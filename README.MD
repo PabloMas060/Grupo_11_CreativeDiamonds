@@ -1,21 +1,36 @@
+## Creatives Diamonds.
+
 Nuestro sitio ofrece un a amplia variedad de productos relacionados con la musica (remeras,gorros, etc) pero principalmente nos dedicamos a vender discos de diversos generos
 
 Nosotros hacemos lo posible por llegar a todo tipo de publico y a todas las edades logrando asi conectar generaciones con lo que mas amamos LA MUSICA.
 
-INTEGRANTES:
+### INTEGRANTES:
 1)
-Nombre:Gustavo Matias Recalde Pereira
-Edad:24
+Nombre: Gustavo Matias Recalde Pereira
+Edad: 24
 Lugar de residencia: Bella Vista
 2)
 Nombre: Fernando Potro Muñoz
-Edad:39
-Lugar de residencia:Santa Clara del Mar
+Edad: 39
+Lugar de residencia: Santa Clara del Mar
 3)
-Nombre:Liz Vilchez
-Edad:35 
+Nombre: Liz Vilchez
+Edad: 35 
 Lugar de residencia: Capital Federal
 4)
-Nombre:Pablo Mas
-Edad:27
-Lugar de residencia:Lanus Este
+Nombre: Pablo Mas
+Edad: 27
+Lugar de residencia: Lanus Este
+
+
+## Sitios de Inspiración por las FUNCIONALIDADES implementadas:
+
+https://www.zivals.com.ar/
+De zivals encontramos atractiva la propuesta de categorizar los productos en mas de una categoría principal, cada una con sus respectivas Subcategorías. Como puede ser VINILOS(donde las subcategorías serían los generos musicales) e INDUMENTARIA(donde podremos encontrar gorras, remeras, accesorios, etc).
+
+https://plazamusica.com.ar/
+De plazamusica tomé la funcion de un menú desplegable en la barra de navegación.
+
+https://vinilospormayor.cl/
+De vinilopormayor, la funcionalidad de poder ver una imagen principal, y vistas previas de otras imagenes del producto, asi como el intercambio al clickear en cualquiera de ellas.
+Tambien de este mismo sitio, la implementación de un bot a modo de soporte par orientar al usuario.
