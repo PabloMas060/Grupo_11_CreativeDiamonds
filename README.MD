@@ -34,3 +34,12 @@ De plazamusica tomé la funcion de un menú desplegable en la barra de navegaci�
 https://vinilospormayor.cl/
 De vinilopormayor, la funcionalidad de poder ver una imagen principal, y vistas previas de otras imagenes del producto, asi como el intercambio al clickear en cualquiera de ellas.
 Tambien de este mismo sitio, la implementación de un bot a modo de soporte par orientar al usuario.
+
+## Sitios de Inspiración por las ESTETICAS que presentan:
+
+https://www.musimundo.com/
+De Musimundo pudimos tomar como referencia la estetica en mostrar el producto principal y la estructura al armar el carrito.
+
+https://mercadolibre.com/
+De esta empresa lider en e-commerce nos sirvio de inspiracion tanto para implementar la estetica de posicionamiento de las imagenes como tambien de botones para usarse en desktop, tablet y mobile
+
