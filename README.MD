@@ -1,5 +1,3 @@
-## Creatives Diamonds.
-
 Nuestro sitio ofrece un a amplia variedad de productos relacionados con la musica (remeras,gorros, etc) pero principalmente nos dedicamos a vender discos de diversos generos
 
 Nosotros hacemos lo posible por llegar a todo tipo de publico y a todas las edades logrando asi conectar generaciones con lo que mas amamos LA MUSICA.
@@ -43,3 +41,8 @@ De Musimundo pudimos tomar como referencia la estetica en mostrar el producto pr
 https://mercadolibre.com/
 De esta empresa lider en e-commerce nos sirvio de inspiracion tanto para implementar la estetica de posicionamiento de las imagenes como tambien de botones para usarse en desktop, tablet y mobile
 
+## SITIOS ELEGIDOS POR LOS PRODUCTOS QUE OFRECEN
+Me llamo mucho la atencion esta pagina por la forma tan innovadora de presentar sus productos resultando atractiva y un ejemplo para nuestro trabajo en proceso .
+
+
+https://icarusmusicstore.com/
