@@ -46,3 +46,12 @@ Me llamo mucho la atencion esta pagina por la forma tan innovadora de presentar 
 
 
 https://icarusmusicstore.com/
+
+
+## SITIOS de Inspiracion por los CLIENTES a los que apuntan:
+De estos sitios tome la inspiracion al ver la variedad de géneros que brindan destinados a un amplia variedad de Clientes mostrando la posibilidad de aceso generaliado a la musica atravez de la adquisicion fisica de los albumes de los artistas que mas resuenan en la actualidad y de epocas pasadas.  
+
+https://www.zivals.com.ar/resultados.aspx?c=bts&formatoproducto=
+
+https://www.disqueriamusicshop.com/
+
