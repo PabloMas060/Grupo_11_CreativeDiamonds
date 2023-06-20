@@ -41,7 +41,7 @@ De Musimundo pudimos tomar como referencia la estetica en mostrar el producto pr
 https://mercadolibre.com/
 De esta empresa lider en e-commerce nos sirvio de inspiracion tanto para implementar la estetica de posicionamiento de las imagenes como tambien de botones para usarse en desktop, tablet y mobile
 
-SITIOS ELEGIDOS POR LOS PRODUCTOS QUE OFRECEN
+## SITIOS ELEGIDOS POR LOS PRODUCTOS QUE OFRECEN
 Me llamo mucho la atencion esta pagina por la forma tan innovadora de presentar sus productos resultando atractiva y un ejemplo para nuestro trabajo en proceso .
 
 
