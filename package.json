@@ -1,4 +1,22 @@
 {
+  "name": "grupo_11_creativesdiamonds",
+  "version": "1.0.0",
+  "description": "Nuestro sitio ofrece un a amplia variedad de productos relacionados con la musica (remeras,gorros, etc) pero principalmente nos dedicamos a vender discos de diversos generos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloMas060/Grupo_11_CreativesDiamonds.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PabloMas060/Grupo_11_CreativesDiamonds/issues"
+  },
+  "homepage": "https://github.com/PabloMas060/Grupo_11_CreativesDiamonds#readme",
   "dependencies": {
     "express": "^4.18.2"
   }
