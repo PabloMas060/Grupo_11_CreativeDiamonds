@@ -1,0 +1,32 @@
+/* 
+font-family: 'Poppins', sans-serif;
+font-family: 'Exo 2', sans-serif;
+ */
+
+:root {
+    --colorHeader : #33FFA0;
+    --colorBody : #D6FFEC;
+    --colorFooter: #00E078;
+    --tipografiaTitulos : 'Poppins', sans-serif;
+    --tipografiaTextos: 'Exo 2', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    font-family: var(--tipografiaTitulos);
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #ffff;
+}
+
+li {
+    list-style: none;
+}
