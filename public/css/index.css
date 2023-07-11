@@ -1,0 +1,152 @@
+/* MOBILE */
+@media(max-width:481px) {
+    .home__body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .home__carrousel {}
+
+    .home__body__menu {
+        background-color: var(--colorHeader);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .home__body__menu a {
+        width: 40%;
+        text-align: center;
+        margin: 5px 5px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 8px;
+        font-weight: 700;
+        font-family: var(--tipografiaTitulos);
+    }
+
+    .home__body__section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: var(--colorBody);
+    }
+
+    .home__body__section h2 {
+
+        margin: 10px;
+
+    }
+
+    .home__body__card {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0px;
+        flex-wrap: wrap;
+        background-color: var(--colorFooter);
+    }
+
+    .home__body__card__image {
+        width: 80%;
+    }
+
+    .home__body__card img {
+        width: 100%;
+    }
+
+    .home__body__card_info {}
+
+    .home__body__card_info h3 {}
+
+    .home__body__card_info h5 {}
+
+    .home__body__card_info h4 {}
+}
+
+
+/* TABLET */
+/* @media(max-width:768px) {
+    .home__body{
+    
+    }
+    .home__carrousel{
+    
+    }
+    .home__body__menu{
+    
+    }
+    .home__body__menu a{
+    
+    }
+    .home__body__section{
+    
+    }
+    .home__body__section h2{
+    
+    }
+    .home__body__card{
+    
+    }
+    .home__body__card img{
+    
+    }
+    .home__body__card_info{
+    
+    }
+    .home__body__card_info h3{
+    
+    }
+    .home__body__card_info h5{
+    
+    }
+    .home__body__card_info h4{
+        
+    }
+    } */
+
+
+
+/* DESKTOP */
+/* @media(min-width:1024px) {
+    .home__body{
+    
+    }
+    .home__carrousel{
+    
+    }
+    .home__body__menu{
+    
+    }
+    .home__body__menu a{
+    
+    }
+    .home__body__section{
+    
+    }
+    .home__body__section h2{
+    
+    }
+    .home__body__card{
+    
+    }
+    .home__body__card img{
+    
+    }
+    .home__body__card_info{
+    
+    }
+    .home__body__card_info h3{
+    
+    }
+    .home__body__card_info h5{
+    
+    }
+    .home__body__card_info h4{
+        
+    }
+    }
+     */
