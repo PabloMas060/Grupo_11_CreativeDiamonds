@@ -5,10 +5,88 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/dcaef0d3ba.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
     
 </head>
 <body>
+    <header>
+    </header>
     
+    <main class="producto">
+        <section class="producto__section--producto">
+            <h3>Nombre del Producto</h3>
+            <article class="producto__section__article">
+                <div class="producto__section__article--img">
+                    <img src="/images/product02.jpg" alt="vinilo Gnr">
+                </div>
+                
+                <div class="producto__section__article--descripcion">
+                    <p>$15000</p>
+                    <button>Agregar al carrito</button>
+                    <i class="fa-solid fa-star" style="color: #837f01;"></i>
+                    
+                </div>
+
+                <div class="producto__section__article--enlaces">
+                    <ul>
+                        <li><a href="#general">General</a></li>
+                        <li><a href="#ficha">Ficha tecnica</a></li>
+                        <li><a href="#reseña">Reseñas</a></li>
+                        
+                    </ul>
+                    
+                </div>
+            </article>
+        </section>
+        
+        <div class="producto__section--detalles">
+            <section class="producto__section--general">
+                <h3 id="general">General</h3>
+                <article>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatem recusandae vero repellat? Minus, voluptatem voluptates voluptas reiciendis enim excepturi rem deleniti alias eum expedita, voluptate laborum dolores dignissimos pariatur.</p>
+                </article>
+            </section>
+
+            <section class="producto__section--general">
+                <h3 id="ficha">Ficha Tecnica</h3>
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum vel eum a tempora sit in saepe quidem soluta ipsa architecto maxime, minus dolorum! Quas aperiam quo distinctio porro ipsa architecto!</p>
+                </article>
+            </section>
+
+            <section class="producto__section--general">
+                <h3 id="reseña">Reseñas</h3>
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum vel eum a tempora sit in saepe quidem soluta ipsa architecto maxime, minus dolorum! Quas aperiam quo distinctio porro ipsa architecto!</p>
+                </article>
+            </section>
+        </div>
+
+        <section class="producto__section--form">
+            <i class="fa-solid fa-calculator fa-2xl" style="color: #003694;"></i>
+            <form class="producto__section--form-tarjetas">
+                <label for="tarjeta">Tipo de Tarjeta:</label>
+                <select id="tarjeta" name="tarjeta">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+
+                <label for="cuotas">Cantidad de Cuotas:</label>
+                <select id="cuotas" name="cuotas">
+                    <option value="1">1 cuota</option>
+                    <option value="3">3 cuotas</option>
+                    <option value="6">6 cuotas</option>
+                    <option value="12">12 cuotas</option>
+                </select>
+        </section>
+
+    </main>
+
+
+    <footer>
+
+    </footer>
 </body>
 </html>

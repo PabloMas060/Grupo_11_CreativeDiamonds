@@ -1,0 +1,49 @@
+.producto{
+
+background-color: black;
+
+/* margin: 0 auto; */
+}
+.producto__section--producto{
+
+background-color: white;
+
+width: 90vw;
+
+margin: auto;
+}
+.producto__section__article{
+
+}
+.producto__section__article--img{
+
+}
+.producto__section__article--img img{
+width: 100%;    
+}
+.producto__section__article--descripcion{
+
+text-align: center;
+}
+.producto__section__article--enlaces{
+
+}
+.producto__section__article--enlaces ul{
+    
+}
+.producto__section__article--enlaces li{
+    
+}
+.producto__section--detalles{
+    width: 90vw;
+    margin: auto;
+    color: white;
+}
+.producto__section--general{
+    
+}
+.producto__section--form{color: crimson;}
+.producto__section--form-tarjetas{
+    
+}
+
