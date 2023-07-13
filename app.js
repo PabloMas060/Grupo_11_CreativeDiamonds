@@ -11,16 +11,16 @@ app.use(express.static('public'))
 app.get("/", (req, res) =>
     res.sendFile(path.join(__dirname, "views", "index.html"))
 );
-app.get("/about", (req, res) =>
+app.get("/carrito", (req, res) =>
     res.sendFile(path.join(__dirname, "views", "carrito.html"))
 );
-app.get("/music", (req, res) =>
+app.get("/login", (req, res) =>
     res.sendFile(path.join(__dirname,"views", "login.html"))
 );
-app.get("/contact", (req, res) =>
+app.get("/producto", (req, res) =>
     res.sendFile(path.join(__dirname,"views", "producto.html"))
 );
-app.get("/*", (req, res) =>
+app.get("/registro", (req, res) =>
     res.sendFile(path.join(__dirname, "views", "registro.html"))
 );
 
