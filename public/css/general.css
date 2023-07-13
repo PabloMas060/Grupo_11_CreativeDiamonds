@@ -7,6 +7,11 @@ font-family: 'Exo 2', sans-serif;
     --colorHeader : #33FFA0;
     --colorBody : #D6FFEC;
     --colorFooter: #00E078;
+    --colorAzulOscuro: #030E43;
+    --colorAzulClaro: #144473;
+    --colorGris: #888B8E;
+    --colorVerde: #1F857E;
+    --colorNegro: #040000;
     --tipografiaTitulos : 'Poppins', sans-serif;
     --tipografiaTextos: 'Exo 2', sans-serif;
 }
