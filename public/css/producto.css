@@ -46,4 +46,66 @@ text-align: center;
 .producto__section--form-tarjetas{
     
 }
-
+h3{
+    color: darkgrey;
+}
+#conteItemsCarrusel{
+    
+height: 200px;
+    
+overflow: hidden;
+    
+/* margin: auto; */
+}
+h3{
+    color: darkgrey;
+}
+.itemCarrusel{   
+    height: 100%;
+    position: relative;
+    margin-bottom: 5px;
+    
+}
+.tarjetaCarrusel{
+    background-color: grey;
+    height: 100%;
+    /* margin: 0 auto; */
+}
+.tarjetaCarrusel img{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10%;
+    
+    box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.flechasCarrusel{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+#tarjetaCarrusel1{
+    
+display: flex;
+    
+justify-content: center;
+}
+#tarjetaCarrusel2{
+    display: flex;
+    
+justify-content: center;
+}
+#tarjetaCarrusel3{
+    display: flex;
+    
+justify-content: center;    
+}
+#puntos{
+    text-align: center;
+}
