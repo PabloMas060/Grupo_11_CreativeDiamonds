@@ -5,8 +5,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 0;
-    background: rgb(4, 0, 0);
-    background: linear-gradient(49deg, rgba(4, 0, 0, 1) 15%, rgba(136, 139, 142, 1) 55%, rgba(255, 255, 255, 1) 72%);
+
 }
 
 .home__body__header {
@@ -22,11 +21,7 @@
 }
 
 
-.home__banner--box-image {
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+.home__container__carousel{
     display: none;
 }
 
@@ -78,9 +73,9 @@
 
 
 .home__body__card {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
+    width: 80%;/* 
+    display: flex; *//* 
+    flex-direction: column; */
     flex-wrap: wrap;
     background-color: #ffffff;
     align-items: center;
@@ -166,23 +161,10 @@
 
 /* TABLET */
 @media(min-width:481px) {
-    #carouselExampleIndicators {
-        padding: 0;
+   
+    .home__container__carousel{
+        display: flex;
     }
-
-    .carousel-inner {
-        padding: 0;
-    }
-
-    .home__banner--box-image {
-        height: 250px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        display: block;
-        padding: 0;
-    }
-
     .home__body__menu {
         width: 100%;
         display: flex;
@@ -236,16 +218,7 @@
 @media(min-width:1024px) {
     .home__body {}
 
-    .home__carrousel {}
-
-    .home__banner--box-image {
-        height: 500px;
-        background-repeat: no-repeat;
-        object-fit: contain;
-        background-position: center;
-        display: block;
-        padding: 0;
-    }
+  
 
     .home__body__menu {
         display: none;

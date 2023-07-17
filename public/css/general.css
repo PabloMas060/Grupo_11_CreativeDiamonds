@@ -25,6 +25,8 @@ font-family: 'Exo 2', sans-serif;
 body {
     font-family: var(--tipografiaTitulos);
     padding: 10px;
+    background: rgb(4, 0, 0);
+    background: linear-gradient(49deg, rgba(4, 0, 0, 1) 15%, rgba(136, 139, 142, 1) 55%, rgba(255, 255, 255, 1) 72%);
 }
 
 a{
