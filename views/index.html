@@ -7,8 +7,8 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://kit.fontawesome.com/6f4f4fce15.js" crossorigin="anonymous"></script>
 </head>
@@ -71,147 +71,128 @@
             </h2>
         </div>
 
-        
+
         <!-- Slide ofertas -->
-        <div class="container text-center">
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="home__body__card"> <!-- CARD -->
-                            <figure class="home__body__card__figure"> <img src="/images/product01.jpg"
-                                    alt="Imagen del Producto">
-                            </figure>
-                            <div class="home__body__card_info">
-                                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                                <h5>$15.000</h5>
-                                <div class="home__body__card_info_discount">
-                                    <h3>$13.500</h3>
-                                    <h4>-10%</h4>
-                                </div>
-                            </div>
-                            <div class="home__body__card__icons">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product01.jpg"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="home__body__card"> <!-- CARD -->
-                            <figure class="home__body__card__figure"> <img src="/images/product02.jpg"
-                                    alt="Imagen del Producto">
-                            </figure>
-                            <div class="home__body__card_info">
-                                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                                <h5>$15.000</h5>
-                                <div class="home__body__card_info_discount">
-                                    <h3>$13.500</h3>
-                                    <h4>-10%</h4>
-                                </div>
-                            </div>
-                            <div class="home__body__card__icons">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="home__body__card"> <!-- CARD -->
-                            <figure class="home__body__card__figure"> <img src="/images/product03.png"
-                                    alt="Imagen del Producto">
-                            </figure>
-                            <div class="home__body__card_info">
-                                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                                <h5>$15.000</h5>
-                                <div class="home__body__card_info_discount">
-                                    <h3>$13.500</h3>
-                                    <h4>-10%</h4>
-                                </div>
-                            </div>
-                            <div class="home__body__card__icons">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="home__body__card"> <!-- CARD -->
-                            <figure class="home__body__card__figure"> <img src="/images/product04.png"
-                                    alt="Imagen del Producto">
-                            </figure>
-                            <div class="home__body__card_info">
-                                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                                <h5>$15.000</h5>
-                                <div class="home__body__card_info_discount">
-                                    <h3>$13.500</h3>
-                                    <h4>-10%</h4>
-                                </div>
-                            </div>
-                            <div class="home__body__card__icons">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="home__body__card"> <!-- CARD -->
-                            <figure class="home__body__card__figure"> <img src="/images/product05.png"
-                                    alt="Imagen del Producto">
-                            </figure>
-                            <div class="home__body__card_info">
-                                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                                <h5>$15.000</h5>
-                                <div class="home__body__card_info_discount">
-                                    <h3>$13.500</h3>
-                                    <h4>-10%</h4>
-                                </div>
-                            </div>
-                            <div class="home__body__card__icons">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="home__body__card"> <!-- CARD -->
-                            <figure class="home__body__card__figure"> <img src="/images/product06.webp"
-                                    alt="Imagen del Producto">
-                            </figure>
-                            <div class="home__body__card_info">
-                                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                                <h5>$15.000</h5>
-                                <div class="home__body__card_info_discount">
-                                    <h3>$13.500</h3>
-                                    <h4>-10%</h4>
-                                </div>
-                            </div>
-                            <div class="home__body__card__icons">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product02.jpg"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product03.png"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product04.png"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product05.png"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product06.webp"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="swiper-pagination"></div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
     </section>
@@ -221,109 +202,158 @@
                 Novedades
             </h2>
         </div>
-        <article class="home__body__card"> <!-- CARD -->
-            <figure class="home__body__card__figure"> <img src="/images/product01.jpg" alt="Imagen del Producto">
-            </figure>
-            <div class="home__body__card_2">
-                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                <h5 class="home__body__card_info_h5">$15.000</h5>
-                <div class="home__body__card_info_discount">
-                    <h3>$13.500</h3>
-                    <h4 class="home__body__card_info_discount_h4">-10%</h4>
+     
+        <!-- Slide ofertas -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product01.jpg"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="home__body__card__icons">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </article>
-        <article class="home__body__card"> <!-- CARD -->
-            <figure class="home__body__card__figure"> <img src="/images/product02.jpg" alt="Imagen del Producto">
-            </figure>
-            <div class="home__body__card_2">
-                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                <h5 class="home__body__card_info_h5">$15.000</h5>
-                <div class="home__body__card_info_discount">
-                    <h3>$13.500</h3>
-                    <h4 class="home__body__card_info_discount_h4">-10%</h4>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product02.jpg"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="home__body__card__icons">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </article>
-        <article class="home__body__card"> <!-- CARD -->
-            <figure class="home__body__card__figure"> <img src="/images/product03.png" alt="Imagen del Producto">
-            </figure>
-            <div class="home__body__card_2">
-                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                <h5 class="home__body__card_info_h5">$15.000</h5>
-                <div class="home__body__card_info_discount">
-                    <h3>$13.500</h3>
-                    <h4 class="home__body__card_info_discount_h4">-10%</h4>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product03.png"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="home__body__card__icons">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </article>
-        <article class="home__body__card"> <!-- CARD -->
-            <figure class="home__body__card__figure"> <img src="/images/product04.png" alt="Imagen del Producto">
-            </figure>
-            <div class="home__body__card_2">
-                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                <h5 class="home__body__card_info_h5">$15.000</h5>
-                <div class="home__body__card_info_discount">
-                    <h3>$13.500</h3>
-                    <h4 class="home__body__card_info_discount_h4">-10%</h4>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product04.png"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="home__body__card__icons">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </article>
-        <article class="home__body__card"> <!-- CARD -->
-            <figure class="home__body__card__figure"> <img src="/images/product05.png" alt="Imagen del Producto">
-            </figure>
-            <div class="home__body__card_2">
-                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                <h5 class="home__body__card_info_h5">$15.000</h5>
-                <div class="home__body__card_info_discount">
-                    <h3>$13.500</h3>
-                    <h4 class="home__body__card_info_discount_h4">-10%</h4>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product05.png"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="home__body__card__icons">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </article>
-        <article class="home__body__card"> <!-- CARD -->
-            <figure class="home__body__card__figure"> <img src="/images/product06.webp" alt="Imagen del Producto">
-            </figure>
-            <div class="home__body__card_2">
-                <h3 class="home__body__card_info_name">Nombre del Producto</h3>
-                <h5 class="home__body__card_info_h5">$15.000</h5>
-                <div class="home__body__card_info_discount">
-                    <h3>$13.500</h3>
-                    <h4 class="home__body__card_info_discount_h4">-10%</h4>
+                <div class="swiper-slide">
+                    <div class="home__body__card"> <!-- CARD -->
+                        <figure class="home__body__card__figure"> <img src="/images/product06.webp"
+                                alt="Imagen del Producto">
+                        </figure>
+                        <div class="home__body__card_info">
+                            <h3 class="home__body__card_info_name">Nombre del Producto</h3>
+                            <h5>$15.000</h5>
+                            <div class="home__body__card_info_discount">
+                                <h3>$13.500</h3>
+                                <h4>-10%</h4>
+                            </div>
+                        </div>
+                        <div class="home__body__card__icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="home__body__card__icons">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </article>
+            <div class="swiper-pagination"></div>
+        </div>
+
     </section>
     <footer class="footer_provisorio">Footer</footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            481: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          },
+        });
+      </script>
 
 </body>
 
