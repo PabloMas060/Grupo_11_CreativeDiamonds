@@ -193,10 +193,12 @@ width: 100%;
     
     }
     .producto__section__article--descripcion p {
-color: white;
-font-size: xx-large;
-}
 
+color: white;
+
+font-size: xx-large;
+}
+}
 
 
 
@@ -270,5 +272,4 @@ font-size: xxx-large;
 width: 50%;
 }
 
-}
 }
