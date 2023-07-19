@@ -83,6 +83,7 @@
     width: 100%;
     margin-top: 1rem;
     object-fit: cover;
+    height: 150px;
 }
 
 .home__body__card_info {
@@ -183,6 +184,11 @@
         flex-wrap: wrap;
         flex-direction: column;
     }
+    .home__body__card img {
+        height: 200px;
+        object-fit: contain;
+    }
+    
 }
 
 
@@ -214,6 +220,10 @@
     .home__body__card {
         width: 90%;
         margin: 1rem auto;
+    }
+    .home__body__card img {
+        height: 300px;
+        object-fit: contain;
     }
 
 }
