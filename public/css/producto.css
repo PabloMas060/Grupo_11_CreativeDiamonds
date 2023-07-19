@@ -1,26 +1,47 @@
 .producto{
-
-background-color: black;
-
-/* margin: 0 auto; */
+    margin: 0 auto; 
 }
+    /*.home__body__section--title {
+        background: rgb(3, 14, 67);
+        background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
+        width: 100%;
+        text-align: center;
+    
+    }
+    
+    .home__body__section h2 {
+        text-shadow: 2px 2px 2px var(--colorGris);
+        margin: 5px;
+        color: #ffffff;*/
+    
+
+
+
 .producto__section--producto{
 
-background-color: white;
+/* background: rgb(3, 14, 67); */
+
+background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
 
 width: 90vw;
 
 margin: auto;
+
+height: 30vh;
 }
 .producto__section__article{
+    width: 100%;
+}
+.producto__section__article--imgPrincipal{
+    width: 100%;
+}
+.producto__section__article--imgPrincipal img{
+    width: 100%;    
+    }
+.producto__section__article--imgSecundaria{
+    display: none;
+}
 
-}
-.producto__section__article--img{
-
-}
-.producto__section__article--img img{
-width: 100%;    
-}
 .producto__section__article--descripcion{
 
 text-align: center;
@@ -37,7 +58,7 @@ text-align: center;
 .producto__section--detalles{
     width: 90vw;
     margin: auto;
-    color: white;
+    color: black;
 }
 .producto__section--general{
     
@@ -108,4 +129,147 @@ justify-content: center;
 }
 #puntos{
     text-align: center;
+}
+
+/* TABLET */
+@media(min-width:481px){
+    .producto__section__article{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 50vw;
+    }
+    .producto__section--producto{
+        
+height: 46vh;
+    }
+    
+    .producto__section__article--imgPrincipal{
+        width: 65%;
+        height: 100%;
+    }
+    .producto__section__article--imgPrincipal img{
+        width: 100%;
+        height: 100%;
+        }
+    .producto__section__article--imgSecundaria{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        background-color: white;
+        /* align-items: baseline; */
+        justify-content: space-evenly;
+    }
+    .producto__section__article--imgSecundaria img{
+        
+width: 100%;
+    }
+    .producto__section__article--descripcion{
+
+width: 100%;
+
+}
+    .producto__section__article--enlaces{
+        /* display: flex; */
+        /* flex-direction: column; */
+    }
+    .producto__section__article--enlaces ul{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding-top: 15px;
+    font-size: x-large;
+    }
+    .producto__section__article--descripcion button{
+
+        font-size: x-large;
+        
+        background-color: black;
+        
+        color: white;
+        
+        border-radius: 26px;
+    
+    }
+    .producto__section__article--descripcion p {
+
+color: white;
+
+font-size: xx-large;
+}
+}
+
+
+
+
+/* DESKTOP */
+@media(min-width:1024px){
+    .producto__section__article{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 50vw;
+    }
+    .producto__section--producto{
+        
+height: 50vh;
+    } 
+    .producto__section__article--imgPrincipal{
+        width: 60%;
+        height: 100%;
+    }
+    .producto__section__article--imgPrincipal img{
+        width: 100%;
+        height: 100%;
+        }
+    .producto__section__article--imgSecundaria{
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        background-color: white;
+        /* align-items: baseline; */
+        justify-content: space-evenly;
+    }
+    .producto__section__article--imgSecundaria img{
+        
+width: 100%;
+    }
+    .producto__section__article--descripcion{
+
+width: 18%;
+
+margin-top: 0;
+
+/* display: flex; */
+
+background-color: white;
+}
+    .producto__section__article--enlaces{
+        display: inline;
+        width: 100%;
+    }
+
+    .producto__section__article--descripcion button{
+
+font-size: x-large;
+
+background-color: black;
+
+color: white;
+
+border-radius: 26px;
+}
+    .producto__section__article--descripcion p{
+
+font-size: xxx-large;
+
+}
+.producto__section--form-tarjetas{display: inline-grid;}
+.tarjetaCarrusel img{
+    
+width: 50%;
+}
+
 }
