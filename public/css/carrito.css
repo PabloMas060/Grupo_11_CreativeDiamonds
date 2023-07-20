@@ -1,5 +1,8 @@
 .carrito{
-
+padding-bottom: 10%;
+}
+carrito__general{
+    padding-bottom: 10%;
 }
 .carrito__section{
 
@@ -61,7 +64,17 @@ font-size: x-large;
 .carrito__button{
     /* margin: auto; */
     border-radius: 14px;
-    background-color: #030E43;
+    background-color: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
+    background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
     color: #888B8E;
     width: 50%;
     text-align: center;
@@ -70,7 +83,7 @@ font-size: x-large;
     justify-content: center;
     align-items: center;
     margin: auto;
-    font-size: larger;
+    font-size: 70%;
     margin-top: 12px;
 }
 .carrito__div--compra p{
@@ -142,7 +155,17 @@ text-align: center;
     .carrito__button{
         /* margin: auto; */
         border-radius: 14px;
-        background-color: #030E43;
+        background-color: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
+        background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
         color: #888B8E;
         width: 50%;
         text-align: center;
@@ -182,24 +205,29 @@ text-align: center;
 
     }
     .carrito__general{
-        
-display: flex;
-        
-flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 10%;
     }
     .carrito__section{
-    background: white;
-    width: 70%;
+    
+background: white;
+    
+width: 70%;
     }
     .carrito__section h3{
         background: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
         font-size: xx-large;
     }
     .carrito__section__article{
-    color: #888B8E;
-    width: 100%;
-    text-align: center;
-    width: 100%;
+    
+color: #888B8E;
+    
+width: 100%;
+    
+text-align: center;
+    
+width: 100%;
     }
     .carrito__section__article--img{
     
@@ -243,7 +271,17 @@ flex-wrap: wrap;
     .carrito__button{
         /* margin: auto; */
         border-radius: 14px;
-        background-color: #030E43;
+        background-color: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
+        background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
         color: #888B8E;
         width: 100%;
         text-align: center;
@@ -259,11 +297,23 @@ flex-wrap: wrap;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        margin: auto;
     }
     .carrito__div--compra p{
         width: 100%;
+        color: #888B8E;
         display: flex;
-        background-color: chocolate;
+        background-color: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
+        background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
     }
 
 
