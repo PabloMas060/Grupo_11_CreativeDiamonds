@@ -14,6 +14,7 @@ font-family: 'Exo 2', sans-serif;
     --colorNegro: #040000;
     --tipografiaTitulos : 'Poppins', sans-serif;
     --tipografiaTextos: 'Exo 2', sans-serif;
+    --animation-duration: .3s;
 }
 
 * {

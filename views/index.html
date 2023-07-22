@@ -14,7 +14,45 @@
 </head>
 
 <body class="home__body">
-    <header class="home__body__header">este es el header</header>
+
+    <header class="header">
+        <div class="header__logo">
+            <img src="/images/logo.jpg" alt="LOGO">
+        </div>
+        <div class="header__burger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="header__navbar">
+            <ul class="header__navbar__ul">
+                <li><a href="">Vinilos</a></li>
+                <li><a href="">Indumentaria</a></li>
+                <li><a href="">Próximos Conciertos</a></li>
+                <li><a href="">Iniciar sesión</a></li>
+                <li><a href="">Registrarme</a></li>
+            </ul>
+        </nav>
+        <div class="header__container_icons">
+            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+
+        </div>
+   
+
+
+
+    </header>
+
+
+
+
+    <div class="header__search">
+        <input type="text"> <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+
+
+
+
     <!-- CARROUSEL -->
     <div class="home__container__carousel">
         <input class="home__carousel__input" type="radio" name="image-slide" id="1" hidden>
@@ -202,7 +240,7 @@
                 Novedades
             </h2>
         </div>
-     
+
         <!-- Slide ofertas -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -332,28 +370,28 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 1,
-          spaceBetween: 10,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          breakpoints: {
-            481: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
             },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 40,
+            breakpoints: {
+                481: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
             },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 50,
-            },
-          },
         });
-      </script>
+    </script>
 
 </body>
 
