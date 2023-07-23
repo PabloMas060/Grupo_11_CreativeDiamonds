@@ -1,5 +1,5 @@
 .producto{
-    margin: 0 auto;
+    margin: 0 ;
     margin-top: 20px;
 }
     /*.home__body__section--title {
@@ -19,23 +19,78 @@
 
 
 .producto__section--producto{
-/* background: rgb(3, 14, 67); */
-background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
-width: 90vw;
-margin: auto;
-height: 45vh;
+
+/* background: rgb(3, 14, 67); */
+
+background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
+
+width: 90vw;
+
+margin: auto;
+
+height: 640px;
+}
+/* The grid: Four equal columns that floats next to each other */
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    
+    width: 25%;
+    padding: 10px;
+  }
+  
+  /* Style the images inside the grid */
+  .column img {
+    opacity: 0.8;
+    cursor: pointer;
+    
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.288);
+    object-fit: cover;
+  }
+  
+  .column img:hover {
+    opacity: 1;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* The expanding image container (positioning is needed to position the close button and the text) */
+  .container {
+    position: relative;
+    display: none;
+    width: 50%;
+
+  }
+  
+  /* Expanding image text */
+
+  
+
+  
+.producto__imagenes{
+    display: flex;
+}
+.row{
+    display: flex;
+    
 }
 .producto__section__article{
-    width: 100%;
+    
 }
 .producto__section__article--imgPrincipal{
-    width: 100%;
+    
 }
 .producto__section__article--imgPrincipal img{
-    width: 100%;    
+      
     }
 .producto__section__article--imgSecundaria{
-    display: none;
+    
 }
 
 .producto__section__article--descripcion{
@@ -89,12 +144,11 @@ h3{
     /* margin: 0 auto; */
 }
 .tarjetaCarrusel img{
-    width: 70%;
+    width: 390px;
     height: 100%;
     display: flex;
     justify-content: center;
     border-radius: 10%;
-    
     box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.5);
 }
 .flechasCarrusel{
@@ -137,7 +191,16 @@ justify-content: center;
         height: 50vw;
     }
     .producto__section--producto{
-        height: 74vh;
+        
+    height: 74vh;
+    }    
+.producto__imagenes{
+    display: flex;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}    
     }
     .producto__section__article--enlaces{
     }
@@ -175,10 +238,10 @@ width: 100%;
     }
     .producto__section__article--enlaces ul{
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 73px;
     padding-top: 15px;
-    font-size: x-large;
+    font-size: xx-small;
     }
     .producto__section__article--descripcion button{
 
@@ -212,7 +275,8 @@ font-size: xx-large;
         height: 50vw;
     }
     .producto__section--producto{
-        height: 80vh;
+        
+height: 80vh;
     } 
     .producto__section__article--imgPrincipal{
         width: 60%;
@@ -267,7 +331,7 @@ font-size: xxx-large;
 .producto__section--form-tarjetas{display: inline-grid;}
 .tarjetaCarrusel img{
     
-width: 50%;
+width: 600px;
 }
 
 }

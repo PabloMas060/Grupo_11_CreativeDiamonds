@@ -85,6 +85,11 @@ font-size: x-large;
     color: cornflowerblue;
     text-align: center;
     margin-top: 20px;
+    width: 250px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 24px;
+    border-radius: 12px;
 }
 
 
@@ -165,7 +170,7 @@ font-size: x-large;
         background-clip: initial;
         background-color: initial;
         color: #888B8E;
-        width: 50%;
+        width: 280px;
         text-align: center;
         height: 5vh;
         display: flex;
@@ -178,6 +183,16 @@ font-size: x-large;
     .carrito__div--compra p {
         /* display: none; */
         font-size: xx-large;
+        ackground-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
+        /* background-position-x: initial; */
+        /* background-position-y: initial; */
+        /* background-size: initial; */
+        /* background-repeat-x: initial; */
+        /* background-attachment: initial; */
+        /* background-origin: initial; */
+        /* background-clip: initial; */
+        /* background-color: initial; */
+        background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
     }
 
 
@@ -233,8 +248,8 @@ font-size: x-large;
     }
     .carrito__section__article--img i{
         margin-right: 0px;
-        font-size: xx-large;
-        color: turquoise;
+        font-size: x-large;
+        color: black;
     }
     .carrito__section__article--img img{
         width: 270px;
