@@ -1,5 +1,5 @@
 .producto{
-    margin: 0 ;
+    margin: 0;
     margin-top: 20px;
 }
     /*.home__body__section--title {
@@ -28,13 +28,22 @@ width: 90vw;
 
 margin: auto;
 
-height: 640px;
+height: 524px;
 }
+/*---------------------------------------------------------------------*/
 /* The grid: Four equal columns that floats next to each other */
 /* The grid: Four equal columns that floats next to each other */
+.producto__imagenes{
+    display: flex;
+    flex-wrap: wrap;
+}
+.producto__imagenes--secundarias{
+    display: flex;
+    width: 100%;
+}
 .column {
-    
-    width: 25%;
+    float: left;
+    width: 30%;
     padding: 10px;
   }
   
@@ -42,11 +51,10 @@ height: 640px;
   .column img {
     opacity: 0.8;
     cursor: pointer;
-    
     width: 100%;
-    height: 100%;
-    border: 1px solid rgba(128, 128, 128, 0.288);
-    object-fit: cover;
+    object-fit: contain;
+    height: 50px;
+    background-color: white;
   }
   
   .column img:hover {
@@ -54,32 +62,41 @@ height: 640px;
   }
   
   /* Clear floats after the columns */
-  .row:after {
+  .producto__imagenes--secundarias:after {
     content: "";
     display: table;
     clear: both;
   }
   
   /* The expanding image container (positioning is needed to position the close button and the text) */
-  .container {
-    position: relative;
-    display: none;
+  .producto__imagenes--principal {
+    /* position: relative; */
+    display: flex;
     width: 50%;
-
+    margin: auto;
+    align-content: initial;
   }
   
   /* Expanding image text */
-
+  #imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+  }
   
+  /* Closable button inside the image */
+  .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
 
-  
-.producto__imagenes{
-    display: flex;
-}
-.row{
-    display: flex;
-    
-}
+/*------------------------------------------------------------------------*/
 .producto__section__article{
     
 }
@@ -114,12 +131,18 @@ text-align: center;
 .producto__section--general{
     
 }
-.producto__section--form{color: crimson;}
+.producto__section--form{color: white;margin-top: 50px;}
 .producto__section--form-tarjetas{
     
+display: flex;
+    
+flex-direction: column;
+    
+width: 270px;
 }
 .producto__title{
     color: darkgrey;
+    margin-top: 50px;
 }
 #conteItemsCarrusel{
     
@@ -183,54 +206,86 @@ justify-content: center;
 
 /* TABLET */
 @media(min-width:481px){
-    .producto__section__article{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 50vw;
-    }
+
     .producto__section--producto{
         
-    height: 74vh;
-    }    
-.producto__imagenes{
-    display: flex;
-}
-.row{
-    display: flex;
-    flex-direction: column;
-}    
-    
-    .producto__section__article--enlaces{
+height: 810px;
     }
-    producto__section__article--enlaces ul{
-        
-    }
-    .producto__section__article--imgPrincipal{
-        width: 65%;
-        height: 100%;
-    }
-    .producto__section__article--imgPrincipal img{
-        width: 100%;
-        height: 100%;
-        }
-    .producto__section__article--imgSecundaria{
+    .producto__imagenes{
         display: flex;
+        flex-wrap: nowrap;
+    }
+    .producto__imagenes--secundarias{
+        display: flex;
+        width: 30%;
         flex-direction: column;
-        width: 20%;
+    }
+    .column {
+        /* float: left; */
+        width: 70%;
+        padding: 10px;
+      }
+      
+      /* Style the images inside the grid */
+      .column img {
+        opacity: 0.8;
+        cursor: pointer;
+        width: 100%;
+        height: 80px;
+        object-fit: contain;
         background-color: white;
-        /* align-items: baseline; */
-        justify-content: space-evenly;
-    }
-    .producto__section__article--imgSecundaria img{
+      }
+      
+      .column img:hover {
+        opacity: 1;
+      }
+      
+      /* Clear floats after the columns */
+      .producto__imagenes--secundarias:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* The expanding image container (positioning is needed to position the close button and the text) */
+      .producto__imagenes--principal {
+        /* position: relative; */
+        display: flex;
+        width: 50%;
+        /* margin: auto; */
+        align-content: initial;
+      }
+      .producto__imagenes--principal img{
+      object-fit: contain;
+      }
+      
+      /* Expanding image text */
+      #imgtext {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: white;
+        font-size: 20px;
+      }
+      
+      /* Closable button inside the image */
+      .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: white;
+        font-size: 35px;
+        cursor: pointer;
+      }   
+
+    
+    
+ 
         
-width: 100%;
-    }
+
     .producto__section__article--descripcion{
 
-width: 100%;
-
+/* width: 100%; */
 }
     .producto__section__article--enlaces{
         /* display: flex; */
@@ -239,21 +294,23 @@ width: 100%;
     .producto__section__article--enlaces ul{
     display: flex;
     justify-content: center;
-    gap: 73px;
+    gap: 28px;
     padding-top: 15px;
-    font-size: xx-small;
+    font-size: 23px;
     }
     .producto__section__article--descripcion button{
 
-        font-size: x-large;
-        
-        background-color: black;
-        
-        color: white;
-        
-        border-radius: 26px;
-    
-    }
+font-size: x-large;
+
+background-color: black;
+
+color: white;
+
+border-radius: 26px;
+
+padding: 20px;
+
+}
     .producto__section__article--descripcion p {
 
 color: white;
@@ -267,17 +324,76 @@ font-size: xx-large;
 
 /* DESKTOP */
 @media(min-width:1024px){
-    .producto__section__article{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 50vw;
-    }
     .producto__section--producto{
         
-height: 80vh;
-    } 
+height: 1030px;
+}
+            .producto__imagenes{
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            .producto__imagenes--secundarias{
+                display: flex;
+                width: 35%;
+                flex-direction: column;
+            }
+            .column {
+                /* float: left; */
+                width: 50%;
+                padding: 10px;
+                height: 160px;
+              }
+              
+              /* Style the images inside the grid */
+              .column img {
+                opacity: 0.8;
+                cursor: pointer;
+                width: 100%;
+                object-fit: contain;
+                height: 100%;
+              }
+              
+              .column img:hover {
+                opacity: 1;
+              }
+              
+              /* Clear floats after the columns */
+              .producto__imagenes--secundarias:after {
+                content: "";
+                display: table;
+                clear: both;
+              }
+              
+              /* The expanding image container (positioning is needed to position the close button and the text) */
+              .producto__imagenes--principal {
+                /* position: relative; */
+                display: flex;
+                width: 50%;
+                /* margin: auto; */
+                align-content: initial;
+              }
+              .producto__imagenes--principal img{
+              object-fit: contain;
+              }
+              
+              /* Expanding image text */
+              #imgtext {
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                color: white;
+                font-size: 20px;
+              }
+              
+              /* Closable button inside the image */
+              .closebtn {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                color: white;
+                font-size: 35px;
+                cursor: pointer;
+              }
     .producto__section__article--imgPrincipal{
         width: 60%;
         height: 100%;
@@ -300,17 +416,23 @@ width: 100%;
     }
     .producto__section__article--descripcion{
 
-width: 18%;
+width: 30%;
 
 margin-top: 0;
 
 /* display: flex; */
 
-background-color: white;
+background-color: transparent;
+
+margin: auto;
 }
     .producto__section__article--enlaces{
         display: inline;
         width: 100%;
+    }
+    .producto__section__article--enlaces ul{
+        
+font-size: xx-large;
     }
 
     .producto__section__article--descripcion button{
@@ -322,6 +444,8 @@ background-color: black;
 color: white;
 
 border-radius: 26px;
+
+width: 260px;
 }
     .producto__section__article--descripcion p{
 
@@ -333,5 +457,8 @@ font-size: xxx-large;
     
 width: 600px;
 }
-
+#conteItemsCarrusel{
+    
+height: 400px;
+}
 }

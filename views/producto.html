@@ -42,35 +42,32 @@
     <main class="producto">
         <section class="producto__section--producto">
             <h3>Nombre del Producto</h3>
-            
             <div class="producto__imagenes">   <!-- The grid: four columns -->
-                <div class="row">
+                <div class="producto__imagenes--secundarias">
                     <div class="column">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_847551-MLA51204351774_082022-O.webp" alt="Nature" onclick="myFunction(this);">
                     </div>
-
                     <div class="column">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_909616-MLA51111411679_082022-O.webp" alt="Snow" onclick="myFunction(this);">
                     </div>
-
                     <div class="column">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_616055-MLA52758456106_122022-O.webp" alt="Mountains" onclick="myFunction(this);">
                     </div>
-
                     <div class="column">
                         <img src="https://http2.mlstatic.com/D_NQ_NP_754157-MLA52084654222_102022-O.webp" alt="Lights" onclick="myFunction(this);">
                     </div>
                 </div>
-            
-                <!-- The expanding image container -->
-                <div class="container">
+              
+              <!-- The expanding image container -->
+                <div class="producto__imagenes--principal">
                 <!-- Close the image -->
-                <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
-            
+                   <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+              
                 <!-- Expanded image -->
                     <img id="expandedImg" style="width:100%" src="https://http2.mlstatic.com/D_NQ_NP_754157-MLA52084654222_102022-O.webp" alt="Lights">
-            
-                
+              
+                <!-- Image text -->
+                    <div id="imgtext"></div>
                 </div>
             </div> 
 
