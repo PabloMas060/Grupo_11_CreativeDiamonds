@@ -76,6 +76,11 @@ height: 524px;
     width: 50%;
     margin: auto;
     align-content: initial;
+    /* background-color: white; */
+  }
+  .producto__imagenes--principal img{
+    
+background-color: white;
   }
   
   /* Expanding image text */
@@ -481,10 +486,10 @@ width: 600px;
     
 height: 400px;
 }
-}
+
   
-color: white;
-}
+
+
 .producto__section__article--enlaces{
 
 }
