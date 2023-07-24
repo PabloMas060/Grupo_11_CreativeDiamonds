@@ -23,8 +23,20 @@ app.get("/producto", (req, res) =>
 app.get("/footer", (req, res) =>
     res.sendFile(path.join(__dirname, "views", "footer.html"))
 );
+app.get("/product/vinilos", (req, res) =>
+    res.sendFile(path.join(__dirname, "views", "product", "vinilos.html"))
+);
+app.get("/product/indumentaria", (req, res) =>
+    res.sendFile(path.join(__dirname, "views", "product", "indumentaria.html"))
+);
+app.get("/product/shows", (req, res) =>
+    res.sendFile(path.join(__dirname, "views", "product", "shows.html"))
+);
 app.get("/registro", (req, res) =>
     res.sendFile(path.join(__dirname, "views", "registro.html"))
+);
+app.get("/profile", (req, res) =>
+    res.sendFile(path.join(__dirname, "views", "profile.html"))
 );
 
 
