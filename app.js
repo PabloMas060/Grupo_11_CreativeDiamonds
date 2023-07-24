@@ -28,6 +28,7 @@ app.get("/registro", (req, res) =>
 );
 
 
+
 app.listen(PORT, () =>
     console.log("Server running in http://localhost:" + PORT)
 );
