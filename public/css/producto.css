@@ -112,17 +112,25 @@ height: 524px;
 }
 
 .producto__section__article--descripcion{
-text-align: center;
-margin-top: 14px;
+
+text-align: center;
+
+margin-top: 14px;
 }
 .producto__section__article--descripcion button{
   background-color: black;
   color: white;
   border-radius: 5px;
   padding: 2px;
+  cursor: pointer;
+}
+.producto__section__article--descripcion button:hover{
+  background-color: #030E43;
+  box-shadow: 4px 4px 20px rgba(255, 255, 255, 0.5)
 }
 .producto__section__article--descripcion p{
-  color: white;
+  
+color: white;
 }
 .producto__section__article--enlaces{
 
@@ -310,11 +318,16 @@ height: 810px;
     font-size: 23px;
     }
     .producto__section__article--descripcion button{
-font-size: x-large;
-background-color: black;
-color: white;
-border-radius: 26px;
-padding: 10px;
+
+font-size: x-large;
+
+background-color: black;
+
+color: white;
+
+border-radius: 26px;
+
+padding: 10px;
 }
     .producto__section__article--descripcion p {
 
