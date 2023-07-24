@@ -54,26 +54,20 @@
     background-position: center;
     width: 100%;
     text-align: center;
-
-}
-
-.home__body__section h2 {
     text-shadow: 2px 2px 2px var(--colorGris);
     margin: 5px;
     color: #ffffff;
 
 }
-
-
-
 .home__body__card {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     background-color: #ffffff;
     align-items: center;
     border-radius: 5px;
     box-shadow: 10px 5px 25px #292828;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -137,7 +131,15 @@
     gap: 0.8rem;
 
 }
-
+.home__body__card__button{
+    margin: 1rem auto;
+    border: solid 1px #000;
+    border-radius: 8px;
+    padding: 5px;
+}
+.home__body__card__button:hover{
+box-shadow: 3px 4px 3px #1F857E;
+}
 
 
 
@@ -224,6 +226,8 @@
     .home__body__card {
         width: 90%;
         margin: 1rem auto;
+        flex-direction: row;
+        padding: 1rem;
     }
     .home__body__card img {
         height: 300px;
