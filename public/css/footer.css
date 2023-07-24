@@ -2,10 +2,7 @@ footer {
     /*background: rgb(4, 0, 0);
     background: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
     height: 25%;*/
-    background-image: url('/images/bg/bg07.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left;
+   
     color: #ffffff;
     text-align: center;
     text-transform: capitalize;
@@ -13,28 +10,31 @@ footer {
     font-size: 24px;
 }
 .footer__section{
-
+    background-image: url('/images/bg/bg07.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
 display: flex;
-
 flex-wrap: wrap;
+
 }
 .footer__section h3{
     
 width: 100%;
     
-font-size: small;
+font-size: 1.2rem;
 }
 .footer__section--preguntas{
 
 width: 50%;
 
-padding-top: 2%;
 
 display: flex;
+
 }
 .footer__section--preguntas ul{
-
-font-size: 50%;
+padding: 10px;
+font-size: 1rem;
 }
                 
 .footer__section--iconos{
@@ -61,11 +61,13 @@ gap: 10px;
     
 }
 .footer__section--iconos i{
-    color: #888B8E;
+    color: #ffffff;
     font-size: large;
 }
-.footer__copyright p{
-    font-size: 40%;
+.footer__copyright{
+    font-size: 1rem;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    color: #ffffff;
+    width: 100%;
     }

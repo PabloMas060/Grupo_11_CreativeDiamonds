@@ -170,8 +170,9 @@ overflow: hidden;
     
 /* margin: auto; */
 }
-h3{
-    color: darkgrey;
+
+.producto__section--producto h3{
+    color: grey;
 }
 .itemCarrusel{   
     height: 100%;
