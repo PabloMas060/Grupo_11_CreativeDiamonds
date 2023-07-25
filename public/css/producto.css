@@ -427,6 +427,10 @@ h3 {
 
   .producto__imagenes--principal img {
     object-fit: contain;
+
+
+    height: 650px;
+
   }
 
   /* Expanding image text */
@@ -632,4 +636,5 @@ h3 {
   #puntos {
     text-align: center;
   }
+
 }
