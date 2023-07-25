@@ -424,17 +424,14 @@ h3 {
   .producto__imagenes--principal {
     /* position: relative; */
     display: flex;
-    width: 50%;
-    /* margin: auto; */
-    align-content: initial;
+    width: 580px;
+    margin: auto;
+    height: 630px;
   }
 
   .producto__imagenes--principal img {
     object-fit: contain;
-
-
-    height: 650px;
-
+    height: 100%;
   }
 
   /* Expanding image text */
