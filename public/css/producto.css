@@ -393,7 +393,7 @@ h3 {
 
   .producto__imagenes--secundarias {
     display: flex;
-    width: 35%;
+    width: 312px;
     flex-direction: column;
   }
 
