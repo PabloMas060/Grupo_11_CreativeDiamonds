@@ -136,6 +136,7 @@
     border: solid 1px #000;
     border-radius: 8px;
     padding: 5px;
+    transition: box-shadow 0.5s ease;
 }
 .home__body__card__button:hover{
 box-shadow: 3px 4px 3px #1F857E;
