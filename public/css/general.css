@@ -16,7 +16,9 @@ font-family: 'Exo 2', sans-serif;
     --tipografiaTextos: 'Exo 2', sans-serif;
     --animation-duration: .3s;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 * {
     box-sizing: border-box;
     margin: 0;
