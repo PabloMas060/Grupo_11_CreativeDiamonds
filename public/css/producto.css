@@ -1,6 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .producto {
-  margin: 0;
-  margin-top: 20px;
+  margin: 0px;
+  background-color: darkgrey;
 }
 
 /*.home__body__section--title {
@@ -21,15 +25,17 @@
 
 .producto__section--producto {
 
-  /* background: rgb(3, 14, 67); */
+background: rgb(3, 14, 67);
 
-  background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
+background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
 
-  width: 90vw;
+width: 90vw;
 
-  margin: auto;
+margin: auto;
 
-  height: 524px;
+height: 524px;
+
+padding-top: 10px;
 }
 
 /*---------------------------------------------------------------------*/
@@ -161,21 +167,52 @@
   margin: auto;
   color: black;
 }
-
-.producto__section--general {}
-
+.producto__section--general{
+  
+margin-top: 30px;
+}
+.producto__section--general h3 {
+  color: black;
+}
+  
 .producto__section--form {
-  color: white;
+  /* color: slategray; */
   margin-top: 50px;
+  text-align: center;
+  background-color:  linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%);
+  background-image: linear-gradient(158deg, rgb(3, 14, 67) 22%, rgb(20, 68, 115) 67%, rgb(31, 133, 126) 83%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  padding-top: 18px;
+  padding-bottom: 24px;
+  margin: auto;
+  width: 290px;
+  margin-top: 60px;
+}
+.producto__section--form i{
+  color: gray;
 }
 
 .producto__section--form-tarjetas {
 
-  display: flex;
+display: flex;
 
-  flex-direction: column;
+flex-direction: column;
 
-  width: 270px;
+width: 270px;
+
+margin: auto;
+
+margin-top: 15px;
+
+color: white;
 }
 
 .producto__title {

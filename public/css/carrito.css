@@ -8,8 +8,7 @@ carrito__general{
     padding-bottom: 10%;
 }
 .carrito__section{
-
-background: center;
+background: center;
 }
 .carrito__section h3{
     background: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
@@ -17,18 +16,17 @@ background: center;
     color: #888B8E;;
 }
 .carrito__section__article{
-
-color: #888B8E;
-
-width: 100%;
-
-text-align: center;
-
-/* width: 333px; */
-
-margin-top: 30px;
-
-border: solid 1px #888B8E;
+color: #888B8E;
+width: 100%;
+text-align: center;
+width: 333px;
+margin-top: 45px;
+border: solid 1px #888B8E;
+padding: 12px;
+width: 90vw;
+margin: auto;
+margin-bottom: 30px;
+margin-top: 30px;
 }
 .carrito__section__article--img{
 
@@ -44,7 +42,7 @@ justify-content: space-between;
     color: #030E43;
 }
 .carrito__section__article--img img{
-    width: 90vw;
+    width: 69vw;
 }
 .carrito__section__article--descripcion{
 
@@ -106,7 +104,17 @@ font-size: x-large;
     justify-content: center;
     margin: auto;
     margin-top: 24px;
-    border-radius: 12px;
+    border-radius: 6px;
+    background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
 }
 
 
@@ -117,6 +125,8 @@ font-size: x-large;
     .carrito__section{
     /* display: flex; */
     /* flex-wrap: wrap; */
+    width: 95vw;
+    margin: auto;
     }
     .carrito__section h3{
         background: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
@@ -157,10 +167,8 @@ width: 300px;
         height: 172px;
     }
     .carrito__section__article--descripcion{
-    
-font-size: medium;
-    
-width: 34%;
+    font-size: medium;
+    width: 30%;
     }
     .carrito__section__article--cantidad{
     
@@ -232,6 +240,8 @@ width: 100%;
         background-image: linear-gradient(158deg, rgb(4, 0, 0) 16%, rgb(3, 14, 67) 39%, rgb(20, 68, 115) 75%, rgb(31, 133, 126) 89%);
     }
 
+p {}
+
 
 
 
@@ -264,10 +274,9 @@ flex-wrap: wrap;
 padding-bottom: 10%;
     }
     .carrito__section{
-    
-background: center;
-    
-width: 70%;
+    background: center;
+    width: 70%;
+    margin-left: 20px;
     }
     .carrito__section h3{
         background: linear-gradient(158deg, rgba(4, 0, 0, 1) 16%, rgba(3, 14, 67, 1) 39%, rgba(20, 68, 115, 1) 75%, rgba(31, 133, 126, 1) 89%);
