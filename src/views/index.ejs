@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon_io/site.webmanifest">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://kit.fontawesome.com/6f4f4fce15.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,16 +28,16 @@
         </div>
         <nav class="header__navbar">
             <ul class="header__navbar__ul">
-                <li><a href="/product/vinilos">Vinilos</a></li>
-                <li><a href="/product/indumentaria">Indumentaria</a></li>
-                <li><a href="/product/shows">Próximos Conciertos</a></li>
-                <li><a href="/login">Iniciar sesión</a></li>
-                <li><a href="/registro">Registrarme</a></li>
+                <li><a href="/products/vinilos">Vinilos</a></li>
+                <li><a href="/products/indumentaria">Indumentaria</a></li>
+                <li><a href="/products/shows">Próximos Conciertos</a></li>
+                <li><a href="/users/login">Iniciar sesión</a></li>
+                <li><a href="/users/register">Registrarme</a></li>
             </ul>
         </nav>
         <div class="header__container_icons">
-            <a href="/profile"><i class="fa-solid fa-user"></i></a>
-            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/users/profile"><i class="fa-solid fa-user"></i></a>
+            <a href="/users/cart"><i class="fa-solid fa-cart-shopping"></i></a>
 
         </div>
 
@@ -99,10 +99,10 @@
 
 
     <div class="home__body__menu">
-        <a href=""><i class="fa-solid fa-compact-disc"></i> Vinilos</a>
-        <a href=""><i class="fa-solid fa-shirt"></i> Indumentaria</a>
-        <a href=""><i class="fa-solid fa-percent"></i> Promociones</a>
-        <a href=""><i class="fa-solid fa-ticket"></i> Próximos Conciertos</a>
+        <a href="/products/vinilos"><i class="fa-solid fa-compact-disc"></i> Vinilos</a>
+        <a href="/products/indumentaria"><i class="fa-solid fa-shirt"></i> Indumentaria</a>
+        <a href="/products/promos"><i class="fa-solid fa-percent"></i> Promociones</a>
+        <a href="/products/shows"><i class="fa-solid fa-ticket"></i> Próximos Conciertos</a>
     </div>
 
 
@@ -119,7 +119,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product01.jpg"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product01.jpg"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -135,13 +135,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product02.jpg"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product02.jpg"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -157,13 +157,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product03.png"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product03.png"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -179,13 +179,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product04.png"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product04.png"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -201,13 +201,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product05.png"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product05.png"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -223,13 +223,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product06.webp"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product06.webp"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -245,7 +245,7 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
@@ -263,12 +263,12 @@
             </h2>
         </div>
 
-        <!-- Slide ofertas -->
+        <!-- Slide novedades -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product01.jpg"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product01.jpg"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -284,13 +284,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product02.jpg"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product02.jpg"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -306,13 +306,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product03.png"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product03.png"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -328,13 +328,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product04.png"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product04.png"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -350,13 +350,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product05.png"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product05.png"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -372,13 +372,13 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="home__body__card"> <!-- CARD -->
-                        <figure class="home__body__card__figure"><a href="/producto"><img src="/images/product06.webp"
+                        <figure class="home__body__card__figure"><a href="/products/detail/:id"><img src="/images/product06.webp"
                                     alt="Imagen del Producto"></a>
                         </figure>
                         <div class="home__body__card_info">
@@ -394,7 +394,7 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         <div class="home__body__card__button">
-                            <a href="/producto">VER MÁS</a>
+                            <a href="/products/detail/:id">VER MÁS</a>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>REGISTRARME</title>
+    <title>INGRESA</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -13,30 +13,30 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon_io/site.webmanifest">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://kit.fontawesome.com/6f4f4fce15.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
         <div class="header__logo">
-           <a href="/"><img src="/images/logo.jpg" alt="LOGO"></a> 
+            <a href="/"><img src="/images/logo.jpg" alt="LOGO"></a>
         </div>
         <div class="header__burger">
             <i class="fa-solid fa-bars"></i>
         </div>
         <nav class="header__navbar">
             <ul class="header__navbar__ul">
-                <li><a href="/product/vinilos">Vinilos</a></li>
-                <li><a href="/product/indumentaria">Indumentaria</a></li>
-                <li><a href="/product/shows">Próximos Conciertos</a></li>
-                <li><a href="/login">Iniciar sesión</a></li>
-                <li><a href="/registro">Registrarme</a></li>
+                <li><a href="/products/vinilos">Vinilos</a></li>
+                <li><a href="/products/indumentaria">Indumentaria</a></li>
+                <li><a href="/products/shows">Próximos Conciertos</a></li>
+                <li><a href="/users/login">Iniciar sesión</a></li>
+                <li><a href="/users/register">Registrarme</a></li>
             </ul>
         </nav>
         <div class="header__container_icons">
-            <a href="/profile"><i class="fa-solid fa-user"></i></a>
-            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/users/profile"><i class="fa-solid fa-user"></i></a>
+            <a href="/users/cart"><i class="fa-solid fa-cart-shopping"></i></a>
 
         </div>
 
@@ -45,21 +45,15 @@
 
     </header>
 
+
     <main class="form__main">
         <div class="form__title">
-            <h1>Registrate</h1>
+            <h1>inicia sesión</h1>
         </div>
         <div class="form__container">
             <form class="form__box" action="#" method="post">
+                
                 <div class="form__box__field">
-                    <label class="form-label" for="name">Nombre:</label>
-                    <input class="form-control" type="text" id="name" name="name">
-                </div>
-                <div class="form__box__field">
-                    <label class="form-label" for="surname">Apellido:</label>
-                    <input class="form-control" type="text" id="surname" name="surname">
-                </div>
-                <div class="form__box__field-email">
                     <label class="form-label" for="email">Email:</label>
                     <input class="form-control" type="email" id="email" name="email">
                 </div>
@@ -67,20 +61,17 @@
                     <label class="form-label" for="password">Contraseña:</label>
                     <input class="form-control" type="password" id="password" name="password">
                 </div>
-                <div class="form__box__field">
-                    <label class="form-label" for="password2">Confirmar Contraseña:</label>
-                    <input class="form-control" type="password" id="password2" name="password2">
-                </div>
+               
                 <div class="form__button-container">
-                    <button class="form__button-submit"><a href="">Registrate con <i class="fa-brands fa-google"></i></a></button>
+                    <button class="form__button-submit"><a href="">Inicia sesion con <i class="fa-brands fa-google"></i></a></button>
                     
-                    <button class="form__button-submit" type="submit"><a href="/">Registrarme</a></button>
+                    <button class="form__button-submit" type="submit"><a href="/">Ingresar</a></button>
                 </div>
                
                     
            
                 <div class="form__p">
-                    <p>¿Ya tienes cuenta? <a href="login">Ingresa</a></p>
+                    <p>¿Aún no tienes cuenta? <a href="/registro">Registrate</a></p>
                 </div>
             </form>
           
