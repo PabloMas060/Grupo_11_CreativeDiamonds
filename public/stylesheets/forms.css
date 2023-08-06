@@ -23,6 +23,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
+    
 }
 .form__box{
     display: flex;
@@ -62,8 +63,10 @@
     outline: none;
 }
 .form__button-container{
-    display: flex;justify-content: space-around;
-
+    display: flex;
+    justify-content: space-around;
+margin-bottom: 1rem;
+gap: 1rem;
 }
 .form__button-submit{
     padding: 8px 10px;
@@ -86,8 +89,8 @@ color: #ffffff;
 .form-field-select {
     display: flex;
     flex-direction: column;
-    width: 40%;
     text-align: center;
+    align-items: center;
 }
 .form-select {
     border-radius: 5px;
@@ -146,6 +149,9 @@ color: #ffffff;
     .form__box__field-email{
         width: 70%;
         text-align: center;
+    }
+    .form-field-select{
+        width: 40%;
     }
     .form__button-container{
         width: 100%;
