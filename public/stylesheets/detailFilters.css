@@ -1,0 +1,19 @@
+.aside__vinilos__filter{
+    padding-left: 5px;
+    width: 25%;
+}
+.filter__section_vinilos{
+    display: flex;
+    flex-direction: column;
+width: 100%;
+gap: .5rem;
+}
+.filter_form{
+}
+.product__main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product__main__cards_container{
+    width: 70%;
+}
