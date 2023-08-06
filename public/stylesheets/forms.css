@@ -83,6 +83,36 @@ color: #ffffff;
 .form__p a{
     color: var(--colorVerde);
 }
+.form-field-select {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+.form-select {
+    border-radius: 5px;
+    padding: 8px;
+    width: 90%;
+    border: 1px solid silver;
+}
+
+.form-select:focus {
+    box-shadow: 0px 0px 5px skyblue;
+    outline: none;
+}
+.form__button-reset {
+    padding: 8px 10px;
+    color: #ffffff;
+    background-color: rgb(177, 24, 24);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+}
+
+.form__button-reset:hover {
+    background-color: red;
+    box-shadow: 0px 0px 5px grey;
+}
 
 
 @media(min-width:481px){

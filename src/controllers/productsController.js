@@ -10,5 +10,8 @@ module.exports = {
     },
     shows: (req, res) => {
         return res.render('products/shows')
+    },
+    edit: (req, res) => {
+        return res.render('products/editProduct')
     }
 }
