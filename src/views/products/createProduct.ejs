@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="form__main">
+                <div class="form__title">
+                    <h1>Editar Producto</h1>
+                </div>
+                <div class="form__container">
+                    <form class="form__box" action="#" method="post">
+
+                        <div class="form__box__field">
+                            <label class="form-label" for="name">Nombre del Producto:</label>
+                            <input class="form-control" type="text" id="name" name="name">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="band">Nombre banda/grupo:</label>
+                            <input class="form-control" type="text" id="band" name="band">
+                        </div>
+
+
+                        <div class="form__box__field">
+                            <label class="form-label" for="price">Precio:</label>
+                            <input class="form-control" type="number" id="price" name="price">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="discount">Descuento:</label>
+                            <input class="form-control" type="number" id="discount" name="discount">
+                        </div>
+                        <div class="form-field-select">
+                            <label class="form-label" for="category">Categoría</label>
+                            <select class="form-select" name="category" id="category">
+                                <option selected hidden value="">Seleccione...</option>
+                                <option value="v">Vinilo</option>
+                                <option value="i">Indumentaria</option>
+                                <option value="s">Show</option>
+                            </select>
+                        </div>
+                        <div class="form-field-select">
+                            <label class="form-label" for="gender">Género</label>
+                            <select class="form-select" name="gender" id="gender">
+                                <option selected hidden value="">Seleccione...</option>
+                                <option value="r">Rock</option>
+                                <option value="f">Funk</option>
+                                <option value="s">Soul</option>
+                                <option value="h">Heavy Metal</option>
+                                <option value="p">Punk</option>
+                                <option value="c">Classical</option>
+                                <option value="b">Blues</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form__box__field">
+                            <label class="form-label" for="description">Descripción:</label>
+                            <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+                        </div>
+                        <div class="form-field-select">
+                            <label class="form-label" for="image">Imagen:</label>
+                            <input class="form-control" type="file" id="image" name="image">
+                        </div>
+                        <div class="form__button-container">
+                            <button class="form__button-reset" type="reset">Limpiar los campos</button>
+                            <button class="form__button-submit" type="submit"><a href="/">Editar</a></button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>
