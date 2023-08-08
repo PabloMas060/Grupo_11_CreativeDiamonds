@@ -3,6 +3,8 @@
     gap: 2rem;
     margin-bottom: 2rem;
     width: 90%;
+    align-items: center;
+    justify-content: center;
 }
 @media (min-width: 481px) {
     .admin-buttons-container{
