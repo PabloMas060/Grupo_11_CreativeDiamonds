@@ -7,6 +7,7 @@
         "description": "Álbum icónico con una mezcla de influencias de rock, funk y punk.",
         "year": 1991,
         "price": 21.99,
+        "discount": 0,
         "image": "rhcpDisco.jfif",
         "format": "LP",
         "discographic": "Warner Bros. Records",
@@ -39,6 +40,7 @@
         "description": "Una colección de los mejores éxitos de Guns N' Roses.",
         "year": null,
         "price": 19.99,
+        "discount": 5,
         "image": "gnrGreatestHits.jfif",
         "format": "CD",
         "discographic": "Geffen Records",
@@ -67,6 +69,7 @@
         "description": "Uno de los álbumes más influyentes en la historia de la música.",
         "year": 1973,
         "price": 24.99,
+        "discount": 8,
         "image": "pinkFloydDarkSide.jfif",
         "format": "LP",
         "discographic": "Harvest Records",
@@ -91,6 +94,7 @@
         "description": "El sexto álbum de estudio de AC/DC y uno de los más exitosos de la historia.",
         "year": 1980,
         "price": 20.99,
+        "discount": 12,
         "image": "acdcBackInBlack.jfif",
         "format": "LP",
         "discographic": "Atlantic Records",
@@ -115,6 +119,7 @@
         "description": "El álbum debut de Led Zeppelin, un clásico del rock.",
         "year": 1969,
         "price": 18.99,
+        "discount": 0,
         "image": "ledZeppelinI.jfif",
         "format": "LP",
         "discographic": "Atlantic Records",
@@ -138,6 +143,7 @@
         "description": "Una colección de sencillos y canciones de The Beatles.",
         "year": 1988,
         "price": 22.99,
+        "discount": 15,
         "image": "beatlesPastMasters.jfif",
         "format": "CD",
         "discographic": "Apple Records",
@@ -169,6 +175,7 @@
         "description": "Es el primer trabajo de la banda tras casi seis años, siendo esta la mayor distancia entre un álbum y otro en la historia del grupo.",
         "year": 2022,
         "price": 26.99,
+        "discount": 0,
         "image": "product01.jpg",
         "format": "CD",
         "discographic": "Warner Bros. Records",
@@ -193,3 +200,4 @@
         ]
     }
 ]
+
