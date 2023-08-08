@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    
+
+    <main class="form__main">
+        <div class="form__title">
+            <h1>Dashboard</h1>
+        </div>
+       <div class="admin-buttons-container">
+        <button class="form__button-submit"><a href="/products/add">Crear un nuevo Producto</a></button>
+        <button class="form__button-submit"><a href="/products/edit/:id">Editar un Producto</a></button>
+       </div>
+
+
+
+    </main>
+
+    <%- include('../partials/footer') %>
+
+
+
+</body>
+
+</html>

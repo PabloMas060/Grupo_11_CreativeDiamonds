@@ -1,0 +1,13 @@
+.admin-buttons-container{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 90%;
+}
+@media (min-width: 481px) {
+    .admin-buttons-container{
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+}
