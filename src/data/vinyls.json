@@ -41,7 +41,7 @@
         "year": null,
         "price": 19.99,
         "discount": 5,
-        "image": "gnrGreatestHits.jfif",
+        "image": "product02.jpg",
         "format": "CD",
         "discographic": "Geffen Records",
         "tracklist": [
@@ -70,7 +70,7 @@
         "year": 1973,
         "price": 24.99,
         "discount": 8,
-        "image": "pinkFloydDarkSide.jfif",
+        "image": "product03.png",
         "format": "LP",
         "discographic": "Harvest Records",
         "tracklist": [
@@ -95,7 +95,7 @@
         "year": 1980,
         "price": 20.99,
         "discount": 12,
-        "image": "acdcBackInBlack.jfif",
+        "image": "product04.png",
         "format": "LP",
         "discographic": "Atlantic Records",
         "tracklist": [
@@ -120,7 +120,7 @@
         "year": 1969,
         "price": 18.99,
         "discount": 0,
-        "image": "ledZeppelinI.jfif",
+        "image": "product05.png",
         "format": "LP",
         "discographic": "Atlantic Records",
         "tracklist": [
@@ -144,7 +144,7 @@
         "year": 1988,
         "price": 22.99,
         "discount": 15,
-        "image": "beatlesPastMasters.jfif",
+        "image": "product06.webp",
         "format": "CD",
         "discographic": "Apple Records",
         "tracklist": [
@@ -200,4 +200,3 @@
         ]
     }
 ]
-
