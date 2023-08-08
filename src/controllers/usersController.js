@@ -10,5 +10,8 @@ module.exports = {
     },
     cart: (req, res) => {
         return res.render('users/cart')
+    },
+    admin: (req, res) => {
+        return res.render('users/admin')
     }
 }
