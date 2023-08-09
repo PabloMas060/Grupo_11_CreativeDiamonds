@@ -1,6 +1,14 @@
+const vinyls = require('../data/vinyls.json')
+
 module.exports = {
     detail: (req, res) => {
-        return res.render('products/detail')
+
+        const id = req.params.id;
+        const vinyl = vinyls.find(vinyl => vinyl.id === +id)
+
+        return res.render('products/detail',{
+            vinyl
+        })
     },
     vinilos: (req, res) => {
         return res.render('products/vinilos')
