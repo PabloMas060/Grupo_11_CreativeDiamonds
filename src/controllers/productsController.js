@@ -11,7 +11,9 @@ module.exports = {
         })
     },
     vinilos: (req, res) => {
-        return res.render('products/vinilos')
+        return res.render('products/vinilos',{
+            vinyls
+        })
     },
     indumentaria: (req, res) => {
         return res.render('products/indumentaria')
