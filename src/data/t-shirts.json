@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "artist": "Red Hot Chili Peppers",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "talle": "small",
+        "color": "blanco",
+        "tipo de manga": "corta",
+        "price": 30.99,
+        "discount": 0,
+        "image": ""
+    }
+]
