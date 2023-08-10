@@ -8,7 +8,7 @@
         "sleeve": "short",
         "price": 30.99,
         "discount": 0,
-        "image": "remeraRhcp.webp"
+        "image": "shirts/remeraRhcp.webp"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "sleeve": "short",
         "price": 30.99,
         "discount": 10,
-        "image": "remeraNirvana.webp"
+        "image": "shirts/remeraNirvana.webp"
     },   
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "sleeve": "short",
         "price": 30.99,
         "discount": 0,
-        "image": "remeraRhcp.webp"
+        "image": "shirts/remeraGuns.webp"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "sleeve": "short",
         "price": 30.99,
         "discount": 0,
-        "image": "remeraRadiohead.webp"
+        "image": "shirts/remeraRadiohead.webp"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@
         "sleeve": "short",
         "price": 30.99,
         "discount": 0,
-        "image": "remeraSoda.webp"
+        "image": "shirts/remeraSoda.webp"
     },
     {
         "id": 6,
@@ -63,6 +63,6 @@
         "sleeve": "long",
         "price": 30.99,
         "discount": 0,
-        "image": "/remeraPearlJam.webp"
+        "image": "shirts//remeraPearlJam.webp"
     }
 ]
