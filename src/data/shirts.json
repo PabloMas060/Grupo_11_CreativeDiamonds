@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "artist": "Red Hot Chili Peppers",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "size": "small",
+        "color": "white",
+        "sleeve": "short",
+        "price": 30.99,
+        "discount": 0,
+        "image": "remeraRhcp.webp"
+    },
+    {
+        "id": 2,
+        "artist": "Nirvana",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "size": "small",
+        "color": "black",
+        "sleeve": "short",
+        "price": 30.99,
+        "discount": 10,
+        "image": "remeraNirvana.webp"
+    },   
+    {
+        "id": 3,
+        "artist": "Guns and roses",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "size": "medium",
+        "color": "white",
+        "sleeve": "short",
+        "price": 30.99,
+        "discount": 0,
+        "image": "remeraRhcp.webp"
+    },
+    {
+        "id": 4,
+        "artist": "RadioHead",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "size": "large",
+        "color": "white",
+        "sleeve": "short",
+        "price": 30.99,
+        "discount": 0,
+        "image": "remeraRadiohead.webp"
+    },
+    {
+        "id": 5,
+        "artist": "Soda Stereo",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "size": "small",
+        "color": "white",
+        "sleeve": "short",
+        "price": 30.99,
+        "discount": 0,
+        "image": "remeraSoda.webp"
+    },
+    {
+        "id": 6,
+        "artist": "Pearl Jam",
+        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+        "size": "large",
+        "color": "black",
+        "sleeve": "long",
+        "price": 30.99,
+        "discount": 0,
+        "image": "/remeraPearlJam.webp"
+    }
+]

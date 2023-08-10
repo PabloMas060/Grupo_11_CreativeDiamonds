@@ -1,4 +1,5 @@
-const vinyls = require('../data/vinyls.json')
+const vinyls = require('../data/vinyls.json');
+const shirts = require('../data/shirts.json')
 
 module.exports = {
     detail: (req, res) => {
@@ -16,7 +17,7 @@ module.exports = {
         })
     },
     indumentaria: (req, res) => {
-        return res.render('products/indumentaria')
+        return res.render('products/indumentaria',{shirts})
     },
     shows: (req, res) => {
         return res.render('products/shows')
@@ -26,5 +27,6 @@ module.exports = {
     },
     edit: (req, res) => {
         return res.render('products/editProduct')
-    }
+    },
+
 }

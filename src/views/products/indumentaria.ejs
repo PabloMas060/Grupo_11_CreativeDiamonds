@@ -93,8 +93,8 @@
                             <h3>Talle</h3>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="talle" value="corta">
-                                    Corta
+                                    <input type="checkbox" name="talle" value="small">
+                                    Small
                                 </label>
                             </div>
                             <div class="filter-field">
@@ -145,8 +145,11 @@
                         <button class="form__button-submit" type="submit">Aplicar filtros</button>
                     </form>
                 </aside>
-                <section>
-
+                
+                <section class="product__main__cards_container">
+                    <% shirts.forEach(({id, title,artist, price, discount, image})=> { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, image}) %>
+                            <% }) %>
 
 
 
@@ -154,8 +157,8 @@
             </main>
 
 
-            </main>
-
+        
+            <%- include('../partials/footer') %>
 
     </body>
 

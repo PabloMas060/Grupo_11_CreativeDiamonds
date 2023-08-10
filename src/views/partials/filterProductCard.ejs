@@ -3,10 +3,12 @@
     </figure>
     <div class="product__body__card_info"><!-- Card body -->
         <h3><%= title %></h3>
+        <h3><%= artist %></h3>
         <h5><%= price %></h5>
+
         <div class="product__body__card_info_discount">
-        <h3><%= price - (price * discount / 100) %></h3>
-        <h4><%= discount %></h4>
+        <h3><%= price * (1 -( discount / 100)) %></h3>
+        <h4><%= discount %>%</h4>
     </div>
     </div>
     <div class="product__body__card__icons">
