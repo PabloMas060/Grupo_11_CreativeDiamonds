@@ -8,7 +8,7 @@ Nombre: Gustavo Matias Recalde Pereira
 Edad: 24
 Lugar de residencia: Bella Vista
 2)
-Nombre: Fernando Potro Muñoz
+Nombre: Fernando Luciano Muñoz
 Edad: 39
 Lugar de residencia: Santa Clara del Mar
 3)
