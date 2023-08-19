@@ -147,8 +147,8 @@
                 </aside>
                 
                 <section class="product__main__cards_container">
-                    <% shirts.forEach(({id, title,artist, price, discount, image})=> { %>
-                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, image}) %>
+                    <% shirts.forEach(({id, title,artist, price, discount, mainImage})=> { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
                             <% }) %>
 
 

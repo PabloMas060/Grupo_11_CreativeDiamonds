@@ -76,8 +76,8 @@
                 <!-- Slide ofertas -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <% offerVinyls.forEach(({id, title, price, discount, image})=> { %>
-                            <%- include('partials/productCard',{ id, title, price, discount, image }) %>
+                        <% offerVinyls.forEach(({id, title, price, discount, mainImage})=> { %>
+                            <%- include('partials/productCard',{ id, title, price, discount, mainImage }) %>
                                 <% }) %>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -96,8 +96,8 @@
                 <!-- Slide novedades -->
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <% vinyls.forEach(({id, title, price, discount, image})=> { %>
-                            <%- include('partials/productCard',{ id, title, price, discount, image }) %>
+                        <% vinyls.forEach(({id, title, price, discount, mainImage})=> { %>
+                            <%- include('partials/productCard',{ id, title, price, discount, mainImage }) %>
                                 <% }) %>
                     </div>
                     <div class="swiper-pagination"></div>
