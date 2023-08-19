@@ -10,14 +10,14 @@
                     <h1>Crear Producto</h1>
                 </div>
                 <div class="form__container">
-                    <form class="form__box" action="#" method="post">
+                    <form class="form__box" action="#" method="POST" enctype="multipart/form-data">
 
                         <div class="form__box__field">
                             <label class="form-label" for="name">Nombre del Producto:</label>
                             <input class="form-control" type="text" id="name" name="name">
                         </div>
                         <div class="form__box__field">
-                            <label class="form-label" for="band">Nombre banda/grupo:</label>
+                            <label class="form-label" for="band">Artista:</label>
                             <input class="form-control" type="text" id="band" name="band">
                         </div>
 
@@ -31,13 +31,16 @@
                             <input class="form-control" type="number" id="discount" name="discount">
                         </div>
                         <div class="form-field-select">
-                            <label class="form-label" for="category">Categoría</label>
+                            <label class="form-label" for="category">Formato</label>
                             <select class="form-select" name="category" id="category">
                                 <option selected hidden value="">Seleccione...</option>
-                                <option value="v">Vinilo</option>
-                                <option value="i">Indumentaria</option>
-                                <option value="s">Show</option>
+                                <option value="lp">LP</option>
+                                <option value="cd">CD</option>
                             </select>
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="discographic">Discográfica</label>
+                            <input class="form-control" type="text" id="discographic" name="discographic">
                         </div>
                         <div class="form-field-select">
                             <label class="form-label" for="gender">Género</label>
@@ -52,7 +55,16 @@
                                 <option value="b">Blues</option>
                             </select>
                         </div>
-
+                       <!--  <div class="form__box__field">
+                            <label class="form-label" for="song">Agregar Canción</label>
+                            <input class="form-control" type="text" id="song" name="song">
+                            <button type="button" id="addSongButton">Agregar</button>
+                        </div>
+                        
+                        <div class="form__box__field" id="songListContainer">
+                            <label class="form-label">Lista de canciones</label>
+                            <ul id="songList"></ul>
+                        </div> -->
 
                         <div class="form__box__field">
                             <label class="form-label" for="description">Descripción:</label>
