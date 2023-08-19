@@ -19,7 +19,10 @@
 
             <main class="product__main">
                 <div class="header__search">
-                    <input type="text"> <i class="fa-solid fa-magnifying-glass"></i>
+                    <form method="GET" action="/products/vinilos"> 
+                        <input type="text" name="search" placeholder="Buscar por título o banda">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
                 </div>
                 <div>
                     <button class="filter-button" id="filter-button"> <i class="fa-solid fa-filter fa-lg"></i></button>
@@ -109,12 +112,9 @@
                 <section class="product__main__cards_container">
                     <% vinyls.forEach(({id, title, artist, price, discount, mainImage})=> { %>
                         <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
-                            <% }) %>
-
-
-
-
+                    <% }) %>
                 </section>
+                
             </main>
             
             <%- include('../partials/footer') %>

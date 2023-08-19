@@ -7,18 +7,17 @@ const { upload } = require('../middlewares/upload');
 router
     .get('/add', add)
     .post('/add', upload.fields([
-      {
-        name: "mainImage"
-      },
-      {
-        name: "images"
-      }
-    ]), create )
+        {
+            name: "mainImage"
+        },
+        {
+            name: "images"
+        }
+    ]), create)
     .get('/detail/:id', detail)
     .get('/vinilos', vinilos)
     .get('/indumentaria', indumentaria)
     .get('/shows', shows)
- 
-    .get('/edit/:id', edit)
+    .get('/edit/:id', edit);
 
 module.exports = router;
