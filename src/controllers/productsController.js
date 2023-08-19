@@ -5,7 +5,7 @@ module.exports = {
     detail: (req, res) => {
 
         const id = req.params.id;
-        const vinyl = vinyls.find(vinyl => vinyl.id === +id)
+        const vinyl = vinyls.find(vinyl => vinyl.id === id)
 
         return res.render('products/detail',{
             vinyl
@@ -23,7 +23,7 @@ module.exports = {
         return res.render('products/shows')
     },
     add: require('./products/add'),
-    /* create : require('./products/create'), */
+    create : require('./products/create'),
     edit: (req, res) => {
         return res.render('products/editProduct')
     },
