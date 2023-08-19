@@ -1,11 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { detail, vinilos, indumentaria, shows, add, edit } = require('../controllers/productsController')
+const { detail, vinilos, indumentaria, shows, add, edit, create } = require('../controllers/productsController');
+const { upload } = require('../middlewares/upload');
 
 /* /products */
 router
     .get('/add', add)
-  /*   .post('/add', create) */
+    .post('/add', upload.fields([
+      {
+        name: "mainImage"
+      },
+      {
+        name: "images"
+      }
+    ]), create )
     .get('/detail/:id', detail)
     .get('/vinilos', vinilos)
     .get('/indumentaria', indumentaria)
