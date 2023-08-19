@@ -1,3 +1,4 @@
+const { readJSON } = require('../data')
 const vinyls = require('../data/vinyls.json')
 
 

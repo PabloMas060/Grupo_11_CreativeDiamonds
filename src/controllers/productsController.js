@@ -22,9 +22,8 @@ module.exports = {
     shows: (req, res) => {
         return res.render('products/shows')
     },
-    add: (req, res) => {
-        return res.render('products/createProduct')
-    },
+    add: require('./products/add'),
+    /* create : require('./products/create'), */
     edit: (req, res) => {
         return res.render('products/editProduct')
     },
