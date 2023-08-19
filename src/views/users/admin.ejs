@@ -64,7 +64,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <% vinyls.forEach(({id, title, artist, price, discount, image,
+                                                    <% vinyls.forEach(({id, title, artist, price, discount,mainImage, images,
                                                         description}, index)=> { %>
                                                         <tr>
                                                             <th scope="row">
@@ -96,7 +96,7 @@
                                                                     </button>
 
                                                                     <%- include('../partials/modalVinylDetail',{
-                                                                        id, title, artist, price, discount, description, image}) %>
+                                                                        id, title, artist, price, discount, description, mainImage, images}) %>
 
                                                                         <a href="/products/edit/<%= id %>"
                                                                             class="btn btn-sm btn-success">
