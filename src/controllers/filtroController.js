@@ -20,16 +20,6 @@ module.exports = {
             return tituloMinusculas.includes(terminoMinusculas) || bandaMinusculas.includes(terminoMinusculas);
         });
     
-        // Filtrar por género si se seleccionaron opciones
-        if (filtros.genero && filtros.genero.length > 0) {
-            resultadosFiltrados = resultadosFiltrados.filter(vinilo => filtros.genero.includes(vinilo.genre.toLowerCase()));
-        }
-    
-        // Filtrar por formato si se seleccionaron opciones
-        if (filtros.formato && filtros.formato.length > 0) {
-            resultadosFiltrados = resultadosFiltrados.filter(vinilo => filtros.formato.includes(vinilo.format));
-        }
-    
         return resultadosFiltrados;
     },
     

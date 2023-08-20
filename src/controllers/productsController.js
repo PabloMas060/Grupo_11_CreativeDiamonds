@@ -13,33 +13,34 @@ module.exports = {
     },
     vinilos: (req, res) => {
         const terminoDeBusqueda = req.query.search || '';
-    
+        
         // Manejo de filtros
         const filtros = {
-            genero: req.query.genre || [],
-            formato: req.query.formato || [],
+            formato: req.query.formato || '', // Cambio de "formato" a "formato"
             ordenar: req.query.ordenar || ''
         };
-    
+        
         // Filtrar y mostrar los productos de vinilos
         let productosAMostrar = vinyls;
-    
+        
         if (terminoDeBusqueda) {
-            productosAMostrar = filtroController.filtrarVinilos(terminoDeBusqueda, filtros);
+            productosAMostrar = filtroController.filtrarVinilos(terminoDeBusqueda);
         }
-    
-        // Aplicar filtros de género y formato a los productos
-        const productosFiltrados = filtroController.aplicarFiltros(productosAMostrar, filtros);
-    
+        
+        // Filtrar por formato si se seleccionaron opciones
+        if (filtros.formato) {
+            productosAMostrar = productosAMostrar.filter(vinilo => vinilo.format === filtros.formato);
+        }
+        
         // Ordenar los productos según la opción seleccionada
         if (filtros.ordenar === 'mayor-precio') {
-            productosFiltrados.sort((a, b) => b.price - a.price);
+            productosAMostrar.sort((a, b) => b.price - a.price);
         } else if (filtros.ordenar === 'menor-precio') {
-            productosFiltrados.sort((a, b) => a.price - b.price);
+            productosAMostrar.sort((a, b) => a.price - b.price);
         }
-    
+        
         return res.render('products/vinilos', {
-            productosAMostrar: productosFiltrados,
+            productosAMostrar: productosAMostrar,
         });
     },
     
