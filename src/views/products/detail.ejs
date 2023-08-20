@@ -7,53 +7,35 @@
     
     <main class="producto">
         <section class="producto__section--producto">
-            <h3>Nombre del Producto</h3>
-            <div class="producto__imagenes">   <!-- The grid: four columns -->
+            <h3><%= vinyl.title %></h3>
+            <div class="producto__imagenes">
                 <div class="producto__imagenes--secundarias">
-                    <div class="column">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_847551-MLA51204351774_082022-O.webp" alt="" onclick="myFunction(this);">
-                    </div>
-                    <div class="column">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_909616-MLA51111411679_082022-O.webp" alt="" onclick="myFunction(this);">
-                    </div>
-                    <div class="column">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_616055-MLA52758456106_122022-O.webp" alt="" onclick="myFunction(this);">
-                    </div>
-                    <div class="column">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_754157-MLA52084654222_102022-O.webp" alt="" onclick="myFunction(this);">
-                    </div>
+                    <% vinyl.images.forEach(image => { %>
+                        <div class="column">
+                            <img src="/images/<%= image %>" alt="" onclick="myFunction(this);">
+                        </div>
+                    <% }); %>
                 </div>
-              
-              <!-- The expanding image container -->
+                
                 <div class="producto__imagenes--principal">
-                <!-- Close the image -->
-                   <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
-              
-                <!-- Expanded image -->
-                    <img id="expandedImg" style="width:100%" src="https://http2.mlstatic.com/D_NQ_NP_754157-MLA52084654222_102022-O.webp" alt="Lights">
-              
-                <!-- Image text -->
+                    <img id="expandedImg" style="width:100%" src="/images/<%= vinyl.mainImage %>" alt="<%= vinyl.title %>">
                     <div id="imgtext"></div>
                 </div>
-            </div> 
-
-                <div class="producto__section__article--descripcion">
-                    <p>$15000</p>
-                    <button>Agregar al carrito</button>
-                    <i class="fa-solid fa-star" style="color: #837f01;"></i>
-                    
-                </div>
-
-                <div class="producto__section__article--enlaces">
-                    <ul>
-                        <li><a href="#general">General</a></li>
-                        <li><a href="#ficha">Ficha tecnica</a></li>
-                        <li><a href="#reseña">Reseñas</a></li>
-                        
-                    </ul>
-                    
-                </div>
-            </article>
+            </div>
+            
+            <div class="producto__section__article--descripcion">
+                <p>$<%= vinyl.price %></p>
+                <button>Agregar al carrito</button>
+                <i class="fa-solid fa-star" style="color: #837f01;"></i>
+            </div>
+    
+            <div class="producto__section__article--enlaces">
+                <ul>
+                    <li><a href="#general">General</a></li>
+                    <li><a href="#ficha">Ficha técnica</a></li>
+                    <li><a href="#reseña">Reseñas</a></li>
+                </ul>
+            </div>
         </section>
         
         <div class="producto__section--detalles">
