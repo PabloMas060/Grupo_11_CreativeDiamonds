@@ -26,17 +26,40 @@ module.exports = {
 
     indumentaria: (req, res) => {
         const terminoDeBusqueda = req.query.search || ''; // Obtén el término de búsqueda desde la URL
-        let productosAMostrar = shirts;
-
-        if (terminoDeBusqueda) {
-            productosAMostrar = filtroController.filtrarProductos(terminoDeBusqueda);
+    
+        // Manejo de filtros desde el formulario
+        const filtrosFormulario = {
+            genero: req.query.genero || [],
+            color: req.query.color || [],
+            talle: req.query.talle || [],
+            'Tipo de Manga': req.query['Tipo de Manga'] || [],
+            ordenar: req.query.ordenar || ''
+        };
+    
+        // Aplicar filtros a los productos desde el formulario
+        let productosFiltradosFormulario = shirts;
+        productosFiltradosFormulario = filtroController.aplicarFiltros(productosFiltradosFormulario, filtrosFormulario);
+    
+        // Obtén productos filtrados por búsqueda
+        const productosFiltradosBusqueda = filtroController.filtrarProductos(terminoDeBusqueda);
+    
+        // Combina los resultados de ambos filtros
+        const productosAMostrar = productosFiltradosFormulario.filter(producto =>
+            productosFiltradosBusqueda.some(p => p.id === producto.id)
+        );
+    
+        // Ordenar los productos según la opción seleccionada
+        if (filtrosFormulario.ordenar === 'mayor-precio') {
+            productosAMostrar.sort((a, b) => b.price - a.price);
+        } else if (filtrosFormulario.ordenar === 'menor-precio') {
+            productosAMostrar.sort((a, b) => a.price - b.price);
         }
-
+    
         return res.render('products/indumentaria', {
             shirts: productosAMostrar
         });
     },
-
+    
     shows: (req, res) => {
         return res.render('products/shows');
     },
