@@ -17,7 +17,7 @@
         "size": "small",
         "color": "black",
         "sleeve": "short",
-        "price": 30.99,
+        "price": 31.99,
         "discount": 10,
         "mainImage": "shirts/remeraNirvana.webp"
     },   
@@ -39,7 +39,7 @@
         "size": "large",
         "color": "white",
         "sleeve": "short",
-        "price": 30.99,
+        "price": 32.99,
         "discount": 0,
         "mainImage": "shirts/remeraRadiohead.webp"
     },

@@ -29,48 +29,48 @@
                 </div>
                 <aside class="aside__vinilos__filter">
                     <h2>Filtrar productos</h2>
-                    <form class="filter_form" action="/productos" method="get">
+                    <form class="filter_form" action="/products/vinilos" method="get">
                         <div class="filter__section_vinilos">
                             <h3>Género</h3>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="rock">
+                                    <input type="checkbox" name="genre" value="rock">
                                     Rock
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="funk">
+                                    <input type="checkbox" name="genre" value="funk">
                                     Funk
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="soul">
+                                    <input type="checkbox" name="genre" value="soul">
                                     Soul
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="heavy-metal">
+                                    <input type="checkbox" name="genre" value="heavy-metal">
                                     Heavy Metal
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="punk">
+                                    <input type="checkbox" name="genre" value="punk">
                                     Punk
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="clasica">
+                                    <input type="checkbox" name="genre" value="clasica">
                                     Clásica
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="genero" value="blues">
+                                    <input type="checkbox" name="genre" value="blues">
                                     Blues
                                 </label>
                             </div>
@@ -79,13 +79,13 @@
                             <h3>Formato</h3>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="formato" value="vinilo">
+                                    <input type="checkbox" name="format" value="LP">
                                     Vinilo
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="formato" value="cd">
+                                    <input type="checkbox" name="format" value="CD">
                                     CD
                                 </label>
                             </div>
@@ -110,10 +110,11 @@
                 </aside>
 
                 <section class="product__main__cards_container">
-                    <% vinyls.forEach(({id, title, artist, price, discount, mainImage})=> { %>
+                    <% productosAMostrar.forEach(({id, title, artist, price, discount, mainImage}) => { %>
                         <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
                     <% }) %>
                 </section>
+                
                 
             </main>
             

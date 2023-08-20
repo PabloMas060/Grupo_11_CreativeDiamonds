@@ -12,22 +12,34 @@ module.exports = {
 
         return resultadosFiltrados;
     },
-    filtrarVinilos: (terminoDeBusqueda) => {
+    filtrarVinilos: (terminoDeBusqueda, filtros) => {
         const resultadosFiltrados = vinyls.filter(vinilo => {
             const tituloMinusculas = vinilo.title.toLowerCase();
             const bandaMinusculas = vinilo.artist.toLowerCase();
             const terminoMinusculas = terminoDeBusqueda.toLowerCase();
             return tituloMinusculas.includes(terminoMinusculas) || bandaMinusculas.includes(terminoMinusculas);
         });
-
+    
+        // Filtrar por género si se seleccionaron opciones
+        if (filtros.genero && filtros.genero.length > 0) {
+            resultadosFiltrados = resultadosFiltrados.filter(vinilo => filtros.genero.includes(vinilo.genre.toLowerCase()));
+        }
+    
+        // Filtrar por formato si se seleccionaron opciones
+        if (filtros.formato && filtros.formato.length > 0) {
+            resultadosFiltrados = resultadosFiltrados.filter(vinilo => filtros.formato.includes(vinilo.format));
+        }
+    
         return resultadosFiltrados;
     },
+    
+    
 
     aplicarFiltros: (productos, filtros) => {
         let productosFiltrados = [...productos];
 
-        if (filtros.genero && filtros.genero.length > 0) {
-            productosFiltrados = productosFiltrados.filter(producto => filtros.genero.includes(producto.genero));
+        if (filtros.genre && filtros.genre.length > 0) {
+            productosFiltrados = productosFiltrados.filter(producto => filtros.genre.includes(producto.genre));
         }
 
         if (filtros.color && filtros.color.length > 0) {

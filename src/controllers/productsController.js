@@ -12,17 +12,39 @@ module.exports = {
         });
     },
     vinilos: (req, res) => {
-        const terminoDeBusqueda = req.query.search || ''; // Obtén el término de búsqueda desde la URL
+        const terminoDeBusqueda = req.query.search || '';
+    
+        // Manejo de filtros
+        const filtros = {
+            genero: req.query.genre || [],
+            formato: req.query.formato || [],
+            ordenar: req.query.ordenar || ''
+        };
+    
+        // Filtrar y mostrar los productos de vinilos
         let productosAMostrar = vinyls;
-
+    
         if (terminoDeBusqueda) {
-            productosAMostrar = filtroController.filtrarVinilos(terminoDeBusqueda);
+            productosAMostrar = filtroController.filtrarVinilos(terminoDeBusqueda, filtros);
         }
-
+    
+        // Aplicar filtros de género y formato a los productos
+        const productosFiltrados = filtroController.aplicarFiltros(productosAMostrar, filtros);
+    
+        // Ordenar los productos según la opción seleccionada
+        if (filtros.ordenar === 'mayor-precio') {
+            productosFiltrados.sort((a, b) => b.price - a.price);
+        } else if (filtros.ordenar === 'menor-precio') {
+            productosFiltrados.sort((a, b) => a.price - b.price);
+        }
+    
         return res.render('products/vinilos', {
-            vinyls: productosAMostrar
+            productosAMostrar: productosFiltrados,
         });
     },
+    
+    
+    
 
     indumentaria: (req, res) => {
         const terminoDeBusqueda = req.query.search || ''; // Obtén el término de búsqueda desde la URL
@@ -36,14 +58,11 @@ module.exports = {
             ordenar: req.query.ordenar || ''
         };
     
-        // Aplicar filtros a los productos desde el formulario
         let productosFiltradosFormulario = shirts;
         productosFiltradosFormulario = filtroController.aplicarFiltros(productosFiltradosFormulario, filtrosFormulario);
     
-        // Obtén productos filtrados por búsqueda
         const productosFiltradosBusqueda = filtroController.filtrarProductos(terminoDeBusqueda);
     
-        // Combina los resultados de ambos filtros
         const productosAMostrar = productosFiltradosFormulario.filter(producto =>
             productosFiltradosBusqueda.some(p => p.id === producto.id)
         );
@@ -59,6 +78,8 @@ module.exports = {
             shirts: productosAMostrar
         });
     },
+    
+    
     
     shows: (req, res) => {
         return res.render('products/shows');
