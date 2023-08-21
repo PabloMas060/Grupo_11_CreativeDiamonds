@@ -27,7 +27,6 @@ module.exports = {
         });
     },
     
-
     vinilos: (req, res) => {
         const terminoDeBusqueda = req.query.search || '';
         
@@ -45,7 +44,6 @@ module.exports = {
         
         if (filtros.formato) {
             productosAMostrar = productosAMostrar.filter(vinilo => vinilo.format === filtros.formato);
-            
         }
 
         if (filtros.genero) {
@@ -63,9 +61,6 @@ module.exports = {
         });
     },
     
-    
-    
-
     indumentaria: (req, res) => {
         const terminoDeBusqueda = req.query.search || ''; // Obtén el término de búsqueda desde la URL
     
@@ -96,13 +91,15 @@ module.exports = {
         });
     },
     
-    
-    
     shows: (req, res) => {
         return res.render('products/shows');
     },
-    add: require('./products/add'),
-    create: require('./products/create'),
+    
+    addVinyl: require('./products/addVinyl'),
+    createVinyl : require('./products/createVinyl'),
+    addShirt: require('./products/addShirt'),
+    createShirt : require('./products/createShirt'),
+    
     edit: (req, res) => {
         return res.render('products/editProduct');
     },
