@@ -22,8 +22,10 @@ module.exports = {
     shows: (req, res) => {
         return res.render('products/shows')
     },
-    add: require('./products/add'),
-    create : require('./products/create'),
+    addVinyl: require('./products/addVinyl'),
+    createVinyl : require('./products/createVinyl'),
+    addShirt: require('./products/addShirt'),
+    createShirt : require('./products/createShirt'),
     edit: (req, res) => {
         return res.render('products/editProduct')
     },

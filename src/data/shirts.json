@@ -1,74 +1,86 @@
 [
-    {
-        "id": 1,
-        "title": "Remera Rhcp",
-        "artist": "Red Hot Chili Peppers",
-        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
-        "size": "small",
-        "color": "white",
-        "sleeve": "short",
-        "price": 30.99,
-        "discount": 0,
-        "mainImage": "shirts/remeraRhcp.webp"
-    },
-    {
-        "id": 2,
-        "title": "Remera Nirvana",
-        "artist": "Nirvana",
-        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
-        "size": "small",
-        "color": "black",
-        "sleeve": "short",
-        "price": 30.99,
-        "discount": 10,
-        "mainImage": "shirts/remeraNirvana.webp"
-    },   
-    {
-        "id": 3,
-        "title": "Remera Gun's and Roses",
-        "artist": "Guns and roses",
-        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
-        "size": "medium",
-        "color": "white",
-        "sleeve": "short",
-        "price": 30.99,
-        "discount": 0,
-        "mainImage": "shirts/remeraGuns.webp"
-    },
-    {
-        "id": 4,
-        "title": "Remera RadioHead",
-        "artist": "RadioHead",
-        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
-        "size": "large",
-        "color": "white",
-        "sleeve": "short",
-        "price": 30.99,
-        "discount": 0,
-        "mainImage": "shirts/remeraRadiohead.webp"
-    },
-    {
-        "id": 5,
-        "title": "Remera Soda Stereo",
-        "artist": "Soda Stereo",
-        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
-        "size": "small",
-        "color": "white",
-        "sleeve": "short",
-        "price": 30.99,
-        "discount": 0,
-        "mainImage": "shirts/remeraSoda.webp"
-    },
-    {
-        "id": 6,
-        "title": "Remera Pearl Jam",
-        "artist": "Pearl Jam",
-        "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
-        "size": "large",
-        "color": "black",
-        "sleeve": "long",
-        "price": 30.99,
-        "discount": 0,
-        "mainImage": "shirts//remeraPearlJam.webp"
-    }
+   {
+      "id": "740224f1-299e-451231sda37-85cc-6f873bbb7de0",
+      "title": "Remera Rhcp",
+      "artist": "Red Hot Chili Peppers",
+      "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+      "size": "small",
+      "color": "white",
+      "sleeve": "short",
+      "price": 30.99,
+      "discount": 0,
+      "mainImage": "shirts/remeraRhcp.webp"
+   },
+   {
+      "id": "740224f1-299e-4537-85cc-6f873bbb7de0asd2",
+      "title": "Remera Nirvana",
+      "artist": "Nirvana",
+      "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+      "size": "small",
+      "color": "black",
+      "sleeve": "short",
+      "price": 30.99,
+      "discount": 10,
+      "mainImage": "shirts/remeraNirvana.webp"
+   },
+   {
+      "id": "7402212314f1-299e-4537-85cc-6f873bbb7de0",
+      "title": "Remera Gun's and Roses",
+      "artist": "Guns and roses",
+      "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+      "size": "medium",
+      "color": "white",
+      "sleeve": "short",
+      "price": 30.99,
+      "discount": 0,
+      "mainImage": "shirts/remeraGuns.webp"
+   },
+   {
+      "id": "74022124f1-299e-4537-85cc-6f873bbb7de0",
+      "title": "Remera RadioHead",
+      "artist": "RadioHead",
+      "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+      "size": "large",
+      "color": "white",
+      "sleeve": "short",
+      "price": 30.99,
+      "discount": 0,
+      "mainImage": "shirts/remeraRadiohead.webp"
+   },
+   {
+      "id": "74022224f1-299e-4537-85cc-6f873bbb7de0",
+      "title": "Remera Soda Stereo",
+      "artist": "Soda Stereo",
+      "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+      "size": "small",
+      "color": "white",
+      "sleeve": "short",
+      "price": 30.99,
+      "discount": 0,
+      "mainImage": "shirts/remeraSoda.webp"
+   },
+   {
+      "id": "740224f1-299e-4537-85cc-6f8732bbb7de0",
+      "title": "Remera Pearl Jam",
+      "artist": "Pearl Jam",
+      "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
+      "size": "large",
+      "color": "black",
+      "sleeve": "long",
+      "price": 30.99,
+      "discount": 0,
+      "mainImage": "shirts//remeraPearlJam.webp"
+   },
+   {
+      "id": "158c8852-6478-4ee3-805f-a80c0b8a8218",
+      "title": "Producto de prueba",
+      "artist": "Test",
+      "color": "negro",
+      "size": "small",
+      "sleeve": "corta",
+      "description": "Esto es un testeo",
+      "price": 500000,
+      "discount": 1,
+      "mainImage": "1692630191379_products_.jpg"
+   }
 ]

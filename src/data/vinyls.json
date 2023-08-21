@@ -347,27 +347,24 @@
       ]
    },
    {
-      "id": "e2e47ac3-706d-4531-a977-5e879da11ec5",
-      "title": "Eliminame",
-      "artist": "piti alvarez",
-      "description": "esto es un producto de prueba que debe ser eliminado",
-      "year": 1995,
-      "price": 500,
-      "discount": 5,
-      "mainImage": "1692479993025_products_.jpg",
+      "id": "5f6dd950-c798-4be1-989e-79df838ae4fb",
+      "title": "Album de prueba",
+      "artist": "test 1",
+      "description": "esto es un testeo",
+      "year": 2023,
+      "price": 50000,
+      "discount": 1,
+      "mainImage": "1692630256956_products_.jpg",
       "images": [
-         "1692479993026_products_.jpg",
-         "1692479993028_products_.jpg",
-         "1692479993028_products_.jpg"
+         "1692630256959_products_.jpg",
+         "1692630256961_products_.jpg"
       ],
-      "format": "cd",
-      "discographic": "discografica de prueba",
+      "format": "lp",
+      "discographic": "alguna",
       "tracklist": [
          "cancion 1",
          "cancion 2",
-         "cancion 3",
-         "cancion 4",
-         "cancion 5"
+         "cancion 3"
       ]
    }
 ]
