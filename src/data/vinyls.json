@@ -8,12 +8,8 @@
       "year": 1991,
       "price": 21.99,
       "discount": 0,
-      "mainImage": null,
-      "images": [
-         "1692653370040_products_.jpg",
-         "1692653370041_products_.jpg",
-         "1692653370041_products_.jpg"
-      ],
+      "mainImage": "1692656279520_products_.jpg",
+      "images": [],
       "format": "",
       "discographic": "Warner Bros. Records",
       "tracklist": [
