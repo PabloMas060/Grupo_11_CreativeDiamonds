@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { detail, vinilos, indumentaria, shows, add, edit, create } = require('../controllers/productsController');
+const { detail, vinilos, indumentaria, shows, add, edit, create, update } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 
 /* /products */
@@ -18,7 +18,15 @@ router
     .get('/vinilos', vinilos)
     .get('/indumentaria', indumentaria)
     .get('/shows', shows)
- 
+
     .get('/edit/:id', edit)
+    .put('/update/:id', upload.fields([
+      {
+        name: "mainImage"
+      },
+      {
+        name: "images"
+      }
+    ]),update)
 
 module.exports = router;

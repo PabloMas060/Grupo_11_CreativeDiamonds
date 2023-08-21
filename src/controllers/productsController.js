@@ -24,8 +24,8 @@ module.exports = {
     },
     add: require('./products/add'),
     create : require('./products/create'),
-    edit: (req, res) => {
-        return res.render('products/editProduct')
-    },
+    edit: require ('./products/edit'),
+    update: require ('./products/update')
+
 
 }
