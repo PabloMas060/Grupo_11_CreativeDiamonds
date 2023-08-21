@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update } = require('../controllers/productsController');
-
+const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 
 /* /products */
 router
   /* ADD PARA VINILOS */
-  .get('/add', addVinyl)
-  .post('/add', upload.fields([
+  .get('/addVinyl', addVinyl)
+  .post('/addVinyl', upload.fields([
     {
       name: "mainImage"
     },
@@ -23,8 +22,6 @@ router
       name: "mainImage"
     }
   ]), createShirt)
-
-
 
   .get('/detail/:id', detail)
   .get('/vinilos', vinilos)
@@ -44,4 +41,5 @@ router
       }
     ]),update)
 
+  .get('/detail-shirt/:id', detailShirt); 
 module.exports = router;

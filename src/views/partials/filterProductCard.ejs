@@ -16,6 +16,10 @@
         <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <div class="product__body__card__button">
-        <a href="">VER MÁS</a>
+        <% if (productType === 'vinilos') { %>
+            <a href="/products/detail/<%= id %>">VER MÁS</a>
+        <% } else if (productType === 'remeras') { %>
+            <a href="/products/detail-shirt/<%= id %>">VER MÁS</a>
+        <% } %>
     </div>
 </div>
