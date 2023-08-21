@@ -12,9 +12,6 @@
                 <h2>
                     Indumentaria
                 </h2>
-
-
-
             </div>
 
             <main class="product__main">
@@ -30,52 +27,6 @@
                 <aside class="aside__vinilos__filter">
                     <h2>Filtrar productos</h2>
                     <form class="filter_form" action="/products/indumentaria" method="GET">
-                        <div class="filter__section_vinilos">
-                            <h3>Género</h3>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="rock">
-                                    Rock
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="funk">
-                                    Funk
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="soul">
-                                    Soul
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="heavy-metal">
-                                    Heavy Metal
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="punk">
-                                    Punk
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="clasica">
-                                    Clásica
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="blues">
-                                    Blues
-                                </label>
-                            </div>
-                        </div>
-
                         <div class="filter__section_vinilos">
                             <h3>Color</h3>
                             <div class="filter-field">
@@ -150,10 +101,11 @@
                 </aside>
                 
                 <section class="product__main__cards_container">
-                    <% shirts.forEach(({id, title, artist, price, discount, mainImage})=> { %>
-                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
+                    <% shirts.forEach(({id, title, artist, price, discount, mainImage}) => { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage, productType: 'remeras'}) %>
                     <% }) %>
                 </section>
+                
             </main>
 
 

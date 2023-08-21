@@ -1,4 +1,3 @@
-// filtroController.js
 const shirts = require('../data/shirts.json');
 const vinyls = require('../data/vinyls.json'); 
 
@@ -27,10 +26,6 @@ module.exports = {
 
     aplicarFiltros: (productos, filtros) => {
         let productosFiltrados = [...productos];
-
-        if (filtros.genre && filtros.genre.length > 0) {
-            productosFiltrados = productosFiltrados.filter(producto => filtros.genre.includes(producto.genre));
-        }
 
         if (filtros.color && filtros.color.length > 0) {
             productosFiltrados = productosFiltrados.filter(producto => filtros.color.includes(producto.color));

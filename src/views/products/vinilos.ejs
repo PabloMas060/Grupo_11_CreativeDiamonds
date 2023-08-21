@@ -111,9 +111,10 @@
 
                 <section class="product__main__cards_container">
                     <% productosAMostrar.forEach(({id, title, artist, price, discount, mainImage}) => { %>
-                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage, productType: 'vinilos'}) %>
                     <% }) %>
                 </section>
+                
                 
                 
             </main>

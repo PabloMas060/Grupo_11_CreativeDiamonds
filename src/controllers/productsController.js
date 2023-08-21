@@ -11,28 +11,41 @@ module.exports = {
             vinyl
         });
     },
+    detailShirt: (req, res) => {
+        const id = parseInt(req.params.id);
+        console.log("req.query:", req.query); // Agrega esta línea para imprimir los parámetros de la consulta
+        const shirt = shirts.find(shirt => shirt.id === id);
+    
+        console.log("Shirt:", shirt); // Agregar esta línea de depuración
+        
+        if (!shirt) {
+            return res.status(404).send('Shirt not found');
+        }
+    
+        return res.render('products/detailShirt', {
+            shirt: shirt
+        });
+    },
+    
+
     vinilos: (req, res) => {
         const terminoDeBusqueda = req.query.search || '';
         
-        // Manejo de filtros
         const filtros = {
-            formato: req.query.formato || '', // Cambio de "formato" a "formato"
+            formato: req.query.formato || '', 
             ordenar: req.query.ordenar || ''
         };
         
-        // Filtrar y mostrar los productos de vinilos
         let productosAMostrar = vinyls;
         
         if (terminoDeBusqueda) {
             productosAMostrar = filtroController.filtrarVinilos(terminoDeBusqueda);
         }
         
-        // Filtrar por formato si se seleccionaron opciones
         if (filtros.formato) {
             productosAMostrar = productosAMostrar.filter(vinilo => vinilo.format === filtros.formato);
         }
         
-        // Ordenar los productos según la opción seleccionada
         if (filtros.ordenar === 'mayor-precio') {
             productosAMostrar.sort((a, b) => b.price - a.price);
         } else if (filtros.ordenar === 'menor-precio') {
@@ -50,9 +63,7 @@ module.exports = {
     indumentaria: (req, res) => {
         const terminoDeBusqueda = req.query.search || ''; // Obtén el término de búsqueda desde la URL
     
-        // Manejo de filtros desde el formulario
         const filtrosFormulario = {
-            genero: req.query.genero || [],
             color: req.query.color || [],
             talle: req.query.talle || [],
             'Tipo de Manga': req.query['Tipo de Manga'] || [],
@@ -68,7 +79,6 @@ module.exports = {
             productosFiltradosBusqueda.some(p => p.id === producto.id)
         );
     
-        // Ordenar los productos según la opción seleccionada
         if (filtrosFormulario.ordenar === 'mayor-precio') {
             productosAMostrar.sort((a, b) => b.price - a.price);
         } else if (filtrosFormulario.ordenar === 'menor-precio') {
