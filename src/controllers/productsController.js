@@ -12,20 +12,19 @@ module.exports = {
         });
     },
     detailShirt: (req, res) => {
-        const id = parseInt(req.params.id);
-        console.log("req.query:", req.query);
+        const id = req.params.id;
         const shirt = shirts.find(shirt => shirt.id === id);
-
-        console.log("Shirt:", shirt);
-        
+    
         if (!shirt) {
             return res.status(404).send('Shirt not found');
         }
-        
+    
         return res.render('products/detailShirt', {
             shirt: shirt
         });
     },
+    
+    
     vinilos: (req, res) => {
         const terminoDeBusqueda = req.query.search || '';
         
