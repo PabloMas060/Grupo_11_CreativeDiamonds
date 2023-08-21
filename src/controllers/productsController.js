@@ -13,21 +13,19 @@ module.exports = {
     },
     detailShirt: (req, res) => {
         const id = parseInt(req.params.id);
-        console.log("req.query:", req.query); // Agrega esta línea para imprimir los parámetros de la consulta
+        console.log("req.query:", req.query);
         const shirt = shirts.find(shirt => shirt.id === id);
-    
-        console.log("Shirt:", shirt); // Agregar esta línea de depuración
+
+        console.log("Shirt:", shirt);
         
         if (!shirt) {
             return res.status(404).send('Shirt not found');
         }
-    
+        
         return res.render('products/detailShirt', {
             shirt: shirt
         });
     },
-    
-
     vinilos: (req, res) => {
         const terminoDeBusqueda = req.query.search || '';
         
@@ -45,7 +43,6 @@ module.exports = {
         
         if (filtros.formato) {
             productosAMostrar = productosAMostrar.filter(vinilo => vinilo.format === filtros.formato);
-            
         }
 
         if (filtros.genero) {
@@ -62,47 +59,42 @@ module.exports = {
             productosAMostrar: productosAMostrar,
         });
     },
-    
-    
-    
-
     indumentaria: (req, res) => {
-        const terminoDeBusqueda = req.query.search || ''; // Obtén el término de búsqueda desde la URL
-    
+        const terminoDeBusqueda = req.query.search || '';
+        
         const filtrosFormulario = {
             color: req.query.color || [],
             talle: req.query.talle || [],
             'Tipo de Manga': req.query['Tipo de Manga'] || [],
-            ordenar: req.query.ordenar || ''
+            ordenar: req.query.ordenar || '',
         };
-    
+        
         let productosFiltradosFormulario = shirts;
         productosFiltradosFormulario = filtroController.aplicarFiltros(productosFiltradosFormulario, filtrosFormulario);
-    
+        
         const productosFiltradosBusqueda = filtroController.filtrarProductos(terminoDeBusqueda);
-    
+        
         const productosAMostrar = productosFiltradosFormulario.filter(producto =>
             productosFiltradosBusqueda.some(p => p.id === producto.id)
         );
-    
+        
         if (filtrosFormulario.ordenar === 'mayor-precio') {
             productosAMostrar.sort((a, b) => b.price - a.price);
         } else if (filtrosFormulario.ordenar === 'menor-precio') {
             productosAMostrar.sort((a, b) => a.price - b.price);
         }
-    
+        
         return res.render('products/indumentaria', {
             shirts: productosAMostrar
         });
     },
-    
-    
-    
     shows: (req, res) => {
         return res.render('products/shows');
     },
-    add: require('./products/add'),
-    create: require('./products/create'),
+    addVinyl: require('./products/addVinyl'),
+    createVinyl: require('./products/createVinyl'),
+    addShirt: require('./products/addShirt'),
+    createShirt: require('./products/createShirt'),
     edit: (req, res) => {
         return res.render('products/editProduct');
     },

@@ -357,18 +357,39 @@
       "discount": 5,
       "mainImage": "1692479993025_products_.jpg",
       "images": [
-         "1692479993026_products_.jpg",
-         "1692479993028_products_.jpg",
-         "1692479993028_products_.jpg"
+         "1692630256959_products_.jpg",
+         "1692630256961_products_.jpg"
       ],
-      "format": "cd",
-      "discographic": "discografica de prueba",
+      "format": "lp",
+      "discographic": "alguna",
       "tracklist": [
          "cancion 1",
          "cancion 2",
-         "cancion 3",
-         "cancion 4",
-         "cancion 5"
+         "cancion 3"
+      ]
+   },
+   {
+      "id": "c3abd0ff-65cf-4ed3-950c-d667fc665469",
+      "title": "Lámina Once",
+      "artist": "El Cuarteto de Nos",
+      "genre": "soul",
+      "description": "Lámina Once es el decimoséptimo álbum de estudio de la banda de rock uruguaya El Cuarteto de Nos, publicado el 8 de julio de 2022 vía plataformas digitales, bajo el sello de Porfiado Records. Contiene ocho canciones en total. Antes de su lanzamiento, cuatro sencillos fueron lanzados: «Fiesta en lo del Dr. Hermes», «La ciudad sin alma», «Maldito Show» y «Rorschach» (este último siendo publicado horas antes del lanzamiento del álbum).1",
+      "year": 2021,
+      "price": 90,
+      "discount": 15,
+      "mainImage": "1692497556093_products_.png",
+      "images": [],
+      "format": "cd",
+      "discographic": "Porfiado Records",
+      "tracklist": [
+         "Fiesta en lo del Dr. Hermes",
+         "Flan",
+         "El Cinturón Gris",
+         "Chivo Expiatorio",
+         "Rorschach",
+         "La Ciudad Sin Alma",
+         "Maldito Show",
+         "Frankenstein Posmo"
       ]
    },
    {

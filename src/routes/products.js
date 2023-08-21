@@ -1,24 +1,33 @@
 const express = require('express');
 const router = express.Router();
-const { detail, detailShirt, vinilos, indumentaria, shows, add, edit, create } = require('../controllers/productsController');
+const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 
 /* /products */
 router
-    .get('/add', add)
-    .post('/add', upload.fields([
-        {
-            name: "mainImage"
-        },
-        {
-            name: "images"
-        }
-    ]), create)
-    .get('/detail/:id', detail) 
-    .get('/detail-shirt/:id', detailShirt)
-    .get('/vinilos', vinilos)
-    .get('/indumentaria', indumentaria)
-    .get('/shows', shows)
-    .get('/edit/:id', edit);
+  /* ADD PARA VINILOS */
+  .get('/addVinyl', addVinyl)
+  .post('/addVinyl', upload.fields([
+    {
+      name: "mainImage"
+    },
+    {
+      name: "images"
+    }
+  ]), createVinyl)
+  /* ADD PARA SHIRTS */
+  .get('/addShirt', addShirt)
+  .post('/addShirt', upload.fields([
+    {
+      name: "mainImage"
+    }
+  ]), createShirt)
+
+  .get('/detail/:id', detail)
+  .get('/vinilos', vinilos)
+  .get('/indumentaria', indumentaria)
+  .get('/shows', shows)
+
+  .get('/edit/:id', edit);
 
 module.exports = router;
