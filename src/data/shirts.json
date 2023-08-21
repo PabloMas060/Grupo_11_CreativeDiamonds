@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "title": "Remera Rhcp",
         "artist": "Red Hot Chili Peppers",
         "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
         "size": "small",
@@ -12,6 +13,7 @@
     },
     {
         "id": 2,
+        "title": "Remera Nirvana",
         "artist": "Nirvana",
         "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
         "size": "small",
@@ -23,6 +25,7 @@
     },   
     {
         "id": 3,
+        "title": "Remera Gun's and Roses",
         "artist": "Guns and roses",
         "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
         "size": "medium",
@@ -34,6 +37,7 @@
     },
     {
         "id": 4,
+        "title": "Remera RadioHead",
         "artist": "RadioHead",
         "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
         "size": "large",
@@ -45,6 +49,7 @@
     },
     {
         "id": 5,
+        "title": "Remera Soda Stereo",
         "artist": "Soda Stereo",
         "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
         "size": "small",
@@ -56,6 +61,7 @@
     },
     {
         "id": 6,
+        "title": "Remera Pearl Jam",
         "artist": "Pearl Jam",
         "description": "Remeras son de spum premium importado. Las prendas se estampan con sublimacion ",
         "size": "large",
