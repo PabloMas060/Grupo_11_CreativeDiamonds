@@ -64,16 +64,16 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <% vinyls.forEach(({id, title, artist, price, discount,mainImage, images,
-                                                        description}, index)=> { %>
+                                                    <% vinyls.forEach(({id, title, artist, price, discount,mainImage,
+                                                        images, description}, index)=> { %>
                                                         <tr>
                                                             <th scope="row">
                                                                 <%= index + 1 %>
                                                             </th>
                                                             <td>
                                                                 <%= title %>
-                                                            </td> 
-                                                             <td>
+                                                            </td>
+                                                            <td>
                                                                 <%= artist %>
                                                             </td>
                                                             <td>
@@ -95,8 +95,9 @@
                                                                         <i class="fas fa-eye"></i>
                                                                     </button>
 
-                                                                    <%- include('../partials/modalVinylDetail',{
-                                                                        id, title, artist, price, discount, description, mainImage, images}) %>
+                                                                    <%- include('../partials/modalVinylDetail',{ id,
+                                                                        title, artist, price, discount, description,
+                                                                        mainImage, images}) %>
 
                                                                         <a href="/products/edit/<%= id %>"
                                                                             class="btn btn-sm btn-success">
@@ -161,14 +162,141 @@
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel"
                                         aria-labelledby="nav-profile-tab" tabindex="0">
-                                        todas las marcas
+
+                                        <!-- Shirts -->
+                                        <div class="d-flex flex-column gap-2 flex-md-row justify-content-between my-3">
+                                            <a href="/products/add" class="btn btn-dark"><i class="fas fa-plus"></i>
+                                                Agregar</a>
+                                            <form action="/products/search"
+                                                class="d-flex flex-column flex-md-row  gap-2" method="GET">
+
+                                                <input type="text" class="form-control" placeholder="Buscar..."
+                                                    name="keyword">
+                                                <button type="submit" class="btn btn-dark">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped ">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Producto</th>
+                                                        <th scope="col">Talle</th>
+                                                        <th scope="col">Color</th>
+                                                        <th scope="col">Artista</th>
+                                                        <th scope="col">Precio</th>
+                                                        <th scope="col">Descuento</th>
+                                                        <th scope="col">P. Final</th>
+                                                        <th scope="col">Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% shirts.forEach(({id, title, size,color, artist, price, discount,mainImage, description}, index)=> { %>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <%= index + 1 %>
+                                                            </th>
+                                                            <td>
+                                                                <%= title %>
+                                                            </td>
+                                                            <td>
+                                                                <%= size %>
+                                                            </td>
+                                                            <td>
+                                                                <%= color %>
+                                                            </td>
+                                                            <td>
+                                                                <%= artist %>
+                                                            </td>
+                                                            <td>
+                                                                <%= price %>
+                                                            </td>
+                                                            <td>
+                                                                <%= discount %>
+                                                            </td>
+                                                            <td>
+                                                                <%= price - (discount * price / 100) %>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex gap-2">
+
+                                                                    <button type="button"
+                                                                        class="btn btn-sm  btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#modalDetail<%= id %>">
+                                                                        <i class="fas fa-eye"></i>
+                                                                    </button>
+
+                                                                    <%- include('../partials/modalShirtDetail',{ id,
+                                                                        title, artist, price, discount, description,
+                                                                        mainImage}) %>
+
+                                                                        <a href="/products/edit/<%= id %>"
+                                                                            class="btn btn-sm btn-success">
+                                                                            <i class="fas fa-edit"></i>
+                                                                        </a>
+
+                                                                        <button type="button"
+                                                                            class="btn btn-sm btn-danger"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#modalDelete<%= id %>">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </button>
+
+                                                                        <div class="modal fade"
+                                                                            id="modalDelete<%= id %>" tabindex="-1"
+                                                                            aria-labelledby="modalDeleteLabel"
+                                                                            aria-hidden="true">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h1 class="modal-title fs-5"
+                                                                                            id="modalDeleteLabel">
+                                                                                            Advertencia</h1>
+                                                                                        <button type="button"
+                                                                                            class="btn-close"
+                                                                                            data-bs-dismiss="modal"
+                                                                                            aria-label="Close"></button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        <p>¿Seguro quieres eliminar el
+                                                                                            producto <b> "<%= title %>"
+                                                                                            </b>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button"
+                                                                                            class="btn btn-secondary"
+                                                                                            data-bs-dismiss="modal">Cancelar</button>
+
+                                                                                        <form
+                                                                                            action="products/remove/<%= id %>?_method=DELETE"
+                                                                                            method="POST">
+                                                                                            <button type="submit"
+                                                                                                class="btn btn-danger">Eliminarlo</button>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <% }) %>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
                                     </div>
-                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                        aria-labelledby="nav-contact-tab" tabindex="0">
-                                        todos los tutoriales
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel"
-                                        aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+
                                 </div>
 
                             </div>
