@@ -33,7 +33,8 @@ module.exports = {
         
         const filtros = {
             formato: req.query.formato || '', 
-            ordenar: req.query.ordenar || ''
+            ordenar: req.query.ordenar || '',
+            genero: req.query.genre || '',
         };
         
         let productosAMostrar = vinyls;
@@ -44,6 +45,11 @@ module.exports = {
         
         if (filtros.formato) {
             productosAMostrar = productosAMostrar.filter(vinilo => vinilo.format === filtros.formato);
+            
+        }
+
+        if (filtros.genero) {
+            productosAMostrar = productosAMostrar.filter(vinilo => vinilo.genre === filtros.genero);
         }
         
         if (filtros.ordenar === 'mayor-precio') {
