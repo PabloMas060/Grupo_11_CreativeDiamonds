@@ -1,0 +1,43 @@
+/* 
+font-family: 'Poppins', sans-serif;
+font-family: 'Exo 2', sans-serif;
+ */
+
+:root {
+    --colorHeader : #33FFA0;
+    --colorBody : #D6FFEC;
+    --colorFooter: #00E078;
+    --colorAzulOscuro: #030E43;
+    --colorAzulClaro: #144473;
+    --colorGris: #888B8E;
+    --colorVerde: #1F857E;
+    --colorNegro: #040000;
+    --tipografiaTitulos : 'Poppins', sans-serif;
+    --tipografiaTextos: 'Exo 2', sans-serif;
+    --animation-duration: .3s;
+}
+html {
+    scroll-behavior: smooth;
+  }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+}
+
+body {
+    font-family: var(--tipografiaTitulos);
+    /* background: rgb(4, 0, 0); */
+    /* background: linear-gradient(49deg, rgba(4, 0, 0, 1) 15%, rgba(136, 139, 142, 1) 55%, rgba(255, 255, 255, 1) 72%); */
+}
+
+p {}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+li {
+    list-style: none;
+}

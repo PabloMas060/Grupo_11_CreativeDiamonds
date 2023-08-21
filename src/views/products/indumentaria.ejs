@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'INDUMENTARIA' }) %>
+
+    <body class="home__body">
+        <%- include('../partials/header') %>
+
+
+
+            <div class="home__body__section--title">
+                <h2>
+                    Indumentaria
+                </h2>
+
+
+
+            </div>
+
+            <main class="product__main">
+                <div class="header__search">
+                    <input type="text"> <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div>
+                    <button class="filter-button" id="filter-button"> <i class="fa-solid fa-filter fa-lg"></i></button>
+                </div>
+                <aside class="aside__vinilos__filter">
+                    <h2>Filtrar productos</h2>
+                    <form class="filter_form" action="/productos" method="get">
+                        <div class="filter__section_vinilos">
+                            <h3>Género</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="rock">
+                                    Rock
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="funk">
+                                    Funk
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="soul">
+                                    Soul
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="heavy-metal">
+                                    Heavy Metal
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="punk">
+                                    Punk
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="clasica">
+                                    Clásica
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genero" value="blues">
+                                    Blues
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter__section_vinilos">
+                            <h3>Color</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="color" value="blanco">
+                                    Blanco
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="color" value="negro">
+                                    Negro
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter__section_vinilos">
+                            <h3>Talle</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="talle" value="small">
+                                    Small
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="talle" value="medium">
+                                    Medium
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="talle" value="large">
+                                    Large
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter__section_vinilos">
+                            <h3>Tipo de Manga</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="Tipo de Manga" value="small">
+                                    Corta
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="Tipo de Manga" value="medium">
+                                    Larga
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter__section_vinilos">
+                            <h3>Ordenar por precio</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="radio" name="ordenar" value="mayor-precio">
+                                    Mayor a menor
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="radio" name="ordenar" value="menor-precio">
+                                    Menor a mayor
+                                </label>
+                            </div>
+                        </div>
+                        <button class="form__button-submit" type="submit">Aplicar filtros</button>
+                    </form>
+                </aside>
+                
+                <section class="product__main__cards_container">
+                    <% shirts.forEach(({id, title,artist, price, discount, mainImage})=> { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
+                            <% }) %>
+
+
+
+                </section>
+            </main>
+
+
+        
+            <%- include('../partials/footer') %>
+
+    </body>
+
+</html>

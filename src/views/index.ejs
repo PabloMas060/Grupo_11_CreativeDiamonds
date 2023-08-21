@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head',{ title : 'HOME' }) %>
+
+
+
+    <body class="home__body">
+
+        <%- include('partials/header') %>
+
+
+            <div class="header__search">
+                <input type="text"> <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+
+
+
+
+            <!-- CARROUSEL -->
+            <div class="home__container__carousel">
+                <input class="home__carousel__input" type="radio" name="image-slide" id="1" hidden>
+                <input class="home__carousel__input" type="radio" name="image-slide" id="2" hidden>
+                <input class="home__carousel__input" type="radio" name="image-slide" id="3" hidden>
+                <div class="home__carousel">
+                    <div class="home__carousel__item">
+                        <img src="/images/banner/banner04.png" alt="">
+                    </div>
+                    <div class="home__carousel__item">
+                        <img src="/images/banner/banner05.png" alt="">
+                    </div>
+                    <div class="home__carousel__item">
+                        <img src="/images/banner/banner06.png" alt="">
+                    </div>
+                    <div class="home__carousel__item">
+                        <img src="/images/banner/banner07.png" alt="">
+                    </div>
+                    <div class="home__carousel__item">
+                        <img src="/images/banner/banner08.png" alt="">
+                    </div>
+                    <div class="home__carousel__item">
+                        <img src="/images/banner/banner09.png" alt="">
+                    </div>
+                </div>
+                <div class="home__carousel__pagination">
+                    <label class="home__carousel__pagination-item" for="1">
+                        <img src="/images/banner/banner04.png" alt="">
+                    </label>
+                    <label class="home__carousel__pagination-item" for="2">
+                        <img src="/images/banner/banner06.png" alt="">
+                    </label>
+                    <label class="home__carousel__pagination-item" for="3">
+                        <img src="/images/banner/banner08.png" alt="">
+                    </label>
+                </div>
+            </div>
+
+
+
+
+            <div class="home__body__menu">
+                <a href="/products/vinilos"><i class="fa-solid fa-compact-disc"></i> Vinilos</a>
+                <a href="/products/indumentaria"><i class="fa-solid fa-shirt"></i> Indumentaria</a>
+                <a href="/products/promos"><i class="fa-solid fa-percent"></i> Promociones</a>
+                <a href="/products/shows"><i class="fa-solid fa-ticket"></i> Próximos Conciertos</a>
+            </div>
+
+
+            <section class="home__body__section">
+                <div class="home__body__section--title">
+                    <h2>
+                        Ofertas Exclusivas
+                    </h2>
+                </div>
+                <!-- Slide ofertas -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% offerVinyls.forEach(({id, title, price, discount, mainImage})=> { %>
+                            <%- include('partials/productCard',{ id, title, price, discount, mainImage }) %>
+                                <% }) %>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </section>
+
+
+            <section class="home__body__section2">
+                <div class="home__body__section--title">
+                    <h2>
+                        Novedades
+                    </h2>
+                </div>
+
+                <!-- Slide novedades -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% vinyls.forEach(({id, title, price, discount, mainImage})=> { %>
+                            <%- include('partials/productCard',{ id, title, price, discount, mainImage }) %>
+                                <% }) %>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </section>
+
+            <%- include('partials/footer') %>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+                <script>
+                    var swiper = new Swiper(".mySwiper", {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            481: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 40,
+                            },
+                            1024: {
+                                slidesPerView: 4,
+                                spaceBetween: 50,
+                            },
+                        },
+                    });
+                </script>
+
+    </body>
+
+</html>

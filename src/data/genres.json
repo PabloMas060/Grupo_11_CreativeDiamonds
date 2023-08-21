@@ -1,0 +1,30 @@
+[
+    {
+        "id" : 1,
+        "name" : "Rock"
+    },
+    {
+        "id" : 2,
+        "name" : "Funk"
+    },
+    {
+        "id" : 3,
+        "name" : "Soul"
+    },
+    {
+        "id" : 4,
+        "name" : "Heavy Metal"
+    },
+    {
+        "id" : 5,
+        "name" : "Punk"
+    },
+    {
+        "id" : 6,
+        "name" : "Classical"
+    },
+    {
+        "id" : 7,
+        "name" : "Blues"
+    }
+]

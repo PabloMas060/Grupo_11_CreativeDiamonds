@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head',{ title : 'DETALLE DE PRODUCTO' }) %>
+<body>
+    <%- include('../partials/header') %>
+    
+    
+    <main class="producto">
+        <section class="producto__section--producto">
+            <h3>Nombre del Producto</h3>
+            <div class="producto__imagenes">   <!-- The grid: four columns -->
+                <div class="producto__imagenes--secundarias">
+                    <div class="column">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_847551-MLA51204351774_082022-O.webp" alt="" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_909616-MLA51111411679_082022-O.webp" alt="" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_616055-MLA52758456106_122022-O.webp" alt="" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_754157-MLA52084654222_102022-O.webp" alt="" onclick="myFunction(this);">
+                    </div>
+                </div>
+              
+              <!-- The expanding image container -->
+                <div class="producto__imagenes--principal">
+                <!-- Close the image -->
+                   <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+              
+                <!-- Expanded image -->
+                    <img id="expandedImg" style="width:100%" src="https://http2.mlstatic.com/D_NQ_NP_754157-MLA52084654222_102022-O.webp" alt="Lights">
+              
+                <!-- Image text -->
+                    <div id="imgtext"></div>
+                </div>
+            </div> 
+
+                <div class="producto__section__article--descripcion">
+                    <p>$15000</p>
+                    <button>Agregar al carrito</button>
+                    <i class="fa-solid fa-star" style="color: #837f01;"></i>
+                    
+                </div>
+
+                <div class="producto__section__article--enlaces">
+                    <ul>
+                        <li><a href="#general">General</a></li>
+                        <li><a href="#ficha">Ficha tecnica</a></li>
+                        <li><a href="#reseña">Reseñas</a></li>
+                        
+                    </ul>
+                    
+                </div>
+            </article>
+        </section>
+        
+        <div class="producto__section--detalles">
+            <section class="producto__section--general">
+                <h3 id="general">General</h3>
+                <article>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatem recusandae vero repellat? Minus, voluptatem voluptates voluptas reiciendis enim excepturi rem deleniti alias eum expedita, voluptate laborum dolores dignissimos pariatur.</p>
+                </article>
+            </section>
+
+            <section class="producto__section--general">
+                <h3 id="ficha">Ficha Tecnica</h3>
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum vel eum a tempora sit in saepe quidem soluta ipsa architecto maxime, minus dolorum! Quas aperiam quo distinctio porro ipsa architecto!</p>
+                </article>
+            </section>
+
+            <section class="producto__section--general">
+                <h3 id="reseña">Reseñas</h3>
+                <article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum vel eum a tempora sit in saepe quidem soluta ipsa architecto maxime, minus dolorum! Quas aperiam quo distinctio porro ipsa architecto!</p>
+                </article>
+            </section>
+        </div>
+
+        <section class="producto__section--form">
+            <i class="fa-solid fa-calculator fa-2xl" style="color: #003694;"></i>
+            <form class="producto__section--form-tarjetas">
+                <label for="tarjeta">Tipo de Tarjeta:</label>
+                    <select id="tarjeta" name="tarjeta">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+
+                <label for="cuotas">Cantidad de Cuotas:</label>
+                    <select id="cuotas" name="cuotas">
+                    <option value="1">1 cuota</option>
+                    <option value="3">3 cuotas</option>
+                    <option value="6">6 cuotas</option>
+                    <option value="12">12 cuotas</option>
+                </select>
+</section>
+
+        <div class="producto__title">
+            <h3>MAS MUSICA</h3> 
+        </div>    
+        <div id="conteItemsCarrusel">
+
+            <div class="itemCarrusel" id="itemCarrusel1">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel1">
+                    <img src="/images/product01.jpg" alt="">
+                </div>    
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel3">
+                        <i class="fa-solid fa-guitar fa-rotate-270"></i>
+                    </a>
+                    <a href="#itemCarrusel2">
+                        <i class="fa-solid fa-guitar"></i>
+                    </a>
+                </div>    
+            </div>
+
+            <div class="itemCarrusel" id="itemCarrusel2">    
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel2">
+                    <img src="/images/product04.png" alt="">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel1">
+                        <i class="fa-solid fa-guitar fa-rotate-270"></i>
+                    </a>
+                    <a href="#itemCarrusel3">
+                        <i class="fa-solid fa-guitar"></i>
+                    </a>
+                </div>
+            </div>    
+
+            <div class="itemCarrusel" id="itemCarrusel3">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel3">
+                    <img src="/images/product03.png" alt="">
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel2">
+                        <i class="fa-solid fa-guitar fa-rotate-270"></i>
+                    </a>
+                    <a href="#itemCarrusel1">
+                        <i class="fa-solid fa-guitar"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="puntos">
+            <a href="#itemCarrusel1"><i class="fa-solid fa-music" style="color: #ffffff;"></i></a>
+            <a href="#itemCarrusel2"><i class="fa-solid fa-music" style="color: #ffffff;"></i></a>
+            <a href="#itemCarrusel3"><i class="fa-solid fa-music" style="color: #ffffff;"></i></a>
+            
+            
+
+        </div>
+        
+
+    </main>
+
+    <%- include('../partials/footer') %>
+    
+
+
+    <script src='/javascripts/producto.js' ></script>   
+</body>
+</html>
