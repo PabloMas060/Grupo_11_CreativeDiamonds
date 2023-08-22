@@ -8,8 +8,11 @@
       "year": 1991,
       "price": 21.99,
       "discount": 0,
-      "mainImage": "1692656279520_products_.jpg",
-      "images": [],
+      "mainImage": "1692721063449_products_.jfif",
+      "images": [
+         "1692721063450_products_.jpg",
+         "1692721063450_products_.jfif"
+      ],
       "format": "",
       "discographic": "Warner Bros. Records",
       "tracklist": [
@@ -344,28 +347,6 @@
          "Wind Below",
          "Roll Right",
          "Year of tha Boomerang"
-      ]
-   },
-   {
-      "id": "e2e47ac3-706d-4531-a977-5e879da11ec5",
-      "title": "Eliminame",
-      "artist": "piti alvarez",
-      "genre" : "funk",
-      "description": "esto es un producto de prueba que debe ser eliminado",
-      "year": 1995,
-      "price": 500,
-      "discount": 5,
-      "mainImage": "1692479993025_products_.jpg",
-      "images": [
-         "1692630256959_products_.jpg",
-         "1692630256961_products_.jpg"
-      ],
-      "format": "lp",
-      "discographic": "alguna",
-      "tracklist": [
-         "cancion 1",
-         "cancion 2",
-         "cancion 3"
       ]
    },
    {
