@@ -10,8 +10,8 @@ module.exports = (req,res) => {
         if(vinyl.id === req.params.id){
 
             req.file &&
-            existSync('./public/images/${vinyl.images}') &&
-            unlinkSync('./public/images/${vinyl.images}')
+            existSync(`./public/images/${vinyl.images}`) &&
+            unlinkSync(`./public/images/${vinyl.images}`)
 
 
             vinyl.title = title.trim()

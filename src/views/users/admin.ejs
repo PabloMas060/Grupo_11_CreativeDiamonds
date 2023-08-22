@@ -38,7 +38,8 @@
                                     <div class="tab-pane fade show active " id="nav-home" role="tabpanel"
                                         aria-labelledby="nav-home-tab" tabindex="0">
                                         <div class="d-flex flex-column gap-2 flex-md-row justify-content-between my-3">
-                                            <a href="/products/addVinyl" class="btn btn-dark"><i class="fas fa-plus"></i>
+                                            <a href="/products/addVinyl" class="btn btn-dark"><i
+                                                    class="fas fa-plus"></i>
                                                 Agregar</a>
                                             <form action="/products/search"
                                                 class="d-flex flex-column flex-md-row  gap-2" method="GET">
@@ -138,8 +139,8 @@
                                                                                             data-bs-dismiss="modal">Cancelar</button>
 
                                                                                         <form
-                                                                                            action="products/remove/<%= id %>?_method=DELETE"
-                                                                                            method="POST">
+                                                                                            action="/products/remove/<%= id %>"
+                                                                                            method="post">
                                                                                             <button type="submit"
                                                                                                 class="btn btn-danger">Eliminarlo</button>
                                                                                         </form>
@@ -165,7 +166,8 @@
 
                                         <!-- Shirts -->
                                         <div class="d-flex flex-column gap-2 flex-md-row justify-content-between my-3">
-                                            <a href="/products/addShirt" class="btn btn-dark"><i class="fas fa-plus"></i>
+                                            <a href="/products/addShirt" class="btn btn-dark"><i
+                                                    class="fas fa-plus"></i>
                                                 Agregar</a>
                                             <form action="/products/search"
                                                 class="d-flex flex-column flex-md-row  gap-2" method="GET">
@@ -193,7 +195,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <% shirts.forEach(({id, title, size,color, artist, price, discount,mainImage, description}, index)=> { %>
+                                                    <% shirts.forEach(({id, title, size,color, artist, price,
+                                                        discount,mainImage, description}, index)=> { %>
                                                         <tr>
                                                             <th scope="row">
                                                                 <%= index + 1 %>
@@ -272,8 +275,8 @@
                                                                                             data-bs-dismiss="modal">Cancelar</button>
 
                                                                                         <form
-                                                                                            action="products/remove/<%= id %>?_method=DELETE"
-                                                                                            method="POST">
+                                                                                            action="/products/remove/<%= id %>"
+                                                                                            method="post">
                                                                                             <button type="submit"
                                                                                                 class="btn btn-danger">Eliminarlo</button>
                                                                                         </form>
