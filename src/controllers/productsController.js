@@ -143,12 +143,16 @@ module.exports = {
     createVinyl: require('./products/createVinyl'),
     addShirt: require('./products/addShirt'),
     createShirt: require('./products/createShirt'),
-    edit: (req, res) => {
+    /*edit: (req, res) => {
         return res.render('products/editProduct');
-    },
+    },*/
 
     edit: require ('./products/edit'),
-    update: require ('./products/update')
+    update: require ('./products/update'),
+    editShirts: require ('./products/editShirts'),
+    updateShirts: require ('./products/updateShirts')
+
+    
 
 
 };

@@ -28,9 +28,9 @@ router
   .get('/indumentaria', indumentaria)
   .get('/shows', shows)
 
-  .get('/edit/:id', edit)
+  
 
-
+/*Edit y Update Vinilos*/
   .get('/edit/:id', edit)
   .put('/update/:id', upload.fields([
     {
@@ -41,7 +41,19 @@ router
     }
   ]), update)
 
-  /*Eliminar un producto*/
+  /*Edit y Update Shirts*/
+  .get('/editShirts/:id', editShirts) 
+  .put('/updateShirts/:id', upload.fields([
+    {
+      name: "mainImage"
+    }
+  ]), updateShirts)
+
+
+
+
+
+/*Eliminar un producto*/
   .delete('/remove/:id', remove)
   .post('/remove/:id', remove)
   .get('/remove/:id', remove)

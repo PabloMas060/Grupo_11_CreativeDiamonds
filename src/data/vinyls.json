@@ -8,13 +8,7 @@
       "year": 1991,
       "price": 21.99,
       "discount": 0,
-      "mainImage": "1692668360111_products_.jfif",
-      "images": [
-         "1692668360111_products_.jfif",
-         "1692668360111_products_.jfif",
-         "1692668360111_products_.jfif",
-         "1692668360112_products_.jfif"
-      ],
+      "images": [],
       "format": "",
       "discographic": "Warner Bros. Records",
       "tracklist": [
@@ -36,7 +30,8 @@
          "Sir Psycho Sexy",
          "They're Red Hot",
          "Unlimited Love"
-      ]
+      ],
+      "mainImage": null
    },
    {
       "id": "53321519-17cf-46c219-9cae-6364c844f8b2",
