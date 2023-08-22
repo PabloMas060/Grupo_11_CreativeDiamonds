@@ -10,7 +10,7 @@ module.exports = {
         const vinyl = vinyls.find(vinyl => vinyl.id === id);
 
         return res.render('products/detail', {
-            vinyl
+            ...vinyl
         });
     },
     detailShirt: (req, res) => {

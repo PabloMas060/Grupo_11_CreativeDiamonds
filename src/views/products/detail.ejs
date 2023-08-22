@@ -7,10 +7,14 @@
     
     <main class="producto">
         <section class="producto__section--producto">
-            <h3><%= vinyl.title %></h3>
+            <h3><%= title %></h3>
             <div class="producto__imagenes">
+               
                 <div class="producto__imagenes--secundarias">
-                    <% vinyl.images.forEach(image => { %>
+                    <div class="column">
+                        <img src="/images/<%= mainImage %>" alt="" onclick="myFunction(this);">
+                    </div>
+                    <% images.forEach(image => { %>
                         <div class="column">
                             <img src="/images/<%= image %>" alt="" onclick="myFunction(this);">
                         </div>
@@ -18,13 +22,13 @@
                 </div>
                 
                 <div class="producto__imagenes--principal">
-                    <img id="expandedImg" style="width:100%" src="/images/<%= vinyl.mainImage %>" alt="<%= vinyl.title %>">
+                    <img id="expandedImg" style="width:100%" src="/images/<%= mainImage %>" alt="<%= title %>">
                     <div id="imgtext"></div>
                 </div>
             </div>
             
             <div class="producto__section__article--descripcion">
-                <p>$<%= vinyl.price %></p>
+                <p>$<%= price %></p>
                 <button>Agregar al carrito</button>
                 <i class="fa-solid fa-star" style="color: #837f01;"></i>
             </div>
