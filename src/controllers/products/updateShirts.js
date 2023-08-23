@@ -22,8 +22,8 @@ module.exports = (req,res) => {
             shirt.sleeve = sleeve
             shirt.color = color
             shirt.description = description.trim()
-            shirt.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : null
-            shirt.images = req.files.images ? req.files.images.map(image => image.filename) : []
+            shirt.mainImage =  shirt.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : null
+            
             
             
 
