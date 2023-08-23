@@ -4,9 +4,9 @@ const { readJSON, writeJSON } = require('../../data');
 module.exports = (req,res) => {
     const shirts = readJSON("shirts.json")
     const id = req.params.id
-    const {title, artist,price,discount, format,discographic,genre,year,description,}= req.body
+    const {title, artist,price,discount, size ,sleeve,color,description,}= req.body
     
-    const shirtsModify = shirts.map(vinyl =>{
+    const shirtsModify = shirts.map(shirt =>{
         if(shirt.id === req.params.id){
 
             req.file &&
@@ -18,10 +18,9 @@ module.exports = (req,res) => {
             shirt.artist = artist.trim()
             shirt.price = +price
             shirt.discount = +discount
-            shirt.format = format
-            shirt.discographic = discographic.trim()
-            shirt.genre = genre
-            shirt.year = +year
+            shirt.size = size
+            shirt.sleeve = sleeve
+            shirt.color = color
             shirt.description = description.trim()
             shirt.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : null
             shirt.images = req.files.images ? req.files.images.map(image => image.filename) : []
@@ -30,7 +29,7 @@ module.exports = (req,res) => {
 
 
         }
-        return vinyl;
+        return shirt;
     }) 
     writeJSON(shirtsModify,'shirts.json');
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt,remove } = require('../controllers/productsController');
+const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt,remove, editShirts, updateShirts } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 
 /* /products */

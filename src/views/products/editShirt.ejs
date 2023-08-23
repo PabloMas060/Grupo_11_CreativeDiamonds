@@ -10,7 +10,7 @@
                     <h1>Modificar Indumentaria</h1>
                 </div>
                 <div class="form__container">
-                    <form class="form__box" action="/products/updateShirts<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form class="form__box" action="/products/updateShirts<%= id %>_method=PUT" method="POST" enctype="multipart/form-data">
 
                         <div class="form__box__field">
                             <label class="form-label" for="title">Nombre de Producto</label>
@@ -62,9 +62,15 @@
                             <label class="btn btn-dark" for="mainImage">Imagen Principal</label>
                             <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
                         </div>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <img src="/images/<%= mainImage %>" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
                         <div class="form__button-container">
                             <button class="form__button-reset" type="reset">Limpiar los campos</button>
-                            <button class="form__button-submit" type="submit">Agregar</button>
+                            <button class="form__button-submit" type="submit">Modificar</button>
                         </div>
                     </form>
 
