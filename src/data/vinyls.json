@@ -8,12 +8,9 @@
       "year": 1991,
       "price": 21.99,
       "discount": 0,
-      "mainImage": "1692756381003_products_.jpg",
+      "mainImage": "1692759496948_products_.jfif",
       "images": [
-         "1692756381003_products_.jpg",
-         "1692756381003_products_.jpg",
-         "1692756381008_products_.jpg",
-         "1692756381020_products_.jpg"
+         "1692759496949_products_.jfif"
       ],
       "format": "",
       "discographic": "Warner Bros. Records",
@@ -42,14 +39,16 @@
       "id": "53321519-17cf-46c219-9cae-6364c844f8b2",
       "title": "Greatest Hits",
       "artist": "Guns N' Roses",
-      "genre": "Punk",
+      "genre": "Rock",
       "description": "",
       "year": 1989,
       "price": 24.99,
       "discount": 10,
-      "mainImage": "product02.jpg",
-      "images": [],
-      "format": "lp",
+      "mainImage": "1692759968342_products_.jfif",
+      "images": [
+         "1692759968343_products_.webp"
+      ],
+      "format": "",
       "discographic": "Geffen Records",
       "tracklist": [
          "Welcome to the Jungle",
@@ -72,14 +71,16 @@
       "id": "53321231519-17cf-46c9-9cae-6364c844f8b2",
       "title": "The Dark Side of the Moon",
       "artist": "Pink Floyd",
-      "genre": "Rock Progresivo",
+      "genre": "Rock",
       "description": "Uno de los álbumes más influyentes en la historia de la música.",
       "year": 1973,
       "price": 24.99,
       "discount": 10,
-      "mainImage": "product03.png",
-      "images": [],
-      "format": "LP",
+      "mainImage": "1692760566263_products_.webp",
+      "images": [
+         "1692760566264_products_.webp"
+      ],
+      "format": "",
       "discographic": "Harvest Records",
       "tracklist": [
          "Speak to Me",
@@ -129,9 +130,11 @@
       "year": 1969,
       "price": 18.99,
       "discount": 0,
-      "mainImage": "product05.png",
-      "images": [],
-      "format": "LP",
+      "mainImage": "1692761224471_products_.webp",
+      "images": [
+         "1692761224472_products_.webp"
+      ],
+      "format": "",
       "discographic": "Atlantic Records",
       "tracklist": [
          "Good Times Bad Times",
@@ -182,14 +185,16 @@
       "id": "53321519-17cf-46c9-9cae-63640c844f8b2",
       "title": "Unlimited Love",
       "artist": "Red Hot Chili Peppers",
-      "genre": "Rock Alternativo",
+      "genre": "Rock",
       "description": "Es el primer trabajo de la banda tras casi seis años, siendo esta la mayor distancia entre un álbum y otro en la historia del grupo.",
       "year": 2022,
       "price": 26.99,
       "discount": 0,
-      "mainImage": "product01.jpg",
-      "images": [],
-      "format": "CD",
+      "mainImage": "1692761376501_products_.webp",
+      "images": [
+         "1692761376502_products_.webp"
+      ],
+      "format": "",
       "discographic": "Warner Bros. Records",
       "tracklist": [
          "Black Summer",
@@ -242,14 +247,16 @@
       "id": "53321519-17cf-46c9-9cae-6364c844f8b2987",
       "title": "The Battle of Los Angeles",
       "artist": "Rage Against the Machine",
-      "genre": "Rap Metal",
+      "genre": "Rock",
       "description": "El tercer álbum de estudio de Rage Against the Machine, lleno de crítica social y energía.",
       "year": 1999,
       "price": 20.99,
       "discount": 10,
-      "mainImage": "product09.webp",
-      "images": [],
-      "format": "CD",
+      "mainImage": "1692761659334_products_.webp",
+      "images": [
+         "1692761659335_products_.webp"
+      ],
+      "format": "",
       "discographic": "Epic Records",
       "tracklist": [
          "Testify",
@@ -297,14 +304,16 @@
       "id": "53321519-17cf-46s4dsc9-9cae-6364c844f8b2",
       "title": "Californication",
       "artist": "Red Hot Chili Peppers",
-      "genre": "rock",
+      "genre": "Rock",
       "description": "Uno de los álbumes más icónicos de los Red Hot Chili Peppers.",
       "year": 1999,
       "price": 22.99,
       "discount": 15,
-      "mainImage": "californication.webp",
-      "images": [],
-      "format": "LP",
+      "mainImage": "1692760971571_products_.webp",
+      "images": [
+         "1692760971572_products_.webp"
+      ],
+      "format": "",
       "discographic": "Warner Bros. Records",
       "tracklist": [
          "Around the World",
@@ -328,14 +337,16 @@
       "id": "5332asdas1519-17cf-46c9-9cae-6364c844f8b2",
       "title": "Evil Empire",
       "artist": "Rage Against the Machine",
-      "genre": "Rap Metal",
+      "genre": "Rock",
       "description": "El segundo álbum de estudio de Rage Against the Machine, lleno de poder y mensaje político.",
       "year": 1996,
       "price": 19.99,
       "discount": 0,
-      "mainImage": "product12.webp",
-      "images": [],
-      "format": "CD",
+      "mainImage": "1692761945011_products_.webp",
+      "images": [
+         "1692761945012_products_.webp"
+      ],
+      "format": "",
       "discographic": "Epic Records",
       "tracklist": [
          "People of the Sun",

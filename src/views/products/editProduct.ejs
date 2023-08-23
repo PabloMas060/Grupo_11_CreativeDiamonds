@@ -81,22 +81,26 @@
                         <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
                     </div>
 
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <img src="/images/<%= mainImage %>" class="img-fluid" alt="">
-                        </div>
-                    </div>
+
                         
 
                     <div class="form-field-select">
                         <label class="btn btn-dark" for="images">Más Imagenes</label>
                         <input hidden class="form-control" multiple type="file" id="images" name="images">
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <img src="/images/<%= images %>" class="img-fluid" alt="">
-                            </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="/images/<%= mainImage %>" class="img-fluid" alt="">
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="/images/<%= images %>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
                     <div class="form__button-container">
                         <button class="form__button-reset" type="reset">Limpiar los campos</button>
                         <button class="form__button-submit" type="submit">Guardar Cambios</button>
