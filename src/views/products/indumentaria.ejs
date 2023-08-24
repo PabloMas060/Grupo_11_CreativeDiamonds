@@ -16,9 +16,11 @@
 
             <main class="product__main">
                 <div class="header__search">
-                    <form method="GET" action="/products/indumentaria"> 
-                        <input type="text" name="search" placeholder="Buscar por artista">
-                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <form method="GET" action="/products/indumentaria">
+                        <div class="navegador">
+                            <input type="text" name="search" placeholder="Buscar por artista">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
                     </form>
                 </div>
                 <div>
@@ -99,17 +101,18 @@
                         <button class="form__button-submit" type="submit">Aplicar filtros</button>
                     </form>
                 </aside>
-                
+
                 <section class="product__main__cards_container">
-                    <% shirts.forEach(({id, title, artist, price, discount, mainImage}) => { %>
-                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage, productType: 'remeras'}) %>
-                    <% }) %>
+                    <% shirts.forEach(({id, title, artist, price, discount, mainImage})=> { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage,
+                            productType: 'remeras' }) %>
+                            <% }) %>
                 </section>
-                
+
             </main>
 
 
-        
+
             <%- include('../partials/footer') %>
 
     </body>
