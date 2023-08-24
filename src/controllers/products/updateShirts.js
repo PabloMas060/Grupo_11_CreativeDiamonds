@@ -22,7 +22,7 @@ module.exports = (req,res) => {
             shirt.sleeve = sleeve
             shirt.color = color
             shirt.description = description.trim()
-            shirt.mainImage =  shirt.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : null
+            shirt.mainImage =  shirt.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : shirt.mainImage
             
             
             

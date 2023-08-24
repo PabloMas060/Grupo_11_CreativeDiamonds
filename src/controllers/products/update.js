@@ -23,8 +23,8 @@ module.exports = (req,res) => {
             vinyl.genre = genre
             vinyl.year = +year
             vinyl.description = description.trim()
-            vinyl.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : null
-            vinyl.images = req.files.images ? req.files.images.map(image => image.filename) : []
+            vinyl.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : vinyl.mainImage
+            vinyl.images = req.files.images ? req.files.images.map(image => image.filename) : vinyl.images
             
             
 
