@@ -1,4 +1,4 @@
-const { readJSON,writeJSON } = require('../data')
+const { readJSON, writeJSON } = require('../data')
 const vinyls = require('../data/vinyls.json');
 const shirts = require('../data/shirts.json')
 
@@ -16,13 +16,23 @@ module.exports = {
     cart: (req, res) => {
         return res.render('users/cart')
     },
-    admin : (req,res) => {
+    admin: (req, res) => {
         const vinyls = readJSON('vinyls.json');
         const shirts = readJSON('shirts.json');
 
-        return res.render('users/admin',{
+        const { keyword } = req.body
+
+
+        const searchVinyls = vinyls.filter(vinyl => vinyl.title.toLowerCase().includes(keyword) || vinyl.artist.toLowerCase().includes(keyword))
+        const searchShirts = shirts.filter(shirt => shirt.title.toLowerCase().includes(keyword) || shirt.artist.toLowerCase().includes(keyword))
+
+
+        return res.render('users/admin', {
             vinyls,
-            shirts
+            shirts,
+            searchVinyls,
+            searchShirts,
+            keyword
         })
     }
 }
