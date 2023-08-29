@@ -6,7 +6,7 @@ const {register, login, profile, cart, admin, } = require('../controllers/usersC
 router.get('/register', register);
 router.get('/login', login);
 router.get('/admin', admin);
-router.post('/admin', admin);
+router.post('/admin/:typeSearch?', admin);
 router.get('/profile', profile);
 router.get('/cart', cart);
 
