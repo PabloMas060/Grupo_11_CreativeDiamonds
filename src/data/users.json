@@ -43,5 +43,14 @@
       "password": "$2a$10$/xDd3IJ4pVUinH7dx3oFKuqToOleTzEk4dQvN3vUgjRWpbBwwokn.",
       "mainImage": "1694105923197_products_.png",
       "rol": "usuario"
+   },
+   {
+      "id": "402fa5a4-5bbe-43f7-ba01-7000f82ff5d9",
+      "firstName": "Braian",
+      "lastName": "Braian",
+      "email": "Braian@gmail.com",
+      "password": "$2a$10$d8asLPdJxB6GGvLOyWSDfuIwaewsB9Xsl8ikqp8K3re4nOXU8jnSC",
+      "mainImage": "1694106417149_products_.png",
+      "rol": "usuario"
    }
 ]
