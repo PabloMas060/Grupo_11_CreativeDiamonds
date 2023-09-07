@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt,remove } = require('../controllers/productsController');
+const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt,remove, editShirts, updateShirts } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 
 /* /products */
 router
   /* ADD PARA VINILOS */
-  .get('/add', addVinyl)
-  .post('/add', upload.fields([
+  .get('/addVinyl', addVinyl)
+  .post('/addVinyl', upload.fields([
     {
       name: "mainImage"
     },
@@ -23,19 +23,40 @@ router
     }
   ]), createShirt)
 
-
-
   .get('/detail/:id', detail)
   .get('/vinilos', vinilos)
   .get('/indumentaria', indumentaria)
   .get('/shows', shows)
 
-  .get('/edit/:id', edit)
+  
 
-  /*Eliminar un producto*/
+/*Edit y Update Vinilos*/
+  .get('/edit/:id', edit)
+  .put('/update/:id', upload.fields([
+    {
+      name: "mainImage"
+    },
+    {
+      name: "images"
+    }
+  ]), update)
+
+  /*Edit y Update Shirts*/
+  .get('/editShirts/:id', editShirts) 
+  .put('/updateShirts/:id', upload.fields([
+    {
+      name: "mainImage"
+    }
+  ]), updateShirts)
+
+
+
+
+
+/*Eliminar un producto*/
   .delete('/remove/:id', remove)
   .post('/remove/:id', remove)
   .get('/remove/:id', remove)
 
-
+  .get('/detail-shirt/:id', detailShirt);
 module.exports = router;

@@ -12,78 +12,34 @@
                 <h2>
                     Indumentaria
                 </h2>
-
-
-
             </div>
 
             <main class="product__main">
                 <div class="header__search">
-                    <input type="text"> <i class="fa-solid fa-magnifying-glass"></i>
+                    <form method="GET" action="/products/indumentaria">
+                        <div class="navegador">
+                            <input type="text" name="search" placeholder="Buscar por artista">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
                 </div>
                 <div>
                     <button class="filter-button" id="filter-button"> <i class="fa-solid fa-filter fa-lg"></i></button>
                 </div>
                 <aside class="aside__vinilos__filter">
                     <h2>Filtrar productos</h2>
-                    <form class="filter_form" action="/productos" method="get">
-                        <div class="filter__section_vinilos">
-                            <h3>Género</h3>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="rock">
-                                    Rock
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="funk">
-                                    Funk
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="soul">
-                                    Soul
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="heavy-metal">
-                                    Heavy Metal
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="punk">
-                                    Punk
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="clasica">
-                                    Clásica
-                                </label>
-                            </div>
-                            <div class="filter-field">
-                                <label>
-                                    <input type="checkbox" name="genero" value="blues">
-                                    Blues
-                                </label>
-                            </div>
-                        </div>
-
+                    <form class="filter_form" action="/products/indumentaria" method="GET">
                         <div class="filter__section_vinilos">
                             <h3>Color</h3>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="color" value="blanco">
+                                    <input type="checkbox" name="color" value="white">
                                     Blanco
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="color" value="negro">
+                                    <input type="checkbox" name="color" value="black">
                                     Negro
                                 </label>
                             </div>
@@ -115,13 +71,13 @@
                             <h3>Tipo de Manga</h3>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="Tipo de Manga" value="small">
+                                    <input type="checkbox" name="sleeve" value="small">
                                     Corta
                                 </label>
                             </div>
                             <div class="filter-field">
                                 <label>
-                                    <input type="checkbox" name="Tipo de Manga" value="medium">
+                                    <input type="checkbox" name="sleeve" value="medium">
                                     Larga
                                 </label>
                             </div>
@@ -145,19 +101,18 @@
                         <button class="form__button-submit" type="submit">Aplicar filtros</button>
                     </form>
                 </aside>
-                
+
                 <section class="product__main__cards_container">
-                    <% shirts.forEach(({id, title,artist, price, discount, mainImage})=> { %>
-                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage}) %>
+                    <% shirts.forEach(({id, title, artist, price, discount, mainImage})=> { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage,
+                            productType: 'remeras' }) %>
                             <% }) %>
-
-
-
                 </section>
+
             </main>
 
 
-        
+
             <%- include('../partials/footer') %>
 
     </body>

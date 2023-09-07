@@ -1,0 +1,48 @@
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function (){
+        const searchInput = document.getElementById('vinyl-search-input');
+        const productsTable = document.getElementById('vinyl-products-table');
+        const tableItems = productsTable.querySelector('tbody tr');
+
+        searchInput.addEventListener('input', function(){
+            const keyword= searchInput.value.toLowerCase().trim();
+
+            tableItems.forEach(tableItem =>{
+                const itemTitle = tableItem.querySelector('td:nth-child(2)')
+                if(itemTitle){
+                    const title = itemTitle.textContent.toLowerCase();
+
+                    if(title.includes(keyword)){
+                        tableItem.style.display = '';
+                    }else {
+                        tableItem.style.display = 'none';
+                    }
+                }
+            })
+        })
+        const shirtSearchInput = document.getElementById('shirt-search-input');
+        const shirtProductsTable = document.getElementById('shirt-products-table');
+        const shirtTableItems = shirtProductsTable.querySelector('tbody tr');
+
+        shirtSearchInput.addEventListener('input', function(){
+            const keyword= shirtSearchInput.value.toLowerCase().trim();
+
+            shirtTableItems.forEach(tableItem =>{
+                const itemTitle = tableItem.querySelector('td:nth-child(2)')
+                if(itemTitle){
+                    const title = itemTitle.textContent.toLowerCase();
+
+                    if(title.includes(keyword)){
+                        tableItem.style.display = '';
+                    }else {
+                        tableItem.style.display = 'none';
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+
+
+ -->

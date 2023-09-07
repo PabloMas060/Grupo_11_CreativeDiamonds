@@ -1,5 +1,14 @@
 <div class="product__body__card"><!-- Card -->
-    <figure class="product__body__card__figure"><a href="/products/detail/<%= id %>"><img src="/images/<%= mainImage %>" alt="Imagen del Producto"></a>
+    <figure class="product__body__card__figure">
+        <% if (productType === 'vinilos') { %>
+            <a href="/products/detail/<%= id %>">
+                <img src="/images/<%= mainImage %>" alt="Imagen del Producto">
+            </a>
+        <% } else if (productType === 'remeras') { %>
+            <a href="/products/detail-shirt/<%= id %>">
+                <img src="/images/<%= mainImage %>" alt="Imagen del Producto">
+            </a>
+        <% } %>
     </figure>
     <div class="product__body__card_info"><!-- Card body -->
         <h3><%= title %></h3>
@@ -16,6 +25,10 @@
         <i class="fa-solid fa-cart-shopping"></i>
     </div>
     <div class="product__body__card__button">
-        <a href="">VER MÁS</a>
+        <% if (productType === 'vinilos') { %>
+            <a href="/products/detail/<%= id %>">VER MÁS</a>
+        <% } else if (productType === 'remeras') { %>
+            <a href="/products/detail-shirt/<%= id %>">VER MÁS</a>
+        <% } %>
     </div>
 </div>

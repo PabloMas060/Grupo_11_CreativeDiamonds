@@ -124,7 +124,7 @@ color: #ffffff;
         width: 80%;
     }
     .form__container{
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
     .form__box{
         align-items: center;

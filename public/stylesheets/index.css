@@ -159,7 +159,25 @@
 box-shadow: 3px 4px 3px #1F857E;
 }
 
-
+.navegador{
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+   }
+   
+   .navegador input{
+   border-radius: 0.5rem;
+   padding: 0.5rem 2rem;
+   
+   }
+   
+   .navegador button{
+       position: absolute;
+       right: 9px;
+       background: transparent;
+       border: none;
+       top: 12px;
+      }
 
 
 
