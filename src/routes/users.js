@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const {register, processRegister,login, processLogin, profile, updateProfile, cart, admin, logout } = require('../controllers/usersController')
 const registerValidation = require('../validation/registerValidation');
-const { upload } = require('../middlewares/upload');
+const { uploads } = require('../middlewares/uploads');
 /* /users */
 router.get('/register', register);
-router.post('/register', upload.fields([
+router.post('/register', uploads.fields([
     {
       name: "mainImage"
     }

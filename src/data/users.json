@@ -34,5 +34,14 @@
       "password": "$2a$10$k7sJx17h8wH/toomajkP8OZ0qBKT.N5bbIGzzu6MPwOD06OR09ykW",
       "mainImage": "1694103615616_products_.png",
       "rol": "usuario"
+   },
+   {
+      "id": "29f8d964-5a4e-45e3-adb4-5e871baf5d5c",
+      "firstName": "Fredyy",
+      "lastName": "Mercury",
+      "email": "Mercury@gmail.com",
+      "password": "$2a$10$/xDd3IJ4pVUinH7dx3oFKuqToOleTzEk4dQvN3vUgjRWpbBwwokn.",
+      "mainImage": "1694105923197_products_.png",
+      "rol": "usuario"
    }
 ]
