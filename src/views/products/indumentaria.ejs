@@ -112,6 +112,16 @@
             </main>
 
 
+            <script>
+                $(document).ready(function () {
+                    const filterButton = $("#filter-button");
+                    const filterSection = $(".aside__vinilos__filter");
+
+                    filterButton.click(function () {
+                        filterSection.toggleClass("show");
+                    });
+                });
+            </script>
 
             <%- include('../partials/footer') %>
 
