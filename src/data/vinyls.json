@@ -385,5 +385,44 @@
          "Maldito Show",
          "Frankenstein Posmo"
       ]
+   },
+   {
+      "id": "6e254582-cc79-450f-b034-570e95c371d1",
+      "title": "ASA",
+      "artist": "ASA",
+      "genre": "rock",
+      "description": "asdad",
+      "year": 1,
+      "price": 1,
+      "discount": 50,
+      "mainImage": "1694101208502_products_.png",
+      "images": [
+         "1694101208510_products_.png",
+         "1694101208520_products_.png"
+      ],
+      "format": "lp",
+      "discographic": "ASA",
+      "tracklist": [
+         "ASA"
+      ]
+   },
+   {
+      "id": "1feb1d84-d9cc-4bf3-bbd9-ec1db54bf431",
+      "title": "asa",
+      "artist": "asa",
+      "genre": "rock",
+      "description": "asasa",
+      "year": 5,
+      "price": 5,
+      "discount": 5,
+      "mainImage": "1694101882793_products_.png",
+      "images": [
+         "1694101882795_products_.png"
+      ],
+      "format": "lp",
+      "discographic": "sa",
+      "tracklist": [
+         "asa"
+      ]
    }
 ]

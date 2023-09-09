@@ -1,21 +1,36 @@
+const { readJSON } = require('../../data/index')
+
 module.exports = (req, res) => {
+
+    const { keyword } = req.body;
+    const { typeSearch } = req.params;
+    
     const vinyls = readJSON('vinyls.json');
     const shirts = readJSON('shirts.json');
-
-    const { keyword } = req.body
-    const {typeSearch} = req.params
-
-
-    const searchVinyls = vinyls.filter(vinyl => vinyl.title.toLowerCase().includes(keyword) || vinyl.artist.toLowerCase().includes(keyword))
-    const searchShirts = shirts.filter(shirt => shirt.title.toLowerCase().includes(keyword) || shirt.artist.toLowerCase().includes(keyword))
-
-
+    
+    let searchVinyls = [];
+    let searchShirts = [];
+    let keywordLowerCase = '';
+    
+    if (keyword) {
+      keywordLowerCase = keyword.trim().toLowerCase();
+      searchVinyls = vinyls.filter(vinyl =>
+        vinyl.title.toLowerCase().includes(keywordLowerCase) || vinyl.artist.toLowerCase().includes(keywordLowerCase)
+      );
+    
+      searchShirts = shirts.filter(shirt =>
+        shirt.title.toLowerCase().includes(keywordLowerCase) || shirt.artist.toLowerCase().includes(keywordLowerCase)
+      );
+    }
+    
     return res.render('users/admin', {
-        vinyls,
-        shirts,
-        searchVinyls,
-        searchShirts,
-        keyword,
-        typeSearch
-    })
+      vinyls,
+      shirts,
+      searchVinyls,
+      searchShirts,
+      keyword,
+      typeSearch
+    });
+    
+
 }

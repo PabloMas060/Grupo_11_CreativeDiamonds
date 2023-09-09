@@ -1,12 +1,56 @@
 [
-    {
-        "id":1,
-        "firstName": "Pedro",
-        "lastName": "Paez",
-        "email": "pedro@gmail.com",
-        "password": "1234",
-        "category": [],
-        "image": ""
-    }
-
+   {
+      "id": 1,
+      "firstName": "Pedro",
+      "lastName": "Paez",
+      "email": "pedro@gmail.com",
+      "password": "1234",
+      "category": [],
+      "image": ""
+   },
+   {
+      "id": "9be42591-6a19-43bf-a25a-50af95689c14",
+      "firstName": "as",
+      "lastName": "as",
+      "email": "as@gmail.com",
+      "password": "$2a$10$Wqqv122MxF0IMCl2Xkdz0ezbdzGGSY0G2dyWbI1iD530Da4PJ9a0a",
+      "mainImage": "1694102454069_products_.png",
+      "rol": "usuario"
+   },
+   {
+      "id": "55e4b390-8127-41f0-a4c0-d59e803f9ef2",
+      "firstName": "Braian",
+      "lastName": "Braian",
+      "email": "Braian@gmail.com",
+      "password": "$2a$10$U1vXpjZWVBAjJUQaGfnIL.46r2nLKrY680LB71n1FzVnhm0m6fO4.",
+      "mainImage": "1694102511810_products_.png",
+      "rol": "usuario"
+   },
+   {
+      "id": "09b01f17-befd-43bf-ab62-0a0f5e522663",
+      "firstName": "asa",
+      "lastName": "asas",
+      "email": "asa@gmail.com",
+      "password": "$2a$10$k7sJx17h8wH/toomajkP8OZ0qBKT.N5bbIGzzu6MPwOD06OR09ykW",
+      "mainImage": "1694103615616_products_.png",
+      "rol": "usuario"
+   },
+   {
+      "id": "29f8d964-5a4e-45e3-adb4-5e871baf5d5c",
+      "firstName": "Fredyy",
+      "lastName": "Mercury",
+      "email": "Mercury@gmail.com",
+      "password": "$2a$10$/xDd3IJ4pVUinH7dx3oFKuqToOleTzEk4dQvN3vUgjRWpbBwwokn.",
+      "mainImage": "1694105923197_products_.png",
+      "rol": "usuario"
+   },
+   {
+      "id": "402fa5a4-5bbe-43f7-ba01-7000f82ff5d9",
+      "firstName": "Braian",
+      "lastName": "Braian",
+      "email": "Braian@gmail.com",
+      "password": "$2a$10$d8asLPdJxB6GGvLOyWSDfuIwaewsB9Xsl8ikqp8K3re4nOXU8jnSC",
+      "mainImage": "1694106417149_products_.png",
+      "rol": "usuario"
+   }
 ]

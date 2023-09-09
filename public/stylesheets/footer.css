@@ -14,9 +14,8 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
-display: flex;
-flex-wrap: wrap;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 .footer__section h3{
     
