@@ -10,18 +10,29 @@
             <li><a href="/products/vinilos">Vinilos</a></li>
             <li><a href="/products/indumentaria">Indumentaria</a></li>
             <li><a href="/products/shows">Próximos Conciertos</a></li>
-            <li><a href="/users/login">Iniciar sesión</a></li>
-            <li><a href="/users/register">Registrarme</a></li>
+            <% if (user && user.rol === 'admin') { %>
+                <li><a href="/users/admin"><i class="fa-solid fa-gears"></i> Admin</a></li>
+            <% } %>
+            <% if (user && user.rol === 'usuario') { %>
+                <li><a href="/users/profile"><i class="fa-solid fa-user"></i> ¡Hola, <%= user.firstName %>!</a></li>
+            <% } else if (!user) { %>
+                <li><a href="/users/login">Iniciar sesión</a></li>
+                <li><a href="/users/register">Registrarme</a></li>
+            <% } %>
+            <% if (user) { %>
+                <li><a href="/users/logout"><i class="fa-solid fa-sign-out"></i> Cerrar sesión</a></li>
+            <% } %>
         </ul>
     </nav>
     <div class="header__container_icons">
-        <a href="/users/admin"><i class="fa-solid fa-gears"></i></a>
-        <a href="/users/profile"><i class="fa-solid fa-user"></i></a>
-        <a href="/users/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
+        <% if (user && user.rol === 'admin') { %>
+            <a href="/users/admin"><i class="fa-solid fa-gears"></i></a>
+        <% } %>
+        <% if (user && user.rol === 'usuario') { %>
+            <a href="/users/profile"><i class="fa-solid fa-user"></i></a>
+        <% } %>
+        <% if (user) { %>
+            <a href="/users/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        <% } %>
     </div>
-
-
-
-
 </header>
