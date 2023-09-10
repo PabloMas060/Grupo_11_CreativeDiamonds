@@ -31,20 +31,10 @@ module.exports = (req, res) => {
 
       console.log("Inicio de sesión exitoso. Usuario:", req.session.user);
       return res.redirect('/');
-    } else {
-      console.log("Credenciales incorrectas. Correo electrónico:", email);
-      return res.render('users/login', {
-        errors: {
-          loginFailed: {
-            msg: 'Credenciales incorrectas. Por favor, verifica tu correo y contraseña.',
-          },
-        },
-      });
     }
-  } else {
-    console.log("Errores de validación:", errors.array());
-    return res.render('users/login', {
-      errors: errors.mapped(),
-    });
   }
+
+  return res.render('users/login', {
+    errors: errors.array(),
+  });
 };
