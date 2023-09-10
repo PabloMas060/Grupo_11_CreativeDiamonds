@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const {index} = require('../controllers/indexController')
+const localsCheck = require('../middlewares/localsCheck');
+const { index } = require('../controllers/indexController')
 
 /* GET home page. */
-router
-    .get('/', index)
+router.use(localsCheck); 
+
+router.get('/', index);
 
 module.exports = router;

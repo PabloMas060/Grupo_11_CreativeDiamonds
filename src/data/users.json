@@ -52,5 +52,23 @@
       "password": "$2a$10$d8asLPdJxB6GGvLOyWSDfuIwaewsB9Xsl8ikqp8K3re4nOXU8jnSC",
       "mainImage": "1694106417149_products_.png",
       "rol": "usuario"
+   },
+   {
+      "id": "1f99c111-92c2-4f04-a023-5bec9dc98de5",
+      "firstName": "Maxi",
+      "lastName": "Brocato",
+      "email": "maximilianobrocato@gmail.com",
+      "password": "$2a$10$FS9NeOTuZEjyfAW3q1TeuunhEgUW8IISXWPBm39c9DrYiCHFUavBm",
+      "mainImage": "1694232789976_products_.png",
+      "rol": "usuario"
+   },
+   {
+      "id": "85e8c7aa-9cb7-4065-8aa3-6f3e6bee9a5b",
+      "firstName": "prueba",
+      "lastName": "pruebon",
+      "email": "familiabrocato@gmail.com",
+      "password": "$2a$10$aOrmHIMuDafGe3e98Ue2iOCkjQiwZus.eQTQ8Rngz3L5TJSPp.Kqm",
+      "mainImage": null,
+      "rol": "usuario"
    }
 ]

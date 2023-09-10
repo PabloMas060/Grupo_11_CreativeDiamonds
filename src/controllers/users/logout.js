@@ -1,3 +1,6 @@
 module.exports = (req, res) => {
-    return res.render('users/register')
-}
+    req.session.destroy();
+    res.clearCookie('creativeDiamonds'); 
+    res.redirect('/');
+  };
+  

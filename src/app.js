@@ -1,9 +1,11 @@
-const createError = require('http-errors');
 const express = require('express');
+const session = require('express-session'); // Importa express-session
+const createError = require('http-errors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const checkCookie = require('./middlewares/cookieCheck');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -22,6 +24,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(methodOverride('_method'))
+
+// Configura express-session
+app.use(session({
+  secret: 'elbichosiuu', 
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 30000}
+}));
+
+// recordar usuario
+app.use(checkCookie);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

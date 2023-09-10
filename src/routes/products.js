@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt,remove, editShirts, updateShirts } = require('../controllers/productsController');
+const localsCheck = require('../middlewares/localsCheck'); 
+const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt, remove, editShirts, updateShirts } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
+
+router.use(localsCheck); 
 
 /* /products */
 router
