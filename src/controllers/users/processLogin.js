@@ -22,7 +22,6 @@ module.exports = (req, res) => {
       };
 
       if (remember !== undefined) {
-        // Si "Recordar Sesión" está activado, muestra un mensaje en la consola
         console.log("Sesión recordada. Usuario:", req.session.user);
         res.cookie('creativeDiamonds', req.session.user, {
           maxAge: 1000 * 60 * 60 * 24 * 7,
