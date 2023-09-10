@@ -4,7 +4,8 @@ const createError = require('http-errors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const checkCookie = require('./middlewares/cookieCheck');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -28,8 +29,13 @@ app.use(methodOverride('_method'))
 app.use(session({
   secret: 'elbichosiuu', 
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 30000}
 }));
+
+// recordar usuario
+app.use(checkCookie);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
