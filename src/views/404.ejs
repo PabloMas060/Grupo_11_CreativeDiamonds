@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head',{ title : '404' }) %>
+
+    <body class="body-404">
+
+
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="../images/404/abstract_background_-_107303 (540p).mp4" type="video/mp4">
+                Tu navegador no admite la reproducción de video.
+            </video>
+        </div>
+
+        <div class="content">
+            <h1>ERROR</h1>
+
+            <div class="error">
+                <h2>4</h2>
+                <img id="randomImage" src="" alt="Imagen al Azar">
+                <h2>4</h2>
+            </div>
+            <h2>PAGE NOT FOUND</h2>
+        </div>
+
+        <div class="triangulo">
+            <p>"</p>
+        </div>
+
+
+        <script>
+            var imageUrls = [
+                '/images/404/axl.png',
+                '/images/404/freddy.png',
+                '/images/404/slashhh.png'
+            ];
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+            var randomImageUrl = imageUrls[randomIndex];
+            var imageElement = document.getElementById('randomImage');
+            imageElement.src = randomImageUrl;
+        </script>
+    </body>
+
+
+
+</html>

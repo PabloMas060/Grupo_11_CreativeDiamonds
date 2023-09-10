@@ -1,0 +1,30 @@
+<div class="swiper-slide">
+    <div class="home__body__card"> <!-- CARD -->
+        <figure class="home__body__card__figure"><a href="/products/detail/<%= id %>"><img src="/images/<%= mainImage %>"
+                    alt="Imagen del Producto"></a>
+        </figure>
+        <div class="home__body__card_info">
+            <h3 class="home__body__card_info_name">
+                <%= title %>
+            </h3>
+            <h5>
+                <%= price %>
+            </h5>
+            <div class="home__body__card_info_discount">
+                <h3>
+                    <%= price - (price * discount / 100) %>
+                </h3>
+                <h4>
+                    <%= discount %>%
+                </h4>
+            </div>
+        </div>
+        <div class="home__body__card__icons">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="home__body__card__button">
+            <a href="/products/detail/<%= id %>">VER MÁS</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <nav class="navbar navbar-expand-lg " style="background-color: #212529;">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="/"><img class="rounded-circle"
+                height="70"
+                alt=""
+                loading="lazy" src="/images/logo.jpg" alt="LOGO"></a>
+            <!-- Search form -->
+            <form class="input-group" action="/products/buscar"  method="GET" style="width: 400px">
+                <input type="hidden" name="category" value="<%= categoria %>" />
+                <input type="search" name="search"  class="form-control text-dark border-white" placeholder="Buscar en la tienda" aria-label="Search" />
+                <button class="btn btn-outline-light" type="submit" data-mdb-ripple-color="dark" style="padding: .45rem 1.5rem .35rem;">
+                    Buscar
+                </button>
+            </form>
+        
+            <!-- Toggle button -->
+            <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> 
+                        <a class="nav-link active d-flex flex-column text-center" aria-current="page" href="/products/vinilos"><i class="fas fa-record-vinyl"  style="color: white;"></i><span class="small  text-white">Vinilos</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/products/indumentaria"><i class="fas fa-tshirt" style="color: white;"></i><span class="small text-white">Indumentaria</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/products/shows"><i class="fas fa-music" style="color: white;"></i><span class="small text-white">Próximos Conciertos</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/users/cart"><i class="fas fa-shopping-cart" style="color: white;"></i><span class="small text-white">Carrito</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column text-center" aria-current="page" href="/users/login"><i class="fas fa-sign-in-alt" style="color: white;"></i><span class="small text-white">Iniciar sesión</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        >
+                            <img
+                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                                class="rounded-circle"
+                                height="40"
+                                alt=""
+                                loading="lazy"
+                            />
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #212529;">
+                            <li><a class="dropdown-item text-white" href="/users/profile">Mi Perfil</a></li>
+                            <li><a class="dropdown-item text-white" href="/users/admin">Admin</a></li>
+                            <li><a class="dropdown-item text-white" href="/logout">Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+  
+    <style>
+        .dropdown-menu {
+            background-color: #212529;
+        }
+    
+        .dropdown-item {
+            color: white;
+        }
+    
+        .dropdown-item:hover {
+            background-color: #213447; /* Establece el fondo oscuro cuando se pasa el mouse */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+

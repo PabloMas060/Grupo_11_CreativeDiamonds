@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'PERFIL DE USUARIO' }) %>
+
+    <body class="home__body">
+        <% const categoria = 'shows'; %>
+        <%- include('../partials/navbar', { categoria: categoria }) %>
+
+
+
+            <main class="form__main">
+                <div class="form__title">
+                    <h1>Mis Datos</h1>
+                </div>
+                <div class="form__container">
+                    <form class="form__box" action="#" method="post">
+                        <div class="form__box__field">
+                            <label class="form-label" for="name">Nombre:</label>
+                            <input class="form-control" type="text" id="name" name="name">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="surname">Apellido:</label>
+                            <input class="form-control" type="text" id="surname" name="surname">
+                        </div>
+                        <div class="form__box__field-email">
+                            <label class="form-label" for="email">Email:</label>
+                            <input class="form-control" type="email" id="email" name="email">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="password">Contraseña:</label>
+                            <input class="form-control" type="password" id="password" name="password">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="password2">Cambiar Contraseña:</label>
+                            <input class="form-control" type="password" id="password2" name="password2">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="shipping">Lugar de envio</label>
+                            <input class="form-control" type="text" id="shipping" name="shipping">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="phone">Telefono</label>
+                            <input class="form-control" type="text" id="phone" name="phone">
+                        </div>
+
+
+                        <div class="form__box__field-email">
+                            
+                                <div class="col-md-12">
+                                    <a style= color:blue href="/users/cart">Mis Compras</a>
+                                </div>
+                               
+                            
+                        </div>
+
+
+
+                        <button class="form__button-submit" type="submit"><a href="/">Modifica tus Datos</a></button>
+                    </form>
+                </div>
+
+
+
+                <div class="form__p">
+                    <a href="/">Volvé al Home</a></p>
+                </div>
+                
+
+
+                </div>
+
+
+
+
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

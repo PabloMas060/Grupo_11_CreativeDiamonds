@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'VINILOS' }) %>
+
+    <body class="home__body">
+        
+        <% const categoria = 'vinilos'; %>
+        <%- include('../partials/navbar', { categoria: categoria }) %>
+
+
+            <div class="home__body__section--title">
+                <h2>
+                    Todos los Vinilos
+                </h2>
+
+
+
+            </div>
+
+            <main class="product__main">
+                <div>
+                    <button class="filter-button" id="filter-button"> <i class="fa-solid fa-filter fa-lg" style="color: white;"></i></button>
+                </div>
+                <aside class="aside__vinilos__filter">
+                    <h2>Filtrar productos</h2>
+                    <form class="filter_form" action="/products/vinilos" method="get">
+                        <div class="filter__section_vinilos">
+                            <h3>Género</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="rock">
+                                    Rock
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="funk">
+                                    Funk
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="soul">
+                                    Soul
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="heavy-metal">
+                                    Heavy Metal
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="punk">
+                                    Punk
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="clasica">
+                                    Clásica
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="genre" value="blues">
+                                    Blues
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter__section_vinilos">
+                            <h3>Formato</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="formato" value="LP">
+                                    Vinilo
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="checkbox" name="formato" value="CD">
+                                    CD
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter__section_vinilos">
+                            <h3>Ordenar por precio</h3>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="radio" name="ordenar" value="mayor-precio">
+                                    Mayor a menor
+                                </label>
+                            </div>
+                            <div class="filter-field">
+                                <label>
+                                    <input type="radio" name="ordenar" value="menor-precio">
+                                    Menor a mayor
+                                </label>
+                            </div>
+                        </div>
+                        <button class="form__button-submit" type="submit">Aplicar filtros</button>
+                    </form>
+                </aside>
+
+                <section class="product__main__cards_container">
+                    <% productosAMostrar.forEach(({id, title, artist, price, discount, mainImage})=> { %>
+                        <%- include('../partials/filterProductCard', {id, title, artist, price, discount, mainImage,
+                            productType: 'vinilos' }) %>
+                            <% }) %>
+                </section>
+
+
+
+            </main>
+
+            <%- include('../partials/footer') %>
+
+
+                <script>
+                    $(document).ready(function () {
+                        const filterButton = $("#filter-button");
+                        const filterSection = $(".aside__vinilos__filter");
+
+                        filterButton.click(function () {
+                            filterSection.toggleClass("show");
+                        });
+                    });
+                </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700;900&family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;700&family=Poppins:wght@300;400;700;900&family=Raleway:wght@400;700&family=Roboto:wght@300;400;700&family=Work+Sans:wght@300;400;700&display=swap');
+@import "./general.css";
+@import "./producto.css";
+@import "./index.css";
+@import "./index-carousel.css";
+@import "./swiper.slider.css";
+@import "./footer.css";
+@import "./header.css";
+@import "./carrito.css";
+@import "./forms.css";
+@import "./detailFilters.css";
+@import "./dashboard.css";
+@import "./404.css";
+@import "./bot.css"
+

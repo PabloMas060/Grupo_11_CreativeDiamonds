@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<%- include('../partials/head',{ title : 'ADMIN | Editar' }) %>
+
+    <body>
+        <% const categoria = 'shows'; %>
+        <%- include('../partials/navbar', { categoria: categoria }) %>
+
+            <main class="form__main">
+                <div class="form__title">
+                    <h1>Modificar Indumentaria</h1>
+                </div>
+                <div class="form__container">
+                    <form class="form__box" action="/products/updateShirts/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                        <div class="form__box__field">
+                            <label class="form-label" for="title">Nombre de Producto</label>
+                            <input class="form-control" type="text" id="title" name="title" value="<%= title %>">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="artist">Artista</label>
+                            <input class="form-control" type="text" id="artist" name="artist"  value="<%= artist %>">
+                        </div>
+                        <div class="form-field-select">
+                            <label class="form-label" for="size">Tamaño</label>
+                            <select class="form-select" name="size" id="size">
+                                <option selected hidden value="">Seleccione...</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>                            </select>
+                        </div>
+                        <div class="form-field-select">
+                            <label class="form-label" for="sleeve">Mangas</label>
+                            <select class="form-select" name="sleeve" id="sleeve">
+                                <option selected hidden value="">Seleccione...</option>
+                                <option value="corta">corta</option>
+                                <option value="larga">larga</option>
+                            </select>
+                        </div>
+                        <div class="form-field-select w-75">
+                            <label class="form-label" for="color">Color</label>
+                            <select class="form-select" name="color" id="color">
+                                <option selected hidden value="">Seleccione...</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="negro">Negro</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form__box__field">
+                            <label class="form-label" for="price">Precio</label>
+                            <input class="form-control" type="number" id="price" name="price"  value="<%= price %>">
+                        </div>
+                        <div class="form__box__field">
+                            <label class="form-label" for="discount">Descuento</label>
+                            <input class="form-control" type="number" id="discount" name="discount"  value="<%= discount %>">
+                        </div>
+                        <div class="form__box__field w-75">
+                            <label class="form-label" for="description">Descripción:</label>
+                            <textarea class="form-control" id="description" name="description" rows="4"> <%= description%></textarea>
+                        </div>
+                        <div class="form-field-select">
+                            <label class="btn btn-dark" for="mainImage">Imagen Principal</label>
+                            <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <img src="/images/<%= mainImage %>" class="img-fluid" alt="">
+                            </div>
+                        </div>
+
+                        <div class="form__button-container">
+                            <button class="form__button-reset" type="reset">Limpiar los campos</button>
+                            <button class="form__button-submit" type="submit">Modificar</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        const addSongButton = document.getElementById("addSongButton");
+        const songInput = document.getElementById("song");
+        const songList = document.getElementById("songList");
+        const songArray = [];
+
+        addSongButton.addEventListener("click", function(){
+            const songName = songInput.value.trim();
+            if(songName !== ""){
+                songArray.push(songName);
+                const listItem = document.createElement("li");
+                listItem.textContent = songName;
+                songList.appendChild(listItem);
+                songInput.value = "";
+            }
+        });
+        const form = document.querySelector(".form__box");
+        form.addEventListener("submit", function(){
+            document.getElementById("song").value = JSON.stringify(songArray);
+        })
+    })
+</script>
+</html>

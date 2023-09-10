@@ -1,0 +1,131 @@
+header {
+
+    background-image: url('/images/bg/bg07.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    color: #ffffff;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+header a {
+    color: #ffffff;
+}
+
+.header__logo {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.header__logo img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.header__burger {
+    padding: 10px;
+}
+
+.header__navbar {
+    display: none;
+}
+
+.header__navbar__ul {
+    display: flex;
+}
+
+.header__container_icons {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.header__search {
+    width: 100%;
+    text-align: center;
+}
+
+
+@media(min-width:481px) {
+
+    .header__logo img {
+        width: 100px
+    }
+
+    .header__burger {
+        margin-left: 30px;
+        font-size: 1.3rem;
+    }
+
+    .header__container_icons {
+        margin-right: 30px;
+    }
+}
+
+@media(min-width:769px) {
+    .header__logo {
+        width: 20%;
+        margin-top: 5px;
+    }
+
+    .header__burger {
+        display: none;
+    }
+
+    .header__navbar {
+        display: flex;
+        width: 60%;
+        align-items: center;
+    }
+
+    .header__navbar__ul {
+        display: flex;
+        gap: 10px;
+        font-size: 1rem;
+    }
+
+    .header__navbar__ul li {
+        border-radius: 8px;
+        padding: 8px;
+        text-shadow: 2px 2px 2px var(--colorGris);
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .header__navbar__ul li::after {
+        content: '';
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ffffff;
+        transition: width var(--animation-duration);/
+    }
+
+    .header__navbar__ul li:hover::after {
+        width: 100%;
+    }
+
+    .header__container_icons {
+        width: 15%;
+        gap: 2rem;
+        font-size: 1.2rem;
+        align-items: center;
+    }
+
+
+}
+
+@media(min-width:1024px) {
+    .header__navbar__ul {
+        display: flex;
+        gap: 10px;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'INICIAR SESIÓN' }) %>
+
+<body>
+    <% const categoria = 'shows'; %>
+    <%- include('../partials/navbar', { categoria: categoria }) %>
+    
+
+    <main class="form__main">
+        <div class="form__title">
+            <h1>inicia sesión</h1>
+        </div>
+        <div class="form__container">
+            <form class="form__box" action="#" method="post">
+
+                <div class="form__box__field">
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="form-control" type="email" id="email" name="email">
+                </div>
+                <div class="form__box__field">
+                    <label class="form-label" for="password">Contraseña:</label>
+                    <input class="form-control" type="password" id="password" name="password">
+                </div>
+
+                <div class="form__button-container">
+                    <button class="form__button-submit"><a href="">Inicia sesion con <i
+                                class="fa-brands fa-google"></i></a></button>
+
+                    <button class="form__button-submit" type="submit"><a href="/">Ingresar</a></button>
+                </div>
+
+
+
+                <div class="form__p">
+                    <p>¿Aún no tienes cuenta? <a href="/users/register">Registrate</a></p>
+                </div>
+            </form>
+
+        </div>
+
+
+
+
+
+    </main>
+
+    <%- include('../partials/footer') %>
+
+
+
+</body>
+
+</html>
