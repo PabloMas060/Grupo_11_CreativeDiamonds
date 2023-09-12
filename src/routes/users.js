@@ -21,8 +21,8 @@ router.post('/register', uploads.fields([
 router.get('/login', checkNotUserLogin, login);
 router.post('/login', loginValidation, processLogin);
 
-router.get('/profile', checkUserLogin, profile);
-router.put('/update-profile',  uploads.fields([
+router.get('/profile', profile);
+router.put('/update',  uploads.fields([
   {
     name: "mainImage"
   }

@@ -13,14 +13,14 @@
                     <h1>Mis Datos</h1>
                 </div>
                 <div class="form__container">
-                    <form class="form__box" action="#" method="post">
+                    <form class="form__box" action="/users/update/<%=user.id%>?_method=PUT" method="post" enctype="multipart/form-data">
                         <div class="form__box__field">
-                            <label class="form-label" for="name">Nombre:</label>
-                            <input class="form-control" type="text" id="name" name="name">
+                            <label class="form-label" for="firstName">Nombre:</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName" value="<%= firstName %>">
                         </div>
                         <div class="form__box__field">
-                            <label class="form-label" for="surname">Apellido:</label>
-                            <input class="form-control" type="text" id="surname" name="surname">
+                            <label class="form-label" for="lastName">Apellido:</label>
+                            <input class="form-control" type="text" id="lastName" name="lastName">
                         </div>
                         <div class="form__box__field-email">
                             <label class="form-label" for="email">Email:</label>
@@ -40,11 +40,11 @@
                             <label class="btn btn-dark" for="mainImage">Modificar Imagen  </label>
                             <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
                         </div>
-                        <!-- <div class="row">
+                        <div class="row">
                             <div class="col-12 col-md-4">
                                 <img src="/images/<%= mainImage %>" class="img-fluid" alt="">
                             </div>
-                        </div> -->
+                        </div> 
 
 
                         <div class="form__box__field-email">
