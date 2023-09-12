@@ -70,5 +70,15 @@
       "password": "$2a$10$aOrmHIMuDafGe3e98Ue2iOCkjQiwZus.eQTQ8Rngz3L5TJSPp.Kqm",
       "mainImage": null,
       "rol": "usuario"
+   },
+   {
+      "id": "aefed690-5037-4840-8bf2-4f0ff4d14efa",
+      "firstName": "Fernando",
+      "lastName": "Muñoz",
+      "email": "cirodelpiero9@gmail.com",
+      "password": "$2a$10$wNtPSvj8M5HDRp8c40iCTOFYAfcbTjhc67N2VXi/WBMHtKRuM6uz2",
+      "mainImage": "1694487137237_products_.jpg",
+      "rol": "admin"
    }
+   
 ]
