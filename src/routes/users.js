@@ -22,7 +22,12 @@ router.get('/login', checkNotUserLogin, login);
 router.post('/login', loginValidation, processLogin);
 
 router.get('/profile', checkUserLogin, profile);
-router.put('/update-profile', updateProfile);
+router.put('/update-profile',  uploads.fields([
+  {
+    name: "mainImage"
+  }
+]) ,updateProfile);
+
 router.get('/logout', logout);
 
 router.get('/admin',checkAdmin, admin);
