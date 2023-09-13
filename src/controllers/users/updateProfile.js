@@ -4,6 +4,7 @@ const { readJSON, writeJSON } = require('../../data');
 module.exports = (req,res) => {
     const users = readJSON("users.json")
     const id = req.params.id
+    console.log(id)
     const {firstName, lastName, email }= req.body
     
     const usersModify = users.map(user =>{
@@ -29,5 +30,5 @@ module.exports = (req,res) => {
     }) 
     writeJSON(usersModify,'users.json');
 
-    return res.redirect('/')
+    return res.redirect('/users/profile')
 }

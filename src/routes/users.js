@@ -22,7 +22,7 @@ router.get('/login', checkNotUserLogin, login);
 router.post('/login', loginValidation, processLogin);
 
 router.get('/profile', profile);
-router.put('/update',  uploads.fields([
+router.put('/update/:id',  uploads.fields([
   {
     name: "mainImage"
   }
