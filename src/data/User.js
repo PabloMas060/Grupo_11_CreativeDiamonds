@@ -9,6 +9,8 @@ const User = function ({ firstName, lastName, email, password, mainImage, rol })
   this.password = hashSync(password, 10);
   this.mainImage = mainImage;
   this.rol = rol ? rol : "usuario"; 
+  this.phone = null;
+  this.shipping = null
 };
 
 module.exports = User;

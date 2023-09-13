@@ -13,18 +13,18 @@
                     <h1>Mis Datos</h1>
                 </div>
                 <div class="form__container">
-                    <form class="form__box" action="/users/update/<%=user.id%>?_method=PUT" method="post" enctype="multipart/form-data">
+                    <form class="form__box" action="/users/updateProfile/<%=user.id%>?_method=PUT" method="post" enctype="multipart/form-data">
                         <div class="form__box__field">
                             <label class="form-label" for="firstName">Nombre:</label>
                             <input class="form-control" type="text" id="firstName" name="firstName" value="<%= firstName %>">
                         </div>
                         <div class="form__box__field">
                             <label class="form-label" for="lastName">Apellido:</label>
-                            <input class="form-control" type="text" id="lastName" name="lastName">
+                            <input class="form-control" type="text" id="lastName" name="lastName" value="<%= lastName %>" >
                         </div>
                         <div class="form__box__field-email">
                             <label class="form-label" for="email">Email:</label>
-                            <input class="form-control" type="email" id="email" name="email">
+                            <input class="form-control" type="email" id="email" name="email" value="<%= email%>" >
                         </div>
                         
                         <div class="form__box__field">
