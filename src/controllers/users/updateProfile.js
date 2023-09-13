@@ -5,7 +5,7 @@ module.exports = (req,res) => {
     const users = readJSON("users.json")
     const id = req.params.id
     console.log(id)
-    const {firstName, lastName, email }= req.body
+    const {firstName, lastName, email  }= req.body
     
     const usersModify = users.map(user =>{
         if(user.id === req.params.id){
@@ -18,7 +18,8 @@ module.exports = (req,res) => {
             user.firstName = firstName.trim()
             user.lastName = lastName.trim()
             user.email = email
-           
+        
+        
             user.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : user.mainImage
             
             
