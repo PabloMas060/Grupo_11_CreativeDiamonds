@@ -68,7 +68,7 @@
       "lastName": "pruebon",
       "email": "familiabrocato@gmail.com",
       "password": "$2a$10$aOrmHIMuDafGe3e98Ue2iOCkjQiwZus.eQTQ8Rngz3L5TJSPp.Kqm",
-      "mainImage": null,
+      "mainImage": "1694232789976_products_.png",
       "rol": "usuario"
    },
    {
@@ -77,9 +77,10 @@
       "lastName": "Muñoz",
       "email": "cirodelpiero9@gmail.com",
       "password": "$2a$10$wNtPSvj8M5HDRp8c40iCTOFYAfcbTjhc67N2VXi/WBMHtKRuM6uz2",
-      "mainImage": "1694487137237_products_.jpg",
-      "rol": "usuario"
-   
+      "mainImage": "1694662110938_products_.jfif",
+      "rol": "usuario",
+      "profilePicture": null,
+      "phone": "521351",
+      "shipping": "ASDAA"
    }
-   
 ]
