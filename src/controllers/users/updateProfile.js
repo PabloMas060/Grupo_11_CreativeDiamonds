@@ -26,7 +26,7 @@ module.exports = (req, res) => {
         unlinkSync(`./public/images/${ userFind.images}`)
     
     
-        userFind.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : user.mainImage
+        userFind.mainImage = req.files.mainImage ? req.files.mainImage[0].filename : userFind.mainImage
         
 
 
