@@ -82,5 +82,16 @@
       "profilePicture": null,
       "phone": "521351",
       "shipping": "ASDAA"
+   },
+   {
+      "id": "57dc95be-efa5-4a89-a93e-1e999d1d7add",
+      "firstName": "Pablo",
+      "lastName": "Mas",
+      "email": "pablo.mas.dev@gmail.com",
+      "password": "$2a$10$HHjDH4DmUqYQ1Ztzwi75p.Iu4iZe8nB8TCMPuWpfzroKMBdUGm7Z2",
+      "mainImage": "1694784862635_products_.jpeg",
+      "rol": "admin",
+      "phone": null,
+      "shipping": null
    }
 ]
