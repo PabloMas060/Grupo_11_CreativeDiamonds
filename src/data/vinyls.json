@@ -337,10 +337,10 @@
       "id": "5332asdas1519-17cf-46c9-9cae-6364c844f8b2",
       "title": "Evil Empire",
       "artist": "Rage Against the Machine",
-      "genre": "rock",
+      "genre": "Rock",
       "description": "El segundo álbum de estudio de Rage Against the Machine, lleno de poder y mensaje político.",
       "year": 1996,
-      "price": 19.99,
+      "price": 18.99,
       "discount": 0,
       "mainImage": "1692761945011_products_.webp",
       "images": [
@@ -360,69 +360,6 @@
          "Wind Below",
          "Roll Right",
          "Year of tha Boomerang"
-      ]
-   },
-   {
-      "id": "c3abd0ff-65cf-4ed3-950c-d667fc665469",
-      "title": "Lámina Once",
-      "artist": "El Cuarteto de Nos",
-      "genre": "soul",
-      "description": "Lámina Once es el decimoséptimo álbum de estudio de la banda de rock uruguaya El Cuarteto de Nos, publicado el 8 de julio de 2022 vía plataformas digitales, bajo el sello de Porfiado Records. Contiene ocho canciones en total. Antes de su lanzamiento, cuatro sencillos fueron lanzados: «Fiesta en lo del Dr. Hermes», «La ciudad sin alma», «Maldito Show» y «Rorschach» (este último siendo publicado horas antes del lanzamiento del álbum).1",
-      "year": 2021,
-      "price": 90,
-      "discount": 15,
-      "mainImage": "1692497556093_products_.png",
-      "images": [],
-      "format": "cd",
-      "discographic": "Porfiado Records",
-      "tracklist": [
-         "Fiesta en lo del Dr. Hermes",
-         "Flan",
-         "El Cinturón Gris",
-         "Chivo Expiatorio",
-         "Rorschach",
-         "La Ciudad Sin Alma",
-         "Maldito Show",
-         "Frankenstein Posmo"
-      ]
-   },
-   {
-      "id": "6e254582-cc79-450f-b034-570e95c371d1",
-      "title": "ASA",
-      "artist": "ASA",
-      "genre": "rock",
-      "description": "asdad",
-      "year": 1,
-      "price": 1,
-      "discount": 50,
-      "mainImage": "1694101208502_products_.png",
-      "images": [
-         "1694101208510_products_.png",
-         "1694101208520_products_.png"
-      ],
-      "format": "lp",
-      "discographic": "ASA",
-      "tracklist": [
-         "ASA"
-      ]
-   },
-   {
-      "id": "1feb1d84-d9cc-4bf3-bbd9-ec1db54bf431",
-      "title": "asa",
-      "artist": "asa",
-      "genre": "rock",
-      "description": "asasa",
-      "year": 5,
-      "price": 5,
-      "discount": 5,
-      "mainImage": "1694101882793_products_.png",
-      "images": [
-         "1694101882795_products_.png"
-      ],
-      "format": "lp",
-      "discographic": "sa",
-      "tracklist": [
-         "asa"
       ]
    }
 ]
