@@ -92,5 +92,16 @@
       "rol": "admin",
       "phone": null,
       "shipping": null
+   },
+   {
+      "id": "a0f204c0-5b28-49f1-a746-56b3165e87b4",
+      "firstName": "user",
+      "lastName": "test",
+      "email": "user@gmail.com",
+      "password": "$2a$10$C5TOZ8Eyy0eaTH60b.v7busqIr1Q675brY.Erqg9FMLdg27NfTm4y",
+      "mainImage": "1695425272167_products_.jpg",
+      "rol": "usuario",
+      "phone": null,
+      "shipping": null
    }
 ]
