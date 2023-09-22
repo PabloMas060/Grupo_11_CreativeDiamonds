@@ -59,7 +59,7 @@
 
                         <div class="col-md-4">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="text" class="form-control" name="password" id="password"
+                            <input type="password" class="form-control" name="password" id="password"
                                 value="<%= locals.old && (old.password&& old.password) %>">
                             <div class="invalid-feedback">
                                 <%= locals.errors && (errors.password && errors.password.msg) %>
@@ -71,7 +71,7 @@
 
                         <div class="col-md-4">
                             <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
-                            <input type="text" class="form-control" name="confirmPassword" id="confirmPassword"
+                            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
                                 value="<%= locals.old && (old.confirmPassword&& old.confirmPassword) %>">
                             <div class="invalid-feedback">
                                 <%= locals.errors && (errors.confirmPassword && errors.confirmPassword.msg) %>

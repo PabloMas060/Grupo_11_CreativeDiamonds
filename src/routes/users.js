@@ -8,7 +8,7 @@ const { register, processRegister, login, processLogin, profile, updateProfile, 
 const registerValidation = require('../validation/registerValidation');
 const loginValidation = require('../validation/loginValidation');
 const { uploads } = require('../middlewares/uploads');
-
+const profileValidation = require('../validation/profileValidation');
 /* /users */
 router.use(localsCheck);
 router.get('/register', checkNotUserLogin, register);
@@ -23,7 +23,7 @@ router.post('/login', loginValidation, processLogin);
 
 router.get('/profile', profile);
 
-router.put('/update/:id',  uploads.fields([
+router.put('/update/:id',profileValidation, uploads.fields([
   {
     name: "mainImage"
   }
