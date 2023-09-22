@@ -3,61 +3,68 @@
 
 <%- include('../partials/head',{ title : 'INICIAR SESIÓN' }) %>
 
-<body>
-    <%- include('../partials/header') %>
-    
+    <body>
+        <%- include('../partials/header') %>
 
-    <main class="form__main">
-        <div class="form__title">
-            <h1>inicia sesión</h1>
-        </div>
-        <div class="form__container">
-            <form class="form__box" action="/users/login" method="post">
-    
-                <div class="form__box__field">
-                    <label class="form-label" for="email">Email:</label>
-                    <input class="form-control" type="email" id="email" name="email">
-                </div>
-    
-                <div class="form__box__field">
-                    <label class="form-label" for="password">Contraseña:</label>
-                    <input class="form-control" type="password" id="password" name="password">
-                </div>
-    
-                <div class="form__box__field">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label class="form-label" for="remember">Recordar Sesión</label>
-                </div>
 
-                <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
-                    <div class="form__errors">
-                        <ul>
-                            <% for (let error of errors) { %>
-                                <li class="error"><%= error.msg %></li>
+            <main class="form__main">
+                <div class="form__title">
+                    <h1>inicia sesión</h1>
+                </div>
+                <div class="form__container">
+                    <form class="col g-3 form__container-form" action="/users/login" method="post">
+
+                        <div class="col-md-8 email-field-box">
+                            <label class="form-label" for="email">Email:</label>
+                            <input class="form-control" type="email" id="email" name="email">
+                        </div>
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <label class="form-label" for="password">Contraseña:</label>
+                            <input class="form-control" type="password" id="password" name="password">
+                        </div>
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label class="form-label" for="remember">Recordar Sesión</label>
+                        </div>
+
+                        <% if (typeof errors !=='undefined' && errors.length> 0) { %>
+                            <div class="form__errors">
+                                <ul>
+                                    <% for (let error of errors) { %>
+                                        <li class="error">
+                                            <%= error.msg %>
+                                        </li>
+                                        <% } %>
+                                </ul>
+                            </div>
                             <% } %>
-                        </ul>
-                    </div>
-                <% } %>
-    
-                <div class="form__button-container">
-                    <button class="form__button-submit" type="submit">Ingresar</button>
+
+                                <div class="form__button-container">
+                                    <button class="form__button-submit" type="submit">Ingresar</button>
+                                </div>
+
+                                <div class="form__p">
+                                    <p>¿Aún no tienes cuenta? <a href="/users/register">Registrate</a></p>
+                                </div>
+
+                    </form>
                 </div>
-    
-                <div class="form__p">
-                    <p>¿Aún no tienes cuenta? <a href="/users/register">Registrate</a></p>
-                </div>
-
-            </form>
-        </div>
-    </main>
-    <style>.form__errors {color: red;font-size: small;}</style>
-    
-    
-
-    <%- include('../partials/footer') %>
+            </main>
+            <style>
+                .form__errors {
+                    color: red;
+                    font-size: small;
+                }
+            </style>
 
 
 
-</body>
+            <%- include('../partials/footer') %>
+
+
+
+    </body>
 
 </html>

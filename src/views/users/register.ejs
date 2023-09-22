@@ -12,16 +12,12 @@
                 <div class="form__title">
                     <h1>Registrate</h1>
                 </div>
-                <div class="form__container ">
+                <div class="form__container">
 
-                    <form class=" row g-3 needs-validation" action="/users/register" method="POST" enctype="multipart/form-data">
+                    <form class="col g-3 needs-validation form__container-form" action="/users/register" method="POST" enctype="multipart/form-data">
 
-                        <div class="col-md-4">
-                            <label for="mainImage" class="form-label">Image de perfil</label>
-                            <input type="file" name="mainImage" id="mainImage" class="form-control"  accept="image/*">
-                        </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6 form-field-gap-control">
                             <label for="firstName" class="form-label">Nombre</label>
                             <input type="text" class="form-control" name="firstName" id="firstName"
                                 value="<%= locals.old && (old.firstName&& old.firstName) %>">
@@ -33,7 +29,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6 form-field-gap-control">
                             <label for="lastName" class="form-label">Apellido</label>
                             <input type="text" class="form-control" name="lastName" id="lastName"
                                 value="<%= locals.old && (old.lastName&& old.lastName) %>">
@@ -45,7 +41,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-8 email-field-box">
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control" name="email" id="email"
                                 value="<%= locals.old && (old.email&& old.email) %>">
@@ -57,7 +53,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6 form-field-gap-control">
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="text" class="form-control" name="password" id="password"
                                 value="<%= locals.old && (old.password&& old.password) %>">
@@ -69,7 +65,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6 form-field-gap-control">
                             <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
                             <input type="text" class="form-control" name="confirmPassword" id="confirmPassword"
                                 value="<%= locals.old && (old.confirmPassword&& old.confirmPassword) %>">
@@ -79,6 +75,10 @@
                             <div class="valid-feedback">
                                 La contraseña coincide!
                             </div>
+                        </div>
+                        <div class="col-md-6 form-field-gap-control">
+                            <label for="mainImage" class="form-label">Image de perfil</label>
+                            <input type="file" name="mainImage" id="mainImage" class="form-control"  accept="image/*">
                         </div>
 
                         <div class="form-check mb-3 was-validated">
@@ -90,7 +90,7 @@
                         
 
 
-                        <div class="col-12">
+                        <div class="col-12 text-center mb-2">
                             <button class="btn btn-primary" type="submit">Submit form</button>
                         </div>
 
