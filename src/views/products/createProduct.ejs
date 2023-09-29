@@ -14,37 +14,60 @@
 
                         <div class="form__box__field">
                             <label class="form-label" for="title">Album</label>
-                            <input class="form-control" type="text" id="title" name="title">
+                            <input class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>" type="text" id="title" name="title"
+                            value="<%= locals.old && (old.title && old.title) %>">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.title && errors.title.msg) %>
+                            </small>
                         </div>
                         <div class="form__box__field">
                             <label class="form-label" for="artist">Artista</label>
-                            <input class="form-control" type="text" id="artist" name="artist">
+                            <input class="form-control <%= locals.errors && (errors.artist && 'is-invalid') %>" type="text" id="artist" name="artist"
+                            value="<%= locals.old && (old.artist && old.artist) %>">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.artist && errors.artist.msg) %>
+                            </small>>
                         </div>
 
 
                         <div class="form__box__field">
                             <label class="form-label" for="price">Precio</label>
-                            <input class="form-control" type="number" id="price" name="price">
+                            <input class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" type="number" id="price" name="price"
+                            value="<%= locals.old && (old.price && old.price) %>">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.price && errors.price.msg) %>
+                            </small>
                         </div>
                         <div class="form__box__field">
                             <label class="form-label" for="discount">Descuento</label>
-                            <input class="form-control" type="number" id="discount" name="discount">
+                            <input class="form-control <%= locals.errors && (errors.discount && 'is-invalid') %>" type="number" id="discount" name="discount"
+                            value="<%= locals.old && (old.discount && old.discount) %>">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.discount && errors.discount.msg) %>
+                            </small>
                         </div>
                         <div class="form-field-select">
                             <label class="form-label" for="format">Formato</label>
-                            <select class="form-select" name="format" id="format">
+                            <select class="form-select <%= locals.errors && (errors.format && 'is-invalid') %>" name="format" id="format">
                                 <option selected hidden value="">Seleccione...</option>
                                 <option value="lp">LP</option>
                                 <option value="cd">CD</option>
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.format && errors.format.msg) %>
+                                </small>
                             </select>
                         </div>
                         <div class="form__box__field">
                             <label class="form-label" for="discographic">Discográfica</label>
-                            <input class="form-control" type="text" id="discographic" name="discographic">
+                            <input class="form-control <%= locals.errors && (errors.discographic && 'is-invalid') %>" type="text" id="discographic" name="discographic"
+                            value="<%= locals.old && (old.discographic && old.discographic) %>">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.discographic && errors.discographic.msg) %>
+                            </small>
                         </div>
                         <div class="form-field-select">
                             <label class="form-label" for="genre">Género</label>
-                            <select class="form-select" name="genre" id="genre">
+                            <select class="form-select <%= locals.errors && (errors.genre && 'is-invalid') %>" name="genre" id="genre">
                                 <option selected hidden value="">Seleccione...</option>
                                 <option value="rock">Rock</option>
                                 <option value="funk">Funk</option>
@@ -54,10 +77,17 @@
                                 <option value="classic">Classical</option>
                                 <option value="blues">Blues</option>
                             </select>
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.genre && errors.genre.msg) %>
+                            </small>
                         </div>
                         <div class="form__box__field">
                             <label class="form-label" for="year">Año</label>
-                            <input class="form-control" type="number" id="year" name="year">
+                            <input class="form-control <%= locals.errors && (errors.year && 'is-invalid') %>" type="number" id="year" name="year"
+                            value="<%= locals.old && (old.year && old.year) %>">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.year && errors.year.msg) %>
+                            </small>
                         </div>
                        <div class="form__box__field">
                             <label class="form-label" for="song">Agregar Canción</label>
@@ -72,15 +102,26 @@
 
                         <div class="form__box__field w-75">
                             <label class="form-label" for="description">Descripción:</label>
-                            <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+                            <textarea class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description" name="description" rows="4">
+                                <%= locals.old && (old.description && old.description) %>
+                            </textarea>
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.description && errors.description.msg) %>
+                            </small>
                         </div>
                         <div class="form-field-select">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.mainImage && errors.mainImage.msg) %>
+                            </small>
                             <label class="btn btn-dark" for="mainImage">Imagen Principal</label>
-                            <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
+                            <input hidden class="form-control <%= locals.errors && (errors.mainImage && 'is-invalid') %>" type="file" id="mainImage" name="mainImage">
                         </div>
                         <div class="form-field-select">
+                            <small class="ms-2 text-danger">
+                                <%= locals.errors && (errors.images && errors.images.msg) %>
+                            </small>
                             <label class="btn btn-dark" for="images">Más Imagenes</label>
-                            <input hidden class="form-control" multiple type="file" id="images" name="images">
+                            <input hidden class="form-control <%= locals.errors && (errors.images && 'is-invalid') %>" multiple type="file" id="images" name="images">
                         </div>
                         <div class="form__button-container">
                             <button class="form__button-reset" type="reset">Limpiar los campos</button>

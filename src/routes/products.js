@@ -3,6 +3,8 @@ const router = express.Router();
 const localsCheck = require('../middlewares/localsCheck'); 
 const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt, remove, editShirts, updateShirts } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
+const addVynilValidator = require('../validation/addVynilValidator');
+const addShirtValidator = require('../validation/addShirtValidator');
 
 router.use(localsCheck); 
 
@@ -17,14 +19,14 @@ router
     {
       name: "images"
     }
-  ]), createVinyl)
+  ]), addVynilValidator, createVinyl)
   /* ADD PARA SHIRTS */
   .get('/addShirt', addShirt)
   .post('/addShirt', upload.fields([
     {
       name: "mainImage"
     }
-  ]), createShirt)
+  ]), addShirtValidator, createShirt)
 
   .get('/detail/:id', detail)
   .get('/vinilos', vinilos)
