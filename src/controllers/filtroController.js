@@ -18,8 +18,12 @@ module.exports = {
             const terminoMinusculas = terminoDeBusqueda.toLowerCase();
             return tituloMinusculas.includes(terminoMinusculas) || bandaMinusculas.includes(terminoMinusculas);
         });
+       
+        
+            return resultadosFiltrados;
+
+       
     
-        return resultadosFiltrados;
     },
     
     

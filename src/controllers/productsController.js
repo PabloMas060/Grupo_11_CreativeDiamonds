@@ -56,9 +56,14 @@ module.exports = {
             productosAMostrar.sort((a, b) => a.price - b.price);
         }
         
+        if(!productosAMostrar.length){
+            return res.render('404')
+        }
+
         return res.render('products/vinilos', {
             productosAMostrar: productosAMostrar,
         });
+        
     },
     indumentaria: (req, res) => {
         const terminoDeBusqueda = req.query.search || '';
@@ -83,6 +88,10 @@ module.exports = {
             productosAMostrar.sort((a, b) => b.price - a.price);
         } else if (filtrosFormulario.ordenar === 'menor-precio') {
             productosAMostrar.sort((a, b) => a.price - b.price);
+        }
+        
+        if(!productosAMostrar.length){
+            return res.render('404')
         }
         
         return res.render('products/indumentaria', {
