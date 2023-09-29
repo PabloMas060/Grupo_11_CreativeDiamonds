@@ -44,15 +44,15 @@
                             <label class="form-label" for="phone">Telefono</label>
                             <input class="form-control" type="text" id="phone" name="phone" value="<%= phone%>">
                         </div>
-                        <div class="col-md-6 form-field-gap-control mt-4">
+                        <div class="col-md-6 form-field-gap-control mt-4 mb-2">
                             <label class="btn btn-dark" for="mainImage">Modificar Imagen </label>
                             <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
                         </div>
-                        <div class="row">
-                            <div class="col-6">
+                      
+                            <div class="col-6 mb-2">
                                 <img src="/images/users/<%= mainImage %>" class="img-fluid" alt="">
                             </div>
-                        </div>
+                       
                         <button class="form__button-submit" type="submit">Modifica tus Datos</button>
                     </form>
                 </div>
