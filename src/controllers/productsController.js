@@ -101,8 +101,8 @@ module.exports = {
     remove: (req, res) => {
         const idProducto = req.params.id;
         console.log(idProducto);
-        const indexVinyl = vinyls.findIndex(product => product.id === idProducto);
-        const indexShirt = shirts.findIndex(product => product.id === idProducto);
+        const indexVinyl = vinyls.findIndex(product => product.id == idProducto);
+        const indexShirt = shirts.findIndex(product => product.id == idProducto);
     
         if (indexVinyl !== -1) {
             const removedProduct = vinyls[indexVinyl];
