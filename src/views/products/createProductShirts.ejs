@@ -28,7 +28,7 @@
                                 value="<%= locals.old && (old.artist && old.artist) %>">
                             <small class="ms-2 text-danger">
                                 <%= locals.errors && (errors.artist && errors.artist.msg) %>
-                            </small>>
+                            </small>
                         </div>
                         <div class="form-field-select">
                             <label class="form-label" for="size">Tamaño</label>
@@ -54,7 +54,7 @@
                                 </small>>
                             </select>
                         </div>
-                        <div class="form-field-select w-75">
+                        <div class="form-field-select">
                             <label class="form-label" for="color">Color</label>
                             <select class="form-select <%= locals.errors && (errors.color && 'is-invalid') %>" name="color" id="color">
                                 <option selected hidden value="">Seleccione...</option>
