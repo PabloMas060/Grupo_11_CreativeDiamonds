@@ -103,5 +103,16 @@
       "rol": "usuario",
       "phone": null,
       "shipping": null
+   },
+   {
+      "id": "e817f8fc-6978-4337-a152-ed6c61112354",
+      "firstName": "cosme",
+      "lastName": "fulanito",
+      "email": "userrandom@gmail.com",
+      "password": "$2a$10$.dtg71cnj5R6XuqbFGZew.Lq5sKX6S8N9c8IF9d5kO9JgpdvpOUBi",
+      "mainImage": "1696031550709_products_.jpg",
+      "rol": "usuario",
+      "phone": null,
+      "shipping": null
    }
 ]
