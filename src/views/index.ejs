@@ -7,139 +7,123 @@
 
     <body class="home__body">
 
+
         <%- include('partials/header') %>
 
-        <div class="header__search">
-            <form method="GET" action="/products/vinilos">
-                <div class="navegador">
-                    <input type="text" name="search" placeholder="Buscar por título o banda">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+
+            <div class="home__bienvenida">
+                <img class="img-fluid" src="/img-bienvenida.png" alt="">
+            </div>
+
+
+
+            <div class="row contenedor__presentaciones">
+                <div class="col-6 presentacion__caja1">
+                    <a href=""><img class="img-fluid" src="/presentacion/presentacion-capsulaTiempo.png" alt=""></a>
+                    <a href=""><img class="img-fluid" src="/presentacion/presentacion-noticias.png" alt=""></a>
+                    <a href=""><img class="img-fluid" src="/presentacion/presentacion-paraFans.png" alt=""></a>
+                    <a href=""><img class="img-fluid" src="/presentacion/presentacion-radio.png" alt=""></a>
+                    
+                    
+                    
+
+
+
                 </div>
-            </form>
+                <div class="col-6 presentacion__caja2">
+                    <a href=""><img class="img-fluid" src="/presentacion/presentacion-artistas.png" alt=""></a>
+                    
+                </div>
+            </div>
+
+<section class="section__black">
+    <h2>Iconos del rock</h2>
+    <p>Encuentra a los artistas que marcaron la historia</p>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href=""><img src="/images/stones.jpg" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/nirvana.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/Pink_Floyd_logo.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/stones.jpg" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/nirvana.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/Pink_Floyd_logo.png" alt="1"></a></div>
         </div>
-    
+        <div class="swiper-pagination"></div>
+    </div>
+    <a class="btn btn-dark" href="">Ver lista completa</a>
+</section>
+<section class="section__red">
+    <h2>Clásicos</h2>
+    <p>Aquí encontrarás bandas con más de 30 años de trayectoria</p>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href=""><img src="/images/guns.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/rhcp.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/thebeatles.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/guns.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/rhcp.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/thebeatles.png" alt="1"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <a class="btn btn-dark" href="">Ver lista completa</a>
+</section>
+<section class="section__white">
+    <h2>Orgullo Nacional</h2>
+    <p>En esta sección, celebramos el increíble legado musical de Argentina</p>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href=""><img src="/images/la-renga.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/patricio-rey.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/los-piojos.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/la-renga.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/patricio-rey.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/los-piojos.png" alt="1"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <a class="btn btn-dark" href="">Ver lista completa</a>
+</section>
+<section class="section__yellow">
+    <h2>Indies que apoyamos</h2>
+    <p>Destacamos a artistas y grupos emergentes, listos para cautivar tus oídos</p>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href=""><img src="/images/arctic-monkeys.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/tame-impala.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/the-strokes.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/arctic-monkeys.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/tame-impala.png" alt="1"></a></div>
+            <div class="swiper-slide"><a href=""><img src="/images/the-strokes.png" alt="1"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <a class="btn btn-dark" href="">Ver lista completa</a>
+</section>
 
 
-
-
-
-            <!-- CARROUSEL -->
-            <div class="home__container__carousel">
-                <input class="home__carousel__input" type="radio" name="image-slide" id="1" hidden>
-                <input class="home__carousel__input" type="radio" name="image-slide" id="2" hidden>
-                <input class="home__carousel__input" type="radio" name="image-slide" id="3" hidden>
-                <div class="home__carousel">
-                    <div class="home__carousel__item">
-                        <img src="/images/banner/banner04.png" alt="">
-                    </div>
-                    <div class="home__carousel__item">
-                        <img src="/images/banner/banner05.png" alt="">
-                    </div>
-                    <div class="home__carousel__item">
-                        <img src="/images/banner/banner06.png" alt="">
-                    </div>
-                    <div class="home__carousel__item">
-                        <img src="/images/banner/banner07.png" alt="">
-                    </div>
-                    <div class="home__carousel__item">
-                        <img src="/images/banner/banner08.png" alt="">
-                    </div>
-                    <div class="home__carousel__item">
-                        <img src="/images/banner/banner09.png" alt="">
-                    </div>
-                </div>
-                <div class="home__carousel__pagination">
-                    <label class="home__carousel__pagination-item" for="1">
-                        <img src="/images/banner/banner04.png" alt="">
-                    </label>
-                    <label class="home__carousel__pagination-item" for="2">
-                        <img src="/images/banner/banner06.png" alt="">
-                    </label>
-                    <label class="home__carousel__pagination-item" for="3">
-                        <img src="/images/banner/banner08.png" alt="">
-                    </label>
-                </div>
-            </div>
-
-
-            <%- include('partials/bot') %>
-
-
-            <div class="home__body__menu">
-                <a href="/products/vinilos"><i class="fa-solid fa-compact-disc"></i> Vinilos</a>
-                <a href="/products/indumentaria"><i class="fa-solid fa-shirt"></i> Indumentaria</a>
-                <a href="/products/promos"><i class="fa-solid fa-percent"></i> Promociones</a>
-                <a href="/products/shows"><i class="fa-solid fa-ticket"></i> Próximos Conciertos</a>
-            </div>
-
-
-            <section class="home__body__section">
-                <div class="home__body__section--title">
-                    <h2>
-                        Ofertas Exclusivas
-                    </h2>
-                </div>
-                <!-- Slide ofertas -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <% offerVinyls.forEach(({id, title, price, discount, mainImage})=> { %>
-                            <%- include('partials/productCard',{ id, title, price, discount, mainImage }) %>
-                                <% }) %>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </section>
-
-
-            <section class="home__body__section2">
-                <div class="home__body__section--title">
-                    <h2>
-                        Novedades
-                    </h2>
-                </div>
-
-                <!-- Slide novedades -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <% vinyls.forEach(({id, title, price, discount, mainImage})=> { %>
-                            <%- include('partials/productCard',{ id, title, price, discount, mainImage }) %>
-                                <% }) %>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </section>
-
-            <%- include('partials/footer') %>
-
-
-                <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-                <script>
-                    var swiper = new Swiper(".mySwiper", {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                        pagination: {
-                            el: ".swiper-pagination",
-                            clickable: true,
-                        },
-                        breakpoints: {
-                            481: {
-                                slidesPerView: 2,
-                                spaceBetween: 20,
-                            },
-                            768: {
-                                slidesPerView: 3,
-                                spaceBetween: 40,
-                            },
-                            1024: {
-                                slidesPerView: 4,
-                                spaceBetween: 50,
-                            },
-                        },
-                    });
-                </script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 3,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            481: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            769: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            }
+        },
+    });
+</script>
     </body>
 
 </html>
