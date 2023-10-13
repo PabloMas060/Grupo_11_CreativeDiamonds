@@ -2,7 +2,7 @@
 font-family: 'Poppins', sans-serif;
 font-family: 'Exo 2', sans-serif;
  */
-
+/* 
 :root {
     --colorHeader : #33FFA0;
     --colorBody : #D6FFEC;
@@ -15,7 +15,36 @@ font-family: 'Exo 2', sans-serif;
     --tipografiaTitulos : 'Poppins', sans-serif;
     --tipografiaTextos: 'Exo 2', sans-serif;
     --animation-duration: .3s;
-}
+} */
+
+:root {
+    --varColor5: #8B0000;       /* Rojo oscuro */
+    --varColor4: #FFD700;       /* Amarillo mostaza */
+    --varColor3: #808080;       /* Gris piedra */
+    --varColor2: #FFFFFF;       /* Blanco */
+    --varColor1: #000000;       /* Negro */
+  }
+  
+  @font-face {
+    font-family: "Ohno Blazeface";
+    src: url('../fonts/OhnoBlazeface-12Point.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: "Degular";
+    src: url('../fonts/DegularDemo-Regular.woff') format('woff');
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Ohno Blazeface", sans-serif;
+  }
+  
+  p {
+    font-family: "Degular", sans-serif;
+    font-weight: normal;
+  }
+  
+
 html {
     scroll-behavior: smooth;
   }
