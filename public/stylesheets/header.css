@@ -4,21 +4,28 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 
 
 .header__logo {
+    display: flex;
     width: 25%;
     margin-top: 5px;
     padding: 10px;
+    gap: 0.5rem;
 }
 
 .header__logo img {
     width: 100px;
 }
-.header__navbar{
-    width: 70%;
+.burger{
+   width: 5%;
+   flex-wrap: wrap;
+}
+.header__navbar {
+    width: 40%;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -33,8 +40,58 @@ header {
 .header__navbar__ul {
     display: flex;
 }
+
 .header__navbar__ul-2 {
     display: flex;
+}
+
+.menu-right {
+    width: 80%;
+    justify-content: center;
+    gap: 5px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    margin-top: 60px; 
+}
+
+.menu-right.menu-right-visible {
+    transform: translateX(0);
+    visibility: visible;
+}
+.menu-left {
+    width: 80%;
+    justify-content: center;
+    gap: 5px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    margin-top: 60px; 
+}
+
+.menu-left.menu-left-visible {
+    transform: translateX(0);
+    visibility: visible;
+}
+@media(min-width:481px) {
+    .menu-right {
+        width: 50%;
+    }
+}
+.menu-left {
+    width: 50%; 
 }
 
 @media(min-width:769px) {
@@ -42,6 +99,7 @@ header {
         display: flex;
         gap: 2px;
     }
+
     .header__logo {
         width: 20%;
         margin-top: 5px;
@@ -91,7 +149,12 @@ header {
         font-size: 1.2rem;
         align-items: center;
     }
-
+    .menu-right {
+        width: 30%;
+    }
+    .menu-left {
+        width: 30%;
+    }
 
 }
 
@@ -100,5 +163,11 @@ header {
         display: flex;
         gap: 10px;
         font-size: 1.2rem;
+    }
+    .menu-right {
+        width: 25%;
+    }
+    .menu-left {
+        width: 25%;
     }
 }
