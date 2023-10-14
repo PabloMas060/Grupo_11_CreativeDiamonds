@@ -11,28 +11,7 @@ const { uploads } = require('../middlewares/uploads');
 const profileValidation = require('../validation/profileValidation');
 /* /users */
 router.use(localsCheck);
-router.get('/register', checkNotUserLogin, register);
-router.post('/register', uploads.fields([
-  {
-    name: "mainImage"
-  }
-]), registerValidation, processRegister);
 
-router.get('/login', checkNotUserLogin, login);
-router.post('/login', loginValidation, processLogin);
-
-router.get('/profile', profile);
-
-router.put('/update/:id',profileValidation, uploads.fields([
-  {
-    name: "mainImage"
-  }
-]) ,updateProfile);
-
-router.get('/logout', logout);
-
-router.get('/admin',checkAdmin, admin);
-router.post('/admin/:typeSearch?', admin);
 router.get('/cart', cart);
 
 module.exports = router;

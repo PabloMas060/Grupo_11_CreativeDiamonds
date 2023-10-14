@@ -52,6 +52,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    color: #fff;
 }
 .btn {
     /* Establece el ancho deseado para el botón, por ejemplo, 200px */
@@ -74,6 +75,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    color: #fff;
 }
 .section__white{
     background-color: var(--varColor2);

@@ -1,0 +1,13 @@
+.section-artistas{
+    padding: 1rem;
+}
+.search-artists{
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+@media(min-width: 769px) {
+    .artist-section-card-info{
+        border-left: 1px solid white;
+    }
+}

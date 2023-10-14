@@ -57,9 +57,12 @@ header {
     top: 0;
     right: 0;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--varColor3);
     z-index: 1;
     margin-top: 60px; 
+    border-radius: 15px;
+    padding: 10px;
+    color: #ffffff;
 }
 
 .menu-right.menu-right-visible {
@@ -77,9 +80,12 @@ header {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--varColor3);
     z-index: 1;
-    margin-top: 60px; 
+    margin-top: 60px;
+    border-radius: 15px; 
+    padding: 10px;
+    color: #ffffff;
 }
 
 .menu-left.menu-left-visible {
