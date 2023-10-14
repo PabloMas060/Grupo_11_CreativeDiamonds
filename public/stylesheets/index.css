@@ -10,6 +10,7 @@
 .home__bienvenida{
     display: flex;
     flex-wrap: wrap;
+    display: none;
 }
 .contenedor__presentaciones{
     gap: 0;
