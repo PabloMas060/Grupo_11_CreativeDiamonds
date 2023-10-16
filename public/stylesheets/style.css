@@ -10,9 +10,11 @@
 @import "./sections/about.css";
 @import "./sections/contact.css";
 @import "./sections/artists.css";
+@import "./sections/fans.css";
 @import "./sections/capsule.css";
 @import "./sections/groups.css";
-@import "./products/noticias.css";
+@import "./products/notices.css";
+@import "./products/notice.css";
 @import "./user/profile.css";
 @import "./user/carrito.css";
 @import "./user/editarProfile.css";
