@@ -20,7 +20,7 @@ module.exports = {
       },
       merchId: {
         type: Sequelize.INTEGER,
-        allowNull: true, // Puedes especificar que acepte valores nulos si es opcional
+        allowNull: true, 
         references: {
           model: 'Merchs',
           key: 'id'
@@ -28,7 +28,7 @@ module.exports = {
       },
       albumId: {
         type: Sequelize.INTEGER,
-        allowNull: true, // Puedes especificar que acepte valores nulos si es opcional
+        allowNull: true, 
         references: {
           model: 'Albums',
           key: 'id'

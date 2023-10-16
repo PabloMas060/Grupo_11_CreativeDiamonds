@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('tu_conexion_a_la_db');
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
 
 const User = sequelize.define('User', {
   id: {
