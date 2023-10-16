@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const localsCheck = require('../middlewares/localsCheck');
-const { index } = require('../controllers/indexController')
+const { index, about, contact, groups, profile } = require('../controllers/indexController'); 
 
 /* GET home page. */
-router.use(localsCheck); 
 
 router.get('/', index);
+router.get('/about', about);
+router.get('/contact', contact);
+router.get('/groups', groups);
+router.get('/profile', profile);
+
 
 module.exports = router;

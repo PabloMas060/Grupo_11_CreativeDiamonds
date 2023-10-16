@@ -1,0 +1,182 @@
+/* PEFIL*/
+
+/* Estilo general para el perfil */
+.profile-container {
+  display: flex;
+  flex-direction: column; /* Esto hace que los cuadrados esten en columna */
+  position: relative; /* Esto hace que los cuadrados no se muevan segun el tamaño de la pagina */
+}
+
+/* Estilo para cada cuadrado del perfil */
+.profile-box {
+  width: 500px; /* Ancho fijo para todos los cuadrados */
+  border: 2px solid #000; /* Borde negro acentuado y grueso */
+  padding: 20px;
+  margin-left: 10px; /* Espacio hacia el borde de la pagina*/
+  background: var(--varColor3); /* !!COLOR, DESPUES CAMBIAR/AÑADIR MAS */
+}
+
+/* Primer cuadrado: Nombre de usuario y favoritos */
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none; /* Sin borde para el primer cuadrado */
+}
+
+.profile-info h2 {
+  margin: 0;
+}
+
+.profile-info img { /* La imagen de los mg al perfil*/
+  width: 20px;
+  height: 20px;
+}
+
+.profile-especificaciones { /* Para que el titulo este a la izquierda y los mg y cant esten a la derecha*/
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Segundo cuadrado: Avatar y estado */
+.profile-cajasCentro {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+  }
+  
+.profile-avatar {
+  float: left; /* Amo usar float */
+  margin-right: 20px;
+}
+
+.profile-avatar img {
+  width: 100px;
+  height: 100px;
+  background: var(--varColor2); /* !! COLOR, DESPUES CAMBIAR/AÑADIR MAS */
+}
+
+.profile-status {
+  margin-top: 20px;
+  background: #c0c0c0; /* !! COLOR, DESPUES CAMBIAR/AÑADIR MAS */
+  padding: 10px;
+}
+
+/* Tercer cuadrado: Nota musical, país y ciudad */
+.profile-box:nth-child(2) {
+    position: absolute; /* Posición absoluta para que se pueda superponer y no empuje a los demas*/
+    left: 100px; /* No pido que me perdonen, pido que me entiendan*/
+    top: 0px;
+    border: none; /* Sin borde para el tercer cuadrado */
+    background: none; /* Elimina el color de fondo */
+  }
+
+.profile-music {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.profile-music img {  /* !! El iconito de musica en realidad tiene que ser uno de genero, despues hago 3 iconos, hombre, mujer y ? para quien no quiera especificar */
+  width: 20px;
+  height: 20px;
+}
+
+.profile-location {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.profile-location span {
+  margin: 0 5px;
+}
+
+/* Cuarto cuadrado: Descripción personal */
+.profile-description {
+  background: #808080; /* Fondo gris oscuro, !! COLOR, DESPUES CAMBIAR/AÑADIR MAS  */
+  padding: 20px;
+  color: var(--varColor2);
+}
+
+/* Estilo para el texto en el cuarto cuadrado */
+.profile-description p {
+  margin: 0;
+}
+
+
+/* Estilo para el cuadro de estadísticas */
+.profile-stats {
+    display: flex;
+    flex-direction: row; /* Los cuadrados esten uno arriba del otro*/
+    justify-content: center; /* Centra horizontalmente el contenido */
+    margin: 20px 0;
+    width: 100%; /* Asegura que los cuadros ocupen todo el ancho disponible */
+  }
+  
+  /* Estilo para el título de estadísticas */
+  .profile-stats h2 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 20px; /* Espacio entre el título y las cajas de estadísticas */
+  }
+  
+  /* Estilo para cada cuadro de estadística */
+  .stat-box {
+    flex: 1; /* Hace que los cuadros se expandan para llenar el espacio disponible */
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna para alinear los elementos en columna, osea primero la foto, despues el titulo, despues el texto */
+    align-items: center;
+    margin: 10px;
+    height: auto;
+    width: 150px; /* Ancho fijo de 150px */
+    background: #f0f0f0; /* Fondo gris claro !! COLOR, DESPUES CAMBIAR/AÑADIR MAS */
+    border: 2px solid var(--varColor1); /* Borde negro acentuado y grueso */
+    padding: 20px;
+  }
+  
+  /* Icono de estadística */
+  .stat-icon {
+    margin-bottom: 10px; /* Espacio entre el icono y el título */
+  }
+  
+  .stat-icon img { 
+    width: 50px; 
+    height: 50px;
+  }
+  
+  /* Título de estadística */
+  .stat-box h3 {
+    font-size: 18px;
+    margin: 0;
+    word-wrap: break-word; /* Permite que las palabras se dividan en varias líneas */
+  }
+  
+  /* Texto de estadística */
+  .stat-box p {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .profile-stats-title{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-AvatarStats{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    margin-bottom: 250px;
+  }
+
+@media (max-width: 768px) {
+    
+.profile-box:nth-child(2) {
+    position: absolute; /* Me tiene podrido este muchacho */
+}
+
+.profile-AvatarStats{ /* Las estadisticas se muestran por debajo del perfil, en lugar de al lado, en vistas mas pequeñas*/
+    display: flex;
+    flex-direction: column;
+  }
+
+}
