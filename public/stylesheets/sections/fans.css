@@ -1,0 +1,133 @@
+/* Estilos para el contenedor "fans-test1" */
+.fans-test1 {
+    /* Agrega los estilos para el contenedor que envuelve el segundo y tercer objeto aquí */
+    display: flex;
+    flex-direction: row;
+}
+
+.fans-banner {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 420px; /* Fija la altura en 420px */
+    object-fit: cover; /* Escala la imagen para llenar el espacio sin distorsionarla */
+    object-position: center 20%;
+}
+
+/* Estilos para fans-testInfo */
+.fans-testInfo {
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Centra el texto */
+    margin-top: 100px;
+}
+
+.fans-testButton{
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 100px;
+}
+
+/* Estilos para el botón en fans-testButton */
+.fans-testButton button {
+    width: 200px; /* Ancho más grande */
+    border-radius: 20px; /* Bordes redondeados */
+}
+
+
+.fans-testInfoBotton{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Estilos para la sección negra */
+.partial-Section1 {
+    background-color: var(--varColor1);
+    padding: 20px;
+}
+
+.partial-Section2 {
+    background-color: var(--varColor5);
+    padding: 20px;
+}
+
+.partial-Section3 {
+    background-color: var(--varColor2);
+    padding: 20px;
+}
+
+/* Estilos para el texto en la sección negra */
+.partial-Section1-texto {
+    color: var(--varColor2);
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Centra el texto horizontalmente */
+
+}
+
+.partial-Section3-texto {
+    color: var(--varColor3);
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Centra el texto horizontalmente */
+
+}
+
+/* Estilos para el título en la sección negra */
+.fans-seccionNegra-texto h2 {
+    margin: 0;
+}
+
+/* Estilos para el párrafo en la sección negra */
+.fans-seccionNegra-texto p {
+    margin: 0;
+}
+
+/* Estilos para la sección de productos populares */
+.partial-productDisplaySection {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los objetos pasen a la siguiente línea cuando no caben en el ancho */
+    justify-content: space-between; /* Espacio entre los objetos en cada fila */
+}
+
+/* Estilos para cada producto */
+.partial-productDisplay1 {
+    width: 23%; /* Para acomodar 4 productos por fila con espacio entre ellos */
+    position: relative; /* Permite posicionar el texto superpuesto */
+    margin-bottom: 20px; /* Espacio entre las filas de productos */
+}
+
+.partial-productDisplay1 img {
+    width: 230px;
+    height: 170px;
+    object-fit: cover; /* Cubre todo el espacio sin distorsionar la imagen */
+}
+
+/* Estilos para el texto de precio */
+.fans-precio {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--varColor1);
+    color: var(--varColor2);
+    padding: 5px;
+}
+
+/* Estilos para el botón "VER LISTA COMPLETA" */
+.partial-buttonDisplay1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espacio desde arriba */
+}
+
+.partial-buttonDisplay1 button {
+    width: 250px;
+    height: 35px;
+    background: none;
+    border: 2px solid var(--varColor2);
+    border-radius: 10px; /* Bordes redondeados */
+    color: var(--varColor3);
+    text-align: center; /* Centra el texto horizontalmente */
+    line-height: 10px; /* Centra el texto verticalmente */
+}
