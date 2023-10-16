@@ -1,0 +1,77 @@
+/* FOOTER */
+
+footer {
+  background-color: var(--varColor4);
+  padding: 20px;
+  margin-top: auto; 
+}
+
+
+/* Contenedor para los elementos del footer */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: var(--varColor1);
+}
+
+/* Estilo para cada objeto del footer en individual */
+.footer-object {
+  text-align: center;
+  margin: 10px;
+  flex: 1;
+  max-width: 200px;
+}
+
+/* imagenes */
+.footer-object img {
+  max-width: 100px; 
+}
+.contacto {
+  margin-top: 36px;
+}
+
+
+/* Contacto y ¿Quienes somos? */
+.footer-object a {
+  text-decoration: none;
+  color: var(--varColor1);
+}
+
+/* Estilo para la imagen de Contacto en especifico, porque al ser mas pequeña, no quedan los titulos en la misma altura */
+.footer-object.contact img {
+  margin-bottom: 20px; 
+}
+
+/* título */
+.footer-object h3 {
+  position: relative;
+}
+
+/* Esto es para que aparezca un subrayado el titulo al pasarle el mouse, el before significa "antes" */
+.footer-object h3::before {
+  content: ""; /* sin esto no funciona, no cuestionen mis metodos */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Esto esconde la linea, osea 0% para que este escondida */
+  height: 2px; /* Grosor de la linea de subrayado */
+  background-color: var(--varColor1); /* Color de la linea */
+  transition: width 0.3s ease; /* Animacion de la línea */
+}
+
+/* Cuando se pasa el mouse por encima, expande la línea de izquierda a derecha (osea ancho al 100%*/
+.footer-object h3:hover::before {
+  width: 100%;
+}
+
+
+
+/* Para tablets para abajo */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Cambia la direccion a columna */
+    align-items: center;
+  }
+}

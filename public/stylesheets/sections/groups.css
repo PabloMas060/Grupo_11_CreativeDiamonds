@@ -1,0 +1,164 @@
+/* SELECCION DE GRUPOS*/
+
+/* Estilos generales */
+.groups-background {
+    background-color: var(--varColor5);
+    color: var(--varColor2);
+    margin: 0;
+    padding: 0;
+}
+
+/* Filtros*/
+.group-filters ul {
+    margin-right: 50px;
+    margin-left: 50px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
+    justify-content:space-around;
+    padding: 10px;
+}
+
+.group-filters li {
+    cursor: pointer;
+}
+
+/* Los grupos en cuestion*/
+.group-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 120px;
+}
+
+/* El grupo en individual*/
+.group-item {
+    text-align: center;
+    margin: 10px;
+    flex: 0 0 calc(33.333% - 20px); /* Esto asegura que haya un margen fijo entre los elementos */
+}
+
+/* Imagen de cada grupo, la miniatura*/
+.group-item img {
+    width: 190px;  /* El ancho mas largo que el alto para rectangulo */
+    height: 130px;
+    object-fit: cover; /* Rellena el espacio sin distorsionar */
+}
+
+.group-item h2 {
+    margin-top: 10px;
+}
+
+/* DETALLES DEL GRUPO AL HACERLE CLICK A UNA MINIATURA*/
+
+/* Detalle del fondo*/
+.group-details {
+    display: none;
+    background-color: var(--varColor4); 
+    color: var(--varColor2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.group-details.active {
+    display: flex;
+}
+
+/* Imagen del grupo*/
+.group-details .group-image img {
+    margin-top: 150px;
+    width: 550px; /* Tamaño cuadrado para la imagen del grupo */
+    height: 550px; /* Tamaño cuadrado para la imagen del grupo */
+    object-fit: cover; /* Rellena el espacio sin distorsionar */
+}
+
+/* Todas las noticias del grupo, (en grupo)*/
+.group-details .group-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Todas las noticias del grupo, individualmente*/
+.group-details .news-item {
+    text-align: center;
+    margin: 10px;
+    flex: 0 0 calc(50% - 20px); /* Ajusta el ancho máximo a 2 noticias por fila */
+}
+
+/* Las imagenes de las noticias de los grupos */
+.group-details .news-item img {
+    width: 100%; /* Ajusta el ancho de la imagen */
+    height: 220px;
+    object-fit: cover; /* Rellena el espacio sin distorsionar */
+}
+
+/* INFO GRUPO */
+
+.group-details .group-info-image {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    padding-right: 20px; /* Agrega un relleno a la derecha para que no se vaya completamente al borde */
+    box-sizing: border-box; /* Incluye el relleno en el ancho total */
+}
+
+
+.group-details .group-info {
+    flex: 1;
+    max-width: 70%; /* Limita el ancho para evitar que se extienda demasiado */
+}
+
+.group-info {
+    margin-top: 210px /* Sin este margin, se van fuera de la pantalla por alguna razon. No cuestionen mis metodos */
+}
+
+.group-details .group-image {
+    flex: 1; /* Ajusta el ancho de la imagen del grupo para ocupar todo el espacio restante */
+    display: flex;
+    justify-content:first baseline; /* Coloca la imagen a la derecha */
+}
+
+.group-image{
+    margin-top: 500px; /* Limita el ancho máximo de la imagen */
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.group-details .group-image img {
+    max-width: 100%; /* Limita el ancho máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    object-fit: cover; /* Rellena el espacio sin distorsionar */
+}
+
+#close-details { /* El botoncito de cerrar la seccion */
+    width: 5%; /* Tiene que ser chikito */
+    height: auto; 
+    position: relative;
+    left: 80%; /* No cuestionen mis metodos */
+    margin-top: 10%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 320px; /* No cuestionen mis metodos */
+    margin-left: 50px;
+}
+
+.subscribe-button, .view-news-button {
+    border-radius: 20px; /* Valor de border-radius para hacerlos redondeados */
+    margin-top: 10px; /* Espacio entre los botones */
+    width: 100%;
+}

@@ -1,0 +1,133 @@
+/* ABOUT */
+
+html {
+  scroll-behavior: smooth; /* Añade transición suave al scroll */
+}
+
+
+.about-banner {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ajusta la altura del banner al 100% del viewport height, haciendo que tape toda la pantalla jej !!*/
+}
+
+.about-banner img {
+  width: 50%;
+  height: auto;
+}
+
+/* Estilo para la seccion amarilla*/
+.about-yellow-section {
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between; /* Coloca los elementos a los extremos */
+  align-items: center; /* Centra verticalmente */
+  text-align: center;
+  padding: 20px;
+}
+
+/* texto*/
+.about-yellow-section .text-content {
+  flex: 2; /* Para que ocupe el espacio restante */
+  padding-right: 20px; /* Espacio a la derecha de la imagen */
+  text-align: start; /* Alinea el texto al inicio */
+}
+
+/* titulo */
+.about-yellow-section h1 {
+  margin-bottom: 50px; /* Ajusta el margen superior del título */
+}
+
+/* parrafo */
+.about-yellow-section p {
+  margin-bottom: 250px;
+}
+
+/* imagen*/
+.about-yellow-section img {
+  width: 50%;
+  height: auto;
+}
+
+/* Estilo para la seccion negra */
+.about-black-section {
+  background-color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+/* titulo */
+.about-black-section h1 {
+  color: white;
+  font-size: 24px;
+}
+
+/* tarjetas, en grupo */
+.about-card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* tarjeta individual */
+.about-card {
+  background-color: var(--varColor2);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* imagen, de nosotros jej */
+.about-card img {
+  width: 100%;
+  height: auto;
+}
+
+/* botones, en grupo */
+.about-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* botones, individual */
+.about-card button {
+  background-color: var(--varColor3);
+  color: var(--varColor3);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Media query para pantallas mas pequeñas */
+@media (max-width: 768px) {
+  /* Cambiamos la disposición de la sección amarilla */
+  .about-yellow-section {
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+
+  /* titulo */
+  .about-yellow-section h1 {
+    margin-bottom: 20px; /* Reducimos el margen inferior del título */
+  }
+
+  /* texto */
+  .about-yellow-section p {
+    margin-bottom: 20px; 
+  }
+
+  /* imagen */
+  .about-yellow-section img {
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  /* Cambiamos la disposición de las tarjetas en la sección negra */
+  .about-card-container {
+    flex-direction: column; /* de fila a columna */
+  }
+
+  /* tarjetas */
+  .about-card {
+    margin: 10px 0;
+  }
+}

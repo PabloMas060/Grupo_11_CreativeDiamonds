@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <%- include('partials/head', { title: 'Grupos' }) %>
+    <section class="group-details">
+        
+        <div class="group-info-image">
+            <div class="group-image">
+                <img src="grupos/grupo-1.png" alt="Grupo 1">
+            </div>
+            <div class="group-info">
+                <img id="close-details" src="iconos/icono-cerrar.svg" alt="Cerrar">
+        
+                <h2>Clasicos inmortales</h2>
+                <p>La idea es que cada grupo presente noticias diferentes... La idea es que cada grupo presente noticias diferentes...</p>
+                <div class="button-container">
+                    <button class="subscribe-button">Suscribirse</button>
+                    <button class="view-news-button">Ver todas las noticias</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="group-news">
+            <div class="news-item">
+                <img src="grupos/grupo-1.png" alt="Noticia 1">
+                <p class="news-date">11/3/23</p>
+                <h3 class="news-title">Titulo de la publicacion blog uno</h3>
+                <p class="news-text">Enterate de todo lo que paso con...</p>
+            </div>
+            <div class="news-item">
+                <img src="grupos/grupo-1.png" alt="Noticia 2">
+                <p class="news-date">11/3/23</p>
+                <h3 class="news-title">Titulo de la publicacion blog dos</h3>
+                <p class="news-text">Enterate de todo lo que paso con...</p>
+            </div>
+            <div class="news-item">
+                <img src="grupos/grupo-1.png" alt="Noticia 3">
+                <p class="news-date">11/3/23</p>
+                <h3 class="news-title">Titulo de la publicacion blog tres</h3>
+                <p class="news-text">Enterate de todo lo que paso con...</p>
+            </div>
+            <div class="news-item">
+                <img src="grupos/grupo-1.png" alt="Noticia 4">
+                <p class="news-date">11/3/23</p>
+                <h3 class="news-title">Titulo de la publicacion blog cuatro</h3>
+                <p class="news-text">Enterate de todo lo que paso con...</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div class="groups-background">
+        <section class="group-filters">
+            <ul>
+                <li>Todos los grupos</li>
+                <li>Genero1</li>
+                <li>Genero2</li>
+                <li>Genero3</li>
+                <li>Genero4</li>
+                <li>Genero5</li>
+            </ul>
+        </section>
+        <section class="group-list">
+            <div class="group-item">
+                <img src="grupos/grupo-1.png" alt="Grupo 1">
+                <h2>Clasicos inmortales</h2>
+            </div>
+            <div class="group-item">
+                <img src="grupos/grupo-2.png" alt="Grupo 2">
+                <h2>Nuevo Matiz</h2>
+            </div>
+            <div class="group-item">
+                <img src="grupos/grupo-3.png" alt="Grupo 3">
+                <h2>HEAVY</h2>
+            </div>
+            <div class="group-item">
+                <img src="grupos/grupo-4.png" alt="Grupo 4">
+                <h2>Celeste y Blanca</h2>
+            </div>
+            <div class="group-item">
+                <img src="grupos/grupo-5.png" alt="Grupo 5">
+                <h2>Azucar picante</h2>
+            </div>
+        </section>
+        
+          <!-- Pie de página -->
+        <%- include('partials/footer') %>
+    </div>
+    
+    <script>
+        // Función para redirigir al usuario al grupo
+        function redirectToGroup(url) {
+            window.location.href = url;
+        }
+    
+        // Función para manejar el clic en la imagen
+        function handleImageClick(img, url) {
+            if (window.innerWidth <= 768) { // Te voy a ser sincero baki, no queria hacer la mediaquerie para el modal asique directamente lo deshabilite de tablet para abajo
+                redirectToGroup(url);
+            } else {
+                const groupDetails = document.querySelector('.group-details');
+                groupDetails.classList.add('active');
+            }
+        }
+    
+        // Asignar clic a las imágenes de los grupos
+        document.querySelectorAll('.group-item img').forEach((img, index) => {
+            const groupURL = '/ruta-del-grupo'; // Reemplazar despues cuando el CRUD este terminado
+            img.addEventListener('click', () => {
+                handleImageClick(img, groupURL);
+            });
+        });
+    
+        // Asignar clic al botón de cerrar detalles
+        document.getElementById('close-details').addEventListener('click', () => {
+            const groupDetails = document.querySelector('.group-details');
+            groupDetails.classList.remove('active');
+        });
+    </script>
+    
+    
+</body>
+</html>
