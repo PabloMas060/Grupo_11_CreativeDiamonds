@@ -7,299 +7,169 @@
     padding: 0;
 
 }
-
-
-
-
-.home__container__carousel{
-    display: none;
-}
-
-
-
-.home__body__menu {
-    width: 100%;
-    display: none;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.home__body__menu a {
-    width: 40%;
-    text-align: center;
-    margin: 5px 5px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 8px;
-    font-weight: 400;
-    font-family: var(--tipografiaTitulos);
-}
-
-.home__body__section {
+.home__bienvenida{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
 }
-.home__body__section2 {
+.contenedor__presentaciones{
+    gap: 0;
+    background-color: var(--varColor3);
+    padding: 10px 0;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    
+}
+.presentacion__caja1{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    max-height: 700px;
 }
-.home__body__section2 .home__body__card_info_discount{
-    display: none;
+.presentacion__caja1 a{
+    width: 50%;
+   margin: 0;
+   padding: 0;
 }
-
-
-.home__body__section--title {
-   /*  background: rgb(3, 14, 67);
-    background: linear-gradient(158deg, rgba(3, 14, 67, 1) 22%, rgba(20, 68, 115, 1) 67%, rgba(31, 133, 126, 1) 83%); */
-    background-image: url('/images/bg/bg07.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    text-align: center;
-    text-shadow: 2px 2px 2px var(--colorGris);
-    margin: 5px;
-    color: #ffffff;
-
+.presentacion__caja1 a img{
+   width: 100%;
+   margin: 0;
+   padding: 0;
+} 
+.presentacion__caja2{
+    width: 50%;
+    padding: 0;
+    max-height: 700px;
 }
-.home__body__card {
+.section__black{
+    background-color: #000;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     flex-direction: column;
-    background-color: #ffffff;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 10px 5px 25px #292828;
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* .home__body__card:hover{
-        box-shadow: 5px 5px 50px blue;
-    } */
-
-.home__body__card__figure {}
-
-.home__body__card img {
-    width: 100%;
-    margin-top: 1rem;
-    object-fit: cover;
-    height: 150px;
-}
-
-.home__body__card_info {
-    display: flex;
-    flex-direction: column;
-    font-weight: 300;
-}
-
-.home__body__card_info_name {}
-
-.home__body__card_info_discount {
-    display: flex;
-    gap: 0.7rem;
+    text-align: center;
     align-items: center;
 }
-
-.home__body__card_info h3 {
-    font-size: 18px;
-}
-
-.home__body__card_info h5 {
-    text-decoration: line-through;
-    font-weight: 300;
-    margin-bottom: 0;
-    font-size: 12px;
-    color: var(--colorGris);
-}
-
-.home__body__card_info_h5 {
-    display: none;
-}
-
-.home__body__card_info h4 {
-    font-weight: 400;
-    color: green;
-    font-size: 15px;
-}
-.home__body__section2 h5{
+.btn {
+    /* Establece el ancho deseado para el botón, por ejemplo, 200px */
+    width: 200px;
+    /* Otros estilos de tu botón, como colores y márgenes */
+    background-color: #000;
+    border: solid 1px #fff;
+    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-top: 1rem;
-}
-.home__body__card_info_discount_h4 {
-    display: none;
-}
-
-.home__body__card__icons {
-    width: 80%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.8rem;
-
-}
-.home__body__card__button{
-    margin: 1rem auto;
-    border: solid 1px #000;
-    border-radius: 8px;
-    padding: 5px;
-    transition: box-shadow 0.5s ease;
-}
-.home__body__card__button:hover{
-box-shadow: 3px 4px 3px #1F857E;
-}
-
-.navegador{
-    position: relative;
+    text-align: center;
     display: inline-block;
-    margin: 0.5rem;
-   }
-   
-   .navegador input{
-   border-radius: 0.5rem;
-   padding: 0.5rem 2rem;
-   
-   }
-   
-   .navegador button{
-       position: absolute;
-       right: 9px;
-       background: transparent;
-       border: none;
-       top: 12px;
-      }
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}
+.section__red{
+    background-color: var(--varColor5);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.section__white{
+    background-color: var(--varColor2);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.btn {
+    /* Establece el ancho deseado para el botón, por ejemplo, 200px */
+    width: 200px;
+    /* Otros estilos de tu botón, como colores y márgenes */
+    background-color: #000;
+    border: solid 1px #fff;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}
+.section__yellow{
+    background-color: var(--varColor4);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
 
 
 
 /* TABLET */
 @media(min-width:481px) {
-   
-    .home__container__carousel{
-        display: flex;
-    }
-    .home__body__menu {
+    .home__bienvenida{
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .home__body__menu a {
-        width: 45%;
-        text-align: center;
-        gap: 1%;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 8px;
-        font-weight: 400;
-        font-family: var(--tipografiaTitulos);
-        text-align: center;
-    }
-
-    .home__body__menu i {
-        width: 100%;
-    }
-
-    .home__body__section {
+        background-color: #000;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2%;
-        width: 100%;
     }
-    .home__body__section2 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2%;
-        width: 100%;
+    .home__bienvenida img{
+        height: 300px;
     }
-
-    .home__body__section2 .home__body__card_info_discount{
-        display: none;
-    }
- 
-
-    .home__body__card {
-        width: 90%;
-        margin: 1rem auto;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    .home__body__card img {
-        height: 200px;
-        object-fit: contain;
-    }
-    .home__body__section2 h5{
-        text-decoration: none;
-        font-size: 1.5rem;
-        padding: 5px;
-    }
-    
+  
 }
 
 
 
+@media (min-width:769px) {
+    .contenedor__presentaciones{
+       max-height: 800px;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+    }
+    .presentacion__caja1{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        width: 50%;
+        justify-content: center;
+    }
+    .presentacion__caja1 img{
+       width: 50%;
+       margin: 0;
+       padding: 0;
+       
+    } 
+    .presentacion__caja2{
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        padding: 0;
+        justify-content: center;
+    }
+    .presentacion__caja2 img{
+        max-height: 800px;
+
+    }
+}
+
+
 /* DESKTOP */
 @media(min-width:1024px) {
-    .home__body {}
+   
+    .home__bienvenida img{
+        height: 350px;
+    }
 
   
 
-    .home__body__menu {
-        display: none;
-    }
-
-    .home__body__section {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-evenly;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 8%;
-    }
-    .home__body__section2 {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-evenly;
-        align-items: center;
-        justify-content: space-evenly;
-        gap: 8%;
-    }
-    
-    .home__body__section2 .home__body__card_info_discount{
-        display: none;
-    }
-    
-    .home__body__section--title {
-        width: 100%;
-        text-align: center;
-    }
-
-    .home__body__card {
-        width: 90%;
-        margin: 1rem auto;
-        flex-direction: row;
-        padding: 1rem;
-    }
-    .home__body__card img {
-        height: 300px;
-        object-fit: contain;
-    }
-    .home__body__section2 h5{
-        text-decoration: none;
-    }
+   
 
 }

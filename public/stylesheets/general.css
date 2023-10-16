@@ -47,6 +47,9 @@ font-family: 'Exo 2', sans-serif;
 
 html {
     scroll-behavior: smooth;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 * {
     box-sizing: border-box;
@@ -56,6 +59,8 @@ html {
 
 body {
     font-family: var(--tipografiaTitulos);
+    max-width: 1366px;
+    
     /* background: rgb(4, 0, 0); */
     /* background: linear-gradient(49deg, rgba(4, 0, 0, 1) 15%, rgba(136, 139, 142, 1) 55%, rgba(255, 255, 255, 1) 72%); */
 }
