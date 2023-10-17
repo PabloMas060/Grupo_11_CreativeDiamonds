@@ -1,5 +1,7 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config');
+const Band = require('./Band');
+
 
 const Artist = sequelize.define('Artist', {
   id: {

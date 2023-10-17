@@ -1,5 +1,7 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config'); 
+const User = require('./User');
+
 
 const Address = sequelize.define('Address', {
   id: {

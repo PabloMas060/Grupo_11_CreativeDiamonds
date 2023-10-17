@@ -1,5 +1,7 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config'); 
+const User = require('./User');
+
 
 const Range = sequelize.define('Range', {
   id: {
@@ -12,6 +14,6 @@ const Range = sequelize.define('Range', {
   }
 });
 
-Range.belongsTo(User, { foreignKey: 'userId' });
+Range.hasMany(User, { foreignKey: 'rangeId' });
 
 module.exports = Range;

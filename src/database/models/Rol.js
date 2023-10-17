@@ -1,5 +1,5 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config');  
 
 const Rol = sequelize.define('Rol', {
   id: {

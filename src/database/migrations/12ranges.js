@@ -10,14 +10,6 @@ module.exports = {
       name: {
         type: Sequelize.STRING(255)
       },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Users',
-          key: 'id'
-        }
-      }
     });
   },
   down: async (queryInterface, Sequelize) => {

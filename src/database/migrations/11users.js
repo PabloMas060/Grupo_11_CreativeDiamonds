@@ -48,8 +48,16 @@ module.exports = {
         references: {
           model: 'Rols',
           key: 'id'
+        },
+      },
+      rangeId: { 
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Ranges',
+          key: 'id'
         }
-      }
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
