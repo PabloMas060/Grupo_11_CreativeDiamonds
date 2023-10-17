@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     albumId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'cart',
+    modelName: 'Cart',
   });
   return cart;
 };

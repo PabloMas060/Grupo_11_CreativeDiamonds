@@ -11,6 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Album.hasMany(models.Track, {
+        as : 'track',
+        foreingKey: 'albumId'
+      }),
+      Album.belongsTo(models.Genre,{
+        as: 'genre',
+        foreingKey: 'genreId'
+      }),
+      Album.belongsTo(models.Band,{
+        as: 'band',
+        foreingKey: 'bandId'
+      }),
+      Album.hasMany(models.Cart, {
+        as : 'cart',
+        foreingKey: 'albumId'
+      })
     }
   }
   album.init({
@@ -26,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     genreId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'album',
+    modelName: 'Album',
   });
   return album;
 };

@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class band extends Model {
+  class Band extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,9 +11,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Band.belongsTo(models.Category, {
+        as: 'category',
+        foreignKey: 'categoryId'
+      });
+
+      Band.hasMany(models.Album, {
+        as: 'album',
+        foreignKey: 'bandId' 
+      });
+
+      Band.hasMany(models.Artist, {
+        as: 'artist',
+        foreignKey: 'bandId', 
+      });
     }
   }
-  band.init({
+  Band.init({
     name: DataTypes.STRING,
     history: DataTypes.TEXT,
     mainImage: DataTypes.STRING,
@@ -25,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     phrase: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'band',
+    modelName: 'Band',
   });
   return band;
 };
