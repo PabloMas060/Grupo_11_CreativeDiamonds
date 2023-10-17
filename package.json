@@ -5,8 +5,10 @@
   "scripts": {
     "start": "node ./src/bin/www",
     "dev": "nodemon ./src/bin/www",
-    "db:create" : "npx sequelize db:drop & npx sequelize db:create & npx sequelize db:migrate & npx sequelize db:seed:all",
-    "db:reset" : "npx sequelize db:migrate:undo:all & npx sequelize db:migrate & npx sequelize db:seed:all"
+    "db:create" : "sequelize db:drop & sequelize db:migrate & sequelize db:seed:all",
+    "db:reset" : "sequelize db:migrate:undo:all & sequelize db:migrate & sequelize db:seed:all",
+    "db:creates" : "npx sequelize db:drop & npx sequelize db:create & npx sequelize db:migrate & npx sequelize db:seed:all",
+    "db:resets" : "npx sequelize db:migrate:undo:all & npx sequelize db:migrate & npx sequelize db:seed:all"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
