@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const localsCheck = require('../middlewares/localsCheck'); 
-const { listArtist, detailArtist, addBand, storeBand, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch } = require('../controllers/productsController');
+const { fans, capsule, listArtist, detailArtist, addBand, storeBand, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 const addVynilValidator = require('../validation/addVynilValidator');
 const addShirtValidator = require('../validation/addShirtValidator');
@@ -10,6 +10,8 @@ router.use(localsCheck);
 
 /* /products */
 router
+  .get('/fans', fans)
+  .get('/capsule', capsule)
   .get('/artists', listArtist)
   .get('/artists/detail/:id?', detailArtist)
   .get('/addBand', addBand)

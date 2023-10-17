@@ -1,9 +1,14 @@
-const vinyls = require('../data/vinyls.json');
-const shirts = require('../data/shirts.json');
 const path = require('path');
 const fs = require("fs");
+const { addAlbum } = require('./bands/Category'); 
 
 module.exports = {
+    fans : (req, res) => {
+        return res.render('fans')
+    },
+    capsule : (req, res) => {
+        return res.render('capsule')
+    },
     listArtist: (req, res) => {
 
         return res.render('artists')
