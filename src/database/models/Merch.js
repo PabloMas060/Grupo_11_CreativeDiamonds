@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     discount: DataTypes.INTEGER,
     image: DataTypes.STRING,
     description: DataTypes.STRING,
-    explusive: DataTypes.BOOLEAN,
+    exclusive: DataTypes.BOOLEAN,
     bandId: DataTypes.INTEGER,
     typeId: DataTypes.INTEGER
   }, {

@@ -11,15 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Range.hasMany(models.User, {
-        as: 'user',
-        foreignKey: 'userId'
-      })
+ 
     }
   }
   Range.init({
-    name: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    name: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Range',

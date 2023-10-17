@@ -3,10 +3,26 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Genres', [
-      { name: 'Rock' },
-      { name: 'Pop' },
-      { name: 'Indie' },
-      { name: 'Metal' }
+      {
+        name: 'Rock',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Pop',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Indie',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Metal',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
     ], {});
   },
 

@@ -2,24 +2,15 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('albums', {
+    await queryInterface.createTable('Merchs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
+      name: {
         type: Sequelize.STRING
-      },
-      discography: {
-        type: Sequelize.STRING
-      },
-      image: {
-        type: Sequelize.STRING
-      },
-      year: {
-        type: Sequelize.INTEGER
       },
       price: {
         type: Sequelize.INTEGER
@@ -27,17 +18,31 @@ module.exports = {
       discount: {
         type: Sequelize.INTEGER
       },
+      image: {
+        type: Sequelize.STRING
+      },
       description: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       exclusive: {
         type: Sequelize.BOOLEAN
       },
       bandId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "Bands"
+          }
+        }
       },
-      genreId: {
-        type: Sequelize.INTEGER
+      typeId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "Types"
+          },
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -50,6 +55,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('albums');
+    await queryInterface.dropTable('Merchs');
   }
 };

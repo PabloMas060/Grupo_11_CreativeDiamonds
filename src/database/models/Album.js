@@ -11,10 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Album.hasMany(models.Track, {
-        as : 'track',
-        foreingKey: 'albumId'
-      }),
+     
       Album.belongsTo(models.Genre,{
         as: 'genre',
         foreingKey: 'genreId'
@@ -23,9 +20,11 @@ module.exports = (sequelize, DataTypes) => {
         as: 'band',
         foreingKey: 'bandId'
       }),
-      Album.hasMany(models.Cart, {
-        as : 'cart',
-        foreingKey: 'albumId'
+      Album.belongsToMany(models.Order, {
+        through: 'Cart',
+        foreignKey: "albumId",
+        otherKey: "orderId",
+        as: "cart"
       })
     }
   }

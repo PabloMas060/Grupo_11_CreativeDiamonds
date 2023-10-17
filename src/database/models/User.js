@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsTo(models.Address,{
         as: 'address',
         foreignKey: 'addressId'
+      }),
+      User.belongsTo(models.Range,{
+        as: 'range',
+        foreignKey: 'rangeId'
       })
     }
   }
@@ -31,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
     about: DataTypes.TEXT,
     state: DataTypes.STRING,
     addressId: DataTypes.INTEGER,
-    rolId: DataTypes.INTEGER
+    rolId: DataTypes.INTEGER,
+    rangeId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
