@@ -1,15 +1,23 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Rol = sequelize.define('Rol', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: DataTypes.STRING(255)
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class rol extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-module.exports = Rol;
+  rol.init({
+    name: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Rol',
+  });
+  return rol;
+};

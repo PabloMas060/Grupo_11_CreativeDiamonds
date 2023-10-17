@@ -56,19 +56,7 @@
     align-items: center;
     color: #fff;
 }
-.btn {
-    /* Establece el ancho deseado para el botón, por ejemplo, 200px */
-    width: 200px;
-    /* Otros estilos de tu botón, como colores y márgenes */
-    background-color: #000;
-    border: solid 1px #fff;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    padding: 10px 20px;
-    margin-bottom: 5px;
-}
+
 .section__red{
     background-color: var(--varColor5);
     display: flex;
@@ -88,19 +76,7 @@
     text-align: center;
     align-items: center;
 }
-.btn {
-    /* Establece el ancho deseado para el botón, por ejemplo, 200px */
-    width: 200px;
-    /* Otros estilos de tu botón, como colores y márgenes */
-    background-color: #000;
-    border: solid 1px #fff;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    padding: 10px 20px;
-    margin-bottom: 5px;
-}
+
 .section__yellow{
     background-color: var(--varColor4);
     display: flex;

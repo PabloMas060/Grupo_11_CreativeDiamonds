@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'ADMIN' }) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <form id="bandForm" action="" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="nombreBanda" class="form-label">Nombre de la Banda</label>
+                                <input type="text" class="form-control" id="nombreBanda" name="nombreBanda">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="categoriaBanda" class="form-label">Categoría</label>
+                                <input type="text" class="form-control" id="categoriaBanda" name="categoriaBanda">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fraseBanda" class="form-label">Frase</label>
+                                <input type="text" class="form-control" id="fraseBanda" name="fraseBanda">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" name="fechaInicio">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fechaFinalizacion" class="form-label">Fecha de Finalización</label>
+                                <input type="date" class="form-control" id="fechaFinalizacion" name="fechaFinalizacion">
+                            </div>
+                            <div class="mb-3">
+                                <label for="vigente" class="form-label">Banda Vigente</label>
+                                <input type="checkbox" id="vigente" name="vigente" onclick="toggleFechaFinalizacion()">
+                            </div>
+                            <div class="mb-3">
+                                <label for="conciertos" class="form-label">Total de Conciertos</label>
+                                <input type="number" class="form-control" id="conciertos" name="conciertos">
+                            </div>
+                            <div class="mb-3">
+                                <label for="proximoConcierto" class="form-label">Próximo Concierto</label>
+                                <input type="date" class="form-control" id="proximoConcierto" name="proximoConcierto">
+                            </div>
+                            <div class="mb-3">
+                                <label for="historiaBanda" class="form-label">Historia</label>
+                                <textarea class="form-control" id="historiaBanda" name="historiaBanda"
+                                    rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="resumen" class="form-label">Resumen</label>
+                                <textarea class="form-control" id="resumen" name="resumen" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imagenBanda" class="btn btn-secondary">Imagen de la Banda</label>
+                                <input hidden type="file" class="form-control" id="imagenBanda" name="imagenBanda">
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-primary" id="enviarForm">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+
+            <script>
+                function toggleFechaFinalizacion() {
+                    const fechaFinalizacion = document.getElementById("fechaFinalizacion");
+                    const vigenteCheckbox = document.getElementById("vigente");
+
+                    if (vigenteCheckbox.checked) {
+                        fechaFinalizacion.disabled = true;
+                    } else {
+                        fechaFinalizacion.disabled = false;
+                    }
+                }
+            </script>
+
+            <%- include('../partials/footer') %>
+
+    </body>
+
+</html>
