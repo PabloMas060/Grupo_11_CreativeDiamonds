@@ -16,6 +16,19 @@ router
   .post('/mercheAdd', upload.array('images'), productAddValidator, mercheCreate)
   .get('/artists', listArtist)
   .get('/artists/detail/:id?', detailArtist)
+  .get('/addBand', addBand)
+  .post('/addBand', storeBand)
+  .get('/edit/band/:id?', editBand)
+  .put('/edit/band/:id?', updateBand)
+  .get('/addAlbum', addAlbum)
+  .post('/addAlbum', storeAlbum)
+  .get('/edit/album/:id?', editAlbum)
+  .put('/edit/album/:id?', updateAlbum)
+  .get('/addMerch', addMerch)
+  .post('/addMerch', storeMerch)
+  .get('/edit/merch/:id?', editMerch)
+  .put('/edit/merch/:id?', updateMerch)
+  
   
 
 

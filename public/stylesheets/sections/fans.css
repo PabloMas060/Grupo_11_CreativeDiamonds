@@ -6,11 +6,31 @@
 }
 
 .fans-banner {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    height: 420px; /* Fija la altura en 420px */
-    object-fit: cover; /* Escala la imagen para llenar el espacio sin distorsionarla */
-    object-position: center 20%;
+  position: relative;
+  text-align: center;
+  height: 80vh; /* Ajusta la altura del banner al 80% de la altura de la pantalla */
 }
+
+.fans-bannerImage {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  height: 100%; /* Ajusta la altura de la imagen al 100% del contenedor */
+  object-fit: cover; /* Escala la imagen para llenar el espacio sin distorsionarla */
+  object-position: center 20%;
+}
+
+.partial-textoPresentacion {
+  position: absolute;
+  top: 50%; /* Coloca el texto en el centro vertical */
+  left: 50%; /* Coloca el texto en el centro horizontal */
+  transform: translate(-50%, -50%); /* Centra el texto en relación con su contenedor */
+  z-index: 1; /* Coloca el texto por encima de la imagen */
+  font-size: 4em; /* Establece el tamaño de fuente deseado */
+  color: var(--varColor1); /* Color del texto */
+  background-color: var(--varColor2);
+  white-space: nowrap;
+}
+
+  
 
 /* Estilos para fans-testInfo */
 .fans-testInfo {
@@ -52,7 +72,11 @@
 
 .partial-Section3 {
     background-color: var(--varColor2);
-    padding: 20px;
+}
+
+.partial-Section4 {
+  background-color: var(--varColor4);
+  padding: 20px;
 }
 
 /* Estilos para el texto en la sección negra */
@@ -130,4 +154,109 @@
     color: var(--varColor3);
     text-align: center; /* Centra el texto horizontalmente */
     line-height: 10px; /* Centra el texto verticalmente */
+}
+
+
+.fans-seccionAmarilla {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--varColor4);
+}
+
+
+.fans-testStats, .fans-testResults {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.fans-testStats img {
+  width: 500px;
+  height: 250px;
+}
+
+.fans-testResults img {
+  width: 250px;
+  height: 500px;
+}
+
+/* SECCION AMARRILLA */
+.fans-seccionAmarilla-Recomendaciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--varColor4);
+}
+
+.fans-seccionAmarilla-titulo{
+  background-color: var(--varColor4);
+  margin: 0;
+}
+
+.fans-seccionAmarilla-RecomendacionesImage img {
+  width: 183px;
+  height: 183px;
+  object-fit: cover;
+}
+
+.fans-seccionAmarilla-RecomendacionesInformacion {
+  text-align: left;
+}
+
+.banda-titulo {
+  font-size: 1.2em;
+  color: var(--varColor1);
+  margin-top: 5px;
+  border-bottom: 2px solid var(--varColor3);
+  display: inline;
+}
+
+.banda-texto {
+  font-size: 1em;
+  color: var(--varColor1);
+}
+
+.banda-tag {
+  font-size: 1.5em;
+  color: var(--varColor3);
+}
+
+.visitar-boton {
+  background-color: var(--varColor1);
+  color: var(--varColor2);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+
+  /* Estilos para pantallas de tamaño mediano o más pequeñas */
+@media (max-width: 768px) {
+
+  /* Ajuste del ancho de los productos para mostrar 2 por fila */
+  .partial-productDisplay1 {
+    width: 48%; /* Mostrar dos productos por fila en lugar de cuatro */
+  }
+
+  .fans-test1 {
+    /* Agrega los estilos para el contenedor que envuelve el segundo y tercer objeto aquí */
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.fans-seccionAmarilla {
+  display: flex;
+  flex-direction: column;
+}
+
+.fans-testStats img {
+  width: 100%;
+  height: 250px;
+}
+
 }

@@ -1,34 +1,38 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Merch = sequelize.define('Merch', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
-  price: {
-    type: DataTypes.INTEGER
-  },
-  discount: {
-    type: DataTypes.INTEGER
-  },
-  image: {
-    type: DataTypes.STRING(255)
-  },
-  description: {
-    type: DataTypes.TEXT
-  },
-  exclusive: {
-    type: DataTypes.BOOLEAN
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Merch extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      Merch.belongsTo(models.Type,{
+        as: 'type',
+        foreignKey: 'typeId'
+      }),
+      Merch.belongsTo(models.Band,{
+        as: 'band',
+        foreignKey: 'bandId'
+      })
+    }
   }
-});
-
-Merch.belongsTo(Band, { foreignKey: 'bandId' });
-Merch.belongsTo(Type, { foreignKey: 'typeId' });
-
-module.exports = Merch;
+  Merch.init({
+    name: DataTypes.STRING,
+    price: DataTypes.INTEGER,
+    discount: DataTypes.INTEGER,
+    image: DataTypes.STRING,
+    description: DataTypes.STRING,
+    explusive: DataTypes.BOOLEAN,
+    bandId: DataTypes.INTEGER,
+    typeId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Merch',
+  });
+  return Merch;
+};

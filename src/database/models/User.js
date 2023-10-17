@@ -1,43 +1,40 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('tu_conexion_a_la_db');
-
-const User = sequelize.define('User', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  email: {
-    type: DataTypes.STRING(255)
-  },
-  years: {
-    type: DataTypes.INTEGER
-  },
-  avatar: {
-    type: DataTypes.STRING(255)
-  },
-  password: {
-    type: DataTypes.STRING(1000)
-  },
-  nick_name: {
-    type: DataTypes.STRING(255)
-  },
-  first_name: {
-    type: DataTypes.STRING(255)
-  },
-  last_name: {
-    type: DataTypes.STRING(255)
-  },
-  about: {
-    type: DataTypes.TEXT
-  },
-  state: {
-    type: DataTypes.STRING(255)
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class User extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      User.belongsTo(models.Rol,{
+        as: 'rol',
+        foreignKey: 'rolId'
+      }),
+      User.belongsTo(models.Address,{
+        as: 'address',
+        foreignKey: 'addressId'
+      })
+    }
   }
-});
-
-User.belongsTo(Address, { foreignKey: 'addressId' });
-User.belongsTo(Rol, { foreignKey: 'rolId' });
-User.hasMany(Range);
-
-module.exports = User;
+  User.init({
+    email: DataTypes.STRING,
+    years: DataTypes.INTEGER,
+    avatar: DataTypes.STRING,
+    nick_name: DataTypes.STRING,
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    about: DataTypes.TEXT,
+    state: DataTypes.STRING,
+    addressId: DataTypes.INTEGER,
+    rolId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+  return User;
+};
