@@ -16,13 +16,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'userId'
       }),
       Order.belongsToMany(models.Merch, {
-        as : 'cart',
+        as : 'cart1',
         foreignKey: 'orderId',
         through: 'Cart',
         otherKey: 'merchId'
       }),
       Order.belongsToMany(models.Album, {
-        as : 'cart',
+        as : 'cart2',
         foreignKey: 'orderId',
         through: 'Cart',
         otherKey: 'albumId'
