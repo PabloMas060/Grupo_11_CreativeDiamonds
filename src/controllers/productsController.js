@@ -10,5 +10,41 @@ module.exports = {
     },
     detailArtist: (req, res) => {
         return res.render('artistDetail')
-    }
+    },
+    addBand: (req, res) => {
+        return res.render('./admin/addBand')
+    },
+    storeBand: (req, res) => {
+
+    },
+    editBand: (req, res) => {
+        return res.render('./admin/editBand')
+    },
+    updateBand: (req, res) => {
+
+    },
+    addAlbum: (req, res) => {
+        return res.render('./admin/addAlbum')
+    },
+    storeAlbum: (req, res) => {
+
+    },
+    editAlbum: (req, res) => {
+        return res.render('./admin/editAlbum')
+    },
+    updateAlbum: (req, res) => {
+
+    },
+    addMerch: (req, res) => {
+        return res.render('./admin/addMerch')
+    },
+    storeMerch: (req, res) => {
+
+    },
+    editMerch: (req, res) => {
+        return res.render('./admin/editMerch')
+    },
+    updateMerch: (req, res) => {
+
+    },
 }

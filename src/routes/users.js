@@ -10,8 +10,10 @@ const loginValidation = require('../validation/loginValidation');
 const { uploads } = require('../middlewares/uploads');
 const profileValidation = require('../validation/profileValidation');
 /* /users */
-router.use(localsCheck);
+/* router.use(localsCheck); */
 
-router.get('/cart', cart);
+router
+/* .get('/cart', cart) */
+.get('/admin', admin)
 
 module.exports = router;
