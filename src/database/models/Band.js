@@ -41,5 +41,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Band',
   });
-  return band;
+  return Band;
 };
