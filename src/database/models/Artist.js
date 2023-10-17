@@ -1,28 +1,27 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Artist = sequelize.define('Artist', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  first_name: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
-  last_name: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
-  rol: {
-    type: DataTypes.STRING
-  },
-  years: {
-    type: DataTypes.INTEGER
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class artist extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-Artist.belongsTo(Band, { foreignKey: 'bandId' });
-
-module.exports = Artist;
+  artist.init({
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    rol: DataTypes.STRING,
+    years: DataTypes.INTEGER,
+    bandId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'artist',
+  });
+  return artist;
+};

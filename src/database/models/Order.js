@@ -1,21 +1,26 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Order = sequelize.define('Order', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  date: {
-    type: DataTypes.STRING(45)
-  },
-  total: {
-    type: DataTypes.INTEGER
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class order extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-Order.belongsTo(User, { foreignKey: 'userId' });
-Order.belongsTo(Cart, { foreignKey: 'cartId' });
-
-module.exports = Order;
+  order.init({
+    date: DataTypes.STRING,
+    total: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
+    cartId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'order',
+  });
+  return order;
+};

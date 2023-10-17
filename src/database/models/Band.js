@@ -1,42 +1,31 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Band = sequelize.define('Band', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
-  history: {
-    type: DataTypes.TEXT
-  },
-  mainImage: {
-    type: DataTypes.STRING(255)
-  },
-  dateFounded: {
-    type: DataTypes.INTEGER
-  },
-  dateEnded: {
-    type: DataTypes.STRING(30)
-  },
-  totalShows: {
-    type: DataTypes.INTEGER
-  },
-  nextShows: {
-    type: DataTypes.DATE
-  },
-  resume: {
-    type: DataTypes.TEXT
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class band extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-Band.belongsTo(Category, { foreignKey: 'categoryId' });
-Band.hasMany(Artist);
-Band.hasMany(Merch);
-Band.hasMany(Album);
-
-module.exports = Band;
+  band.init({
+    name: DataTypes.STRING,
+    history: DataTypes.TEXT,
+    mainImage: DataTypes.STRING,
+    dateFounded: DataTypes.INTEGER,
+    dateEnded: DataTypes.INTEGER,
+    totalShows: DataTypes.INTEGER,
+    nextShow: DataTypes.INTEGER,
+    resume: DataTypes.TEXT,
+    phrase: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'band',
+  });
+  return band;
+};

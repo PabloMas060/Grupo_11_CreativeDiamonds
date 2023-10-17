@@ -1,20 +1,25 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-const Track = sequelize.define('Track', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
-  length: {
-    type: DataTypes.INTEGER
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class track extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-Track.belongsTo(Album, { foreignKey: 'albumId' });
-
-module.exports = Track;
+  track.init({
+    name: DataTypes.STRING,
+    length: DataTypes.INTEGER,
+    albumId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'track',
+  });
+  return track;
+};

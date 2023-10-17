@@ -1,40 +1,32 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Album = sequelize.define('Album', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  title: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
-  discography: {
-    type: DataTypes.STRING(255)
-  },
-  image: {
-    type: DataTypes.STRING(255)
-  },
-  year: {
-    type: DataTypes.INTEGER
-  },
-  price: {
-    type: DataTypes.INTEGER
-  },
-  discount: {
-    type: DataTypes.INTEGER
-  },
-  description: {
-    type: DataTypes.TEXT
-  },
-  exclusive: {
-    type: DataTypes.BOOLEAN
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class album extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-Album.belongsTo(Band, { foreignKey: 'bandId' });
-Album.belongsTo(Genre, { foreignKey: 'genreId' });
-
-module.exports = Album;
+  album.init({
+    title: DataTypes.STRING,
+    discography: DataTypes.STRING,
+    image: DataTypes.STRING,
+    year: DataTypes.INTEGER,
+    price: DataTypes.INTEGER,
+    discount: DataTypes.INTEGER,
+    description: DataTypes.TEXT,
+    exclusive: DataTypes.BOOLEAN,
+    bandId: DataTypes.INTEGER,
+    genreId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'album',
+  });
+  return album;
+};

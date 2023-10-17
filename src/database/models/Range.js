@@ -1,17 +1,24 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
-
-const Range = sequelize.define('Range', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: DataTypes.STRING(255)
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class range extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
   }
-});
-
-Range.belongsTo(User, { foreignKey: 'userId' });
-
-module.exports = Range;
+  range.init({
+    name: DataTypes.STRING,
+    userId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'range',
+  });
+  return range;
+};
