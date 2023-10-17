@@ -18,13 +18,13 @@ module.exports = (req, res) => {
         bandId : band,
         typeId : type
         })
-        .then(product => {
+        .then(merche => {
         if(req.files.length){
             const images = req.files.map(file => {
             return {
                 file: file.filename,
                 main : index === 0 ? true : false,
-                productId : product.id,
+                productId : merche.id,
                 }
             })
             db.Image.bulkcreate(images, {
