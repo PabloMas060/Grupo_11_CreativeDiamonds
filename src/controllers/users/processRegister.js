@@ -7,16 +7,16 @@ module.exports = (req, res) => {
     let errors = validationResult(req);
     
     if (errors.isEmpty()) {
-        const {name, surname, email, password} = req.body
+        const {first_name, last_name, email, password} = req.body
             db.User.create ({
-                name : name.trim(),
-                surname : surname.trim(),
+                first_name : first_name.trim(),
+                last_name : last_name.trim(),
                 email : email.trim(),
                 password : hashSync(password, 10),
                 rolId : 2
             })
             .then(user => {
-
+                return res.redirect('/')
             })
             .catch(error => console.log(error))
         //const users = readJSON('users.json');
