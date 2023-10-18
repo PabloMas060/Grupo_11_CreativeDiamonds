@@ -15,31 +15,22 @@ module.exports = (sequelize, DataTypes) => {
         as: 'category',
         foreignKey: 'categoryId'
       });
-
-      Band.hasMany(models.Album, {
-        as: 'album',
-        foreignKey: 'bandId' 
-      });
-
-      Band.hasMany(models.Artist, {
-        as: 'artist',
-        foreignKey: 'bandId', 
-      });
     }
   }
   Band.init({
     name: DataTypes.STRING,
     history: DataTypes.TEXT,
     mainImage: DataTypes.STRING,
-    dateFounded: DataTypes.INTEGER,
-    dateEnded: DataTypes.INTEGER,
+    dateFounded: DataTypes.STRING,
+    dateEnded: DataTypes.STRING,
     totalShows: DataTypes.INTEGER,
-    nextShow: DataTypes.INTEGER,
+    nextShows: DataTypes.STRING,
     resume: DataTypes.TEXT,
-    phrase: DataTypes.STRING
+    phrase: DataTypes.STRING,
+    categoryId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Band',
   });
-  return band;
+  return Band;
 };

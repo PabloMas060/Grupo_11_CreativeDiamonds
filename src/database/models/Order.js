@@ -14,6 +14,18 @@ module.exports = (sequelize, DataTypes) => {
       Order.belongsTo(models.User, {
         as : 'user',
         foreignKey: 'userId'
+      }),
+      Order.belongsToMany(models.Merch, {
+        as : 'cart1',
+        foreignKey: 'orderId',
+        through: 'Cart',
+        otherKey: 'merchId'
+      }),
+      Order.belongsToMany(models.Album, {
+        as : 'cart2',
+        foreignKey: 'orderId',
+        through: 'Cart',
+        otherKey: 'albumId'
       })
     
     }
@@ -22,7 +34,8 @@ module.exports = (sequelize, DataTypes) => {
     date: DataTypes.STRING,
     total: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
-    cartId: DataTypes.INTEGER
+    merchId: DataTypes.INTEGER,
+    albumId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Order',

@@ -11,19 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Address.hasMany(models.User, {
-        as: 'address',
-        foreignKey: 'addressId'
-      })
-    }
+       }
   }
   Address.init({
     address: DataTypes.STRING,
     country: DataTypes.STRING,
     city: DataTypes.STRING,
     province: DataTypes.STRING,
-    zipcode: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    zipcode: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Address',

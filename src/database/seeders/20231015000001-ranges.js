@@ -3,8 +3,16 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Ranges', [
-      { name: 'rango1', userId: 1 },
-      { name: 'rango2', userId: 2 },
+      {
+        name: 'rango1',
+        createdAt: new Date(),
+        updatedAt: new Date()
+
+      },
+      { name: 'rango2',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
       // no se que es rango amigo dejame en paz
     ], {});
   },
