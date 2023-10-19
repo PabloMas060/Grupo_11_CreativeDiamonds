@@ -4,7 +4,7 @@ const localsCheck = require('../middlewares/localsCheck');
 const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtist, detailArtist } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 const addAlbumValidator = require('../validation/addAlbumValidator');
-const addMercheValidator = require('../validation/addShirtValidator');
+const addMercheValidator = require('../validation/addMercheValidator');
 
 router.use(localsCheck); 
 
