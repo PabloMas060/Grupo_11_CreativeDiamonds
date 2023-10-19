@@ -18,7 +18,8 @@ module.exports = (req, res) => {
         description : description.trim(),
         exclusive,
         bandId : band,
-        genreId : genre
+        genreId : genre,
+        image : req.file ? req.file.filename : null
         })
         .then(album => {
         if(req.files.length){

@@ -16,7 +16,8 @@ module.exports = (req, res) => {
         description : description.trim(),
         exclusive,
         bandId : band,
-        typeId : type
+        typeId : type,
+        image : req.file ? req.file.filename : null
         })
         .then(merche => {
         if(req.files.length){
