@@ -252,8 +252,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Origin of Symmetry",
@@ -266,8 +266,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Showbiz",
@@ -280,8 +280,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Black Holes and Revelations",
@@ -294,8 +294,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Resistance",
@@ -308,8 +308,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Drones",
@@ -322,8 +322,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Simulation Theory",
@@ -336,8 +336,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 4,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Nevermind",
@@ -350,8 +350,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 5,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "In Utero",
@@ -364,8 +364,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 5,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Bleach",
@@ -378,8 +378,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 5,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Live at Reading",
@@ -392,8 +392,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 5,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Wall",
@@ -406,8 +406,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 6,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Dark Side of the Moon",
@@ -420,8 +420,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 6,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Wish You Were Here",
@@ -434,8 +434,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 6,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Pulse",
@@ -448,8 +448,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 6,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Division Bell",
@@ -462,8 +462,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 6,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Queen",
@@ -476,8 +476,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 7,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Queen II",
@@ -490,8 +490,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 7,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "A Night at the Opera",
@@ -504,8 +504,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 7,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "A Kind of Magic",
@@ -518,8 +518,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 7,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Made in Heaven",
@@ -532,8 +532,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 7,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "News of the World",
@@ -546,8 +546,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 7,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Evil Empire",
@@ -560,8 +560,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 8,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Renegades",
@@ -574,8 +574,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 8,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Battle of Los Angeles",
@@ -588,8 +588,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 8,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Live & Rare",
@@ -602,8 +602,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 8,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "People of the Sun",
@@ -616,8 +616,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 8,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Blood Sugar Sex Magik",
@@ -630,8 +630,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "By the Way",
@@ -644,8 +644,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Californication",
@@ -658,8 +658,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Red Hot Chili Peppers",
@@ -672,8 +672,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Mother's Milk",
@@ -686,8 +686,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "One Hot Minute",
@@ -700,8 +700,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Getaway",
@@ -714,8 +714,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 9,
         "genreId": 2,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Abbey Road",
@@ -728,8 +728,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Revolver",
@@ -742,8 +742,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "A Hard Day's Night",
@@ -756,8 +756,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Rubber Soul",
@@ -770,8 +770,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Please Please Me",
@@ -784,8 +784,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Help!",
@@ -798,8 +798,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Let It Be",
@@ -812,8 +812,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 10,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Narigón del Siglo",
@@ -826,8 +826,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "La Era de la Boludez",
@@ -840,8 +840,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Vivo Aca",
@@ -854,8 +854,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Acariciando lo Áspero",
@@ -868,8 +868,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Audio y Agua",
@@ -882,8 +882,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Viveza Criolla",
@@ -896,8 +896,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Amapola del '66",
@@ -910,8 +910,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "40 Dibujos en el Piso",
@@ -924,8 +924,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Haciendo Cosas Raras",
@@ -938,8 +938,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 11,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Despedazado por Mil Partes",
@@ -952,8 +952,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 12,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Detonador de Sueños",
@@ -966,8 +966,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 12,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "La Esquina del Infinito",
@@ -980,8 +980,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 12,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Trueno tierra",
@@ -994,8 +994,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 12,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Insoportablemente Vivo",
@@ -1008,8 +1008,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 12,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Esquivando Charcos",
@@ -1022,8 +1022,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 12,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Ritual",
@@ -1036,8 +1036,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Civilización",
@@ -1050,8 +1050,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Tercer Arco",
@@ -1064,8 +1064,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Azul",
@@ -1078,8 +1078,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Máquina de Sangre",
@@ -1092,8 +1092,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Verde Paisaje del Infierno",
@@ -1106,8 +1106,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Chactuchac",
@@ -1120,8 +1120,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Huracanes en Luna Plateada",
@@ -1134,8 +1134,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Fantasmas Peleándole al Viento",
@@ -1148,8 +1148,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Ay Ay Ay",
@@ -1162,8 +1162,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 13,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Signos",
@@ -1176,8 +1176,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Nada Personal",
@@ -1190,8 +1190,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Soda Stereo",
@@ -1204,8 +1204,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Dynamo",
@@ -1218,8 +1218,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Canción Animal",
@@ -1232,8 +1232,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Ruido Blanco",
@@ -1246,8 +1246,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Sueño Stereo",
@@ -1260,8 +1260,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Démagogos",
@@ -1274,8 +1274,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "After Chabón",
@@ -1288,8 +1288,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 15,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Divididos por la Felicidad",
@@ -1302,8 +1302,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 15,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Llegando los Monos",
@@ -1316,8 +1316,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 15,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Corpiños en la Madrugada",
@@ -1330,8 +1330,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 15,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Fiebre",
@@ -1344,8 +1344,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 15,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Obras Cumbres",
@@ -1358,8 +1358,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 15,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Oktubre",
@@ -1372,8 +1372,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 16,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "La Mosca y la Sopa",
@@ -1386,8 +1386,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 16,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Luzbelito",
@@ -1400,8 +1400,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 16,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Lobo Suelto, Cordero Atado",
@@ -1414,8 +1414,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 16,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Momo Sampler",
@@ -1428,8 +1428,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 16,
         "genreId": 3,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Is This It",
@@ -1442,8 +1442,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 17,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The New Abnormal",
@@ -1456,8 +1456,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 17,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Room on Fire",
@@ -1470,8 +1470,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 17,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Angels",
@@ -1484,8 +1484,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 17,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Comedown Machine",
@@ -1498,8 +1498,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 17,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Future Present Past",
@@ -1512,8 +1512,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 17,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "AM",
@@ -1526,8 +1526,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 18,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Car",
@@ -1540,8 +1540,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 18,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Favourite Worst Nightmare",
@@ -1554,8 +1554,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 18,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Humbug",
@@ -1568,8 +1568,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 18,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Suck It and See",
@@ -1582,8 +1582,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 18,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Currents",
@@ -1596,8 +1596,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 19,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "The Slow Rush",
@@ -1610,8 +1610,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 19,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Lonerism",
@@ -1624,8 +1624,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 19,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "title": "Innerspeaker",
@@ -1638,8 +1638,8 @@ module.exports = {
         "exclusive": 1,
         "bandId": 19,
         "genreId": 1,
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       }
 
 
