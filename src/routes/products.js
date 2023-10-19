@@ -3,17 +3,17 @@ const router = express.Router();
 const localsCheck = require('../middlewares/localsCheck'); 
 const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtist, detailArtist } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
-const addVynilValidator = require('../validation/addVynilValidator');
-const addShirtValidator = require('../validation/addShirtValidator');
+const addAlbumValidator = require('../validation/addAlbumValidator');
+const addMercheValidator = require('../validation/addShirtValidator');
 
 router.use(localsCheck); 
 
 /* /products */
 router
   .get('/albumAdd', albumAdd)
-  .post('/albumAdd', upload.array('images'), productAddValidator, albumCreate)
+  .post('/albumAdd', upload.array('images'), addAlbumValidator, albumCreate)
   .get('/mercheAdd', mercheAdd)
-  .post('/mercheAdd', upload.array('images'), productAddValidator, mercheCreate)
+  .post('/mercheAdd', upload.array('images'), addMercheValidator, mercheCreate)
   .get('/artists', listArtist)
   .get('/artists/detail/:id?', detailArtist)
   .get('/addBand', addBand)

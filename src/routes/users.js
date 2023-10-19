@@ -14,6 +14,10 @@ const profileValidation = require('../validation/profileValidation');
 
 router
 /* .get('/cart', cart) */
+.get("/register",checkNotUserLogin, register)
+.post("/register",registerValidator, processRegister)
+.get("/login", checkNotUserLogin, login)
+.post("/login",loginValidator, processLogin)
 .get('/admin', admin)
 
 module.exports = router;
