@@ -226,6 +226,48 @@ module.exports = {
         "resume": "Indio Solari es reverenciado por su lírica inteligente y su impacto duradero en la música y la cultura argentina.",
         "createdAt": new Date(),
         "updatedAt": new Date()
+      },
+      {
+        "name": "The Strokes",
+        "history": "The Strokes es una banda de rock estadounidense formada en Nueva York en 1998. Son conocidos por su álbum debut, 'Is This It', que influyó en el renacimiento del garage rock en la década de 2000.",
+        "mainImage": "logo-thestrokes.png",
+        "categoryId": 1,
+        "phrase": "Last Nite",
+        "dateFounded": 1998,
+        "dateEnded": null,
+        "totalShows": 100,
+        "nextShows": "2023-01-01",
+        "resume": "The Strokes son una de las bandas más influyentes de la década de 2000, conocidos por su sonido crudo y su estilo característico.",
+        "createdAt": "2023-10-19T00:00:00Z",
+        "updatedAt": "2023-10-19T00:00:00Z"
+      },
+      {
+        "name": "Arctic Monkeys",
+        "history": "Arctic Monkeys es una banda británica formada en Sheffield en 2002. Han ganado reconocimiento por su estilo indie rock y éxitos como 'I Bet You Look Good On The Dancefloor' y 'Do I Wanna Know?'.",
+        "mainImage": "logo-arcticmonkeys.png",
+        "categoryId": 1,
+        "phrase": "Do I Wanna Know?",
+        "dateFounded": 2002,
+        "dateEnded": null,
+        "totalShows": 90,
+        "nextShows": "2023-01-01",
+        "resume": "Arctic Monkeys son una de las bandas más influyentes del siglo XXI, conocidos por su lírica inteligente y su evolución musical.",
+        "createdAt": "2023-10-19T00:00:00Z",
+        "updatedAt": "2023-10-19T00:00:00Z"
+      },
+      {
+        "name": "Tame Impala",
+        "history": "Tame Impala es el proyecto musical del músico australiano Kevin Parker, formado en Perth en 2007. La música de Tame Impala fusiona el rock psicodélico con elementos de la música electrónica.",
+        "mainImage": "logo-tameimpala.png",
+        "categoryId": 1,
+        "phrase": "The Less I Know the Better",
+        "dateFounded": 2007,
+        "dateEnded": null,
+        "totalShows": 80,
+        "nextShows": "2023-01-01",
+        "resume": "Tame Impala es conocido por su sonido psicodélico y su habilidad para crear experiencias auditivas envolventes.",
+        "createdAt": "2023-10-19T00:00:00Z",
+        "updatedAt": "2023-10-19T00:00:00Z"
       }
 
     ], {});
