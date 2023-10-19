@@ -11,7 +11,7 @@ router.use(localsCheck);
 /* /products */
 router
   .get('/albumAdd', albumAdd)
-  .post('/albumAdd', upload.array('images'), addAlbumValidator, albumCreate)
+  .post('/albumAdd', upload.single('image'), addAlbumValidator, albumCreate)
   .get('/mercheAdd', mercheAdd)
   .post('/mercheAdd', upload.array('images'), addMercheValidator, mercheCreate)
   .get('/artists', listArtist)
