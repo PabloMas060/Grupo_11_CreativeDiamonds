@@ -8,5 +8,8 @@ module.exports = {
     
     admin : (req,res) => {
         res.render('./admin/admin')
+    },
+    register : (req,res) => {
+        res.render('register')
     }
 }
