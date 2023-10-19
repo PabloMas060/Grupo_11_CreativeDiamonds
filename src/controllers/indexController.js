@@ -1,6 +1,31 @@
+const db = require('../database/models');
+
 module.exports = {
     index: (req, res) => {
-        res.render('index'); 
+        
+        const bands = db.Band.findAll({
+            include: [
+                {
+                    association: 'category',
+                    include: [
+                        {
+                            all : true
+                        }
+                    ]
+                }
+            ]
+        })
+        const categories = db.Category.findAll()
+        Promise.all([bands,categories])
+            .then(([bands,categories]) => {
+                return res.render('index',{
+                    bands,
+                    categories
+                }
+                )
+            })
+
+       
     },
     about: (req, res) => {
         res.render('about')
