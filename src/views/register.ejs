@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <%- include('partials/header') %>
+
+  <%- include('partials/head', { title: 'Perfil de Usuario' }) %>
+
+  <!-- Contenido de la página de registro -->
+  <div class="registro">
+    <h1>Registro</h1>
+    <form action="/registrar" method="POST" enctype="multipart/form-data">
+        <div class="register-grupoB">
+            <div class="register-grupoC">
+
+            <!-- Grupo 1: Nombre, Apellido y Nickname -->
+            <div class="register-grupo1">
+                <div class="register-TextoCaja">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="register-TextoCaja">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name "apellido" required>
+                </div>
+
+                <div class="register-grupoA">
+                    <!-- Nickname agrupado con un párrafo -->
+                    <div class="register-TextoCaja">
+                        <label for="nickname">Nickname:</label>
+                        <input type="text" id="nickname" name="nickname" required>
+                    </div>
+                    <p>Nickname disponible: <span id="nickname-disponible">Sí</span></p>
+                </div>
+            </div>
+
+            <!-- Grupo 2: Género y Fecha de Nacimiento -->
+            <div class="register-grupo2">
+                <div class="register-TextoCaja">
+                    <label for="no-mostrar">No Mostrar</label>
+                    <input type="radio" id="hombre" name="genero" value="Hombre">
+                </div>
+                <div class="register-TextoCaja">
+                    <label for="hombre">Hombre</label>
+                    <input type="radio" id="mujer" name="genero" value="Mujer">
+                </div>
+                <div class="register-TextoCaja">
+                    <label for="mujer">Mujer</label>
+                    <input type="radio" id="no-mostrar" name="genero" value="No Mostrar">
+                </div>
+                <div class="register-TextoCaja">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+                </div>
+            </div>
+
+            <!-- Grupo 3: Ciudad y País -->
+            <div class="register-grupo3">
+                <div class="register-TextoCaja">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad">
+                </div>
+                <div class="register-TextoCaja">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais">
+                </div>
+            </div>
+
+            <!-- Grupo 4: Email -->
+            <div class="register-grupo4">
+                <div class="register-TextoCaja">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <!-- Grupo 5: Contraseña y Repetir Contraseña -->
+            <div class="register-grupo5">
+                <div class="register-TextoCaja">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <div class="register-TextoCaja">
+                    <label for="repetir-contrasena">Repetir Contraseña:</label>
+                    <input type="password" id="repetir-contrasena" name="repetir-contrasena" required>
+                </div>
+            </div>
+        </div>
+
+            <div class="register-grupoD">
+                <label for="imagen-perfil">Imagen de Perfil (opcional):</label>
+                <input type="file" id="imagen-perfil" name="imagen-perfil">
+                <div class="vista-previa">
+                    <p>Vista previa de la imagen:</p>
+                    <img id="imagen-previa" src="" alt="Vista previa">
+                </div>
+            </div>
+        </div>
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
+
+  
+  <%- include('partials/footer') %>
+  
+<%- include('partials/footer') %>
+
+</body>
+</html>

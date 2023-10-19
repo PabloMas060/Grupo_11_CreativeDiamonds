@@ -16,5 +16,6 @@
 @import "./products/notices.css";
 @import "./products/notice.css";
 @import "./user/profile.css";
+@import "./user/register.css";
 @import "./user/carrito.css";
 @import "./user/editarProfile.css";
