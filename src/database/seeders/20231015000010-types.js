@@ -22,7 +22,27 @@ module.exports = {
         name: 'Taza',
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        name: 'Mochila',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Sticker',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Llavero',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Indumentaria General',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
