@@ -24,8 +24,8 @@
         <section>
             <h6>Nombre usuario</h6>
             <div class="opciones-sesion">
-                <a class="btn btn-dark" href="">Iniciar Sesión</a>
-                <a class="btn btn-dark" href="">Registrarme</a>
+                <a class="btn btn-dark" href="#" id="open-login-modal-link">Iniciar Sesión</a>
+                <a class="btn btn-dark" href="/users/register">Registrarme</a>
             </div>
             <div class="row menu-right-section">
                 <div class="col-4 menu-right-item">
@@ -82,6 +82,32 @@
         </section>
 </div>
 
+<div id="login-modal" class="modal">
+
+    <div class="modal-content">
+        <!-- Grupo 1: Email o Nickname y Contraseña -->
+        <div class="login-titulo"> <h4>¡Bienvenido de nuevo!</h4></div>
+
+        <div class="login-grupo1">
+            <!-- Grupo A: Email o Nickname -->
+            <div class="login-grupoA">
+                <label for="email-nickname">Email o Nickname:</label>
+                <input type="text" id="email-nickname" name="email-nickname" required>
+                <input type="checkbox" id="recordarme" name="recordarme">
+                <label for="recordarme">Recordarme</label>
+            </div>
+            <!-- Grupo B: Contraseña y "¿Olvidaste tu contraseña?" -->
+            <div class="login-grupoB">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+            </div>
+        </div>
+        <!-- Botón para enviar el formulario de inicio de sesión -->
+        <button id="login-button">Iniciar Sesión</button>
+    </div>
+</div>
+
 
 <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -104,4 +130,37 @@
                 menuleft.classList.toggle("menu-left-visible");
             });
         });
+</script>
+<script>
+// JavaScript para abrir el modal solo cuando se hace clic en el enlace
+const openLoginModalLink = document.getElementById('open-login-modal-link');
+const loginModal = document.getElementById('login-modal');
+
+// Inicialmente, ocultar el modal
+loginModal.style.display = 'none';
+
+openLoginModalLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Evita que el enlace redirija a una página
+    loginModal.style.display = 'flex'; // Muestra el modal al hacer clic
+});
+
+const closeLoginModal = () => {
+    loginModal.style.display = 'none'; // Oculta el modal
+};
+
+// Cierra el modal cuando se hace clic fuera de el o se presiona la tecla Escape
+window.addEventListener('click', (event) => {
+    if (event.target === loginModal) {
+        closeLoginModal();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeLoginModal();
+    }
+});
+
+//Que trucazo, ¿no?
+
 </script>
