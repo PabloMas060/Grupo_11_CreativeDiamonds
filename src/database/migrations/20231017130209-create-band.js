@@ -18,6 +18,9 @@ module.exports = {
       mainImage: {
         type: Sequelize.STRING
       },
+      image: {
+        type: Sequelize.STRING
+      },
       dateFounded: {
         type: Sequelize.STRING
       },

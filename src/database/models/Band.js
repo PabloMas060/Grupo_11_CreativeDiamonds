@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     history: DataTypes.TEXT,
     mainImage: DataTypes.STRING,
+    image: DataTypes.STRING,
     dateFounded: DataTypes.STRING,
     dateEnded: DataTypes.STRING,
     totalShows: DataTypes.INTEGER.UNSIGNED,
