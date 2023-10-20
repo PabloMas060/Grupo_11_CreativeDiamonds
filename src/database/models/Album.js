@@ -32,13 +32,13 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     discography: DataTypes.STRING,
     image: DataTypes.STRING,
-    year: DataTypes.INTEGER,
-    price: DataTypes.INTEGER,
-    discount: DataTypes.INTEGER,
+    year: DataTypes.INTEGER.UNSIGNED,
+    price: DataTypes.INTEGER.UNSIGNED,
+    discount: DataTypes.INTEGER.UNSIGNED,
     description: DataTypes.TEXT,
     exclusive: DataTypes.BOOLEAN,
-    bandId: DataTypes.INTEGER,
-    genreId: DataTypes.INTEGER
+    bandId: DataTypes.INTEGER.UNSIGNED,
+    genreId: DataTypes.INTEGER.UNSIGNED
   }, {
     sequelize,
     modelName: 'Album',
