@@ -238,8 +238,8 @@ module.exports = {
         "totalShows": 100,
         "nextShows": "2023-01-01",
         "resume": "The Strokes son una de las bandas más influyentes de la década de 2000, conocidos por su sonido crudo y su estilo característico.",
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "name": "Arctic Monkeys",
@@ -252,8 +252,8 @@ module.exports = {
         "totalShows": 90,
         "nextShows": "2023-01-01",
         "resume": "Arctic Monkeys son una de las bandas más influyentes del siglo XXI, conocidos por su lírica inteligente y su evolución musical.",
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       },
       {
         "name": "Tame Impala",
@@ -266,8 +266,8 @@ module.exports = {
         "totalShows": 80,
         "nextShows": "2023-01-01",
         "resume": "Tame Impala es conocido por su sonido psicodélico y su habilidad para crear experiencias auditivas envolventes.",
-        "createdAt": "2023-10-19T00:00:00Z",
-        "updatedAt": "2023-10-19T00:00:00Z"
+        "createdAt": new Date(),
+        "updatedAt": new Date()
       }
 
     ], {});
