@@ -15,7 +15,7 @@ router
   .get('/mercheAdd', mercheAdd)
   .post('/mercheAdd', upload.single('image'), addMercheValidator, mercheCreate)
   .get('/artists', listArtist)
-  .get('/artists/detail/:id?', bandDetail)
+  .get('/artists/detail/:id', bandDetail)
   .get('/addBand', addBand)
   .post('/addBand', storeBand)
   .get('/edit/band/:id?', editBand)

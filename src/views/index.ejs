@@ -36,9 +36,9 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
 
-                        <% bands.forEach(({mainImage,categoryId})=> { %>
+                        <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===1) { %>
-                                <div class="swiper-slide"><a href=""><img class="img-fluid"
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
                                             src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
@@ -54,9 +54,9 @@
                 <p>Aquí encontrarás bandas con más de 30 años de trayectoria</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <% bands.forEach(({mainImage,categoryId})=> { %>
+                        <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===4) { %>
-                                <div class="swiper-slide"><a href=""><img class="img-fluid"
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
                                             src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
@@ -71,9 +71,9 @@
                 <p>En esta sección, celebramos el increíble legado musical de Argentina</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <% bands.forEach(({mainImage,categoryId})=> { %>
+                        <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===2) { %>
-                                <div class="swiper-slide"><a href=""><img class="img-fluid"
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
                                             src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
@@ -88,9 +88,9 @@
                 <p>Destacamos a artistas y grupos emergentes, listos para cautivar tus oídos</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <% bands.forEach(({mainImage,categoryId})=> { %>
+                        <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===3) { %>
-                                <div class="swiper-slide"><a href=""><img class="img-fluid"
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
                                             src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
