@@ -51,5 +51,7 @@ mercheCreate: require('./products/mercheCreate'),
     updateMerch: (req, res) => {
 
     },
-    albumDetail: require('./products/albumDetail')
+    albumDetail: require('./products/albumDetail'),
+    merchDetail: require('./products/merchDetail')
+
 }

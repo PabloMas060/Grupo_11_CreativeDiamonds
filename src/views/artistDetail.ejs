@@ -43,21 +43,18 @@
             </section>
             <section class="section__white">
 
-             
-                
+
+
             </section>
-          
+
 
             <section class="section__red">
                 <div class="row mb-3 m-5">
 
                     <% albums.forEach(({id,title,image,year,description,price, discount})=> { %>
                         <div class="col-6 col-md-4" id="album<%= id %>">
-                           <a href="/products/albums/detail/<%= id %>"> <img class="img-fluid w-50" style="border-radius: 50%;"
-                            src="/images/albums/<%= image %>" alt=""></a>
-                           
-                          
-
+                            <a href="/products/albums/detail/<%= id %>"><img class="img-fluid w-50"
+                                    style="border-radius: 50%;" src="/images/albums/<%= image %>" alt=""></a>
                             <p><b>
                                     <%= title %>
                                 </b></p>
@@ -65,59 +62,22 @@
                                 <%= year %>
                             </small>
                         </div>
-                        <%- include('partials/albumDetailModal',{
-                            id,title,image,year,description,price, discount
-                          }) %>
-                        <% }) %>
+                                <% }) %>
                 </div>
             </section>
 
 
-            <section class="section__white">
-                <div class="row mt-3 p-3 justify-content-around mx-auto align-items-center">
-
-                    <% merchs.forEach(merch=> { %>
-                        <div class="col-8 col-md-4">
-                            <div class="card align-items-center p-5">
-                                <img src="/images/<%= merch.image %>" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <%= merch.name %>
-                                    </h5>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Tipo de item</li>
-                                    <li class="list-group-item"><b>PRECIO:</b> us$ <%= merch.price %>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-8 col-md-6">
-                            <p><b>Descripción: </b>
-                                <%= merch.description %>
-                            </p>
-                        </div>
-                        <div class="col-8 d-flex justify-content-evenly p-3">
-                            <a href="" class="btn btn-dark">Botón de cantidad</a>
-                            <a href="" class="btn btn-dark">Añadir al carrito</a>
-                        </div>
-                        <% }) %>
-
-
-                </div>
-            </section>
             <section class="section__yellow">
-                <div class="row m-3">
+                <div class="row m-3 justify-content-around">
 
-                    <% merchs.forEach(merch=> { %>
+                    <% merchs.forEach(({id, image})=> { %>
                         <div class="col-10 col-md-3 p-2 bg-white">
-                            <img class="img-fluid" src="/images/<%= merch.image %>" alt="">
+                            <a href="/products/merchs/detail/<%= id %>"><img class="img-fluid" src="/images/merch/<%= image %>" alt=""></a>
                         </div>
                         <% }) %>
 
                 </div>
             </section>
-
 
             <!-- Pie de página -->
             <%- include('partials/footer') %>

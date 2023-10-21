@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const localsCheck = require('../middlewares/localsCheck'); 
-const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtist, bandDetail, addBand, storeBand, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch,albumDetail } = require('../controllers/productsController');
+const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtist, bandDetail, addBand, storeBand, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch,albumDetail, merchDetail } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 const addAlbumValidator = require('../validation/addAlbumValidator');
 const addMercheValidator = require('../validation/addMercheValidator');
@@ -29,6 +29,7 @@ router
   .get('/edit/merch/:id?', editMerch)
   .put('/edit/merch/:id?', updateMerch)
   .get('/albums/detail/:id', albumDetail)
+  .get('/merchs/detail/:id', merchDetail)
 
   
 module.exports = router;

@@ -19,7 +19,11 @@
                                     <p class="card-text"><%= album.year %></p>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Género: <%= album.genre %></li>
+                                    <li class="list-group-item">Género: <% genres.forEach(genre => { %>
+                                     <% if (genre.id === album.genreId) { %>
+                                      <%= genre.name %>
+                                     <% } %>
+                                    <% }) %></li>
                                     <li class="list-group-item"><b>PRECIO:</b> us$ <%= album.price %></li>
                                 </ul>
                                 <div class="card-body text-center">
