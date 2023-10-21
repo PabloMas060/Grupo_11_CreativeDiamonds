@@ -965,7 +965,7 @@ module.exports = {
         "description": "'Detonador de Sueños' es el sexto álbum de estudio de La Renga y presenta canciones como 'La Razon Que Te Demora' y 'Detonador de Sueños'.",
         "exclusive": 1,
         "bandId": 12,
-        "genreId": 3,
+        "genreId": 1,
         "createdAt": new Date(),
         "updatedAt": new Date()
       },

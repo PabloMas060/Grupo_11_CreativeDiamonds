@@ -23,16 +23,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   Merch.init({
     name: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    discount: DataTypes.INTEGER,
+    price: DataTypes.INTEGER.UNSIGNED,
+    discount: DataTypes.INTEGER.UNSIGNED,
     image: DataTypes.STRING,
     description: DataTypes.STRING,
     exclusive: DataTypes.BOOLEAN,
-    bandId: DataTypes.INTEGER,
-    typeId: DataTypes.INTEGER
+    bandId: DataTypes.INTEGER.UNSIGNED,
+    typeId: DataTypes.INTEGER.UNSIGNED
   }, {
     sequelize,
     modelName: 'Merch',
+    tableName: 'Merchs'
   });
   return Merch;
 };

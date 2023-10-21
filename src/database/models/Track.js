@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   Track.init({
     name: DataTypes.STRING,
     length: DataTypes.INTEGER,
-    albumId: DataTypes.INTEGER
+    albumId: DataTypes.INTEGER.UNSIGNED
   }, {
     sequelize,
     modelName: 'Track',

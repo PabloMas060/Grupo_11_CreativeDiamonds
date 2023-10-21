@@ -1,43 +1,33 @@
-const db = require('../../database/models')
+const db = require('../../database/models');
 
 module.exports = (req, res) => {
-
-    const band = db.Band.findByPk({
-        where : {
-            id: req.params.id
-        }
-    })
-    const albums = db.Album.findAll({
-        include : [
-            {
-                association : 'band',
-                include : [
-                    {
-                        all: true
-                    }
-                ]
-            }
-        ]
-    })
+    const id = req.params.id;
     const merchs = db.Merch.findAll({
-        include : [
-            {
-                association : 'band',
-                include : [
-                    {
-                        all: true
-                    }
-                ]
-            }
-        ]
-    })
-    Promise.all([band,albums,merchs])
-        .then(([band,albums,merchs]) => {
-            return res.render('artistDetail', {
-                band,
-                albums,
-                merchs
-            })
-        })
+        where: {
+            bandId: id
+        }
+    });
+    const albums = db.Album.findAll({
+        where: {
+            bandId: id
+        }
+    });
+    const type = db.Type.findAll();
 
-    }
+    const band = db.Band.findByPk(id);
+
+    Promise.all([merchs, albums, type, band])
+        .then(([merchs, albums, type, band]) => {
+            if (!band) {
+                return res.send('Banda no encontrada');
+            }
+            return res.render('artistDetail', {
+                id,
+                merchs,
+                albums,
+                type,
+                band
+            });
+        })
+        .catch(error => console.log(error));
+}

@@ -15,19 +15,24 @@ module.exports = (sequelize, DataTypes) => {
         as: 'category',
         foreignKey: 'categoryId'
       });
+      Band.hasMany(models.Album,{
+        as: 'album',
+        foreignKey: 'bandId'
+      })
     }
   }
   Band.init({
     name: DataTypes.STRING,
     history: DataTypes.TEXT,
     mainImage: DataTypes.STRING,
+    image: DataTypes.STRING,
     dateFounded: DataTypes.STRING,
     dateEnded: DataTypes.STRING,
-    totalShows: DataTypes.INTEGER,
+    totalShows: DataTypes.INTEGER.UNSIGNED,
     nextShows: DataTypes.STRING,
     resume: DataTypes.TEXT,
     phrase: DataTypes.STRING,
-    categoryId: DataTypes.INTEGER
+    categoryId: DataTypes.INTEGER.UNSIGNED
   }, {
     sequelize,
     modelName: 'Band',
