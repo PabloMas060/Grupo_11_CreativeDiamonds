@@ -10,10 +10,7 @@ albumAdd: require('./products/albumAdd'),
 albumCreate: require('./products/albumCreate'),
 mercheAdd: require('./products/mercheAdd'),
 mercheCreate: require('./products/mercheCreate'),
-    listArtist: (req, res) => {
-
-        return res.render('artists')
-    },
+    listArtists: require('./products/listArtists'),
     
     addBand: (req, res) => {
         return res.render('./admin/addBand')
