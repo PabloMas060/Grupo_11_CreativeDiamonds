@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="home__body">
+
+    <%- include('partials/head',{ title : 'Detalle de Artista' }) %>
+        <%- include('partials/header') %>
+
+           
+            <section class="section__white">
+<h2 class="m-5">Aquí podrás ver toda la información del álbum <b><%= album.title %></b></h2>
+                <div class="container">
+                    <div class="row justify-content-center g-2">
+                        <div class="col-8 col-md-6 mx-auto p-5">
+                            <div class="card">
+                                <img src="/images/albums/<%= album.image %>" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= album.title %></h5>
+                                    <p class="card-text"><%= album.year %></p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Género: <%= album.genre %></li>
+                                    <li class="list-group-item"><b>PRECIO:</b> us$ <%= album.price %></li>
+                                </ul>
+                                <div class="card-body text-center">
+                                    <a href="" class="btn btn-dark">Añadir al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-6 text-center mt-5">
+                            <h4>Lista de canciones:</h4>
+                            <ol class="Tracklist__ol">
+                                <li class="mt-3">"Black summer"</li>
+                                <li class="mt-3">"Here ever after"</li>
+                                <li class="mt-3">"Aquatic mouth dance"</li>
+                                <li class="mt-3">"Not the one"</li>
+                                <li class="mt-3">"Poster child"</li>
+                                <li class="mt-3">"The great apes"</li>
+                                <li class="mt-3">"It's only natural"</li>
+                                <li class="mt-3">"She's a lover"</li>
+                                <li class="mt-3">"These are the ways"</li>
+                                <li class="mt-3">"Whatchu thinkin'"</li>
+                                <li class="mt-3">"Bastards of light"</li>
+                                <li class="mt-3">"White braids & pillow chair"</li>
+                                <li class="mt-3">"One way traffic"</li>
+                                <li class="mt-3">"Veronica"</li>
+                                <li class="mt-3">"Let 'em cry"</li>
+                                <li class="mt-3">"The heavy wing"</li>
+                                <li class="mt-3">"Tangelo"</li>
+                            </ol>
+                        </div>
+                        <div class="col-8 col-md-6 text-center">
+                            <p><b>Reseña del álbum:</b></p>
+                            <p><%= album.description %></p>
+                
+                            <ul>
+                                <li><b>Voz principal: </b> Anthony Kiedis</li>
+                                <li><b>Guitarra y coros: </b> John Frusciante</li>
+                                <li><b>Bajo: </b> Flea</li>
+                                <li><b>Batería: </b> Chad Smith</li>
+                            </ul>
+                        </div>
+                        <div class="col-8 col-md-6">
+                            <button class="btn btn-dark"><a class="text-white" href="/products/artists/detail/<%= album.bandId %>"> Volver al listado de álbums</a></button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+
+     
+
+
+            <!-- Pie de página -->
+            <%- include('partials/footer') %>
+
+
+</body>
+
+</html>
