@@ -9,7 +9,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Pantalón',
+        name: 'Campera',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -34,7 +34,22 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Llavero',
+        name: 'Hoodie',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Emblema',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Puas',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Merchandising General',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -43,6 +58,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        name: 'Capsula del tiempo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
     ], {});
   },
 
