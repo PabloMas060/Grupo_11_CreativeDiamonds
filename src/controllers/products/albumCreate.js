@@ -22,34 +22,24 @@ module.exports = (req, res) => {
         image : req.file ? req.file.filename : null
         })
         .then(album => {
-        if(req.files.length){
-            const images = req.files.map(file => {
-            return {
-                file: file.filename,
-                main : index === 0 ? true : false,
-                productId : album.id,
+            if (req.file) {
+                    return res.redirect('/admin');
                 }
             })
-            db.Image.bulkcreate(images, {
-            validate : true
-            })
-            .then(response => console.log(response))
-        }
-        return res.redirect('/admin');
-        })
         .catch(error => console.log(error))
+    
 
 
-
-    }else {
-
-        if(req.files.length){
-        req.files.forEach(file => {
-        
-        
-        existsSync('./public/images/' + file.filename) && unlinkSync('./public/images/' + file.filename)
-       });
+    } else {
+        if (req.file) {
+            const routeImage = './public/images/' + req.file.filename;
+    
+            if (existsSync(routeImage)) {
+                unlinkSync(routeImage);
+            }
+        }
     }
+    
     const genres = db.Genre.findAll({
         order : ['name']
     });
@@ -71,4 +61,3 @@ module.exports = (req, res) => {
 
 
     }
-}

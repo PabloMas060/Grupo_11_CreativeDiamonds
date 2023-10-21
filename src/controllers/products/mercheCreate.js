@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 
     if(errors.isEmpty()){
         const {name, price,  discount, description, exclusive, band, type} = req.body
-        db.Product.create({
+        db.Merch.create({
         name : name.trim(),
         price,
         discount : discount || 0,
@@ -19,35 +19,25 @@ module.exports = (req, res) => {
         typeId : type,
         image : req.file ? req.file.filename : null
         })
-        .then(merche => {
-        if(req.files.length){
-            const images = req.files.map(file => {
-            return {
-                file: file.filename,
-                main : index === 0 ? true : false,
-                productId : merche.id,
+        .then(merch => {
+            if (req.file) {
+                    return res.redirect('/admin');
                 }
             })
-            db.Image.bulkcreate(images, {
-            validate : true
-            })
-            .then(response => console.log(response))
-        }
-        return res.redirect('/admin');
-        })
         .catch(error => console.log(error))
+    
 
 
-
-    }else {
-
-        if(req.files.length){
-        req.files.forEach(file => {
-        
-        
-        existsSync('./public/images/' + file.filename) && unlinkSync('./public/images/' + file.filename)
-       });
+    } else {
+        if (req.file) {
+            const routeImage = './public/images/' + req.file.filename;
+    
+            if (existsSync(routeImage)) {
+                unlinkSync(routeImage);
+            }
+        }
     }
+    
     const types = db.Type.findAll({
         order : ['name']
     });
@@ -58,7 +48,7 @@ module.exports = (req, res) => {
     Promise.all([types, bands])
         .then(([types, bands]) => {
             return res.render("mercheAdd", {
-        genres,
+        types,
         bands
             });
         })
@@ -69,4 +59,3 @@ module.exports = (req, res) => {
 
 
     }
-}
