@@ -42,25 +42,23 @@ module.exports = (req, res) => {
                     ).then(() => {
                         if (req.files.mainImage || req.files.image) {
                             const deleteImagePromises = [];
-                            if (Array.isArray(band.mainImage)) {
-                                band.mainImage.forEach(mainImage => {
-                                    if (existsSync(`./public/images/bands/${mainImage.file}`)) {
+
+                            function deleteFiles(files) {
+                                files.forEach(file => {
+                                    if (existsSync(`./public/images/bands/${file.file}`)) {
                                         deleteImagePromises.push(new Promise(resolve => {
-                                            unlinkSync(`./public/images/bands/${mainImage.file}`);
+                                            unlinkSync(`./public/images/bands/${file.file}`);
                                             resolve();
                                         }));
                                     }
                                 });
                             }
 
-                            band.image.forEach(image => {
-                                if (existsSync(`./public/images/bands/${image.file}`)) {
-                                    deleteImagePromises.push(new Promise(resolve => {
-                                        unlinkSync(`./public/images/bands/${image.file}`);
-                                        resolve();
-                                    }));
-                                }
-                            });
+                            if (Array.isArray(band.mainImage)) {
+                                deleteFiles(band.mainImage);
+                            }
+
+                            deleteFiles(band.image);
 
                             Promise.all(deleteImagePromises).then(() => {
                                 return res.redirect('/users/admin');
