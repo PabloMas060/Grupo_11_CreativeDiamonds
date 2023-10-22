@@ -18,9 +18,7 @@ mercheCreate: require('./products/mercheCreate'),
     storeBand: (req, res) => {
 
     },
-    editBand: (req, res) => {
-        return res.render('./admin/editBand')
-    },
+    editBand: require('./products/bandEdit'),
     updateBand: (req, res) => {
 
     },

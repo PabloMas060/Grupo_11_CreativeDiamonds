@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'ADMIN' }) %>
+
+    <body class="home__body">
+        <%- include('../partials/header') %>
+
+
+
+        <main class="container">
+            <div class="row mt-5">
+                <div class="col-12 col-md-10  mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a class="text-primary text-decoration-underline"
+                                            href="/admin">Productos</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="card-body">
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                        aria-selected="true">Bandas</button>
+                                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-profile" type="button" role="tab"
+                                        aria-controls="nav-profile" aria-selected="false">Albums</button>
+                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-contact" type="button" role="tab"
+                                        aria-controls="nav-contact" aria-selected="false">Merchandising</button>
+                                   
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active " id="nav-home" role="tabpanel"
+                                    aria-labelledby="nav-home-tab" tabindex="0">
+                                    <div class="d-flex flex-column gap-2 flex-md-row justify-content-between my-3">
+                                        <a href="/products/add" class="btn btn-dark"><i class="fas fa-plus"></i>
+                                            Agregar</a>
+                                       
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped ">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Nombre</th>
+                                                    <th scope="col">Categoría</th>
+                                                    <th scope="col">Total Shows</th>
+                                                    <th scope="col">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% bands.forEach(({id, name, mainImage, totalShows, resume, categoryId},index)=> { %>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <%= index + 1 %>
+                                                        </th>
+                                                        <td>
+                                                            <%= name %>
+                                                        </td>
+                                                        <td>
+                                                            <%= categoryId %>
+                                                        </td>
+                                                        <td>
+                                                            <%= totalShows %>
+                                                        </td>
+                                                       
+                                                        <td>
+                                                            <div class="d-flex gap-2">
+
+                                                                <button type="button"
+                                                                    class="btn btn-sm  btn-primary"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#modalDetail<%= id %>">
+                                                                    <i class="fas fa-eye"></i>
+                                                                </button>
+
+                                                                <%- include('../partials/modalBandDetail',{ id,
+                                                                    name, resume, mainImage   })%>
+
+                                                                    <a href="/products/edit/<%= id %>"
+                                                                        class="btn btn-sm btn-success">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </a>
+
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-danger"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#modalDelete<%=id%>">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+
+                                                                    <div class="modal fade" id="modalDelete<%=id%>"
+                                                                        tabindex="-1"
+                                                                        aria-labelledby="modalDeleteLabel"
+                                                                        aria-hidden="true">
+                                                                        <div class="modal-dialog">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title"
+                                                                                        id="modalDeleteLabel">
+                                                                                        Advertencia
+                                                                                    </h5>
+                                                                                    <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <p>¿Estás seguro que querés
+                                                                                        eliminar <b>
+                                                                                            <%= name %>
+                                                                                        </b>?</p>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button"
+                                                                                        class="btn btn-secondary"
+                                                                                        data-bs-dismiss="modal">Cancelar</button>
+                                                                                    <form
+                                                                                        action="/products/remove/<%=id%>?_method=DELETE"
+                                                                                        method="POST">
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-danger">Eliminalo</button>
+                                                                                    </form>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <% }) %>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab" tabindex="0">
+                                    todas las marcas
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                    aria-labelledby="nav-contact-tab" tabindex="0">
+                                    todos los tutoriales
+                                </div>
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+            
+                <%- include('../partials/footer') %>
+
+
+                    <%- include('../partials/adminSearchScript') %>
+
+
+                      
+
+
+
+    </body>
+
+</html>
