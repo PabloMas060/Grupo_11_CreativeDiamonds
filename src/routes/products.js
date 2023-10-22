@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const localsCheck = require('../middlewares/localsCheck'); 
-const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtists, bandDetail, addBand, storeBand, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch,albumDetail, merchDetail } = require('../controllers/productsController');
+const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtists, bandDetail, bandAdd, bandCreate, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch,albumDetail, merchDetail } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 const addAlbumValidator = require('../validation/addAlbumValidator');
 const addMercheValidator = require('../validation/addMercheValidator');
+const addBandValidator = require('../validation/addBandValidator');
 
 router.use(localsCheck); 
 
@@ -16,10 +17,17 @@ router
   .post('/mercheAdd', upload.single('image'), addMercheValidator, mercheCreate)
   .get('/artists', listArtists)
   .get('/artists/detail/:id', bandDetail)
-  .get('/addBand', addBand)
-  .post('/addBand', storeBand)
-  .get('/edit/band/:id', editBand)
-  .put('/edit/band/:id', updateBand)
+  .get('/addBand', bandAdd)
+  .post('/addBand', upload.fields([
+    {
+      name: "mainImage",
+    },
+    {
+      name: "images",
+    }
+  ]),addBandValidator, bandCreate)
+  .get('/edit/band/:id?', editBand)
+  .put('/edit/band/:id?', updateBand)
   .get('/addAlbum', addAlbum)
   .post('/addAlbum', storeAlbum)
   .get('/edit/album/:id?', editAlbum)

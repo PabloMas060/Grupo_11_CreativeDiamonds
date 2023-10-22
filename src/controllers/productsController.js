@@ -10,15 +10,14 @@ albumAdd: require('./products/albumAdd'),
 albumCreate: require('./products/albumCreate'),
 mercheAdd: require('./products/mercheAdd'),
 mercheCreate: require('./products/mercheCreate'),
-    listArtists: require('./products/listArtists'),
-    
-    addBand: (req, res) => {
-        return res.render('./admin/addBand')
-    },
-    storeBand: (req, res) => {
+listArtists: require('./products/listArtists'),
+bandAdd: require('./products/bandAdd'), 
+bandCreate: require('./products/bandCreate'),   
 
+
+    editBand: (req, res) => {
+        return res.render('./admin/editBand')
     },
-    editBand: require('./products/bandEdit'),
     updateBand: (req, res) => {
 
     },
