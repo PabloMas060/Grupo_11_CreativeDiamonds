@@ -1,16 +1,16 @@
 const db = require('../../database/models');
 
-module.exports = (req, res) => {
-    const id = req.params.id
-    const categories = db.Category.findAll()
-    const band = db.Band.findByPk(id)
+module.exports = async (req, res) => {
 
-    Promise.all([categories,band])
-        .then(([categories,band]) => {
-            res.render('./admin/editBand',{
-                categories,
-                band
-            })
+    try {
+        const id = req.params.id;
+        const categories = await db.Category.findAll();
+        const band = await db.Band.findByPk(id);
+        return res.render('./admin/editBand', {
+            categories,
+            band  
         })
-        .catch(error => console.log(error))
+    } catch (error) {
+        return console.log(error)
+    }
 }

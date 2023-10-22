@@ -6,6 +6,7 @@ const { upload } = require('../middlewares/upload');
 const addAlbumValidator = require('../validation/addAlbumValidator');
 const addMercheValidator = require('../validation/addMercheValidator');
 const addBandValidator = require('../validation/addBandValidator');
+const { uploadBand } = require('../middlewares/uploadBand');
 
 router.use(localsCheck); 
 
@@ -26,12 +27,19 @@ router
       name: "images",
     }
   ]),addBandValidator, bandCreate)
-  .get('/edit/band/:id?', editBand)
-  .put('/edit/band/:id?', updateBand)
+  .get('/edit/band/:id', editBand)
+  .put('/edit/band/:id',uploadBand.fields([
+    {
+      name: "mainImage",
+    },
+    {
+      name: "images",
+    }
+  ]), updateBand)
   .get('/addAlbum', addAlbum)
   .post('/addAlbum', storeAlbum)
-  .get('/edit/album/:id?', editAlbum)
-  .put('/edit/album/:id?', updateAlbum)
+  .get('/edit/album/:id', editAlbum)
+  .put('/edit/album/:id', updateAlbum)
   .get('/addMerch', addMerch)
   .post('/addMerch', storeMerch)
   .get('/edit/merch/:id?', editMerch)

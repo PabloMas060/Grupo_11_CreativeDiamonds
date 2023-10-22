@@ -15,21 +15,15 @@ bandAdd: require('./products/bandAdd'),
 bandCreate: require('./products/bandCreate'),   
 
 
-    editBand: (req, res) => {
-        return res.render('./admin/editBand')
-    },
-    updateBand: (req, res) => {
-
-    },
+    editBand: require('./products/bandEdit'),
+    updateBand: require('./products/bandUpdate'),
     addAlbum: (req, res) => {
         return res.render('./admin/addAlbum')
     },
     storeAlbum: (req, res) => {
 
     },
-    editAlbum: (req, res) => {
-        return res.render('./admin/editAlbum')
-    },
+    editAlbum: require('./products/albumEdit'),
     updateAlbum: (req, res) => {
 
     },

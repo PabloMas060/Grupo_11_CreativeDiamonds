@@ -17,9 +17,9 @@
 
                             <div class="mb-3">
                                 <label for="category" class="form-label">Categoría</label>
-                                <select class="form-select" aria-label="Default select example" name="category" id="">
+                                <select class="form-select" aria-label="Default select example" name="categoryId" id="category">
                                     <% categories.forEach(category => { %>
-                                     <option <%= category.id === band.categoryId && 'selected' %> value="<%= category.name %>"></option>
+                                     <option <%= category.id === band.categoryId ? 'selected' : '' %> value="<%= category.id %>"><%= category.name %></option>
                                     <% }) %>
                                 </select>
                             </div>
@@ -28,20 +28,20 @@
                                 <input type="text" class="form-control" id="phrase" name="phrase" value="<%= band.phrase %>">
                             </div>
                             <div class="mb-3">
-                                <label for="dateFounded" class="form-label">Fecha de Inicio</label>
-                                <input type="date" class="form-control" id="dateFounded" name="dateFounded" value="<%= band.dateFounded %>">
+                                <label for="dateFounded" class="form-label">Año de fundación</label>
+                                <input type="number" class="form-control" id="dateFounded" name="dateFounded" value="<%= band.dateFounded %>">
                             </div>
                             <div class="mb-3">
-                                <label for="dateEnded" class="form-label">Fecha de Finalización</label>
-                                <input type="date" class="form-control" id="dateEnded" name="dateEnded" value="<%= band.dateEnded ? dateEnded : '' %>">
+                                <label for="dateEnded" class="form-label">Año de finalización</label>
+                                <input type="number" class="form-control" id="dateEnded" name="dateEnded" value="<%= band.dateEnded ? band.dateEnded : '' %>">
                             </div>
                             <div class="mb-3">
                                 <label for="vigente" class="form-label">Banda Vigente</label>
-                                <input type="checkbox" id="vigente" name="vigente" onclick="toggleFechaFinalizacion()">
+                                <input type="checkbox" id="vigente" name="vigente" <% if (!band.dateEnded) { %>checked<% } %> onclick="toggleFechaFinalizacion()">
                             </div>
                             <div class="mb-3">
                                 <label for="conciertos" class="form-label">Total de Conciertos</label>
-                                <input type="number" class="form-control" id="conciertos" name="conciertos" value="<%= band.totalShows %>">
+                                <input type="number" class="form-control" id="conciertos" name="totalShows" value="<%= band.totalShows %>">
                             </div>
                             <div class="mb-3">
                                 <label for="proximoConcierto" class="form-label">Próximo Concierto</label>
@@ -58,13 +58,13 @@
                                 </textarea>
                             </div>
                             <div class="mb-6">
-                                <label for="imagenBanda" class="btn btn-secondary">Cambiar imagen de la Banda</label>
-                                <input hidden type="file" class="form-control" id="imagenBanda" name="imagenBanda">
-                                <label for="logoBanda" class="btn btn-secondary">Cambiar Logo de la Banda</label>
-                                <input hidden type="file" class="form-control" id="logoBanda" name="logoBanda">
+                                <label for="image" class="btn btn-secondary">Cambiar imagen de la Banda</label>
+                                <input hidden type="file" class="form-control" id="image" name="image">
+                                <label for="mainImage" class="btn btn-secondary">Cambiar Logo de la Banda</label>
+                                <input hidden type="file" class="form-control" id="mainImage" name="mainImage">
                             </div>
                             <div class="mb-3">
-                                <button type="button" class="btn btn-success" id="enviarForm">Actualizar</button>
+                                <button type="submit" class="btn btn-success">Actualizar</button>
                             </div>
                         </form>
                     </div>
@@ -84,6 +84,7 @@
                     }
                 }
             </script>
+         
 
             <%- include('../partials/footer') %>
 
