@@ -15,9 +15,14 @@ bandAdd: require('./products/bandAdd'),
 bandCreate: require('./products/bandCreate'),   
 
 
+<<<<<<< HEAD
     editBand: (req, res) => {
         return res.render('./admin/editBand')
     },
+=======
+    },
+    editBand: require('./products/bandEdit'),
+>>>>>>> backup2.0
     updateBand: (req, res) => {
 
     },

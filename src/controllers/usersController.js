@@ -6,9 +6,8 @@ module.exports = {
     processLogin : require('./users/processLogin'),
 
     
-    admin : (req,res) => {
-        res.render('./admin/admin')
-    },
+    admin : require('./users/admin'),
+    
     register : (req,res) => {
         res.render('register')
     }
