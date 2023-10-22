@@ -11,7 +11,7 @@ module.exports = (req, res) => {
     });
     Promise.all([types, bands])
         .then(([types, bands]) => {
-            return res.render("mercheAdd", {
+            return res.render("./admin/addMerch", {
         types,
         bands
             });
