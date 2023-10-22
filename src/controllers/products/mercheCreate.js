@@ -49,7 +49,9 @@ module.exports = (req, res) => {
         .then(([types, bands]) => {
             return res.render("mercheAdd", {
         types,
-        bands
+        bands,
+        errors : errors.mapped(),
+        old : req.body
             });
         })
         .catch (error => console.log(error))

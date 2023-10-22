@@ -51,7 +51,9 @@ module.exports = (req, res) => {
         .then(([genres, bands]) => {
             return res.render("albumAdd", {
         genres,
-        bands
+        bands,
+        errors : errors.mapped(),
+        old : req.body
             });
         })
         .catch (error => console.log(error))
