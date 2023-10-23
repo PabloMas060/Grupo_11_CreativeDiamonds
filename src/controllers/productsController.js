@@ -24,9 +24,7 @@ bandCreate: require('./products/bandCreate'),
 
     },
     editAlbum: require('./products/albumEdit'),
-    updateAlbum: (req, res) => {
-
-    },
+    updateAlbum: require('./products/albumUpdate'),
     addMerch: (req, res) => {
         return res.render('./admin/addMerch')
     },

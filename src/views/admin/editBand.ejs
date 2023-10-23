@@ -12,7 +12,8 @@
                         <form id="bandForm" action="/products/edit/band/<%= band.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre de la Banda</label>
-                                <input type="text" class="form-control" id="name" name="name" value="<%= band.name %>">
+                                <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" name="name" value="<%= band.name %>">
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
                             </div>
 
                             <div class="mb-3">
@@ -22,18 +23,22 @@
                                      <option <%= category.id === band.categoryId ? 'selected' : '' %> value="<%= category.id %>"><%= category.name %></option>
                                     <% }) %>
                                 </select>
+                                
                             </div>
                             <div class="mb-3">
                                 <label for="phrase" class="form-label">Frase</label>
-                                <input type="text" class="form-control" id="phrase" name="phrase" value="<%= band.phrase %>">
+                                <input type="text" class="form-control <%= locals.errors && (errors.phrase && 'is-invalid') %>" id="phrase" name="phrase" value="<%= band.phrase %>">
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.phrase && errors.phrase.msg) %></small>
                             </div>
                             <div class="mb-3">
                                 <label for="dateFounded" class="form-label">Año de fundación</label>
-                                <input type="number" class="form-control" id="dateFounded" name="dateFounded" value="<%= band.dateFounded %>">
+                                <input type="number" class="form-control <%= locals.errors && (errors.dateFounded && 'is-invalid') %>" id="dateFounded" name="dateFounded" value="<%= band.dateFounded %>">
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.dateFounded && errors.dateFounded.msg) %></small>
                             </div>
                             <div class="mb-3">
                                 <label for="dateEnded" class="form-label">Año de finalización</label>
-                                <input type="number" class="form-control" id="dateEnded" name="dateEnded" value="<%= band.dateEnded ? band.dateEnded : '' %>">
+                                <input type="number" class="form-control <%= locals.errors && (errors.dateEnded && 'is-invalid') %>" id="dateEnded" name="dateEnded" value="<%= band.dateEnded ? band.dateEnded : '' %>">
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.dateEnded && errors.dateEnded.msg) %></small>
                             </div>
                             <div class="mb-3">
                                 <label for="vigente" class="form-label">Banda Vigente</label>
@@ -41,21 +46,24 @@
                             </div>
                             <div class="mb-3">
                                 <label for="conciertos" class="form-label">Total de Conciertos</label>
-                                <input type="number" class="form-control" id="conciertos" name="totalShows" value="<%= band.totalShows %>">
+                                <input type="number" class="form-control <%= locals.errors && (errors.totalShows && 'is-invalid') %>" id="conciertos" name="totalShows" value="<%= band.totalShows %>">
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.totalShows && errors.totalShows.msg) %></small>
                             </div>
                             <div class="mb-3">
                                 <label for="proximoConcierto" class="form-label">Próximo Concierto</label>
-                                <input type="date" class="form-control" id="proximoConcierto" name="proximoConcierto" value="<%= band.nextShows %>">
+                                <input type="date" class="form-control <%= locals.errors && (errors.nextShows && 'is-invalid') %>" id="proximoConcierto" name="proximoConcierto" value="<%= band.nextShows %>">
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.nextShows && errors.nextShows.msg) %></small>
                             </div>
                             <div class="mb-3">
                                 <label for="historiaBanda" class="form-label">Historia</label>
-                                <textarea class="form-control" id="historiaBanda" name="historiaBanda"
+                                <textarea class="form-control <%= locals.errors && (errors.history && 'is-invalid') %>" id="historiaBanda" name="historiaBanda"
                                     rows="3"><%= band.history %></textarea>
+                                    <small class="ms-2 text-danger"><%= locals.errors && (errors.history && errors.history.msg) %></small>
                             </div>
                             <div class="mb-3">
                                 <label for="resumen" class="form-label">Resumen</label>
-                                <textarea class="form-control" id="resumen" name="resumen" rows="3"><%= band.resume %>
-                                </textarea>
+                                <textarea class="form-control <%= locals.errors && (errors.resume && 'is-invalid') %>" id="resumen" name="resumen" rows="3"><%= band.resume %></textarea>
+                                <small class="ms-2 text-danger"><%= locals.errors && (errors.resume && errors.resume.msg) %></small>
                             </div>
                             <div class="mb-6">
                                 <label for="image" class="btn btn-secondary">Cambiar imagen de la Banda</label>

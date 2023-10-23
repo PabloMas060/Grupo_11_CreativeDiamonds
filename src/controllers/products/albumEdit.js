@@ -1,11 +1,17 @@
 const db = require('../../database/models');
 
-module.exports = (req, res) => {
-   const id = req.params.id
-   
+module.exports = async (req, res) => {
+ 
 
+  const id = await req.params.id;
+  const genres = await db.Genre.findAll();
+  const bands = await db.Band.findAll();
+  const album = await db.Album.findByPk(id);
 
-
-
-     /*    .catch(error => console.log(error)) */
+return res.render('./admin/editAlbum', {
+  genres,
+  bands, 
+  album
+})
+    
 }
