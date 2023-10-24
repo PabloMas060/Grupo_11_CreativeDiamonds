@@ -34,12 +34,8 @@ bandRemove: require('./products/bandRemove'),
     storeMerch: (req, res) => {
 
     },
-    editMerch: (req, res) => {
-        return res.render('./admin/editMerch')
-    },
-    updateMerch: (req, res) => {
-
-    },
+    editMerch: require('./products/merchEdit'),
+    updateMerch: require('./products/merchUpdate'),
     albumDetail: require('./products/albumDetail'),
     merchDetail: require('./products/merchDetail')
 

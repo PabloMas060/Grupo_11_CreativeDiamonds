@@ -9,61 +9,91 @@
             <main class="container">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
-                        <form id="bandForm" action="/products/edit/band/<%= band.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form id="bandForm" action="/products/edit/band/<%= band.id %>?_method=PUT" method="POST"
+                            enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre de la Banda</label>
-                                <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" name="name" value="<%= band.name %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
+                                <input type="text"
+                                    class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name"
+                                    name="name" value="<%= band.name %>">
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.name && errors.name.msg) %>
+                                </small>
                             </div>
 
                             <div class="mb-3">
-                                <label for="category" class="form-label">Categoría</label>
-                                <select class="form-select" aria-label="Default select example" name="categoryId" id="category">
-                                    <% categories.forEach(category => { %>
-                                     <option <%= category.id === band.categoryId ? 'selected' : '' %> value="<%= category.id %>"><%= category.name %></option>
-                                    <% }) %>
+                                <label for="categoryId" class="form-label">Categoría</label>
+                                <select class="form-select" aria-label="Default select example" name="categoryId"
+                                    id="categoryId">
+                                    <% categories.forEach(category=> { %>
+                                        <option <%=category.id===band.categoryId ? 'selected' : '' %> value="<%=
+                                                category.id %>"><%= category.name %>
+                                        </option>
+                                        <% }) %>
                                 </select>
-                                
+
                             </div>
                             <div class="mb-3">
                                 <label for="phrase" class="form-label">Frase</label>
-                                <input type="text" class="form-control <%= locals.errors && (errors.phrase && 'is-invalid') %>" id="phrase" name="phrase" value="<%= band.phrase %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.phrase && errors.phrase.msg) %></small>
+                                <input type="text"
+                                    class="form-control <%= locals.errors && (errors.phrase && 'is-invalid') %>"
+                                    id="phrase" name="phrase" value="<%= band.phrase %>">
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.phrase && errors.phrase.msg) %>
+                                </small>
                             </div>
                             <div class="mb-3">
                                 <label for="dateFounded" class="form-label">Año de fundación</label>
-                                <input type="number" class="form-control <%= locals.errors && (errors.dateFounded && 'is-invalid') %>" id="dateFounded" name="dateFounded" value="<%= band.dateFounded %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.dateFounded && errors.dateFounded.msg) %></small>
+                                <input type="number"
+                                    class="form-control <%= locals.errors && (errors.dateFounded && 'is-invalid') %>"
+                                    id="dateFounded" name="dateFounded" value="<%= band.dateFounded %>">
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.dateFounded && errors.dateFounded.msg) %>
+                                </small>
                             </div>
                             <div class="mb-3">
                                 <label for="dateEnded" class="form-label">Año de finalización</label>
-                                <input type="number" class="form-control <%= locals.errors && (errors.dateEnded && 'is-invalid') %>" id="dateEnded" name="dateEnded" value="<%= band.dateEnded ? band.dateEnded : '' %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.dateEnded && errors.dateEnded.msg) %></small>
+                                <input type="number" class="form-control" id="dateEnded" name="dateEnded"
+                                    value="<%= band.dateEnded ? band.dateEnded : '' %>">
                             </div>
                             <div class="mb-3">
                                 <label for="vigente" class="form-label">Banda Vigente</label>
-                                <input type="checkbox" id="vigente" name="vigente" <% if (!band.dateEnded) { %>checked<% } %> onclick="toggleFechaFinalizacion()">
+                                <input type="checkbox" id="vigente" name="vigente" <% if (!band.dateEnded) { %>checked<%
+                                    } %> onclick="toggleFechaFinalizacion()">
                             </div>
                             <div class="mb-3">
-                                <label for="conciertos" class="form-label">Total de Conciertos</label>
-                                <input type="number" class="form-control <%= locals.errors && (errors.totalShows && 'is-invalid') %>" id="conciertos" name="totalShows" value="<%= band.totalShows %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.totalShows && errors.totalShows.msg) %></small>
+                                <label for="totalShows" class="form-label">Total de Conciertos</label>
+                                <input type="number"
+                                    class="form-control <%= locals.errors && (errors.totalShows && 'is-invalid') %>"
+                                    id="totalShows" name="totalShows" value="<%= band.totalShows %>">
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.totalShows && errors.totalShows.msg) %>
+                                </small>
                             </div>
                             <div class="mb-3">
-                                <label for="proximoConcierto" class="form-label">Próximo Concierto</label>
-                                <input type="date" class="form-control <%= locals.errors && (errors.nextShows && 'is-invalid') %>" id="proximoConcierto" name="proximoConcierto" value="<%= band.nextShows %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.nextShows && errors.nextShows.msg) %></small>
+                                <label for="nextShows" class="form-label">Próximo Concierto</label>
+                                <input type="date"
+                                    class="form-control <%= locals.errors && (errors.nextShows && 'is-invalid') %>"
+                                    id="nextShows" name="nextShows" value="<%= band.nextShows %>">
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.nextShows && errors.nextShows.msg) %>
+                                </small>
                             </div>
                             <div class="mb-3">
-                                <label for="historiaBanda" class="form-label">Historia</label>
-                                <textarea class="form-control <%= locals.errors && (errors.history && 'is-invalid') %>" id="historiaBanda" name="historiaBanda"
-                                    rows="3"><%= band.history %></textarea>
-                                    <small class="ms-2 text-danger"><%= locals.errors && (errors.history && errors.history.msg) %></small>
+                                <label for="history" class="form-label">Historia</label>
+                                <textarea class="form-control <%= locals.errors && (errors.history && 'is-invalid') %>"
+                                    id="history" name="history" rows="3"><%= band.history %></textarea>
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.history && errors.history.msg) %>
+                                </small>
                             </div>
                             <div class="mb-3">
-                                <label for="resumen" class="form-label">Resumen</label>
-                                <textarea class="form-control <%= locals.errors && (errors.resume && 'is-invalid') %>" id="resumen" name="resumen" rows="3"><%= band.resume %></textarea>
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.resume && errors.resume.msg) %></small>
+                                <label for="resume" class="form-label">Resumen</label>
+                                <textarea class="form-control <%= locals.errors && (errors.resume && 'is-invalid') %>"
+                                    id="resume" name="resume" rows="3"><%= band.resume %></textarea>
+                                <small class="ms-2 text-danger">
+                                    <%= locals.errors && (errors.resume && errors.resume.msg) %>
+                                </small>
                             </div>
                             <div class="mb-6">
                                 <label for="image" class="btn btn-secondary">Cambiar imagen de la Banda</label>
@@ -92,7 +122,7 @@
                     }
                 }
             </script>
-         
+
 
             <%- include('../partials/footer') %>
 

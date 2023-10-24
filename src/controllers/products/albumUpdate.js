@@ -35,7 +35,7 @@ module.exports = (req, res) => {
                                         }
                                     }
                                 ).then((album) => {
-                                    if (album && req.file.image && existsSync(`./public/images/albums/${album.image}`)) {
+                                    if (req.file && req.file.image && existsSync(`./public/images/albums/${album.image}`)) {
                                         unlinkSync(`./public/images/albums/${album.image}`)
                                     }
                                     return res.redirect('/users/admin')

@@ -77,9 +77,15 @@
 
                             </div>
                         
-                            <div class="mb-3">
-                                <label for="image" class="btn btn-secondary">Imagen del Álbum</label>
-                                <input hidden type="file" class="form-control" id="image" name="image">
+                            <div class="mb-3 d-flex flex-column align-items-center">
+                                <div class="col-8 col-md-4 mb-3"> <img class="img-fluid" style="border-radius: 8px;" src="/images/albums/<%= album.image %>" alt=""></div>
+                                <div class="col-8 col-md-4">
+                                    <label for="image" class="btn btn-secondary">Cambiar la imagen</label>
+                                    <input hidden type="file" class="form-control" id="image" name="image">
+                                    <small class="ms-2 text-danger"><%= locals.errors && (errors.image && errors.image.msg) %></small>
+
+                                </div>
+                               
                             </div>
                         
                             <div class="mb-3">

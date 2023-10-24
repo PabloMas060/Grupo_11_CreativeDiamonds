@@ -22,16 +22,6 @@ module.exports = [
         max: 500
         }).withMessage('La cantidad de caracteres admitidos es entre 20 y 500'),    
 
-    check('exclusive')
-        .notEmpty().withMessage('Éste campo es obligatorio'),
 
 
-    
-    body('image')
-        .custom((value, { req }) => {
-            if (req.file) {
-                return true
-            }
-            return false
-        }).withMessage('La imagen principal es obligatoria')
 ]

@@ -6,8 +6,12 @@ const { upload } = require('../middlewares/upload');
 const addAlbumValidator = require('../validation/addAlbumValidator');
 const addMercheValidator = require('../validation/addMercheValidator');
 const addBandValidator = require('../validation/addBandValidator');
+const editAlbumValidator = require('../validation/editAlbumValidator');
+const editMerchValidator = require('../validation/editMercheValidator')
 const { uploadBand } = require('../middlewares/uploadBand');
 const { uploadAlbum } = require('../middlewares/uploadAlbum');
+const { uploadMerch } = require('../middlewares/uploadMerch');
+
 
 
 router.use(localsCheck); 
@@ -30,23 +34,23 @@ router
     }
   ]),addBandValidator, bandCreate)
   .get('/edit/band/:id', editBand)
-  .put('/edit/band/:id',/* uploadBand.fields([
+  .put('/edit/band/:id', uploadBand.fields([
     {
       name: "mainImage",
     },
     {
       name: "images",
     }
-  ]) */
+  ]),
   addBandValidator, updateBand)
   .get('/addAlbum', addAlbum)
   .post('/addAlbum', storeAlbum)
   .get('/edit/album/:id', editAlbum)
-  .put('/edit/album/:id', uploadAlbum.single('image'), addAlbumValidator ,updateAlbum)
+  .put('/edit/album/:id', uploadAlbum.single('image'), editAlbumValidator ,updateAlbum)
   .get('/addMerch', addMerch)
   .post('/addMerch', storeMerch)
-  .get('/edit/merch/:id?', editMerch)
-  .put('/edit/merch/:id?', updateMerch)
+  .get('/edit/merch/:id', editMerch)
+  .put('/edit/merch/:id', uploadMerch.single('image'), editMerchValidator, updateMerch)
   .get('/albums/detail/:id', albumDetail)
   .get('/merchs/detail/:id', merchDetail)
   .get('/album/remove/:id',albumRemove) 
