@@ -12,7 +12,10 @@ mercheAdd: require('./products/mercheAdd'),
 mercheCreate: require('./products/mercheCreate'),
 listArtists: require('./products/listArtists'),
 bandAdd: require('./products/bandAdd'), 
-bandCreate: require('./products/bandCreate'),   
+bandCreate: require('./products/bandCreate'), 
+albumRemove: require('./products/albumRemove'),
+merchRemove: require('./products/merchRemove'),
+bandRemove: require('./products/bandRemove'),  
 
 
     editBand: require('./products/bandEdit'),
