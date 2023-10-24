@@ -11,50 +11,50 @@
                     <div class="col-md-8 mx-auto">
                         <form id="bandForm" action="" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
-                                <label for="nombreBanda" class="form-label">Nombre de la Banda</label>
-                                <input type="text" class="form-control" id="nombreBanda" name="nombreBanda">
+                                <label for="name" class="form-label">Nombre de la Banda</label>
+                                <input type="text" class="form-control" id="name" name="name">
                             </div>
 
                             <div class="mb-3">
-                                <label for="categoriaBanda" class="form-label">Categoría</label>
-                                <input type="text" class="form-control" id="categoriaBanda" name="categoriaBanda">
+                                <label for="category" class="form-label">Categoría</label>
+                                <input type="text" class="form-control" id="category" name="category">
                             </div>
                             <div class="mb-3">
-                                <label for="fraseBanda" class="form-label">Frase</label>
-                                <input type="text" class="form-control" id="fraseBanda" name="fraseBanda">
+                                <label for="phrase" class="form-label">Frase</label>
+                                <input type="text" class="form-control" id="phrase" name="phrase">
                             </div>
                             <div class="mb-3">
-                                <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
-                                <input type="date" class="form-control" id="fechaInicio" name="fechaInicio">
+                                <label for="dateFounded" class="form-label">Fecha de Inicio</label>
+                                <input type="date" class="form-control" id="dateFounded" name="dateFounded">
                             </div>
                             <div class="mb-3">
-                                <label for="fechaFinalizacion" class="form-label">Fecha de Finalización</label>
-                                <input type="date" class="form-control" id="fechaFinalizacion" name="fechaFinalizacion">
+                                <label for="dateEnded" class="form-label">Fecha de Finalización</label>
+                                <input type="date" class="form-control" id="dateEnded" name="dateEnded">
                             </div>
                             <div class="mb-3">
                                 <label for="vigente" class="form-label">Banda Vigente</label>
                                 <input type="checkbox" id="vigente" name="vigente" onclick="toggleFechaFinalizacion()">
                             </div>
                             <div class="mb-3">
-                                <label for="conciertos" class="form-label">Total de Conciertos</label>
-                                <input type="number" class="form-control" id="conciertos" name="conciertos">
+                                <label for="totalShows" class="form-label">Total de Conciertos</label>
+                                <input type="number" class="form-control" id="totalShows" name="totalShows">
                             </div>
                             <div class="mb-3">
-                                <label for="proximoConcierto" class="form-label">Próximo Concierto</label>
-                                <input type="date" class="form-control" id="proximoConcierto" name="proximoConcierto">
+                                <label for="nextShows" class="form-label">Próximo Concierto</label>
+                                <input type="date" class="form-control" id="nextShows" name="nextShows">
                             </div>
                             <div class="mb-3">
-                                <label for="historiaBanda" class="form-label">Historia</label>
-                                <textarea class="form-control" id="historiaBanda" name="historiaBanda"
+                                <label for="history" class="form-label">Historia</label>
+                                <textarea class="form-control" id="history" name="history"
                                     rows="3"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="resumen" class="form-label">Resumen</label>
-                                <textarea class="form-control" id="resumen" name="resumen" rows="3"></textarea>
+                                <label for="resume" class="form-label">Resumen</label>
+                                <textarea class="form-control" id="resume" name="resume" rows="3"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="imagenBanda" class="btn btn-secondary">Imagen de la Banda</label>
-                                <input hidden type="file" class="form-control" id="imagenBanda" name="imagenBanda">
+                                <label for="mainImage" class="btn btn-secondary">Imagen de la Banda</label>
+                                <input hidden type="file" class="form-control" id="mainImage" name="mainImage">
                             </div>
                             <div class="mb-3">
                                 <button type="button" class="btn btn-primary" id="enviarForm">Enviar</button>

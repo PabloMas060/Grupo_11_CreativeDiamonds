@@ -7,13 +7,14 @@ module.exports = [
             min: 2,
             max: 255
         }).withMessage('La cantidad de caracteres debe ser entre 2 y 255'),
+    check('category')
+        .notEmpty().withMessage('Éste campo es obligatorio'),
     check('history')
         .notEmpty().withMessage('Éste campo es obligatorio'),
     check('dateFounded')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isNumeric().withMessage('El dato de fundacion debe ser un número válido'),
     check('dateEnded')
-        .notEmpty()
         .isNumeric().withMessage('Éste campo es obligatorio'),
     check('totalShows')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
