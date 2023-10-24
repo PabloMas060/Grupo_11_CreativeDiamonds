@@ -7,7 +7,7 @@ module.exports = [
             min: 2,
             max: 255
         }).withMessage('La cantidad de caracteres debe ser entre 2 y 255'),
-    check('category')
+    check('categoryId')
         .notEmpty().withMessage('Éste campo es obligatorio'),
     check('history')
         .notEmpty().withMessage('Éste campo es obligatorio'),
