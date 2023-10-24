@@ -12,15 +12,11 @@ module.exports = (req, res) => {
 
         db.Band.findByPk(id)
             .then(band => {
-                if (req.files.image && existsSync(`./public/images/bands/${band.image}`)) {
-                    unlinkSync(`./public/images/bands/${band.image}`);
+                if (req.files.image && existsSync(`./public/images/bands/${band.mainImage}`)) {
+                    unlinkSync(`./public/images/bands/${band.mainImage}`);
                 }
-                if (req.files.image && Array.isArray(band.mainImage)) {
-                    band.mainImage.forEach(mainImage => {
-                        if (existsSync(`./public/images/bands/${mainImage.file}`)) {
-                            unlinkSync(`./public/images/bands/${mainImage.file}`);
-                        }
-                    });
+                if (req.files.images && existsSync(`./public/images/bands${band.image}`)) {
+                    unlinkSync(`./public/images/bands/${band.image}`)
                 }
 
                 db.Category.findAll()
@@ -29,8 +25,8 @@ module.exports = (req, res) => {
                             {
                                 name: name.trim(),
                                 history,
-                                mainImage: req.files.mainImage ? req.files.mainImage[0].filename : (Array.isArray(band.mainImage) ? band.mainImage[0].file : null),
-                                image: req.files.image ? req.files.image[0].filename : band.image,
+                                mainImage: req.files.image ? req.files.image[0].filename : band.image,
+                                image: req.files.images ? req.files.images[0].filename : band.images,
                                 dateFounded,
                                 dateEnded: dateEnded ? dateEnded : null,
                                 totalShows,
@@ -45,29 +41,12 @@ module.exports = (req, res) => {
                                 }
                             }
                         ).then(() => {
-                            if (req.files.mainImage || req.files.image) {
-                                const deleteImagePromises = [];
-
-                                function deleteFiles(files) {
-                                    files.forEach(file => {
-                                        if (existsSync(`./public/images/bands/${file.file}`)) {
-                                            deleteImagePromises.push(new Promise(resolve => {
-                                                unlinkSync(`./public/images/bands/${file.file}`);
-                                                resolve();
-                                            }));
-                                        }
-                                    });
+                            if (req.files.image && existsSync(`./public/images/bands/${band.mainImage}`)) {
+                                unlinkSync(`./public/images/bands/${band.mainImage}`);
+                                if (req.files.images && existsSync(`./public/images/bands${band.image}`)) {
+                                    unlinkSync(`./public/images/bands/${band.image}`)
                                 }
 
-                                if (Array.isArray(band.mainImage)) {
-                                    deleteFiles(band.mainImage);
-                                }
-
-                                deleteFiles(band.image);
-
-                                Promise.all(deleteImagePromises).then(() => {
-                                    return res.redirect('/users/admin');
-                                });
                             } else {
                                 return res.redirect('/users/admin');
                             }
