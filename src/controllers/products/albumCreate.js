@@ -49,7 +49,7 @@ module.exports = (req, res) => {
     });
     Promise.all([genres, bands])
         .then(([genres, bands]) => {
-            return res.render("albumAdd", {
+            return res.render("./admin/addAlbum", {
         genres,
         bands,
         errors : errors.mapped(),
