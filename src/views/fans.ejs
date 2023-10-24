@@ -87,46 +87,19 @@
         <div class="partial-Section1-texto">
             <h2>Creative Souls exclusivos</h2>
             <p>
-                ¡Los mejores productos que Creaitve Souls tiene para ofrecer!
+                ¡Los mejores productos que Creative Souls tiene para ofrecer!
             </p>
         </div>
 
         <div class="partial-productDisplaySection">
-            <!-- Primer objeto -->
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-campera1.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-campera2.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-gorra.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-pick.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-remera1.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-remera2.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-stickers.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-taza.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-        
+            <% exclusiveProducts.forEach(product => { %>
+                <div class="partial-productDisplay1">
+                    <img src="/images/merch/<%= product.image %>" alt="<%= product.name %>">
+                    <div class="fans-precio"><%= product.price %></div>
+                </div>
+            <% }); %>
         </div>
+        
         <div class="partial-buttonDisplay1">
             <button>VER LISTA COMPLETA</button>
         </div>
@@ -142,41 +115,15 @@
         </div>
 
         <div class="partial-productDisplaySection">
-            <!-- Primer objeto -->
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-campera1.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-campera2.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-gorra.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-pick.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-remera1.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-remera2.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-stickers.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-taza.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-        
+            <% discountedProducts.forEach(product => { %>
+                <div class="partial-productDisplay1">
+                    <!-- Ajusta la ruta de la imagen usando la carpeta "public/images/merch" -->
+                    <img src="/images/merch/<%= product.image %>" alt="<%= product.name %>">
+                    <div class="fans-precio"><%= product.price %></div>
+                </div>
+            <% }); %>
         </div>
+        
         <div class="partial-buttonDisplay1">
             <button>VER LISTA COMPLETA</button>
         </div>

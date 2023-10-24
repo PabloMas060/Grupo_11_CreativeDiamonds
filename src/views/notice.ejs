@@ -1,59 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <%- include('partials/head', { title: 'Grupos' }) %>
-    <%- include('partials/header') %>
+<%- include('partials/head', { title: 'Noticia' }) %>
+<%- include('partials/header') %>
 
 <body>
-    <div class="notices">
-        <!-- Primer objeto: notice-info -->
-        <div class="notice-info">
-          <p>11/09/23</p>
-          <p>Blog del grupo 1</p>
+    <div class="notice" style="background-color: <%= article.Group.primaryColor %>;">
+        <div class="notice-info" style="background-color: <%= article.Group.secondaryColor %>;">
+            <p><%= article.createdAt.toLocaleDateString() %></p>
+            <p><a href="/notices/<%= article.Group.id %>" style="color: <%= article.Group.tertiaryColor %>;"><%= article.Group.name %></a></p>
         </div>
-      
-        <!-- Segundo objeto: notice-title -->
+
         <div class="notice-title">
-          <h1>Titulo de la publicación de blog uno</h1>
-          <div class="notice-favoritos">
-          <img src="iconos/icono-favorito.svg" alt="Emoji">
-          <p>10</p>
-          </div>
+            <h1><%= article.title %></h1>
+            <div class="notice-favoritos">
+                <img src="/iconos/icono-favorito.svg" alt="Emoji">
+                <p style="color: <%= article.Group.tertiaryColor %>;"><%= article.favorites %></p>
+            </div>
         </div>
-      
-        <!-- Tercer objeto: notice-image -->
+
         <div class="notice-image">
-          <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+            <a href="/notice/<%= article.id %>">
+                <img src="/noticias/<%= article.image %>" alt="Imagen de la noticia">
+            </a>
         </div>
-      
-        <!-- Cuarto objeto: notice-text -->
+
         <div class="notice-text">
-          <p>
-            Roberto Musso la hace simple cuando se le pide una explicación sobre el éxito de Raro, el disco que catapultó en 2006 a El Cuarteto de Nos, el grupo que este uruguayo clase ’62 lidera desde 1980.
-      
-            "El disco estaba bueno, los cortes estaban buenos, la producción estaba buena y la tapa estaba buena. Esos datos objetivos. Después, a la gente le gustó y empezó una nueva etapa para nosotros", dice el cantante y guitarrista desde su hogar montevideano.
-      
-            Todo fue así, tal cual. Pero ya que está dispuesto por Zoom para celebrar su 15° aniversario, vale indagar si Raro, un disco de sonido claro - rabioso y letras existenciales disparadas como ráfagas, era la última bala de El Cuarteto de Nos para impactar en el público masivo.
-          </p>
+            <h4><%= article.subtitle %></h4>
         </div>
-      
-        <!-- Quinto objeto: notice-writer -->
+
+        <div class="notice-text">
+            <p><%= article.text %></p>
+        </div>
+
         <div class="notice-writer">
-          <img src="iconos/icono-avatarTemporal.svg" alt="Imagen del escritor" width="25" height="25">
-          <p>Nombre Escritor1</p>
+            <img src="/iconos/icono-avatarTemporal.svg" alt="Imagen del escritor" width="25" height="25">
+            <p>Nombre Escritor1</p>
         </div>
-      
-        <!-- Sexto objeto: notice-links -->
-        <div class="notice-links">
-          <h2 class="link-start">< Titulo de la publicación de blog uno</h2>
-          <h2 class="link-end">Titulo de la publicación de blog dos ></h2>
+        
+        <div class="notice-links" style="background-color: <%= article.Group.secondaryColor %>;">
+            <% const currentGroupId = article.Group.id; %>
+            <% const currentArticleIndex = groupArticles.findIndex(a => a.id === article.id); %>
+            
+            <% if (currentArticleIndex > 0) { %>
+                <% const prevArticle = groupArticles[currentArticleIndex - 1]; %>
+                <h2 class="link-start"><a href="/notice/<%= prevArticle.id %>" style="color: <%= article.Group.primaryColor %>;"><%= prevArticle.title %></a></h2>
+            <% } %>
+            
+            <% if (currentArticleIndex < groupArticles.length - 1) { %>
+                <% const nextArticle = groupArticles[currentArticleIndex + 1]; %>
+                <h2 class="link-end"><a href="/notice/<%= nextArticle.id %>" style="color: <%= article.Group.primaryColor %>;"><%= nextArticle.title %></a></h2>
+            <% } %>
         </div>
-      </div>
-      
+    </div>
 
-
-
+    <!-- Pie de página -->
+    <%- include('partials/footer') %>
 </body>
 
-          <!-- Pie de página -->
-          <%- include('partials/footer') %>
 </html>

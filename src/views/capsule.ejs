@@ -9,10 +9,119 @@
     <img class="fans-bannerImage" src="presentacion/presentacion-capsulaTiempo.png" alt="Banner de Fans">
     </div>
 
+    <div class="blanco">
+     <div class="fans-test1">
+      <!-- Segundo objeto: fans-testInfo -->
+      <div class="fans-testInfoBotton">
+      <div class="fans-testInfo">
+          <h2>¿Qué tanto conoces al rock?</h2>
+          <hr> <!-- Línea horizontal -->
+          <p>¿Te atreves a descubrir que tanto conoces al rock? ¡Te invitamos a poner a prueba tus conocimientos con las siguientes preguntas de trivia sobre nuestro genero favorito!</p>
+      </div>
+      <div class="fans-testButton">
+          <button>¡Comenzar!</button>
+      </div>
+  </div>
+      
+  <!-- Tercer objeto: fans-presentacionTest -->
+  <div class="fans-presentacionTest">
+      <img src="presentacion/presentacion-paraFansTest.png" alt="Imagen de presentación del test para fans">
+  </div>
+  </div>
+</div>
+
+<div class="partial-Section1">
+  <!-- Primer objeto: fans-seccionNegra-texto -->
+  <div class="partial-Section1-texto">
+      <h2>¿Te acordas?</h2>
+      <p>
+          ¡Los clasicos nunca mueren! Alimenta tu alma con un paseo al pasado y disfruta del rock a la antigua.
+      </p>
+  </div>
+
+  <div class="partial-productDisplaySection">
+    <% capsuleProducts.forEach(product => { %>
+        <div class="partial-productDisplay1">
+            <!-- Ajusta la ruta de la imagen usando la carpeta "public/images/merch" -->
+            <img src="/images/merch/<%= product.image %>" alt="<%= product.name %>">
+            <div class="fans-precio"><%= product.price %></div>
+        </div>
+    <% }); %>
+</div>
+  <div class="partial-buttonDisplay1">
+      <button>VER LISTA COMPLETA</button>
+  </div>
+</div>
+
+<div class="partial-Section2">
+  <div class="partial-Section1-texto">
+      <h2>Ofertas en clásicos</h2>
+      <p>¡Revisa nuestra oferta semanal en clásicos del rock!</p>
+  </div>
+  
+  <div class="partial-productDisplaySection">
+      <!-- Recorre los álbumes clásicos con descuento -->
+      <% classicAlbums.forEach(album => { %>
+          <div class="partial-productDisplay1">
+              <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+              <div class="fans-precio"><%= album.discount %> % de descuento</div>
+          </div>
+      <% }); %>
+  </div>
+  
+  <div class="partial-buttonDisplay1">
+      <button>VER LISTA COMPLETA</button>
+  </div>
+</div>
 
 
+<h5>¡Noticias de las nuevas bandas emergentes y aportes importantes al genero que merecen mucho mas reconocimiento del que consiguen!</h5>
 
+<div class="noticias-grupo">
+    <!-- Primera noticia -->
+    <div class="noticias-individual">
+        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+        <p>11/08/19</p>
+        <h2>Título de la publicación de blog uno</h2>
+    </div>
 
+    <!-- Segunda noticia -->
+    <div class="noticias-individual">
+        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+        <p>12/08/19</p>
+        <h2>Título de la publicación de blog dos</h2>
+    </div>
+
+    <!-- Tercera noticia -->
+    <div class="noticias-individual">
+        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+        <p>13/08/19</p>
+        <h2>Título de la publicación de blog tres</h2>
+    </div>
+
+    <!-- Cuarta noticia -->
+    <div class="noticias-individual">
+        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+        <p>14/08/19</p>
+        <h2>Título de la publicación de blog cuatro</h2>
+    </div>
+
+    <!-- Quinta noticia -->
+    <div class="noticias-individual">
+        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+        <p>14/08/19</p>
+        <h2>Título de la publicación de blog cinco</h2>
+    </div>
+
+    <!-- Sexta noticia -->
+    <div class="noticias-individual">
+        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
+        <p>14/08/19</p>
+        <h2>Título de la publicación de blog seis</h2>
+    </div>
+
+    
+</div>
 
 
 

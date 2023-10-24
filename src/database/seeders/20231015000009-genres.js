@@ -22,6 +22,16 @@ module.exports = {
         name: 'Metal',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        name: 'Retro',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Argentino',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
   },

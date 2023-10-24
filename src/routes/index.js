@@ -9,8 +9,8 @@ router.get('/about', about);
 router.get('/contact', contact);
 router.get('/groups', groups);
 router.get('/profile', profile);
-router.get('/notices', notices);
-router.get('/notice', notice)
+router.get('/notices/:id', notices);
+router.get('/notice/:id', notice)
 router.get('/fans', fans);
 router.get('/capsule', capsule);
 router.get('/editProfile.ejs', editProfile);
