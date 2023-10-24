@@ -14,6 +14,8 @@ module.exports = [
     check('dateFounded')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isNumeric().withMessage('El dato de fundacion debe ser un número válido'),
+    check('dateEnded')
+        .isNumeric().withMessage('Sólo caracteres numéricos'),
     check('totalShows')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isNumeric().withMessage('La cantidad de shows debe ser un número válido'),
