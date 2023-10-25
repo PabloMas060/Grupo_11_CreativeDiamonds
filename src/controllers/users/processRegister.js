@@ -9,10 +9,13 @@ module.exports = (req, res) => {
     return res.send(errors)
     
     if (errors.isEmpty()) {
-        const {first_name, last_name, email, password} = req.body
+        const {first_name, last_name, nick_name, email, password} = req.body
             db.User.create ({
                 first_name : first_name.trim(),
                 last_name : last_name.trim(),
+                nick_name : nick_name.trim(),
+
+
                 email : email.trim(),
                 password : hashSync(password, 10),
                 rolId : 2

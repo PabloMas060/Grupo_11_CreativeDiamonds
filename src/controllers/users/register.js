@@ -1,5 +1,5 @@
 
 
 module.exports = (req, res) => {
-    return res.render('users/register')
+    return res.render('register')
 }
