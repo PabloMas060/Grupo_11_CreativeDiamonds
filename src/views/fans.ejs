@@ -45,16 +45,20 @@
             <!-- Iterar sobre los productos más vendidos de Merch -->
             <% masVendidosMerch.forEach(merch => { %>
             <div class="partial-productDisplay1">
+                <a href="/products/merchs/detail/<%= merch.id %>">
                 <img src="/images/merch/<%= merch.image %>" alt="<%= merch.name %>">
                 <div class="fans-precio">$<%= merch.price %></div>
+            </a>
             </div>
             <% }); %>
     
             <!-- Iterar sobre los productos más vendidos de Álbums -->
             <% masVendidosAlbums.forEach(album => { %>
-            <div class="partial-productDisplay1">
+            <div class="partial-productDisplay2">
+                <a href="/products/albums/detail/<%= album.id %>">
                 <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
                 <div class="fans-precio">$<%= album.price %></div>
+            </a>
             </div>
             <% }); %>
         </div>
