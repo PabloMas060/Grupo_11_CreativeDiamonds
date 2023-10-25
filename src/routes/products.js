@@ -21,20 +21,20 @@ router.use(localsCheck);
 /* /products */
 router
   .get('/albumAdd', albumAdd)
-  .post('/albumAdd', upload.single('image'), addAlbumValidator, albumCreate)
+  .post('/albumAdd', uploadAlbum.single('image'), addAlbumValidator, albumCreate)
   .get('/mercheAdd', mercheAdd)
-  .post('/mercheAdd', upload.single('image'), addMercheValidator, mercheCreate)
+  .post('/mercheAdd', uploadMerch.single('image'), addMercheValidator, mercheCreate)
   .get('/artists', listArtists)
   .get('/artists/detail/:id', bandDetail)
   .get('/addBand', bandAdd)
-  .post('/addBand', upload.fields([
+  .post('/addBand', uploadBand.fields([
     {
-      name: "mainImage",
+      name: "image",
     },
     {
       name: "images",
     }
-  ]),addBandValidator, bandCreate)
+  ]), bandCreate)
   .get('/edit/band/:id', editBand)
   .put('/edit/band/:id', uploadBand.fields([
     {
@@ -55,9 +55,9 @@ router
   .put('/edit/merch/:id', uploadMerch.single('image'), editMerchValidator, updateMerch)
   .get('/albums/detail/:id', albumDetail)
   .get('/merchs/detail/:id', merchDetail)
-  .get('/album/remove/:id',albumRemove) 
-  .get('/merch/remove/:id',merchRemove)
-  .get('/band/remove/:id',bandRemove) 
+  .delete('/albums/remove/:id',albumRemove) 
+  .delete('/merchs/remove/:id',merchRemove)
+  .delete('/bands/remove/:id',bandRemove) 
  
 
 module.exports = router;
