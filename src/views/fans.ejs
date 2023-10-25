@@ -34,50 +34,32 @@
     </div>
 
     <div class="partial-Section1">
-        <!-- Primer objeto: fans-seccionNegra-texto -->
         <div class="partial-Section1-texto">
             <h2>Productos populares</h2>
             <p>
                 Esta zona está dedicada a los productos que tienen un gran número de ventas, un número que aumenta en uno por cada producto individual cada vez que una compra se concreta.
             </p>
         </div>
-
+    
         <div class="partial-productDisplaySection">
-            <!-- Primer objeto -->
+            <!-- Iterar sobre los productos más vendidos de Merch -->
+            <% masVendidosMerch.forEach(merch => { %>
             <div class="partial-productDisplay1">
-                <img src="productos/productos-campera1.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
+                <img src="/images/merch/<%= merch.image %>" alt="<%= merch.name %>">
+                <div class="fans-precio">$<%= merch.price %></div>
             </div>
+            <% }); %>
+    
+            <!-- Iterar sobre los productos más vendidos de Álbums -->
+            <% masVendidosAlbums.forEach(album => { %>
             <div class="partial-productDisplay1">
-                <img src="productos/productos-campera2.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
+                <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+                <div class="fans-precio">$<%= album.price %></div>
             </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-gorra.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-pick.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-remera1.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-remera2.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-stickers.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-            <div class="partial-productDisplay1">
-                <img src="productos/productos-taza.png" alt="Producto 1">
-                <div class="fans-precio">PRECIO</div>
-            </div>
-        
+            <% }); %>
         </div>
+    </div>
+    
         <div class="partial-buttonDisplay1">
             <button>VER LISTA COMPLETA</button>
         </div>
@@ -92,10 +74,21 @@
         </div>
 
         <div class="partial-productDisplaySection">
-            <% exclusiveProducts.forEach(product => { %>
+            <% exclusivoMerchPromise.forEach(merch => { %>
                 <div class="partial-productDisplay1">
-                    <img src="/images/merch/<%= product.image %>" alt="<%= product.name %>">
-                    <div class="fans-precio"><%= product.price %></div>
+                    <a href="/products/merchs/detail/<%= merch.id %>">
+                    <img src="/images/merch/<%= merch.image %>" alt="<%= merch.name %>">
+                    <div class="fans-precio">$<%= merch.price %></div>
+                </a>
+                </div>
+            <% }); %>
+
+            <% exclusivoAlbumPromise.forEach(album => { %>
+                <div class="partial-productDisplay2">
+                    <a href="/products/albums/detail/<%= album.id %>">
+                    <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+                    <div class="fans-precio">$<%= album.price %></div>
+                </a>
                 </div>
             <% }); %>
         </div>
@@ -115,11 +108,20 @@
         </div>
 
         <div class="partial-productDisplaySection">
-            <% discountedProducts.forEach(product => { %>
+            <% discountMerch.forEach(Merch => { %>
                 <div class="partial-productDisplay1">
-                    <!-- Ajusta la ruta de la imagen usando la carpeta "public/images/merch" -->
-                    <img src="/images/merch/<%= product.image %>" alt="<%= product.name %>">
-                    <div class="fans-precio"><%= product.price %></div>
+                    <a href="/products/merchs/detail/<%= Merch.id %>">
+                    <img src="/images/merch/<%= Merch.image %>" alt="<%= Merch.name %>">
+                    <div class="fans-precio">$<%= Merch.price %></div>
+                </a>
+                </div>
+            <% }); %>
+            <% discountAlbumPromise.forEach(album => { %>
+                <div class="partial-productDisplay2">
+                    <a href="/products/albums/detail/<%= album.id %>">
+                    <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+                    <div class="fans-precio">$<%= album.price %></div>
+                </a>
                 </div>
             <% }); %>
         </div>

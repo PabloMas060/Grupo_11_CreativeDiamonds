@@ -4,7 +4,9 @@ const { hashSync } = require('bcrypt');
 //const { readJSON, writeJSON } = require('../../data/index');
 
 module.exports = (req, res) => {
-    let errors = validationResult(req);
+    const errors = validationResult(req);
+
+    return res.send(errors)
     
     if (errors.isEmpty()) {
         const {first_name, last_name, email, password} = req.body

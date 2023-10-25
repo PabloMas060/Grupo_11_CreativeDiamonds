@@ -5,13 +5,13 @@
 
 <body style="background-color: <%= group.primaryColor %>;">
     <div class="Noticias-PrimeraSeccion">
-        <!-- Primer objeto -->
+
         <div class="notices-object">
-            <h2 style="color: <%= group.secondaryColor %>;"><%= group.name %></h2> <!-- Título del grupo -->
-            <img src="/grupos/<%= group.image %>" alt="Imagen del grupo"> <!-- Ruta a la imagen del grupo -->
+            <h2 style="color: <%= group.secondaryColor %>;"><%= group.name %></h2> 
+            <img src="/grupos/<%= group.image %>" alt="Imagen del grupo"> 
         </div>
         
-        <!-- Segundo objeto -->
+
         <div class="noticesYSuscribe">
             <div class="notices-stats">
                 <p style="color: <%= group.tertiaryColor %>;">Genero: <%= group.Genre.name %></p>
@@ -30,7 +30,7 @@
             
         </div>
 
-        <!-- Tercer objeto -->
+
         <div class="notices-writers">
             <h2 style="color: <%= group.secondaryColor %>;">Escritores</h2>
             <div class="writer">

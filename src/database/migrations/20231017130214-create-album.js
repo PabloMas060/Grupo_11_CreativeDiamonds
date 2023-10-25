@@ -27,6 +27,9 @@ module.exports = {
       discount: {
         type: Sequelize.INTEGER
       },
+      cantidadVendida: {
+        type: Sequelize.INTEGER
+      },
       description: {
         type: Sequelize.TEXT
       },

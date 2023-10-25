@@ -128,11 +128,26 @@
     object-fit: cover; /* Cubre todo el espacio sin distorsionar la imagen */
 }
 
+/* Estilos para cada producto circular (Álbums) */
+.partial-productDisplay2 {
+  width: 23%;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Hace que el producto sea circular */
+  overflow: hidden; /* Oculta las partes que se salen del círculo */
+}
+
+.partial-productDisplay2 img {
+  width: 230px;
+  height: 230px; /* Ajusta la altura para hacerlo un círculo perfecto */
+  object-fit: cover;
+}
+
 /* Estilos para el texto de precio */
 .fans-precio {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 13px;
+    left: 68px;
     background-color: var(--varColor1);
     color: var(--varColor2);
     padding: 5px;
@@ -239,7 +254,7 @@
 @media (max-width: 768px) {
 
   /* Ajuste del ancho de los productos para mostrar 2 por fila */
-  .partial-productDisplay1 {
+  .partial-productDisplay1 .partial-productDisplay2{
     width: 48%; /* Mostrar dos productos por fila en lugar de cuatro */
   }
 
