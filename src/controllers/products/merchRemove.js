@@ -1,8 +1,15 @@
 const db = require('../../database/models');
+
 module.exports = (req, res) => {
 
-    db.Merch.findByPk(req.params.id)
-    .then(merch => {
-        res.render('./admin/merchDelete', { merch });
-    });
+    const id = req.params.id;
+    db.Merch.destroy({
+        where : {
+            id : id
+        }
+    })
+    .then(() => {
+        res.redirect('/users/admin')
+    })
+    .catch(error => console.log(error))
 }

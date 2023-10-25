@@ -2,8 +2,14 @@ const db = require('../../database/models');
 
 module.exports = (req, res) => {
 
-    db.Album.findByPk(req.params.id)
-    .then(album => {
-        res.render('./admin/albumDelete', { album });
-    });
+    const id = req.params.id;
+    db.Album.destroy({
+        where : {
+            id : id
+        }
+    })
+    .then(() => {
+        res.redirect('/users/admin')
+    })
+    .catch(error => console.log(error))
 }
