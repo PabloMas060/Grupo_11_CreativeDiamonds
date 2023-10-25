@@ -61,12 +61,24 @@
 
 
             <section class="section__yellow">
-                <div class="row m-3 justify-content-around">
+                <div class="row m-3 justify-content-start">
 
-                    <% merchs.forEach(({id, image})=> { %>
-                        <div class="col-10 col-md-3 p-2 bg-white">
+                    <% merchs.forEach(({id, price,image})=> { %>
+                        <div class="col-10 col-md-3 p-2 partial-productDisplay1">
                             <a href="/products/merchs/detail/<%= id %>"><img class="img-fluid" src="/images/merch/<%= image %>" alt=""></a>
+                            <div class="fans-precio">$<%= price %></div>
+                            <div class="col-10 col-md-3 mt-5"></div>
+                                <% types.forEach(type => { %>
+                                    <% if (id === type.id) { %>
+                                     <div>
+                                        <h6><%= type.name %></h6>
+                                     </div>
+                                    <% } %>
+                                    <% }) %>
+                            
                         </div>
+                        
+                        
                         <% }) %>
 
                 </div>

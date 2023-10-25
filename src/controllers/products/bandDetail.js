@@ -2,6 +2,7 @@ const db = require('../../database/models');
 
 module.exports = (req, res) => {
     const id = req.params.id;
+    const types = db.Type.findAll()
     const merchs = db.Merch.findAll({
         where: {
             bandId: id
@@ -16,13 +17,14 @@ module.exports = (req, res) => {
 
     const band = db.Band.findByPk(id);
 
-    Promise.all([merchs, albums, type, band])
-        .then(([merchs, albums, type, band]) => {
+    Promise.all([types,merchs, albums, type, band])
+        .then(([types,merchs, albums, type, band]) => {
             if (!band) {
                 return res.send('Banda no encontrada');
             }
             return res.render('artistDetail', {
                 id,
+                types,
                 merchs,
                 albums,
                 type,
