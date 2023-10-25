@@ -1,11 +1,29 @@
 const db = require('../../database/models');
 module.exports = (req, res) => {
-    db.Band.destroy({
+
+    const id = req.params.id;
+    const albums = db.Album.destroy({
         where: {
-            id : req.params.id
+            bandId: id
         }
-    }).then(() => {
-        return res.redirect('/users/admin')
     })
-    .catch(error => console.log(error))
+        .then(() => {
+            db.Merch.destroy({
+                where: {
+                    bandId: id
+                }
+            })
+                .then(() => {
+                    db.Band.destroy({
+                        where: {
+                            id: id
+                        }
+                    })
+                        .then(() => {
+                            return res.redirect('/users/admin')
+                        })
+                })
+        })
+        .catch(error => console.log(error))
+
 }

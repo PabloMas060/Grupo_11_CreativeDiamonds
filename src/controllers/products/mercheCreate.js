@@ -8,20 +8,20 @@ module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if(errors.isEmpty()){
-        const {name, price,  discount, description, exclusive, band, type} = req.body
+        const {name, price,  discount, description, exclusive, bandId, typeId} = req.body
         db.Merch.create({
         name : name.trim(),
         price,
         discount : discount || 0,
         description : description.trim(),
-        exclusive,
-        bandId : band,
-        typeId : type,
+        exclusive: exclusive === true ? 1 : 0,
+        bandId,
+        typeId,
         image : req.file ? req.file.filename : null
         })
         .then(merch => {
             if (req.file) {
-                    return res.redirect('/admin');
+                    return res.redirect('/users/admin');
                 }
             })
         .catch(error => console.log(error))
@@ -30,13 +30,13 @@ module.exports = (req, res) => {
 
     } else {
         if (req.file) {
-            const routeImage = './public/images/' + req.file.filename;
+            const routeImage = './public/images/merch/' + req.file.filename;
     
             if (existsSync(routeImage)) {
                 unlinkSync(routeImage);
             }
         }
-    }
+    
     
     const types = db.Type.findAll({
         order : ['name']
@@ -56,7 +56,7 @@ module.exports = (req, res) => {
         })
         .catch (error => console.log(error))
 
-
+    }
 
 
 
