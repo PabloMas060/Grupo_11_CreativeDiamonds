@@ -1,8 +1,11 @@
 const db = require('../../database/models');
 module.exports = (req, res) => {
-
-    db.Band.findByPk(req.params.id)
-    .then(band => {
-        res.render('./admin/bandDelete', { band });
-    });
+    db.Band.destroy({
+        where: {
+            id : req.params.id
+        }
+    }).then(() => {
+        return res.redirect('/users/admin')
+    })
+    .catch(error => console.log(error))
 }

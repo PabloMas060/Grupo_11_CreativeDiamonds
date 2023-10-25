@@ -19,8 +19,6 @@ module.exports = [
     check('totalShows')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isNumeric().withMessage('La cantidad de shows debe ser un número válido'),
-    check('nextShows')
-        .notEmpty().withMessage('Éste campo es obligatorio'),
     check('resume')
         .notEmpty().withMessage('Éste campo es obligatorio'),
     check('description')
@@ -37,9 +35,9 @@ module.exports = [
             return false;
         })
         .withMessage('La imagen de la portada de la banda es obligatoria'),
-    body('mainImage')
+    body('images')
         .custom((value, { req }) => {
-            if (req.files && req.files.mainImage) {
+            if (req.files && req.files.images) {
                 return true;
             }
             return false;

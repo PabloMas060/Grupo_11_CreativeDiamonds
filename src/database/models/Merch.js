@@ -17,7 +17,9 @@ module.exports = (sequelize, DataTypes) => {
       }),
       Merch.belongsTo(models.Band,{
         as: 'band',
-        foreignKey: 'bandId'
+        foreignKey: 'bandId',
+        onDelete : 'cascade'
+
       })
     }
   }

@@ -8,24 +8,25 @@ module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if(errors.isEmpty()){
-        const {name, history, dateFounded,  totalShows, nextShows, resume, phrase, category} = req.body
+        const {name, history, dateFounded,  totalShows, nextShows, resume, phrase, categoryId} = req.body
 
-        db.Product.create({
+        db.Band.create({
         name : name.trim(),
         history : history.trim(),
-        mainImage: req.files.image ? req.files.image[0].filename : null,
+        mainImage: req.files.image ? req.files.image[0].filename : [],
+        image: req.files.images ? req.files.images[0].filename : [],
         dateFounded: dateFounded.trim(),
         totalShows : totalShows.trim(),
         nextShows : nextShows.trim(),
         resume: resume.trim(),
         phrase: phrase.trim(),
-        categoryId : category,
+        categoryId
         
         
         })
         .then(band => {
             if (req.files.images) {
-                    return res.redirect('/admin/addBand');
+                    return res.redirect('/users/admin');
                 }
             })
         .catch(error => console.log(error))
@@ -38,7 +39,7 @@ module.exports = (req, res) => {
                 existsSync('./public/images/' + file.filename) && unlinkSync('./public/images/' + file.filename)
             });
         }
-    }
+  
     
 
 
@@ -47,7 +48,7 @@ module.exports = (req, res) => {
         order: ['name']
     })
     .then((categories) => {
-        return res.render("AddBand", {
+        return res.render("./admin/addBand", {
             categories,
             errors : errors.mapped(),
             old : req.body
@@ -57,7 +58,7 @@ module.exports = (req, res) => {
         console.log(error);
         
     })
-
+}
 
 
 

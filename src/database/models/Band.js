@@ -13,11 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Band.belongsTo(models.Category, {
         as: 'category',
-        foreignKey: 'categoryId'
+        foreignKey: 'categoryId',
+        onDelete: 'cascade'
       });
       Band.hasMany(models.Album,{
         as: 'album',
-        foreignKey: 'bandId'
+        foreignKey: 'bandId',
+        onDelete: 'cascade'
       })
     }
   }

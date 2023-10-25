@@ -5,7 +5,7 @@ module.exports = (req, res) => {
         order: ['name']
     })
     .then((categories) => {
-        return res.render("AddBand", {
+        return res.render("./admin/addBand", {
             categories,
         });
     })

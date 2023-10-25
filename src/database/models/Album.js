@@ -18,7 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       }),
       Album.belongsTo(models.Band,{
         as: 'band',
-        foreingKey: 'bandId'
+        foreingKey: 'bandId',
+        onDelete : 'cascade'
+
       }),
       Album.belongsToMany(models.Order, {
         through: 'Cart',
