@@ -37,12 +37,13 @@
     
     <div class="groups-background">
         <section class="group-filters">
-            <ul>
-                <li>Todos los grupos</li>
-                <% genres.forEach(genre => { %>
-                    <li><%= genre.name %></li>
-                <% }); %>
-            </ul>
+<ul>
+    <li id="all-genres">Todos los grupos</li>
+    <% genres.forEach(genre => { %>
+        <li><%= genre.name %></li>
+    <% }); %>
+</ul>
+
         </section>
         <section class="group-list">
             <% groups.forEach(group => { %>

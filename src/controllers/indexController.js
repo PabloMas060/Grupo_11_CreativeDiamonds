@@ -176,37 +176,69 @@ Promise.all([group, articles])
         res.render('checkout')
     },
     fans: (req, res) => {
-        const exclusiveProductsPromise = db.Merch.findAll({
+        const exclusivoMerchPromise = db.Merch.findAll({
+            where: {
+                exclusive: 0
+            }
+        });
+        const exclusivoAlbumPromise = db.Album.findAll({
             where: {
                 exclusive: 0
             }
         });
         
-        const discountedProductsPromise = db.Merch.findAll({
+    
+        const discountMerchPromise = db.Merch.findAll({
             where: {
                 discount: {
                     [db.Sequelize.Op.ne]: null 
                 }
             }
         });
-
-        Promise.all([exclusiveProductsPromise, discountedProductsPromise])
-            .then(([exclusiveProducts, discountedProducts]) => {
-                res.render('fans', { exclusiveProducts, discountedProducts });
+        const discountAlbumPromise = db.Album.findAll({
+            where: {
+                discount: {
+                    [db.Sequelize.Op.ne]: null 
+                }
+            }
+        });
+    
+        const masVendidosMerchPromise = db.Merch.findAll({
+            limit: 12,  
+            order: [['cantidadVendida', 'DESC']]
+        });
+    
+        const masVendidosAlbumsPromise = db.Album.findAll({
+            limit: 12,  
+            order: [['cantidadVendida', 'DESC']]
+        });
+    
+        Promise.all([exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerchPromise, masVendidosMerchPromise, masVendidosAlbumsPromise])
+            .then(([exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerch, masVendidosMerch, masVendidosAlbums]) => {
+                res.render('fans', { exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerch, masVendidosMerch, masVendidosAlbums });
             })
             .catch(error => {
                 console.error(error);
             });
     },
+    
     capsule: (req, res) => {
+        // Obtén los artículos para mostrar en la página de "capsule"
+        const capsuleArticulosPromise = db.Article.findAll({
+            where: {
+                nostalgia: 0
+            },
+            order: [['createdAt', 'DESC']], // Ordenar por fecha de creación
+        });
+    
+        // Ahora obtén los datos de los álbumes clásicos con descuento y productos de la Capsula del tiempo
         const classicCategoryID = 4;
         
         const classicAlbumsPromise = db.Album.findAll({
             where: {
                 discount: {
                     [db.Sequelize.Op.ne]: null
-                },
-                '$band.categoryId$': classicCategoryID
+                }
             },
             include: {
                 model: db.Band,
@@ -223,11 +255,12 @@ Promise.all([group, articles])
             }
         });
     
-        Promise.all([classicAlbumsPromise, capsuleProductsPromise])
-            .then(([classicAlbums, capsuleProducts]) => {
-                console.log('Cantidad de albumes clasicos con descuento:', classicAlbums.length);
+        Promise.all([classicAlbumsPromise, capsuleProductsPromise, capsuleArticulosPromise])
+            .then(([classicAlbums, capsuleProducts, capsuleArticles]) => {
+                console.log('Cantidad de álbumes clásicos con descuento:', classicAlbums.length);
                 console.log('Cantidad de productos en la Capsula del tiempo:', capsuleProducts.length);
-                res.render('capsule', { classicAlbums, capsuleProducts });
+                console.log('Cantidad de artículos de cápsula:', capsuleArticles.length);
+                res.render('capsule', { classicAlbums, capsuleProducts, capsuleArticles });
             })
             .catch(error => {
                 console.error(error);

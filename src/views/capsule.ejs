@@ -42,9 +42,10 @@
   <div class="partial-productDisplaySection">
     <% capsuleProducts.forEach(product => { %>
         <div class="partial-productDisplay1">
-            <!-- Ajusta la ruta de la imagen usando la carpeta "public/images/merch" -->
+            <a href="/products/merchs/detail/<%= product.id %>">
             <img src="/images/merch/<%= product.image %>" alt="<%= product.name %>">
-            <div class="fans-precio"><%= product.price %></div>
+            <div class="fans-precio">$<%= product.price %></div>
+        </a>
         </div>
     <% }); %>
 </div>
@@ -60,11 +61,12 @@
   </div>
   
   <div class="partial-productDisplaySection">
-      <!-- Recorre los álbumes clásicos con descuento -->
       <% classicAlbums.forEach(album => { %>
-          <div class="partial-productDisplay1">
+          <div class="partial-productDisplay2">
+            <a href="/products/albums/detail/<%= album.id %>">
               <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
               <div class="fans-precio"><%= album.discount %> % de descuento</div>
+            </a>
           </div>
       <% }); %>
   </div>
@@ -75,53 +77,20 @@
 </div>
 
 
-<h5>¡Noticias de las nuevas bandas emergentes y aportes importantes al genero que merecen mucho mas reconocimiento del que consiguen!</h5>
+<h5>¡Recordemos los momentos mas importantes de la historia del rock!</h5>
 
 <div class="noticias-grupo">
-    <!-- Primera noticia -->
-    <div class="noticias-individual">
-        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
-        <p>11/08/19</p>
-        <h2>Título de la publicación de blog uno</h2>
-    </div>
-
-    <!-- Segunda noticia -->
-    <div class="noticias-individual">
-        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
-        <p>12/08/19</p>
-        <h2>Título de la publicación de blog dos</h2>
-    </div>
-
-    <!-- Tercera noticia -->
-    <div class="noticias-individual">
-        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
-        <p>13/08/19</p>
-        <h2>Título de la publicación de blog tres</h2>
-    </div>
-
-    <!-- Cuarta noticia -->
-    <div class="noticias-individual">
-        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
-        <p>14/08/19</p>
-        <h2>Título de la publicación de blog cuatro</h2>
-    </div>
-
-    <!-- Quinta noticia -->
-    <div class="noticias-individual">
-        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
-        <p>14/08/19</p>
-        <h2>Título de la publicación de blog cinco</h2>
-    </div>
-
-    <!-- Sexta noticia -->
-    <div class="noticias-individual">
-        <img src="noticias/noticia1.png" alt="Imagen de la noticia">
-        <p>14/08/19</p>
-        <h2>Título de la publicación de blog seis</h2>
-    </div>
-
-    
+    <% capsuleArticles.forEach(article => { %>
+        <div class="noticias-individual">
+            <a href="/notice/<%= article.id %>">
+                <img src="/noticias/<%= article.image %>" alt="Imagen de la noticia">
+            </a>            
+            <p><%= article.createdAt.toLocaleDateString() %></p>
+            <h2><%= article.title %></h2>
+        </div>
+    <% }); %>
 </div>
+
 
 
 
