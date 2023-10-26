@@ -259,7 +259,6 @@
   }
 
   .fans-test1 {
-    /* Agrega los estilos para el contenedor que envuelve el segundo y tercer objeto aquí */
     display: flex;
     flex-direction: column-reverse;
 }

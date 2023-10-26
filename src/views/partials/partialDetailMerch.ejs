@@ -12,17 +12,84 @@
 
     <div class="partial-productDisplaySection">
         <% merchData.forEach(merch => { %>
-        <div class="partial-productDisplay1">
-            <a href="/products/merchs/detail/<%= merch.id %>">
-            <img src="/images/merch/<%= merch.image %>" alt="<%= merch.name %>">
-            <div class="fans-precio">$<%= merch.price %></div>
-        </a>
+            <div class="partial-productDisplay1" data-image="<%= merch.image %>" data-name="<%= merch.name %>" data-price="<%= merch.price %>" data-description="<%= merch.description %>" data-typeId="<%= merch.type.name %>">
+                <img src="/images/merch/<%= merch.image %>" alt="<%= merch.name %>">
+                <div class="fans-precio">$<%= merch.price %></div>
         </div>
         <% }); %>
     </div>
 </div>
 
-<script>
 
-    
+<div class="partial-detailMerch" id="detailMerch">
+    <div class="modal-content">
+        <span class="closedetailMerch" id="closeModal">&times;</span>
+        <div class="grupoC">
+            <div class="grupoA">
+                <div class="grupo1">
+                    <img id="product-image" src="" alt="">
+                </div>
+                <div class="grupo2">
+                    <h1 id="product-name"></h1>
+                    <h1 id="product-price"></h1>
+                    <p class="grupoX" id="product-typeId"></p> 
+                </div>
+                <div class="grupo3">
+                    <p id="product-description"></p>
+                </div>
+            </div>
+            <div class="grupoB">
+                <button id="add-to-cart">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+const modal = document.getElementById('detailMerch');
+const closeModal = document.getElementById('closeModal');
+const productImage = document.getElementById('product-image');
+const productName = document.getElementById('product-name');
+const productPrice = document.getElementById('product-price');
+const productDescription = document.getElementById('product-description');
+const addToCartButton = document.getElementById('add-to-cart');
+
+const merchItems = document.querySelectorAll('.partial-productDisplay1');
+
+merchItems.forEach(merchItem => {
+    merchItem.addEventListener('click', () => {
+        const image = '/images/merch/' + merchItem.getAttribute('data-image');
+        const name = merchItem.getAttribute('data-name');
+        const price = merchItem.getAttribute('data-price');
+        const description = merchItem.getAttribute('data-description');
+        const typeId = merchItem.getAttribute('data-typeId');
+
+        productImage.src = image;
+        productName.textContent = name;
+        productPrice.textContent = '$' + price;
+        productDescription.textContent = description;
+
+        const grupo2 = document.querySelector('.grupoX');
+        grupo2.innerHTML = '';
+
+        // Utiliza directamente el valor de data-typeId
+        const typeIdElement = document.createElement('p');
+        typeIdElement.textContent = 'Tipo: ' + typeId;
+        grupo2.appendChild(typeIdElement);
+
+        modal.style.display = 'block';
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+document.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
 </script>

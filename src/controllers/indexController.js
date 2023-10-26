@@ -267,16 +267,32 @@ Promise.all([group, articles])
 
     
     prueba1: (req, res) => {
-        db.Merch.findAll({
-            limit: 4,  
-        })
-        .then(merchData => {
-            res.render('partials/partialDetailMerch', { merchData });
-        })
+        const merchPromise = db.Merch.findAll({
+            limit: 4,
+            include: [{
+                model: db.Type,
+                as: 'type',
+            }],
+        });
+    
+        const typesPromise = db.Type.findAll();
+    
+        Promise.all([merchPromise, typesPromise])
+            .then(([merchData, types]) => {
+                res.render('partials/partialDetailMerch', { merchData, types });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     },
+    
     prueba2: (req, res) => {
         db.Album.findAll({
             limit: 4,  
+            include: [{
+                model: db.Band,
+                as: 'band',
+            }],
         })
             .then(albumData => {
                 res.render('partials/partialDetailAlbum', { albumData });
