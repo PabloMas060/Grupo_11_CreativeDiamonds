@@ -6,16 +6,13 @@ const { hashSync } = require('bcrypt');
 module.exports = (req, res) => {
     const errors = validationResult(req);
 
-    return res.send(errors)
+    
     
     if (errors.isEmpty()) {
-        const {first_name, last_name, nick_name, email, password} = req.body
+        const {first_name, last_name, email, password} = req.body
             db.User.create ({
                 first_name : first_name.trim(),
                 last_name : last_name.trim(),
-                nick_name : nick_name.trim(),
-
-
                 email : email.trim(),
                 password : hashSync(password, 10),
                 rolId : 2
@@ -29,7 +26,7 @@ module.exports = (req, res) => {
             ...req.body,
             mainImage: req.files.mainImage ? req.files.mainImage[0].filename : null*/
         }else {
-            return res.render('users/register', {
+            return res.redirect('/users/register', {
                 old: req.body,
                 errors: errors.mapped()
             })
