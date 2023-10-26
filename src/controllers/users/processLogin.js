@@ -55,7 +55,7 @@ module.exports = (req, res) => {
         .catch(error => console.log(error));
     } else {
         return res.render('login', {
-            errors: errors.array(),
+            errors: errors.mapped(),
         });
     }
 }

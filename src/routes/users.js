@@ -17,7 +17,7 @@ router
 .get("/register",/*checkNotUserLogin,*/ register)
 .post("/register",registerValidation, processRegister)
 .get("/login", checkNotUserLogin, login)
-.post("/login",loginValidation, processLogin)
+.post("/login",/*loginValidation,*/ processLogin)
 .get('/admin', admin)
 
 module.exports = router;
