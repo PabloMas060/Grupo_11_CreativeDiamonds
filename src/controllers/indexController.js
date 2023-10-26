@@ -300,12 +300,23 @@ Promise.all([group, articles])
     },
     prueba3: (req, res) => {
         db.Band.findAll({
-            limit: 4,  
+            limit: 4,
         })
             .then(bandData => {
-                res.render('partials/partialDetailBand', { bandData });
-            })    }
-    
+                db.Album.findAll({ // Consulta para obtener los últimos 4 álbumes
+                    order: [['createdAt', 'DESC']], // Ordenar por fecha de creación descendente
+                })
+                    .then(latestAlbums => {
+                        res.render('partials/partialDetailBand', { bandData, latestAlbums });
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener los últimos álbumes:', error);
+                    });
+            })
+            .catch(error => {
+                console.error('Error al obtener las bandas:', error);
+            });
+    }
     
     
 }

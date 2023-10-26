@@ -2,9 +2,118 @@
 
 <%- include('header') %>
 
+<div class="partial-Section1">
+    <div class="partial-Section1-texto">
+        <h2>Bandas populares</h2>
+        <p>
+            Esta zona está dedicada a las bandas populares que tienen un gran número de seguidores y conciertos emocionantes.
+        </p>
+    </div>
+    <div class="partial-productDisplaySection">
+        <% bandData.forEach(band => { %>
+            <div class="partial-productDisplay2" data-mainImage="<%= band.mainImage %>" data-image="<%= band.image %>" data-resume="<%= band.resume %>" data-dateFounded="<%= band.dateFounded %>" >
+                <img src="/images/bands/<%= band.mainImage %>" alt="<%= band.name %>">
+                <div class="fans-precio">Fundada en <%= band.dateFounded %></div>
+            </div>
+            <div class="partial-latestAlbums" style="display: none;">
+                <h3>Últimos 4 álbumes de <%= band.name %></h3>
+                <ul>
+                    <% latestAlbums.forEach(album => { %>
+                        <% if (album.bandId === band.id) { %>
+                            <li>
+                                <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+                                <div class="conchole" data-title="<%= album.title %>" data-image="<%= album.image %>"></div>
+                                <span><%= album.title %></span>
+                            </li>
+                        <% } %>
+                    <% }); %>
+                </ul>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<div class="partial-detailMerch" id="detailMerch" style="display: none;">
+    <div class="modal-content">
+        <span class="closedetailMerch" id="closeModal">&times;</span>
+        <div class="grupoC">
+            <div class="grupoA">
+                <div class="grupo1">
+                    <img id="product-image" src="" alt="">
+                    <img id="product-mainImage" src="" alt=""> <!-- Cambiamos de <p> a <img> para la imagen principal -->
+                </div>
+                <div class="grupo2">
+                    <h1 id="product-name"></h1>
+                    <p class="grupoX" id="product-resume"></p>
+                    <p class="grupoX" id="product-dateFounded"></p>
+                </div>
+                <div class="grupo3">
+                    <p id="product-description"></p>
+                </div>
+                <div class="latest-albums">
+                    <h2>Últimos 4 álbumes</h2>
+                    <ul id="latest-albums-list">
+                        <% latestAlbums.forEach(album => { %>
+                            <li>
+                                <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+                                <span><%= album.title %></span>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="grupoB">
+                <button id="add-to-cart">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script>
+const modal = document.getElementById('detailMerch');
+const closeModal = document.getElementById('closeModal');
+const productImage = document.getElementById('product-image');
+const productName = document.getElementById('product-name');
+const productMainImage = document.getElementById('product-mainImage'); // Agregamos el elemento para la imagen principal
+const productDescription = document.getElementById('product-description');
+const addToCartButton = document.getElementById('add-to-cart');
 
-    
+const bandItems = document.querySelectorAll('.partial-productDisplay2');
+
+bandItems.forEach(bandItem => {
+    bandItem.addEventListener('click', () => {
+        const image = '/images/bands/' + bandItem.getAttribute('data-image');
+        const mainImage = '/images/bands/' + bandItem.getAttribute('data-mainImage'); // Obtenemos la URL de la imagen principal
+        const name = bandItem.getAttribute('data-title');
+        const resume = bandItem.getAttribute('data-resume');
+        const dateFounded = bandItem.getAttribute('data-dateFounded');
+
+        productImage.src = image;
+        productMainImage.src = mainImage; // Asignamos la URL de la imagen principal
+        productName.textContent = name;
+        productDescription.textContent = resume;
+
+
+        const grupo2 = document.querySelector('.grupo2');
+        grupo2.innerHTML = '';
+
+        const dateFoundedElement = document.createElement('p');
+        dateFoundedElement.textContent = 'Fundada en ' + dateFounded;
+        grupo2.appendChild(dateFoundedElement);
+
+        modal.style.display = 'block';
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+document.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
 </script>

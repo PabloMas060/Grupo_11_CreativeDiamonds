@@ -32,6 +32,7 @@
                 <div class="grupo2">
                     <h1 id="product-name"></h1>
                     <h1 id="product-price"></h1>
+                    <p class="grupoX" id="product-discount"></p>
                     <p class="grupoX" id="product-typeId"></p> 
                 </div>
                 <div class="grupo3">
@@ -62,6 +63,7 @@ merchItems.forEach(merchItem => {
         const image = '/images/merch/' + merchItem.getAttribute('data-image');
         const name = merchItem.getAttribute('data-name');
         const price = merchItem.getAttribute('data-price');
+        const discount = merchItem.getAttribute('data-discount');
         const description = merchItem.getAttribute('data-description');
         const typeId = merchItem.getAttribute('data-typeId');
 
@@ -72,6 +74,12 @@ merchItems.forEach(merchItem => {
 
         const grupo2 = document.querySelector('.grupoX');
         grupo2.innerHTML = '';
+
+        if (discount > 0) {
+            const discountElement = document.createElement('p');
+            discountElement.textContent = 'Descuento: ' + discount + '%';
+            grupo2.appendChild(discountElement);
+        }
 
         // Utiliza directamente el valor de data-typeId
         const typeIdElement = document.createElement('p');
