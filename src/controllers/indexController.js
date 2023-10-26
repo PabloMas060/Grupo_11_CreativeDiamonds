@@ -223,15 +223,13 @@ Promise.all([group, articles])
     },
     
     capsule: (req, res) => {
-        // Obtén los artículos para mostrar en la página de "capsule"
         const capsuleArticulosPromise = db.Article.findAll({
             where: {
                 nostalgia: 0
             },
-            order: [['createdAt', 'DESC']], // Ordenar por fecha de creación
+            order: [['createdAt', 'DESC']],
         });
     
-        // Ahora obtén los datos de los álbumes clásicos con descuento y productos de la Capsula del tiempo
         const classicCategoryID = 4;
         
         const classicAlbumsPromise = db.Album.findAll({
@@ -266,6 +264,32 @@ Promise.all([group, articles])
                 console.error(error);
             });
     },
+
+    
+    prueba1: (req, res) => {
+        db.Merch.findAll({
+            limit: 4,  
+        })
+        .then(merchData => {
+            res.render('partials/partialDetailMerch', { merchData });
+        })
+    },
+    prueba2: (req, res) => {
+        db.Album.findAll({
+            limit: 4,  
+        })
+            .then(albumData => {
+                res.render('partials/partialDetailAlbum', { albumData });
+            })
+    },
+    prueba3: (req, res) => {
+        db.Band.findAll({
+            limit: 4,  
+        })
+            .then(bandData => {
+                res.render('partials/partialDetailBand', { bandData });
+            })    }
+    
     
     
 }

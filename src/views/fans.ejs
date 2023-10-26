@@ -42,7 +42,6 @@
         </div>
     
         <div class="partial-productDisplaySection">
-            <!-- Iterar sobre los productos más vendidos de Merch -->
             <% masVendidosMerch.forEach(merch => { %>
             <div class="partial-productDisplay1">
                 <a href="/products/merchs/detail/<%= merch.id %>">
@@ -52,7 +51,6 @@
             </div>
             <% }); %>
     
-            <!-- Iterar sobre los productos más vendidos de Álbums -->
             <% masVendidosAlbums.forEach(album => { %>
             <div class="partial-productDisplay2">
                 <a href="/products/albums/detail/<%= album.id %>">

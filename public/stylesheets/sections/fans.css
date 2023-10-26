@@ -112,7 +112,7 @@
 .partial-productDisplaySection {
     display: flex;
     flex-wrap: wrap; /* Permite que los objetos pasen a la siguiente línea cuando no caben en el ancho */
-    justify-content: space-between; /* Espacio entre los objetos en cada fila */
+    justify-content: start; 
 }
 
 /* Estilos para cada producto */
@@ -133,13 +133,13 @@
   width: 23%;
   position: relative;
   margin-bottom: 20px;
-  border-radius: 50%; /* Hace que el producto sea circular */
-  overflow: hidden; /* Oculta las partes que se salen del círculo */
+  border-radius: 50%; 
+  overflow: hidden; 
 }
 
 .partial-productDisplay2 img {
   width: 230px;
-  height: 230px; /* Ajusta la altura para hacerlo un círculo perfecto */
+  height: 230px; 
   object-fit: cover;
 }
 
