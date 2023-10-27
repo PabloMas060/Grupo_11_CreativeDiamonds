@@ -8,7 +8,5 @@ module.exports = {
     
     admin : require('./users/admin'),
     
-    register : (req,res) => {
-        res.render('register')
-    }
+
 }

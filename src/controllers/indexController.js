@@ -301,7 +301,7 @@ Promise.all([group, articles])
     prueba3: (req, res) => {
         const bandId = req.params.bandId; 
         db.Album.findAll({
-            limit: 4,  
+            limit: 20,  
             include: [{
                 model: db.Band,
                 as: 'band',

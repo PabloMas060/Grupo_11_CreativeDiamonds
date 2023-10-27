@@ -1,4 +1,4 @@
 
 module.exports = (req,res) =>{
-    return res.render('/')
+    return res.render('login')
 }
