@@ -6,8 +6,8 @@ module.exports = {
       {
         "name": "AC/DC",
         "history": "AC/DC es una banda de rock australiana formada en Sídney en 1973. Su música se caracteriza por un sonido de hard rock y son conocidos por canciones icónicas como 'Highway to Hell' y 'Back in Black.'",
-        "mainImage": "logo-acdc.png",
-        "image": "portada-acdc.jpg",
+        "mainImage": "logo-1.png",
+        "image": "portada-1.png",
         "categoryId": 1,
         "phrase": "For Those About to Rock, We Salute You",
         "dateFounded": 1973,
@@ -21,8 +21,8 @@ module.exports = {
       {
         "name": "Guns N' Roses",
         "history": "Guns N' Roses es una banda de rock estadounidense formada en Los Ángeles en 1985. Son famosos por canciones de éxito como 'Sweet Child o' Mine' y 'November Rain.'",
-        "mainImage": "logo-guns.png",
-        "image": "portada-guns.jpg",
+        "mainImage": "logo-2.png",
+        "image": "portada-2.png",
         "categoryId": 1,
         "phrase": "Welcome to the Jungle",
         "dateFounded": 1985,
