@@ -54,9 +54,7 @@ module.exports = {
             });
     },
     
-    profile: (req, res) => {
-        res.render('profile')
-    },
+
     editProfile: (req, res) => {
         res.render('editProfile')
     },

@@ -17,28 +17,28 @@
                 <div class="form__container">
 
 
-                    <form class="col g-3 form__container-form" action="/users/update/<%= id %>?_method=PUT"
+                    <form class="col g-3 form__container-form" action="/users/update/<%=  %>?_method=PUT"
                         method="POST" enctype="multipart/form-data">
 
                         <div class="col-md-6 form-field-gap-control">
                             <label class="form-label" for="firstName">Nombre:</label>
                             <input class="form-control" type="text" id="firstName" name="firstName"
-                                value="<%= firstName %>">
+                                value="<%= first_name %>">
                             </div>
                         </div>
                         <div class="col-md-6 form-field-gap-control">
                             <label class="form-label" for="lastName">Apellido:</label>
                             <input class="form-control" type="text" id="lastName" name="lastName"
-                                value="<%= lastName %>">
+                                value="<%= last_name %>">
                         </div>
                         <div class="col-md-6 form-field-gap-control">
                             <label class="form-label" for="email">Email:</label>
-                            <input class="form-control" type="email" id="email" name="email" value="<%= email%>">
+                            <input class="form-control" type="email" id="email" name="email" value="<%= email %>">
                         </div>
                         <div class="col-md-6 form-field-gap-control">
                             <label class="form-label" for="shipping">Lugar de envio</label>
                             <input class="form-control" type="text" id="shipping" name="shipping"
-                                value="<%= shipping%>">
+                                value="<%= shipping %>">
                         </div>
                         <div class="col-md-6 form-field-gap-control">
                             <label class="form-label" for="phone">Telefono</label>

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const checkUserLogin = require('../middlewares/checkUserLogin')
-const checkNotUserLogin = require('../middlewares/checkNotUserLogin');
+const checkUser = require('../middlewares/checkUser');
 const checkAdmin = require('../middlewares/checkAdmin');
 const { register, processRegister, login, processLogin, profile, updateProfile, cart, admin, logout } = require('../controllers/usersController');
 const registerValidation = require('../validation/registerValidation');
@@ -12,10 +12,13 @@ const profileValidation = require('../validation/profileValidation');
 
 router
 /* .get('/cart', cart) */
-.get("/register",checkNotUserLogin, register)
+.get("/register",checkUser, register)
 .post("/register",registerValidation, processRegister)
-.get("/login", checkNotUserLogin, login)
+.get("/login", checkUser, login)
 .post("/login",loginValidation, processLogin)
-.get('/admin', admin)
+.get('/profile', checkUserLogin, profile)
+.get('/admin',checkAdmin, admin)
+.get("/logout", logout)
+
 
 module.exports = router;

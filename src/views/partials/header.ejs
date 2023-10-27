@@ -1,86 +1,105 @@
 <header class="header">
-        <div class="header__logo">
-            <a href="/"><img src="/logoCreativeSouls.png" alt="LOGO"></a>
-            <div class="d-flex align-items-center justify-content-start burger" id="toggle-bars">
-                <i class="fa-solid fa-bars"></i>
-               </div>
+    <div class="header__logo">
+        <a href="/"><img src="/logoCreativeSouls.png" alt="LOGO"></a>
+        <div class="d-flex align-items-center justify-content-start burger" id="toggle-bars">
+            <i class="fa-solid fa-bars"></i>
         </div>
-       
-     <nav class="header__navbar">
-        <ul class="header__navbar__ul-1">        
-            <li><a href="/users/admin"><img width="45" src="/iconos/icono-diamante.svg" alt=""></a></li>
-    
-            <li><a href="/products/artists"><img width="45" src="/iconos/icono-guitarraElectrica.svg" alt=""></a></li>
-            <li><a href="/users/foro"><img width="45" src="/iconos/icono-microfono.svg" alt=""></a></li>
-            <li><a href="/groups"><img width="45" src="/iconos/icono-radio.svg" alt=""></a></li>
-            <li><a href=""><img width="45" src="/iconos/icono-notaMusical.svg" alt=""></a></li>
+    </div>
+
+    <nav class="header__navbar">
+        <ul class="text-center align-items-center g-5 header__navbar__ul-1">
+
+            
+            <% if (locals.userLogin) { %>
+                <li><h6>Bienvenido</h6></li>
+              
+           
+              <!--   <li><a href="/users/foro"><img width="45" src="/iconos/icono-microfono.svg" alt=""></a>
+                <p>Foro</p></li>
+                <li><a href="/groups"><img width="45" src="/iconos/icono-radio.svg" alt=""></a>
+                <p>Grupos</p></li>
+                <li><a href=""><img width="45" src="/iconos/icono-notaMusical.svg" alt=""></a>
+                <p>Algun lado</p></li> -->
+
+                <% if (locals.userLogin.rolId===1) { %>
+                    <li><a href="/users/admin"><img width="45" src="/iconos/icono-diamante.svg" alt=""></a>
+                    <p>Admin</p></li>
+
+                    <% } %>
+                    <li><a href="/users/logout"><img width="45" src="/iconos/icono-cerrar.svg" alt=""></a>
+                    <p>Salir</p></li>
+                        <% } %>
+                        <li><a href="/products/artists"><img width="45" src="/iconos/icono-guitarraElectrica.svg" alt=""></a>
+                            <p>Bandas</p>
+                        </li>
+                    <li><a href="#" id="toggle-button"><img width="45" src="/iconos/icono-avatarTemporal.svg"
+                        alt=""></a>
+                    <p>Usuario</p></li>
         </ul>
-        <ul class="header__navbar__ul-2">
-            <li><a href="/users/cart"><img width="45" src="/iconos/icono-carrito.svg" alt=""></a></li>
-            <li><a href="#" id="toggle-button"><img width="45" src="/iconos/icono-avatarTemporal.svg" alt=""></a></li>
-        </ul>
-     </nav>
+
+    </nav>
 </header>
 <div class="menu-right">
-        <section>
-            <h6>Nombre usuario</h6>
-            <div class="opciones-sesion">
-                <a class="btn btn-dark" href="#" id="open-login-modal-link">Iniciar Sesión</a>
-                <a class="btn btn-dark" href="/users/register">Registrarme</a>
+    <section>
+        <h6>Nombre usuario</h6>
+        <div class="opciones-sesion">
+            <a class="btn btn-dark" href="#" id="open-login-modal-link">Iniciar Sesión</a>
+            <a class="btn btn-dark" href="/users/register">Registrarme</a>
+        </div>
+        <div class="row menu-right-section">
+            <div class="col-4 menu-right-item">
+                <a href="/users/profile"><img width="45" src="/iconos/icono-avatarTemporal.svg" alt=""></a>
+                <p>Perfil</p>
             </div>
-            <div class="row menu-right-section">
-                <div class="col-4 menu-right-item">
-                    <a href="/users/profile"><img width="45" src="/iconos/icono-avatarTemporal.svg" alt=""></a>
-                    <p>Perfil</p>
-                </div>
-                <div class="col-4 menu-right-item">
-                    <a href="/users/inbox"><img width="45" src="/iconos/icono-mensaje.svg" alt=""></a>
-                    <p>Mensajes</p>
-                </div>
-                <div class="col-4 menu-right-item">
-                    <a href="/users/config"><img width="45" src="/iconos/icono-configuracion.svg" alt=""></a>
-                    <p>Ajustes</p>
-                </div>
-                <div class="col-4 menu-right-item">
-                    <a href="/users/friends"><img width="45" src="/iconos/icono-amigos.svg" alt=""></a>
-                    <p>Amigos</p>
-                </div>
-                <div class="col-4 menu-right-item">
-                    <a href="/users/nexus"><img width="45" src="/iconos/icono-nexus.svg" alt=""></a>
-                    <p>Nexus</p>
-                </div>
-                <div class="col-4 menu-right-item">
-                    <a href="/users/logout"><img width="45" src="/iconos/icono-cerrar.svg" alt=""></a>
-                    <p>Desconectar</p>
-                </div>
+            <div class="col-4 menu-right-item">
+                <a href="/users/inbox"><img width="45" src="/iconos/icono-mensaje.svg" alt=""></a>
+                <p>Mensajes</p>
             </div>
-        </section>
-        <section>
-            <h6>Notificaciones</h6>
-        </section>
+            <div class="col-4 menu-right-item">
+                <a href="/users/config"><img width="45" src="/iconos/icono-configuracion.svg" alt=""></a>
+                <p>Ajustes</p>
+            </div>
+            <div class="col-4 menu-right-item">
+                <a href="/users/friends"><img width="45" src="/iconos/icono-amigos.svg" alt=""></a>
+                <p>Amigos</p>
+            </div>
+            <div class="col-4 menu-right-item">
+                <a href="/users/nexus"><img width="45" src="/iconos/icono-nexus.svg" alt=""></a>
+                <p>Nexus</p>
+            </div>
+            <div class="col-4 menu-right-item">
+                <a href="/users/cart"><img width="45" src="/iconos/icono-carrito.svg" alt=""></a>
+                <p>Carrito</p>
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <h6>Notificaciones</h6>
+    </section>
 </div>
 
 <div class="menu-left">
-        <section>
-            <h6>Secciones</h6>
-            <div class="row menu-left-section">
-                <div class="col-4 menu-left-item">
-                    <a href="/fans"><img width="45" src="/iconos/icono-guitarraElectrica.svg" alt=""></a>
-                    <p>Para los fans</p>
-                </div>
-                <div class="col-4 menu-left-item">
-                    <a href="/products/artists"><img width="45" src="/iconos/icono-mensaje.svg" alt=""></a>
-                    <p>Artistas</p>
-                </div>
-                <div class="col-4 menu-left-item">
-                    <a href="/capsule"><img width="45" src="/iconos/icono-relojArena.svg" alt=""></a>
-                    <p>Cápsula del tiempo</p>
-                </div>
+    <section>
+        <h6>Secciones</h6>
+        <div class="row menu-left-section">
+            <div class="col-4 menu-left-item">
+                <a href="/fans"><img width="45" src="/iconos/icono-guitarraElectrica.svg" alt=""></a>
+                <p>Para los fans</p>
             </div>
-        </section>
-        <section>
-            <h6>Noticias</h6>
-        </section>
+            <div class="col-4 menu-left-item">
+                <a href="/products/artists"><img width="45" src="/iconos/icono-mensaje.svg" alt=""></a>
+                <p>Artistas</p>
+            </div>
+            <div class="col-4 menu-left-item">
+                <a href="/capsule"><img width="45" src="/iconos/icono-relojArena.svg" alt=""></a>
+                <p>Cápsula del tiempo</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h6>Noticias</h6>
+    </section>
 </div>
 
 <div id="login-modal" class="header-modal">
@@ -115,59 +134,56 @@
 
 
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleButton = document.getElementById("toggle-button");
-            const menuright = document.querySelector(".menu-right");
-    
-            toggleButton.addEventListener("click", function(event) {
-                event.preventDefault();
-                menuright.classList.toggle("menu-right-visible");
-            });
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggle-button");
+        const menuright = document.querySelector(".menu-right");
+
+        toggleButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            menuright.classList.toggle("menu-right-visible");
         });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleButton = document.getElementById("toggle-bars");
-            const menuleft = document.querySelector(".menu-left");
-    
-            toggleButton.addEventListener("click", function(event) {
-                event.preventDefault();
-                menuleft.classList.toggle("menu-left-visible");
-            });
-        });
+    });
 </script>
 <script>
-// JavaScript para abrir el modal solo cuando se hace clic en el enlace
-const openLoginModalLink = document.getElementById('open-login-modal-link');
-const loginModal = document.getElementById('login-modal');
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggle-bars");
+        const menuleft = document.querySelector(".menu-left");
 
-// Inicialmente, ocultar el modal
-loginModal.style.display = 'none';
+        toggleButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            menuleft.classList.toggle("menu-left-visible");
+        });
+    });
+</script>
+<script>
+    // JavaScript para abrir el modal solo cuando se hace clic en el enlace
+    const openLoginModalLink = document.getElementById('open-login-modal-link');
+    const loginModal = document.getElementById('login-modal');
 
-openLoginModalLink.addEventListener('click', (event) => {
-    event.preventDefault(); // Evita que el enlace redirija a una página
-    loginModal.style.display = 'flex'; // Muestra el modal al hacer clic
-});
+    // Inicialmente, ocultar el modal
+    loginModal.style.display = 'none';
 
-const closeLoginModal = () => {
-    loginModal.style.display = 'none'; // Oculta el modal
-};
+    openLoginModalLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita que el enlace redirija a una página
+        loginModal.style.display = 'flex'; // Muestra el modal al hacer clic
+    });
 
-// Cierra el modal cuando se hace clic fuera de el o se presiona la tecla Escape
-window.addEventListener('click', (event) => {
-    if (event.target === loginModal) {
-        closeLoginModal();
-    }
-});
+    const closeLoginModal = () => {
+        loginModal.style.display = 'none'; // Oculta el modal
+    };
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        closeLoginModal();
-    }
-});
+    // Cierra el modal cuando se hace clic fuera de el o se presiona la tecla Escape
+    window.addEventListener('click', (event) => {
+        if (event.target === loginModal) {
+            closeLoginModal();
+        }
+    });
 
-//Que trucazo, ¿no?
-//eso si, puede que se rompa en mobile
-//puede no, MUY PROBABLEMENTE este roto actualmente en mobile
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeLoginModal();
+        }
+    });
+
 
 </script>

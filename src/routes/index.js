@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { index, about, contact, groups, profile, notices, notice, fans, capsule, editProfile, cart, selfcart, giftcart, cardInfo, checkout, prueba1, prueba2, prueba3, } = require('../controllers/indexController'); 
+const { index, about, contact, groups, notices, notice, fans, capsule, editProfile, cart, selfcart, giftcart, cardInfo, checkout, prueba1, prueba2, prueba3, } = require('../controllers/indexController'); 
 
 /* GET home page. */
 
@@ -8,7 +8,6 @@ router.get('/', index);
 router.get('/about', about);
 router.get('/contact', contact);
 router.get('/groups', groups);
-router.get('/profile', profile);
 router.get('/notices/:id', notices);
 router.get('/notice/:id', notice)
 router.get('/fans', fans);

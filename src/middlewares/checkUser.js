@@ -1,7 +1,7 @@
 module.exports = (req,res,next) => {
     if(!req.session.userLogin){
-        next()
-    }else {
-        return res.redirect('/users/profile')
+       return next()
     }
+
+    return res.redirect('/users/profile')    
 }
