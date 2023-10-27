@@ -17,6 +17,8 @@ router
 .get("/login", checkUser, login)
 .post("/login",loginValidation, processLogin)
 .get('/profile', checkUserLogin, profile)
+.get('/update-profile', updateProfile)
+.put('/update-profile', checkUserLogin, updateProfile)
 .get('/admin',checkAdmin, admin)
 .get("/logout", logout)
 

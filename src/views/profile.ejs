@@ -13,11 +13,11 @@
     <!-- Primer cuadrado -->
     <div class="profile-box">
       <div class="profile-info">
-        <h2>Nombre de Usuario</h2>
-        <div class ="profile-especificaciones">
-        <img src="iconos/icono-favorito.svg" alt="Favorito">
-        <span>123</span>
-    </div>
+        <h2><%= user.first_name %></h2>
+        <div class="profile-especificaciones">
+          <img src="iconos/icono-favorito.svg" alt="Favorito">
+          <span><%= user.first_name %></span> 
+        </div>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
           </div>
           <div class="profile-status">
             <div class="status-text">
-              <p>Aun no has definido tu estado. Modificar</p>
+              <p><%= user.state || 'Aun no has definido tu estado. Modificar' %></p>
             </div>
           </div>
         </div>
@@ -41,9 +41,9 @@
           </div>
           <div class="profile-location">
             <span>||</span>
-            <span>Pais</span>
+            <span><%= user.country || 'Pais' %></span>
             <span>||</span>
-            <span>Ciudad</span>
+            <span><%= user.city || 'Ciudad' %></span>
           </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
     <!-- Cuarto cuadrado -->
     <div class="profile-box">
       <div class="profile-description">
-        <p>Aun no has escrito una descripcion personal.</p>
+        <p><%= user.about || 'Aun no has escrito una descripcion personal.' %></p>
       </div>
     </div>
   </div>
@@ -65,29 +65,30 @@
         <img src="iconos/icono-disco.svg" alt="Icono de disco">
       </div>
       <h3>Horas escuchadas</h3>
-      <p>50.9h</p>
+      <p><%= user.hours_listened || '0' %>h</p>
     </div>
   
-    <!-- Segunda estadística -->
     <div class="stat-box">
       <div class="stat-icon">
         <img src="iconos/icono-favorito.svg" alt="Icono de favorito">
       </div>
       <h3>Canciones guardadas</h3>
-      <p>9</p>
+      <p><%= user.saved_songs || '0' %></p>
     </div>
   
-    <!-- Tercera estadística -->
     <div class="stat-box">
       <div class="stat-icon">
         <img src="iconos/icono-microfono.svg" alt="Icono de micrófono">
       </div>
       <h3>Comentarios hechos</h3>
-      <p>5</p>
+      <p><%= user.comments_made || '0' %></p>
     </div>
   </div>
 </div>
 </div>
+
+<a href="/update-profile" class="btn btn-primary">Modificar Perfil</a>
+
 
   <!-- Pie de página -->
   <%- include('partials/footer') %>
