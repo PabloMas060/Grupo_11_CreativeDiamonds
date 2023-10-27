@@ -303,8 +303,14 @@ Promise.all([group, articles])
             limit: 4,
         })
             .then(bandData => {
-                db.Album.findAll({ // Consulta para obtener los últimos 4 álbumes
-                    order: [['createdAt', 'DESC']], // Ordenar por fecha de creación descendente
+                db.Album.findAll({
+                    where:{
+                        bandId:req.params.id,
+                        
+                    },
+                    order: [['createdAt', 'DESC']], 
+                    limit: 4,
+                    
                 })
                     .then(latestAlbums => {
                         res.render('partials/partialDetailBand', { bandData, latestAlbums });

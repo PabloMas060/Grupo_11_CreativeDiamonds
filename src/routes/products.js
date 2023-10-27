@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const localsCheck = require('../middlewares/localsCheck'); 
 const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtists, bandDetail, bandAdd, bandCreate, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch,albumDetail, merchDetail, albumRemove, merchRemove, bandRemove } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
 const addAlbumValidator = require('../validation/addAlbumValidator');
@@ -16,7 +15,6 @@ const { uploadMerch } = require('../middlewares/uploadMerch');
 
 
 
-router.use(localsCheck); 
 
 /* /products */
 router

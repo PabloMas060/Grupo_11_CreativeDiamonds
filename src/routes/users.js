@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const localsCheck = require('../middlewares/localsCheck');
 const checkUserLogin = require('../middlewares/checkUserLogin')
 const checkNotUserLogin = require('../middlewares/checkNotUserLogin');
 const checkAdmin = require('../middlewares/checkAdmin');
@@ -10,14 +9,13 @@ const loginValidation = require('../validation/loginValidation');
 const { uploads } = require('../middlewares/uploads');
 const profileValidation = require('../validation/profileValidation');
 /* /users */
-/* router.use(localsCheck); */
 
 router
 /* .get('/cart', cart) */
-.get("/register",/*checkNotUserLogin,*/ register)
+.get("/register",checkNotUserLogin, register)
 .post("/register",registerValidation, processRegister)
 .get("/login", checkNotUserLogin, login)
-.post("/login",/*loginValidation,*/ processLogin)
+.post("/login",loginValidation, processLogin)
 .get('/admin', admin)
 
 module.exports = router;

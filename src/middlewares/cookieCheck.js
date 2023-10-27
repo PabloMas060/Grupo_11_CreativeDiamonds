@@ -1,11 +1,6 @@
-const checkCookie = (req, res, next) => {
-    const userCookie = req.cookies.creativeDiamonds;
-  
-    if (userCookie) {
-      req.session.user = userCookie;
-    }
-    next();
-  };
-  
-  module.exports = checkCookie;
-  
+module.exports = (req,res,next) => {
+  if(req.cookies.craftsyForEver20){
+      req.session.userLogin = req.cookies.creativeDiamonds
+  }
+  next()
+}

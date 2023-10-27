@@ -12,7 +12,7 @@
 
     <div class="partial-productDisplaySection">
         <% merchData.forEach(merch => { %>
-            <div class="partial-productDisplay1" data-image="<%= merch.image %>" data-name="<%= merch.name %>" data-price="<%= merch.price %>" data-description="<%= merch.description %>" data-typeId="<%= merch.type.name %>">
+            <div class="partial-productDisplay1" data-image="<%= merch.image %>" data-name="<%= merch.name %>" data-price="<%= merch.price %>" data-description="<%= merch.description %>" data-typeId="<%= merch.type.name %>" data-discount="<%= merch.discount %>">
                 <img src="/images/merch/<%= merch.image %>" alt="<%= merch.name %>">
                 <div class="fans-precio">$<%= merch.price %></div>
         </div>
@@ -81,7 +81,6 @@ merchItems.forEach(merchItem => {
             grupo2.appendChild(discountElement);
         }
 
-        // Utiliza directamente el valor de data-typeId
         const typeIdElement = document.createElement('p');
         typeIdElement.textContent = 'Tipo: ' + typeId;
         grupo2.appendChild(typeIdElement);

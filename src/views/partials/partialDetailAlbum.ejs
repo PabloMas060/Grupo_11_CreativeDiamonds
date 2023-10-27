@@ -3,34 +3,21 @@
 
 <div class="partial-Section1">
     <div class="partial-Section1-texto">
-        <h2>Bandas populares</h2>
+        <h2>Productos populares</h2>
         <p>
-            Esta zona está dedicada a las bandas populares que tienen un gran número de seguidores y conciertos emocionantes.
+            Esta zona está dedicada a los productos que tienen un gran número de ventas, un número que aumenta en uno por cada producto individual cada vez que una compra se concreta.
         </p>
     </div>
     <div class="partial-productDisplaySection">
-        <% bandData.forEach(band => { %>
-            <div class="partial-productDisplay2" data-mainImage="<%= band.mainImage %>" data-image="<%= band.image %>" data-resume="<%= band.resume %>" data-dateFounded="<%= band.dateFounded %>">
-                <img src="/images/bands/<%= band.mainImage %>" alt="<%= band.name %>">
-                <div class="fans-precio">Fundada en <%= band.dateFounded %></div>
-            </div>
-            <div class="partial-latestAlbums" style="width: auto; height: 100px;">
-                <h3>Últimos 4 álbumes de <%= band.name %></h3>
-                <ul>
-                    <% latestAlbums.filter(album => album.bandId === band.id).slice(0, 4).forEach(album => { %>
-                        <li>
-                            <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
-                            <div data-title="<%= album.title %>" data-image="<%= album.image %>">
-                            </div>
-                        </li>
-                    <% }); %>
-                </ul>
+        <% albumData.forEach(album => { %>
+            <div class="partial-productDisplay2" data-image="<%= album.image %>" data-title="<%= album.title %>" data-price="<%= album.price %>" data-description="<%= album.description %>" data-band="<%= album.band.name %>" data-discography="<%= album.discography %>" data-year="<%= album.year %>" data-discount="<%= album.discount %>">
+                <img src="/images/albums/<%= album.image %>" alt="<%= album.title %>">
+                <div class="fans-precio">$<%= album.price %></div>
             </div>
         <% }); %>
     </div>
 </div>
-
-
+</div>
 
 <div class="partial-detailMerch" id="detailMerch" style="display: none;">
     <div class="modal-content">
