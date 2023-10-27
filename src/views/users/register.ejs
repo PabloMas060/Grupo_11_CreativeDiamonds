@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'REGISTRARSE' }) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+
+
+            <main class="form__main">
+                <div class="form__title">
+                    <h1>Registrate</h1>
+                </div>
+                <div class="form__container">
+
+                    <form class="col g-3 needs-validation form__container-form" action="/users/register" method="POST" enctype="multipart/form-data">
+
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <label for="firstName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName"
+                                value="<%= locals.old && (old.firstName&& old.firstName) %>">
+                            <div class="invalid-feedback">
+                                <%= locals.errors && (errors.firstName && errors.firstName.msg) %>
+                            </div>
+                            <div class="valid-feedback">
+                                Se ve bien!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <label for="lastName" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName"
+                                value="<%= locals.old && (old.lastName&& old.lastName) %>">
+                            <div class="invalid-feedback">
+                                <%= locals.errors && (errors.lastName && errors.lastName.msg) %>
+                            </div>
+                            <div class="valid-feedback">
+                                Se ve bien!
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 email-field-box">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                                value="<%= locals.old && (old.email&& old.email) %>">
+                            <div class="invalid-feedback">
+                                <%= locals.errors && (errors.email && errors.email.msg) %>
+                            </div>
+                            <div class="valid-feedback">
+                                Se ve bien!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" name="password" id="password"
+                                value="<%= locals.old && (old.password&& old.password) %>">
+                            <div class="invalid-feedback">
+                                <%= locals.errors && (errors.password && errors.password.msg) %>
+                            </div>
+                            <div class="valid-feedback">
+                                Se ve bien!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                                value="<%= locals.old && (old.confirmPassword&& old.confirmPassword) %>">
+                            <div class="invalid-feedback">
+                                <%= locals.errors && (errors.confirmPassword && errors.confirmPassword.msg) %>
+                            </div>
+                            <div class="valid-feedback">
+                                La contraseña coincide!
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-field-gap-control">
+                            <label for="mainImage" class="form-label">Image de perfil</label>
+                            <input type="file" name="mainImage" id="mainImage" class="form-control"  accept="image/*">
+                        </div>
+
+                        <div class="form-check mb-3 was-validated">
+                            <input class="form-check-input" type="checkbox" id="remember" name="remember" <% if (locals.old && locals.old.remember) { %>checked<% } %> required>
+                            <label class="form-check-label" for="remember">Aceptar terminos y condiciones</label>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Debes aceptar los terminos y condiciones</div>
+                        </div>
+                        
+
+
+                        <div class="col-12 text-center mb-2">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </main>
+
+            <%- include('../partials/footer') %>
+
+
+
+
+                <script>
+                    function validateField(fieldId, error, validator) {
+                        var fieldValue = $(fieldId).val();
+                        if (error) {
+                            $(fieldId).addClass('is-invalid');
+                        } else if (validator(fieldValue)) {
+                            $(fieldId).addClass('is-valid');
+                        }
+                    }
+
+                    function isValidInput(value) {
+                        return value.trim() !== '';
+                    }
+
+                    var firstNameError = '<%= locals.errors && locals.errors.firstName ? locals.errors.firstName.msg : "" %>';
+                    validateField('#firstName', firstNameError, isValidInput);
+
+                    var lastNameError = '<%= locals.errors && locals.errors.lastName? locals.errors.lastName.msg : "" %>';
+                    validateField('#lastName', lastNameError, isValidInput);
+
+                    var emailError = '<%= locals.errors && locals.errors.email ? locals.errors.email.msg : "" %>';
+                    validateField('#email', emailError, isValidInput);
+
+                    var passwordError = '<%= locals.errors && locals.errors.password ? locals.errors.password.msg : "" %>';
+                    validateField('#password', passwordError, isValidInput);
+
+                    var confirmPasswordError = '<%= locals.errors && locals.errors.confirmPassword ? locals.errors.confirmPassword.msg : "" %>';
+                    validateField('#confirmPassword', confirmPasswordError, isValidInput);
+                
+                </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

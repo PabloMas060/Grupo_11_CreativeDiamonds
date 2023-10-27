@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'ADMIN | EDITAR PRODUCTO' }) %>
+
+<body>
+    <%- include('../partials/header') %>
+
+        <main class="form__main">
+            <div class="form__title">
+                <h1>Editar Producto</h1>
+            </div>
+            <div class="form__container">
+                <form class="form__box" action="/products/update/<%=id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                    <div class="form__box__field">
+                        <label class="form-label" for="title">Album</label>
+                        <input class="form-control" type="text" id="title" name="title" value="<%= title %>">
+                    </div>
+                    <div class="form__box__field">
+                        <label class="form-label" for="artist">Artista</label>
+                        <input class="form-control" type="text" id="artist" name="artist" value="<%= artist %>">
+                    </div>
+
+
+                    <div class="form__box__field">
+                        <label class="form-label" for="price">Precio</label>
+                        <input class="form-control" type="number" id="price" name="price"
+                        value="<%= price %>">
+                    </div>
+                    <div class="form__box__field">
+                        <label class="form-label" for="discount">Descuento</label>
+                        <input class="form-control" type="number" id="discount" name="discount" value="<%= discount %>">
+                    </div>
+                    <div class="form-field-select">
+                        <label class="form-label" for="format">Formato</label>
+                        <select class="form-select" name="format" id="format">
+                            <option selected hidden value="">Seleccione...</option>
+                            <option value="lp">LP</option>
+                            <option value="cd">CD</option>
+                        </select>
+                    </div>
+                    <div class="form__box__field">
+                        <label class="form-label" for="discographic">Discográfica</label>
+                        <input class="form-control" type="text" id="discographic" name="discographic" value="<%= discographic %>">
+                    </div>
+                    <div class="form-field-select">
+                        <label class="form-label" for="genre">Género</label>
+                        <select class="form-select" name="genre" id="genre">
+                            <% genres.forEach(item => { %>
+                                <option <%= item.name === genre && 'select' %> value="<%= item.name %>"> <%= item.name %></option> ></option>
+                                
+                            <% }) %>
+                           
+                        
+                        </select>
+                    </div>
+                    <div class="form__box__field">
+                        <label class="form-label" for="year">Año</label>
+                        <input class="form-control" type="number" id="year" name="year"
+                        value="<%= year %>">
+                    </div>
+                   <div class="form__box__field">
+                        <label class="form-label" for="song">Agregar Canción</label>
+                        <input class="form-control" type="text" id="song" name="song">
+                        <button class="btn btn-success mt-2" type="button" id="addSongButton">Agregar</button>
+                    </div>
+                    
+                    <div class="form__box__field" id="songListContainer">
+                        <label class="form-label">Lista de canciones</label>
+                        <ul id="songList" ><%= tracklist %></ul>
+                    </div> 
+
+                    <div class="form__box__field w-75">
+                        <label class="form-label" for="description">Descripción:</label>
+                        <textarea class="form-control" id="description" name="description" <%= description %> rows="4"><%= description %> </textarea>
+                    </div>
+                    
+                    <div class="form-field-select">
+                        <label class="btn btn-dark" for="mainImage">Imagen Principal</label>
+                        <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
+                    </div>
+
+
+                        
+
+                    <div class="form-field-select">
+                        <label class="btn btn-dark" for="images">Más Imagenes</label>
+                        <input hidden class="form-control" multiple type="file" id="images" name="images">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="/images/<%= mainImage %>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <img src="/images/<%= images %>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="form__button-container">
+                        <button class="form__button-reset" type="reset">Limpiar los campos</button>
+                        <button class="form__button-submit" type="submit">Guardar Cambios</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </main>
+
+    <%- include('../partials/footer') %>
+
+
+
+
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    const addSongButton = document.getElementById("addSongButton");
+    const songInput = document.getElementById("song");
+    const songList = document.getElementById("songList");
+    const songArray = [];
+
+    addSongButton.addEventListener("click", function(){
+        const songName = songInput.value.trim();
+        if(songName !== ""){
+            songArray.push(songName);
+            const listItem = document.createElement("li");
+            listItem.textContent = songName;
+            songList.appendChild(listItem);
+            songInput.value = "";
+        }
+    });
+    const form = document.querySelector(".form__box");
+    form.addEventListener("submit", function(){
+        document.getElementById("song").value = JSON.stringify(songArray);
+    })
+})
+</script>

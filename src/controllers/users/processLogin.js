@@ -1,65 +1,39 @@
-// Importa los módulos necesarios
-const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
-const db = require('../../database/models');
+const { readJSON } = require('../../data');
+const bcrypt = require('bcrypt'); 
 
 module.exports = (req, res) => {
-    const errors = validationResult(req);
+  const errors = validationResult(req);
+  console.log("Iniciando...");
+  
+  if (errors.isEmpty()) {
+    const users = readJSON('users.json');
+    const { email, password, remember } = req.body;
 
-    if (errors.isEmpty()) {
-        return res.render("users/profile", {
-            title: "Inicio de sesión",
-            errors: errors.mapped(),
-            old: req.body,
-          });
-        }
+    const user = users.find((user) => user.email === email);
 
-        db.User.findOne({
-            where : {
-                email: req.body.email
-            }
-        })
-            .then(user=> {
-                req.session.userLogin = {
-                    id: user.id,
-                    firts_name: user.firts_name,
-                    last_name: user.last_name,
-                    rolId : user.rolId 
-                }
-        
-                if (req.body.remember) {
-                    res.cookie("creativeDiamonds", req.session.userLogin, {
-                      maxAge: 1000 * 60 * 5,
-                    });
-                  }
+    if (user && bcrypt.compareSync(password, user.password)) { 
+      req.session.user = {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        rol: user.rol,
+      };
 
-        
-                return res.redirect('/products/artists')
-            })
-            .catch(error => console.log(error))
-      
-   /*  }else {
-        const bands = db.Band.findAll({
-            include: [
-                {
-                    association: 'category',
-                    include: [
-                        {
-                            all : true
-                        }
-                    ]
-                }
-            ]
-        })
-       
+      if (remember !== undefined) {
+        console.log("Sesión recordada. Usuario:", req.session.user);
+        res.cookie('creativeDiamonds', req.session.user, {
+          maxAge: 1000 * 60 * 60 * 24 * 7,
+        });
+      }
+
+      console.log("Inicio de sesión exitoso. Usuario:", req.session.user);
+      return res.redirect('/');
     }
-    const categories = db.Category.findAll()
-    Promise.all([bands,categories])
-        .then(([bands,categories]) => {
-            return res.render('index',{
-                bands,
-                categories
-            }
-            )
-        }) */
-}
+  }
+
+  return res.render('users/login', {
+    errors: errors.array(),
+  });
+};

@@ -1,17 +1,15 @@
 const express = require('express');
-const session = require('express-session'); 
+const session = require('express-session'); // Importa express-session
 const createError = require('http-errors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const checkCookie = require('./middlewares/cookieCheck');
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const productsRouter = require('./routes/products');
-
-const localsCheck = require('./middlewares/localsCheck'); 
-
+const productsRouter = require('./routes/products')
 
 const app = express();
 
@@ -27,22 +25,21 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(methodOverride('_method'))
 
-// Configuracion de express-session
+// Configura express-session
 app.use(session({
   secret: 'elbichosiuu', 
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 300000}
+    maxAge: 30000}
 }));
 
 // recordar usuario
 app.use(checkCookie);
-app.use(localsCheck);
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter)
-app.use('/products', productsRouter)
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

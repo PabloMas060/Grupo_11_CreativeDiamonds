@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('../partials/head',{ title : 'PERFIL DE USUARIO' }) %>
+
+    <body class="home__body">
+        <%- include('../partials/header') %>
+
+
+
+            <main class="form__main">
+
+
+                <div class="form__title">
+                    <h1>Mis Datos</h1>
+                </div>
+                <div class="form__container">
+
+
+                    <form class="col g-3 form__container-form" action="/users/update/<%= id %>?_method=PUT"
+                        method="POST" enctype="multipart/form-data">
+
+                        <div class="col-md-6 form-field-gap-control">
+                            <label class="form-label" for="firstName">Nombre:</label>
+                            <input class="form-control" type="text" id="firstName" name="firstName"
+                                value="<%= firstName %>">
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-field-gap-control">
+                            <label class="form-label" for="lastName">Apellido:</label>
+                            <input class="form-control" type="text" id="lastName" name="lastName"
+                                value="<%= lastName %>">
+                        </div>
+                        <div class="col-md-6 form-field-gap-control">
+                            <label class="form-label" for="email">Email:</label>
+                            <input class="form-control" type="email" id="email" name="email" value="<%= email%>">
+                        </div>
+                        <div class="col-md-6 form-field-gap-control">
+                            <label class="form-label" for="shipping">Lugar de envio</label>
+                            <input class="form-control" type="text" id="shipping" name="shipping"
+                                value="<%= shipping%>">
+                        </div>
+                        <div class="col-md-6 form-field-gap-control">
+                            <label class="form-label" for="phone">Telefono</label>
+                            <input class="form-control" type="text" id="phone" name="phone" value="<%= phone%>">
+                        </div>
+                        <div class="col-md-6 form-field-gap-control mt-4 mb-2">
+                            <label class="btn btn-dark" for="mainImage">Modificar Imagen </label>
+                            <input hidden class="form-control" type="file" id="mainImage" name="mainImage">
+                        </div>
+                      
+                            <div class="col-6 mb-2">
+                                <img src="/images/users/<%= mainImage %>" class="img-fluid" alt="">
+                            </div>
+                       
+                        <button class="form__button-submit" type="submit">Modifica tus Datos</button>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-2 form__p">
+                        <a style=color:blue href="/users/cart">Ir a mis Compras</a>
+                    </div>
+                    <div class="col-6 mb-2 form__p">
+                        <a href="/">Ir al Inicio</a></p>
+                    </div>
+                </div>
+            </main>
+
+
+            <script>
+                function validateField(fieldId, error, validator) {
+                    var fieldValue = $(fieldId).val();
+                    if (error) {
+                        $(fieldId).addClass('is-invalid');
+                    } else if (validator(fieldValue)) {
+                        $(fieldId).addClass('is-valid');
+                    }
+                }
+
+                function isValidInput(value) {
+                    return value.trim() !== '';
+                }
+
+                var firstNameError = '<%= locals.errors && locals.errors.firstName ? locals.errors.firstName.msg : "" %>';
+                validateField('#firstName', firstNameError, isValidInput);
+
+                var lastNameError = '<%= locals.errors && locals.errors.lastName? locals.errors.lastName.msg : "" %>';
+                validateField('#lastName', lastNameError, isValidInput);
+
+                var emailError = '<%= locals.errors && locals.errors.email ? locals.errors.email.msg : "" %>';
+                validateField('#email', emailError, isValidInput);
+
+                var shippingError = '<%= locals.errors && locals.errors.shipping ? locals.errors.shipping.msg : "" %>';
+                validateField('#shipping', shippingError, isValidInput);
+
+                var phoneError = '<%= locals.errors && locals.errors.phone ? locals.errors.phone.msg : "" %>';
+                validateField('#phone', phoneError, isValidInput);
+
+                var mainImageError = '<%= locals.errors && locals.errors.mainImage ? locals.errors.mainImage.msg : "" %>';
+                validateField('#mainImage', mainImageError, isValidInput);
+
+
+            </script>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

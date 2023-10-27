@@ -1,6 +1,11 @@
-module.exports = (req,res,next) => {
-  if(req.session.userLogin){
-      res.locals.userLogin = req.session.userLogin
+function localsCheck(req, res, next) {
+    if (req.session.user) {
+      res.locals.user = req.session.user;
+    } else {
+      res.locals.user = null;
+    }
+    next();
   }
-  next()
-}
+  
+  module.exports = localsCheck;
+  

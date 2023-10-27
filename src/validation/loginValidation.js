@@ -1,27 +1,20 @@
-const {body} = require('express-validator');
-const {compareSync} = require('bcryptjs')
-const db = require('../database/models');
-const { where } = require('sequelize');
-/*const { readJSON } = require('../data');*/
+const { check } = require('express-validator');
+const { readJSON } = require("../data/index");
+const bcrypt = require('bcrypt'); 
 
-module.exports = [
-    body('email')
-        .notEmpty().withMessage('El email es requerido').bail()
-        .isEmail().withMessage('El formato es inválido'),
-    body('password')
-        .notEmpty().withMessage('La contraseña es requerida')
-        .custom((value, {req}) => {
-            return db.User.findOne({
-            where : {
-                email : req.body.email
-            } 
-        })
-            .then(user => {
-                if(!user || !compareSync(value,user.password)){
-                    return Promise.reject()
-                }
-            })
-            .catch(() => Promise.reject('Credenciales inválidas') )
-        })
-]
+const validateLogin = [
+    check('email').isEmail().withMessage('Email no es válido'),
+    check('password').notEmpty().withMessage('Contraseña es obligatoria')
+        .custom((value, { req }) => {
+            const users = readJSON('users.json');
+            const user = users.find(user => user.email === req.body.email);
 
+            if (!user || !bcrypt.compareSync(value, user.password)) {
+                throw new Error('Credenciales incorrectas');
+            }
+
+            return true;
+        }),
+];
+
+module.exports = validateLogin;

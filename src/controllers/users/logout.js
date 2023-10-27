@@ -1,5 +1,6 @@
 module.exports = (req, res) => {
-  res.clearCookie('creativeDiamonds');
-  req.session.destroy();
-  return res.redirect('/');
-};
+    req.session.destroy();
+    res.clearCookie('creativeDiamonds'); 
+    res.redirect('/');
+  };
+  

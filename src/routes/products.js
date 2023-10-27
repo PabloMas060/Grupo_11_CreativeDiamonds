@@ -1,61 +1,67 @@
 const express = require('express');
 const router = express.Router();
-const { albumAdd, albumCreate, mercheAdd, mercheCreate, listArtists, bandDetail, bandAdd, bandCreate, editBand, updateBand, addAlbum, storeAlbum, editAlbum, updateAlbum, addMerch, storeMerch, editMerch, updateMerch,albumDetail, merchDetail, albumRemove, merchRemove, bandRemove } = require('../controllers/productsController');
+const localsCheck = require('../middlewares/localsCheck'); 
+const { detail, vinilos, indumentaria, shows, edit, createVinyl, addVinyl, addShirt, createShirt, update, detailShirt, remove, editShirts, updateShirts } = require('../controllers/productsController');
 const { upload } = require('../middlewares/upload');
-const addAlbumValidator = require('../validation/addAlbumValidator');
-const addMercheValidator = require('../validation/addMercheValidator');
-const addBandValidator = require('../validation/addBandValidator');
-const editAlbumValidator = require('../validation/editAlbumValidator');
-const editMerchValidator = require('../validation/editMercheValidator')
-const dBandValidator = require('../validation/addBandValidator');
+const addVynilValidator = require('../validation/addVynilValidator');
+const addShirtValidator = require('../validation/addShirtValidator');
 
-const { uploadBand } = require('../middlewares/uploadBand');
-const { uploadAlbum } = require('../middlewares/uploadAlbum');
-const { uploadMerch } = require('../middlewares/uploadMerch');
-
-
-
+router.use(localsCheck); 
 
 /* /products */
 router
-  .get('/albumAdd', albumAdd)
-  .post('/albumAdd', uploadAlbum.single('image'), addAlbumValidator, albumCreate)
-  .get('/mercheAdd', mercheAdd)
-  .post('/mercheAdd', uploadMerch.single('image'), addMercheValidator, mercheCreate)
-  .get('/artists', listArtists)
-  .get('/artists/detail/:id', bandDetail)
-  .get('/addBand', bandAdd)
-  .post('/addBand', uploadBand.fields([
+  /* ADD PARA VINILOS */
+  .get('/addVinyl', addVinyl)
+  .post('/addVinyl', upload.fields([
     {
-      name: "image",
+      name: "mainImage"
     },
     {
-      name: "images",
+      name: "images"
     }
-  ]), bandCreate)
-  .get('/edit/band/:id', editBand)
-  .put('/edit/band/:id', uploadBand.fields([
+  ]), addVynilValidator, createVinyl)
+  /* ADD PARA SHIRTS */
+  .get('/addShirt', addShirt)
+  .post('/addShirt', upload.fields([
     {
-      name: "image",
-    },
-    {
-      name: "images",
+      name: "mainImage"
     }
-  ]),
-   updateBand)
-  .get('/addAlbum', addAlbum)
-  .post('/addAlbum', storeAlbum)
-  .get('/edit/album/:id', editAlbum)
-  .put('/edit/album/:id', uploadAlbum.single('image'), editAlbumValidator ,updateAlbum)
-  .get('/addMerch', addMerch)
-  .post('/addMerch', storeMerch)
-  .get('/edit/merch/:id', editMerch)
-  .put('/edit/merch/:id', uploadMerch.single('image'), editMerchValidator, updateMerch)
-  .get('/albums/detail/:id', albumDetail)
-  .get('/merchs/detail/:id', merchDetail)
-  .delete('/albums/remove/:id',albumRemove) 
-  .delete('/merchs/remove/:id',merchRemove)
-  .delete('/bands/remove/:id',bandRemove) 
- 
+  ]), addShirtValidator, createShirt)
 
+  .get('/detail/:id', detail)
+  .get('/vinilos', vinilos)
+  .get('/indumentaria', indumentaria)
+  .get('/shows', shows)
+
+  
+
+/*Edit y Update Vinilos*/
+  .get('/edit/:id', edit)
+  .put('/update/:id', upload.fields([
+    {
+      name: "mainImage"
+    },
+    {
+      name: "images"
+    }
+  ]), update)
+
+  /*Edit y Update Shirts*/
+  .get('/editShirts/:id', editShirts) 
+  .put('/updateShirts/:id', upload.fields([
+    {
+      name: "mainImage"
+    }
+  ]), updateShirts)
+
+
+
+
+
+/*Eliminar un producto*/
+  .delete('/remove/:id', remove)
+  .post('/remove/:id', remove)
+  .get('/remove/:id', remove)
+
+  .get('/detail-shirt/:id', detailShirt);
 module.exports = router;
