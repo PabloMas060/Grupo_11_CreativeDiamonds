@@ -6,7 +6,8 @@ module.exports = {
     processLogin : require('./users/processLogin'),
 
     profile: require('./users/profile'),
-    updateProfile: require('./users/update-profile'),
+    profileEdit: require('./users/profileEdit'),
+    profileUpdate: require('./users/profileUpdate'),
 
     admin : require('./users/admin'),
     logout : require('./users/logout')

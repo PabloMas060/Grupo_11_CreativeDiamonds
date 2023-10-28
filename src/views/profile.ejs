@@ -15,7 +15,7 @@
       <div class="profile-info">
         <h2><%= user.first_name %></h2>
         <div class="profile-especificaciones">
-          <img src="iconos/icono-favorito.svg" alt="Favorito">
+          <img src="/iconos/icono-favorito.svg" alt="Favorito">
           <span><%= user.first_name %></span> 
         </div>
       </div>
@@ -25,7 +25,7 @@
     <div class="profile-cajasCentro">
         <div class="profile-box">
           <div class="profile-avatar">
-            <img src="iconos/icono-avatarTemporal.svg" alt="Avatar" width="100" height="100">
+            <img src="/iconos/icono-avatarTemporal.svg" alt="Avatar" width="100" height="100">
           </div>
           <div class="profile-status">
             <div class="status-text">
@@ -37,13 +37,13 @@
         <!-- Tercer cuadrado -->
         <div class="profile-box">
           <div class="profile-music">
-            <img src="iconos/icono-notaMusical.svg" alt="Nota Musical">
+            <img src="/iconos/icono-notaMusical.svg" alt="Nota Musical">
           </div>
           <div class="profile-location">
             <span>||</span>
-            <span><%= user.country || 'Pais' %></span>
+            <span><%= user.address.country || 'Pais' %></span>
             <span>||</span>
-            <span><%= user.city || 'Ciudad' %></span>
+            <span><%= user.address.city || 'Ciudad' %></span>
           </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
     <!-- Primera estadística -->
     <div class="stat-box">
       <div class="stat-icon">
-        <img src="iconos/icono-disco.svg" alt="Icono de disco">
+        <img src="/iconos/icono-disco.svg" alt="Icono de disco">
       </div>
       <h3>Horas escuchadas</h3>
       <p><%= user.hours_listened || '0' %>h</p>
@@ -70,7 +70,7 @@
   
     <div class="stat-box">
       <div class="stat-icon">
-        <img src="iconos/icono-favorito.svg" alt="Icono de favorito">
+        <img src="/iconos/icono-favorito.svg" alt="Icono de favorito">
       </div>
       <h3>Canciones guardadas</h3>
       <p><%= user.saved_songs || '0' %></p>
@@ -78,7 +78,7 @@
   
     <div class="stat-box">
       <div class="stat-icon">
-        <img src="iconos/icono-microfono.svg" alt="Icono de micrófono">
+        <img src="/iconos/icono-microfono.svg" alt="Icono de micrófono">
       </div>
       <h3>Comentarios hechos</h3>
       <p><%= user.comments_made || '0' %></p>
@@ -87,7 +87,7 @@
 </div>
 </div>
 
-<a href="/users/update-profile" class="btn btn-primary">Modificar Perfil</a>
+<a href="/users/edit-profile/<%= user.id %>" class="btn btn-primary">Modificar Perfil</a>
 
 
   <!-- Pie de página -->
