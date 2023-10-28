@@ -9,6 +9,10 @@ module.exports = async (req, res) => {
                     model: db.Address,
                     as: 'address',
                 },
+                {
+                    model: db.Identificator, 
+                    as: 'identificator',
+                },
             ],
         });
         return res.render('editProfile', {

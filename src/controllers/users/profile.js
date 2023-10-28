@@ -7,6 +7,10 @@ module.exports = (req, res) => {
                 model: db.Address,
                 as: 'address',
             },
+            {
+                model: db.Identificator, 
+                as: 'identificator', 
+            },
         ],
     })
         .then(user => {

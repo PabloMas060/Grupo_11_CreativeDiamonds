@@ -33,6 +33,17 @@
             <textarea class="form-control" id="about" name="about"><%= user.about %></textarea>
           </div>
           <div class="form-group">
+            <label for="identificator">Identificador</label>
+            <select class="form-control" id="identificator" name="identificator">
+                <option value="<%= user.identificator ? user.identificator.id : '' %>">
+                    <%= user.identificator ? user.identificator.nombre : 'Selecciona un Identificador' %>
+                </option>
+                <option value="1">Hombre</option>
+                <option value="2">Mujer</option>
+                <option value="3">No mostrar</option>
+            </select>
+        </div>
+          <div class="form-group">
             <label for="address">Dirección</label>
             <input type="text" class="form-control" id="address" name="address" value="<%= user.address ? user.address.address : '' %>">
         </div>

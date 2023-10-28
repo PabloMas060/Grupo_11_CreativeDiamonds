@@ -70,6 +70,15 @@ module.exports = {
           }
         }
       },
+      identificatorId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: {
+            tableName: "Identificators"
+          }
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

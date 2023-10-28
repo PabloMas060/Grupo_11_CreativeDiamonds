@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-        const { first_name, last_name, nick_name, state, about, address, country, city, province, zipcode } = req.body;
+        const { first_name, last_name, nick_name, state, about, address, country, city, province, zipcode, identificator  } = req.body;
 
         const addressData = {
             address: address.trim(),
@@ -38,6 +38,7 @@ module.exports = (req, res) => {
                     nick_name: nick_name.trim(),
                     state: state.trim(),
                     about: about.trim(),
+                    identificatorId: identificator,
                 },
                 {
                     where: {
