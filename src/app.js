@@ -32,8 +32,8 @@ app.use(session({
   secret: 'elbichosiuu', 
   resave: false,
   saveUninitialized: true,
-  cookie: {
-    maxAge: 300000}
+ // cookie: {
+  //  maxAge: 300000}
 }));
 
 // recordar usuario

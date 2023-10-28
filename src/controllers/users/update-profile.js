@@ -2,10 +2,10 @@ const { validationResult } = require('express-validator');
 const db = require('../../database/models');
 
 module.exports = (req, res) => {
-    return res.render('update-profile');
+
 
    
-   /* const errors = validationResult(req);
+ const errors = validationResult(req);
 
     if (errors.isEmpty()) {
         const { first_name, last_name, nick_name, state, about } = req.body;
@@ -37,5 +37,5 @@ module.exports = (req, res) => {
                 });
             })
             .catch(error => console.log(error));
-    } */
+    } 
 };
