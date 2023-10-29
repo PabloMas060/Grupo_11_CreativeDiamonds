@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { index, about, contact, groups, notices, notice, fans, capsule, editProfile, cart, selfcart, giftcart, cardInfo, checkout, prueba1, prueba2, prueba3, } = require('../controllers/indexController'); 
+const { index, about, contact, groups, notices, notice, fans, capsule, editProfile, cart, selfcart, giftcart, cardInfo, checkout, prueba1, prueba2, prueba3, prueba4 } = require('../controllers/indexController'); 
 
 /* GET home page. */
 
@@ -21,6 +21,8 @@ router.get('/checkout', checkout);
 router.get('/prueba1', prueba1);
 router.get('/prueba2', prueba2);
 router.get('/prueba3', prueba3);
+router.get('/prueba4', prueba4);
+
 
 
 module.exports = router;

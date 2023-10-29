@@ -309,6 +309,21 @@ Promise.all([group, articles])
             res.render('partials/partialDetailBand', { albumData, bandId }); 
         })
     },
+    prueba4: (req, res) => {
+        db.Band.findAll({
+            include: {
+                model: db.Album,
+                as: 'album',
+                limit: 4,
+                order: [['year', 'DESC']],
+            },
+        })
+        .then(bandData => {
+            res.render('partials/prueba4', { bandData });
+        })
+    },
+    
+    
     
     
 }

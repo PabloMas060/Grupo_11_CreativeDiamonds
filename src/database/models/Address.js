@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     country: DataTypes.STRING,
     city: DataTypes.STRING,
     province: DataTypes.STRING,
-    zipcode: DataTypes.INTEGER.UNSIGNED
+    zipcode: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Address',
