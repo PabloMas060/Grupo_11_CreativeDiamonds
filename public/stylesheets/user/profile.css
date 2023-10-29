@@ -65,8 +65,8 @@
 /* Tercer cuadrado: Nota musical, país y ciudad */
 .profile-box:nth-child(2) {
     position: absolute; /* Posición absoluta para que se pueda superponer y no empuje a los demas*/
-    left: 100px; /* No pido que me perdonen, pido que me entiendan*/
-    top: 0px;
+    left: 112px;
+    top: -6px;
     border: none; /* Sin borde para el tercer cuadrado */
     background: none; /* Elimina el color de fondo */
   }

@@ -14,7 +14,7 @@ module.exports = {
         about: "Esto es un about me",
         state: "Conectado",
         rangeId: 2,
-        rolId: 2,
+        rolId: 1,
         addressId: null,
         createdAt: new Date(),
         updatedAt: new Date()
