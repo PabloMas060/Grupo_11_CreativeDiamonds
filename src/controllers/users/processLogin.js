@@ -34,7 +34,7 @@ module.exports = (req, res) => {
                   }
 
         
-                return res.redirect('/products/artists')
+                return res.redirect('/')
             })
             .catch(error => console.log(error))
       
