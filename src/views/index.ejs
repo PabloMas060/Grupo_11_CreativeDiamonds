@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <section class="col-12 col-md-4 section__black">
+            <section class="col-12 col-md-4 section__black-index">
                 <h2>Iconos del rock</h2>
                 <p>Encuentra a los artistas que marcaron la historia</p>
                 <div class="swiper mySwiper">
@@ -47,12 +47,12 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-
             </section>
-            <section class="section__red">
-                <h2>Clásicos</h2>
+
+            <section class="section__red-index">
+                <h2 class="mt-5">Clásicos</h2>
                 <p>Aquí encontrarás bandas con más de 30 años de trayectoria</p>
-                <div class="swiper mySwiper">
+                <div class="swiper mySwiper m-5">
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===4) { %>
@@ -64,11 +64,11 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-
             </section>
+
             <section class="section__white">
-                <h2>Orgullo Nacional</h2>
-                <p>En esta sección, celebramos el increíble legado musical de Argentina</p>
+                <h2 class="mb-2">Orgullo Nacional</h2>
+                <p class="mb-3">En esta sección, celebramos el increíble legado musical de Argentina</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
@@ -83,7 +83,7 @@
                 </div>
 
             </section>
-            <section class="section__yellow">
+            <section class="section__yellow-index pt-5">
                 <h2>Indies que apoyamos</h2>
                 <p>Destacamos a artistas y grupos emergentes, listos para cautivar tus oídos</p>
                 <div class="swiper mySwiper">
