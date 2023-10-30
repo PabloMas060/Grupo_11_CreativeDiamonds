@@ -261,7 +261,7 @@ module.exports = {
       {
         "name": "Arctic Monkeys",
         "history": "Arctic Monkeys es una banda británica formada en Sheffield en 2002. Han ganado reconocimiento por su estilo indie rock y éxitos como 'I Bet You Look Good On The Dancefloor' y 'Do I Wanna Know?'.",
-        "mainImage": "logo-arcticmonkeys.png",
+        "mainImage": "logo-arctic.png",
         "image": "portada-arcticmonkeys.jpg",
         "categoryId": 1,
         "phrase": "Do I Wanna Know?",
