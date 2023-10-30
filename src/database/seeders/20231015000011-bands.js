@@ -96,7 +96,7 @@ module.exports = {
       {
         "name": "Queen",
         "history": "Queen es una banda de rock británica formada en Londres en 1970. Son conocidos por su estilo musical diverso y su icónico líder, Freddie Mercury.",
-        "mainImage": "logo-queen.png",
+        "mainImage": "logo-queen.jpg",
         "image": "portada-queen.webp",
         "categoryId": 1,
         "phrase": "Bohemian Rhapsody",
