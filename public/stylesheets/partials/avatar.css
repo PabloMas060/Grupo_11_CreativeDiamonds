@@ -1,33 +1,45 @@
-.avatar {
-    position: relative;
+.avatar-sweeper img {
+    max-width: 150px;
+    height: auto;
 }
 
-.cabeza, .cara, .sombrero, .torso {
+.avatar-sweeper {
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+.avatar-sweeper.slick-initialized.slick-slider {
     position: absolute;
+    top: 75px;
+    left: 780px;
+    width: 241px;
 }
 
-.cara, .sombrero {
-    z-index: 1;
+.avatar-carousel {
+    display: flex; /* Cambiamos esta clase */
+    align-items: center; /* Añadimos esto */
+    justify-content: space-between; /* Añadimos esto */
+    width: 420px;
 }
 
-.sombrero {
-    top: 0;
-    left: 0; 
+.avatar-sweeper {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
 }
 
-.cabeza {
-    top: 0;
-    left: 0; 
-    max-width: 200px;
-    max-height: auto;
+.avatar-sweeper img {
+    max-width: 150px;
+    height: auto;
 }
 
-.cara{
-    top: 0;
-    left: 0; 
+.avatar-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.torso {
-    top: 0;
-    left: 0; 
+.avatar-controls button {
+    width: 50px;
+    margin: 5px 0;
 }

@@ -1,74 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <%- include('head', { title: 'Fans' }) %>
+    <%- include('header') %>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
     <div class="avatar">
-        <div class="cabeza">
-            <!-- Carrusel para la cabeza -->
-            <div class="cabeza-sweeper">
-                <img src="/avatar/cabeza/defaultCabeza.png" alt="Cabeza">
-                <img src="/avatar/cabeza/cabeza1.png" alt="Cabeza 1">
-                <img src="/avatar/cabeza/cabeza2.png" alt="Cabeza 2">
-                <img src="/avatar/cabeza/cabeza3.png" alt="Cabeza 3">
-                <img src="/avatar/cabeza/cabeza4.png" alt="Cabeza 4">
-                <img src="/avatar/cabeza/cabeza5.png" alt="Cabeza 5">
-                <img src="/avatar/cabeza/cabeza6.png" alt="Cabeza 6">
-                <img src="/avatar/cabeza/cabeza7.png" alt="Cabeza 7">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-head-controls">
+                <button class="avatar-prev-head"><</button>
             </div>
-            <div class="cabeza-controls">
-                <button class="prev">Anterior</button>
-                <button class="next">Siguiente</button>
+            <div class="avatar-sweeper avatar-head-sweeper">
+                <div><img src="/avatar/cabeza/defaultCabeza.png" alt="Cabeza"></div>
+                <div><img src="/avatar/cabeza/cabeza1.png" alt="Cabeza 1"></div>
+                <div><img src= "/avatar/cabeza/cabeza2.png" alt="Cabeza 2"></div>
+                <div><img src="/avatar/cabeza/cabeza3.png" alt="Cabeza 3"></div>
+                <div><img src="/avatar/cabeza/cabeza4.png" alt="Cabeza 4"></div>
+                <div><img src="/avatar/cabeza/cabeza5.png" alt="Cabeza 5"></div>
+                <div><img src="/avatar/cabeza/cabeza6.png" alt="Cabeza 6"></div>
+                <div><img src="/avatar/cabeza/cabeza7.png" alt="Cabeza 7"></div>
             </div>
-        </div>
-        <div class="cara">
-            <!-- Carrusel para la cara -->
-            <div class="cara-sweeper">
-                <img src="/avatar/cara/defaultCara.png" alt="Cara">
-                <img src="/avatar/cara/cara1.png" alt="Cara 1">
-                <img src="/avatar/cara/cara2.png" alt="Cara 2">
-                <img src="/avatar/cara/cara3.png" alt="Cara 3">
-                <img src="/avatar/cara/cara4.png" alt="Cara 4">
-                <img src="/avatar/cara/cara5.png" alt="Cara 5">
-            </div>
-            <div class="cara-controls">
-                <button class="prev">Anterior</button>
-                <button class="next">Siguiente</button>
-            </div>
-        </div>
-        <div class="sombrero">
-            <!-- Carrusel para el sombrero -->
-            <div class="sombrero-sweeper">
-                <img src="/avatar/sombrero/defaultGorro.png" alt="Gorro">
-                <img src="/avatar/sombrero/gorro1.png" alt="Gorro 1">
-                <img src="/avatar/sombrero/gorro2.png" alt="Gorro 2">
-                <img src="/avatar/sombrero/gorro3.png" alt="Gorro 3">
-            </div>
-            <div class="sombrero-controls">
-                <button class="prev">Anterior</button>
-                <button class="next">Siguiente</button>
-            </div>
-        </div>
-        <div class="torso">
-            <!-- Carrusel para el torso -->
-            <div class="torso-sweeper">
-                <img src="/avatar/torso/defaultTorso.png" alt="Torso">
-                <img src="/avatar/torso/torso1.png" alt="Torso 1">
-                <img src="/avatar/torso/torso2.png" alt="Torso 2">
-                <img src="/avatar/torso/torso3.png" alt="Torso 3">
-                <img src="/avatar/torso/torso4.png" alt="Torso 4">
-                <img src="/avatar/torso/torso5.png" alt="Torso 5">
-            </div>
-            <div class="torso-controls">
-                <button class="prev">Anterior</button>
-                <button class="next">Siguiente</button>
+            <div class="avatar-controls avatar-head-controls">
+                <button class="avatar-next-head">></button>
             </div>
         </div>
     </div>
     
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-cara-controls">
+                <button class="avatar-prev-cara"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-cara-sweeper">
+                <!-- Contenido del carrusel de la cara -->
+                <div><img src="/avatar/cara/defaultCara.png" alt="Cara"></div>
+                <div><img src="/avatar/cara/cara1.png" alt="Cara 1"></div>
+                <div><img src="/avatar/cara/cara2.png" alt="Cara 2"></div>
+                <div><img src="/avatar/cara/cara3.png" alt="Cara 3"></div>
+                <div><img src="/avatar/cara/cara4.png" alt="Cara 4"></div>
+                <div><img src="/avatar/cara/cara5.png" alt="Cara 5"></div>
+            </div>
+            <div class="avatar-controls avatar-cara-controls">
+                <button class="avatar-next-cara">></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-sombrero-controls">
+                <button class="avatar-prev-sombrero"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-sombrero-sweeper">
+                <div><img src="/avatar/sombrero/defaultGorro.png" alt="Gorro"></div>
+                <div><img src="/avatar/sombrero/gorro1.png" alt="Gorro 1"></div>
+                <div><img src="/avatar/sombrero/gorro2.png" alt="Gorro 2"></div>
+                <div><img src="/avatar/sombrero/gorro3.png" alt="Gorro 3"></div>
+            </div>
+            <div class="avatar-controls avatar-sombrero-controls">
+                <button class="avatar-next-sombrero">></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-torso-controls">
+                <button class="avatar-prev-torso"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-torso-sweeper">
+                <div><img src="/avatar/torso/defaultTorso.png" alt="Torso"></div>
+                <div><img src="/avatar/torso/torso1.png" alt="Torso 1"></div>
+                <div><img src= "/avatar/torso/torso2.png" alt="Torso 2"></div>
+                <div><img src="/avatar/torso/torso3.png" alt="Torso 3"></div>
+                <div><img src="/avatar/torso/torso4.png" alt="Torso 4"></div>
+                <div><img src="/avatar/torso/torso5.png" alt="Torso 5"></div>
+            </div>
+            <div class="avatar-controls avatar-torso-controls">
+                <button class="avatar-next-torso">></button>
+            </div>
+        </div>
+    </div>
+    
+    
 
+    <script>
+$(document).ready(function(){
+    // Configuración del carrusel de la cabeza
+    $('.avatar-head-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+
+    // Configuración del carrusel de la cara
+    $('.avatar-cara-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+
+    $(document).ready(function(){
+    // Configuración del carrusel del sombrero
+    $('.avatar-sombrero-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+
+    $(document).ready(function(){
+    // Configuración del carrusel del torso
+    $('.avatar-torso-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+    // Botones de control para el carrusel de la cabeza
+    $('.avatar-head-controls .avatar-prev-head').click(function() {
+        $('.avatar-head-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-head-controls .avatar-next-head').click(function() {
+        $('.avatar-head-sweeper').slick('slickNext');
+    });
+
+    // Botones de control para el carrusel de la cara
+    $('.avatar-cara-controls .avatar-prev-cara').click(function() {
+        $('.avatar-cara-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-cara-controls .avatar-next-cara').click(function() {
+        $('.avatar-cara-sweeper').slick('slickNext');
+    });
+});
+
+    // Botones de control para el carrusel del sombrero
+    $('.avatar-sombrero-controls .avatar-prev-sombrero').click(function() {
+        $('.avatar-sombrero-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-sombrero-controls .avatar-next-sombrero').click(function() {
+        $('.avatar-sombrero-sweeper').slick('slickNext');
+    });
+});
+
+$('.avatar-torso-controls .avatar-prev-torso').click(function() {
+        $('.avatar-torso-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-torso-controls .avatar-next-torso').click(function() {
+        $('.avatar-torso-sweeper').slick('slickNext');
+    });
+});
+
+    </script>
 </body>
 </html>
