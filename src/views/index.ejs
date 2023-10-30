@@ -38,8 +38,12 @@
 
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===1) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide">
+                                    <div class="card-index-black">
+                                        <a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
+                                                src="/images/bands/<%= mainImage %>" alt="1"></a>
+                                    </div>
+                                </div>
                                 <% } %>
 
                                     <% }) %>
@@ -56,8 +60,8 @@
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===4) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img
+                                            class="img-fluid" src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
                                     <% }) %>
@@ -73,8 +77,8 @@
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===2) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img
+                                            class="img-fluid" src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
                                     <% }) %>
@@ -90,8 +94,8 @@
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===3) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img
+                                            class="img-fluid" src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
                                     <% }) %>
