@@ -30,16 +30,20 @@
                 </div>
             </div>
 
-            <section class="col-12 col-md-4 section__black">
-                <h2>Iconos del rock</h2>
+            <section class="col-12 col-md-4 section__black-index">
+                <h2 class="mt-3">Iconos del rock</h2>
                 <p>Encuentra a los artistas que marcaron la historia</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
 
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===1) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide">
+                                    <div class="card-index-black">
+                                        <a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
+                                                src="/images/bands/<%= mainImage %>" alt="1"></a>
+                                    </div>
+                                </div>
                                 <% } %>
 
                                     <% }) %>
@@ -47,34 +51,34 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-
             </section>
+
             <section class="section__red">
-                <h2>Clásicos</h2>
+                <h2 class="mt-5">Clásicos</h2>
                 <p>Aquí encontrarás bandas con más de 30 años de trayectoria</p>
-                <div class="swiper mySwiper">
+                <div class="swiper mySwiper m-5">
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===4) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img
+                                            class="img-fluid" src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
                                     <% }) %>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-
             </section>
+
             <section class="section__white">
-                <h2>Orgullo Nacional</h2>
-                <p>En esta sección, celebramos el increíble legado musical de Argentina</p>
+                <h2 class="mb-2">Orgullo Nacional</h2>
+                <p class="mb-3">En esta sección, celebramos el increíble legado musical de Argentina</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===2) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img
+                                            class="img-fluid" src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
                                     <% }) %>
@@ -83,15 +87,15 @@
                 </div>
 
             </section>
-            <section class="section__yellow">
+            <section class="section__yellow pt-5">
                 <h2>Indies que apoyamos</h2>
                 <p>Destacamos a artistas y grupos emergentes, listos para cautivar tus oídos</p>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <% bands.forEach(({id,mainImage,categoryId})=> { %>
                             <% if (categoryId===3) { %>
-                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img class="img-fluid"
-                                            src="/images/bands/<%= mainImage %>" alt="1"></a></div>
+                                <div class="swiper-slide"><a href="/products/artists/detail/<%= id %>"><img
+                                            class="img-fluid" src="/images/bands/<%= mainImage %>" alt="1"></a></div>
                                 <% } %>
 
                                     <% }) %>

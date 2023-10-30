@@ -56,10 +56,9 @@
     align-items: center;
     color: #fff;
 }
-
-.section__red{
-    background-color: var(--varColor5);
-    display: flex;
+.section__black-index{
+    background: rgb(4,0,0);
+    background: linear-gradient(4deg, rgba(4,0,0,1) 85%, rgba(255,255,255,1) 100%);
     flex-wrap: wrap;
     width: 100%;
     flex-direction: column;
@@ -67,6 +66,24 @@
     align-items: center;
     color: #fff;
 }
+.card-index-black{
+    border: 1px solid var(--varColor2);
+    border-radius: 8px;
+    width: 100%;
+    background-color: #fff;
+}
+.section__red {
+    background-color: var(--varColor5);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #fff; 
+}
+
+
 .section__white{
     background-color: var(--varColor2);
     display: flex;
@@ -86,6 +103,7 @@
     text-align: center;
     align-items: center;
 }
+
 
 
 

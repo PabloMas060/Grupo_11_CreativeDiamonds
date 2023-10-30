@@ -51,6 +51,22 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        email: 'usuario4@example.com',
+        years: 25,
+        avatar: 'avatar2.jpg',
+        password: 'hashedpassword4',
+        nick_name: 'User4',
+        first_name: 'Nombre4',
+        last_name: 'Apellido4',
+        about: "Esto es un about me",
+        state: "Conectado",
+        rangeId: 2,
+        rolId: 2,
+        addressId: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 

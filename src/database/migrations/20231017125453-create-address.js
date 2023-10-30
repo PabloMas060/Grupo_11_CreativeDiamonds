@@ -11,23 +11,28 @@ module.exports = {
       },
       address: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false,
+        defaultValue: ''
       },
       country: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false,
+        defaultValue: ''
       },
       city: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false,
+        defaultValue: ''
       },
       province: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false,
+        defaultValue: ''
       },
       zipcode: {
         type: Sequelize.INTEGER,
-        allowNull: true
+        allowNull: false,
+        defaultValue: 0
       },
       createdAt: {
         allowNull: false,

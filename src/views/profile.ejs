@@ -41,9 +41,9 @@
           </div>
           <div class="profile-location">
             <span>||</span>
-            <span><%= user.address.country || 'Pais' %></span>
+            <span><%= user.address ? (user.address.country ? user.address.country : 'Pais') : 'Pais' %></span>
             <span>||</span>
-            <span><%= user.address.city || 'Ciudad' %></span>
+            <span><%= user.address ? (user.address.city || 'Ciudad') : 'Ciudad' %></span>
           </div>
         </div>
     </div>
