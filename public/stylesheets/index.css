@@ -69,8 +69,8 @@
 .card-index-black{
     border: 1px solid var(--varColor2);
     border-radius: 8px;
-    width: 100%
-   height: 15rem;
+    width: 100%;
+    background-color: #fff;
 }
 .section__red {
     background-color: var(--varColor5);
