@@ -2,37 +2,32 @@
     position: relative;
 }
 
-.cabeza-sweeper, .cara-sweeper, .sombrero-sweeper, .torso-sweeper {
+.cabeza, .cara, .sombrero, .torso {
     position: absolute;
 }
 
-.cara-sweeper, .sombrero-sweeper {
+.cara, .sombrero {
     z-index: 1;
 }
 
-.sombrero-sweeper {
+.sombrero {
     top: 0;
     left: 0; 
 }
 
-.cabeza-sweeper {
+.cabeza {
     top: 0;
     left: 0; 
     max-width: 200px;
     max-height: auto;
 }
 
-.cara-sweeper{
+.cara{
     top: 0;
     left: 0; 
 }
 
-.torso-sweeper {
+.torso {
     top: 0;
     left: 0; 
-}
-
-.sweeper{
-    max-width: 200px;
-    max-height: auto;
 }
