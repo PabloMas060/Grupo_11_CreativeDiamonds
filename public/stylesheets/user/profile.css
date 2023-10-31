@@ -51,13 +51,14 @@
 }
 
 .profile-avatar img {
+  position: absolute;
   width: 100px;
   height: 100px;
-  background: var(--varColor2); /* !! COLOR, DESPUES CAMBIAR/AÑADIR MAS */
 }
 
 .profile-status {
   margin-top: 20px;
+  margin-left: 96px;
   background: #c0c0c0; /* !! COLOR, DESPUES CAMBIAR/AÑADIR MAS */
   padding: 10px;
 }

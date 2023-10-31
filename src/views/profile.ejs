@@ -13,10 +13,10 @@
     <!-- Primer cuadrado -->
     <div class="profile-box">
       <div class="profile-info">
-        <h2><%= user.first_name %></h2>
+        <h2><%= user.last_name %></h2>
         <div class="profile-especificaciones">
           <img src="/iconos/icono-favorito.svg" alt="Favorito">
-          <span><%= user.first_name %></span> 
+          <span><%= user.nickname %></span> 
         </div>
       </div>
     </div>
@@ -27,17 +27,18 @@
           <div class="profile-avatar">
             <div class="avatar-container">
                 <div class="avatar-image">
-                    <img src="/avatar/hat/<%= user.hat.image %>" alt="Hat">
+                  <div class="avatar-image">
+                    <img src="/avatar/cabeza/<%= user.head.image %>" alt="Head">
                 </div>
                 <div class="avatar-image">
-                    <img src="/avatar/bust/<%= user.bust.image %>" alt="Bust">
+                  <img src="/avatar/cara/<%= user.face.image %>" alt="Face">
+              </div>
+                    <img src="/avatar/sombrero/<%= user.hat.image %>" alt="Hat">
                 </div>
                 <div class="avatar-image">
-                    <img src="/avatar/head/<%= user.head.image %>" alt="Head">
+                    <img src="/avatar/torso/<%= user.bust.image %>" alt="Bust">
                 </div>
-                <div class="avatar-image">
-                    <img src="/avatar/face/<%= user.face.image %>" alt="Face">
-                </div>
+
             </div>
         </div>
           <div class="profile-status">

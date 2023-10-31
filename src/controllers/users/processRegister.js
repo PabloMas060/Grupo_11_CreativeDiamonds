@@ -8,37 +8,25 @@ module.exports = (req, res) => {
     if (errors.isEmpty()) {
         const { first_name, last_name, email, password } = req.body;
 
-        db.Address.create({
-            address: null,
-            country: null,
-            city: null,
-            province: null,
-            zipcode: null,
+        db.User.create({
+            first_name: first_name.trim(),
+            last_name: last_name.trim(),
+            email: email.trim(),
+            password: hashSync(password, 10),
+            rolId: 2,
+            addressId: null,
+            identificatorId: null,
+            faceId: 1,
+            headId: 1,
+            bustId: 1,
+            hatId: 1
         })
-        .then(address => {
-            db.User.create({
-                first_name: first_name.trim(),
-                last_name: last_name.trim(),
-                email: email.trim(),
-                password: hashSync(password, 10),
-                rolId: 2,
-                addressId: address.id,
-                identificatorId: null,
-                faceId: 1,
-                headId: 1,
-                bustId: 1,
-                hatId: 1
-            })
-            .then(user => {
-                return res.redirect('/');
-            })
-            .catch(error => console.log(error));
+        .then(user => {
+            return res.redirect('/');
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            console.log(error);});
     } else {
-        return res.redirect('/users/register', {
-            old: req.body,
-            errors: errors.mapped()
-        });
+        return res.redirect(500, '/users/register');
     }
 };
