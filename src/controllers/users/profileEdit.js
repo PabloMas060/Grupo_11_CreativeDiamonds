@@ -13,6 +13,22 @@ module.exports = async (req, res) => {
                     model: db.Identificator, 
                     as: 'identificator',
                 },
+                {
+                    model: db.Face, 
+                    as: 'face', 
+                },
+                {
+                    model: db.Head,
+                    as: 'head', 
+                },
+                {
+                    model: db.Bust, 
+                    as: 'bust',
+                },
+                {
+                    model: db.Hat,
+                    as: 'hat', 
+                },
             ],
         });
         return res.render('editProfile', {
