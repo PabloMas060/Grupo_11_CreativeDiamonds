@@ -1,29 +1,51 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      // Define association here
+      User.belongsTo(models.Head, {
+        as: 'head',
+        foreignKey: 'headId'
+      });
+
+      User.belongsTo(models.Face, {
+        as: 'face',
+        foreignKey: 'faceId'
+      });
+
+      User.belongsTo(models.Bust, {
+        as: 'bust',
+        foreignKey: 'bustId'
+      });
+
+      User.belongsTo(models.Hat, {
+        as: 'hat',
+        foreignKey: 'hatId'
+      });
+
       User.belongsTo(models.Rol, {
         as: 'rol',
         foreignKey: 'rolId'
       });
+      
       User.belongsTo(models.Address, {
         as: 'address',
         foreignKey: 'addressId'
       });
+      
       User.belongsTo(models.Range, {
         as: 'range',
         foreignKey: 'rangeId'
       });
+      
       User.belongsTo(models.Identificator, {
         as: 'identificator',
         foreignKey: 'identificatorId'
       });
     }
   }
+
   User.init({
     email: DataTypes.STRING,
     years: DataTypes.INTEGER.UNSIGNED,
@@ -36,10 +58,15 @@ module.exports = (sequelize, DataTypes) => {
     addressId: DataTypes.INTEGER.UNSIGNED,
     rolId: DataTypes.INTEGER.UNSIGNED,
     rangeId: DataTypes.INTEGER.UNSIGNED,
-    identificatorId: DataTypes.INTEGER.UNSIGNED
+    identificatorId: DataTypes.INTEGER.UNSIGNED,
+    headId: DataTypes.INTEGER.UNSIGNED,
+    faceId: DataTypes.INTEGER.UNSIGNED,
+    bustId: DataTypes.INTEGER.UNSIGNED,
+    hatId: DataTypes.INTEGER.UNSIGNED,
   }, {
     sequelize,
     modelName: 'User',
   });
+
   return User;
 };

@@ -297,18 +297,24 @@ Promise.all([group, articles])
             })
     },
     prueba3: (req, res) => {
-        const bandId = req.params.bandId; 
-        db.Album.findAll({
-            limit: 20,  
-            include: [{
-                model: db.Band,
-                as: 'band',
-            }],
-        })
-        .then(albumData => {
-            res.render('partials/partialDetailBand', { albumData, bandId }); 
-        })
-    },
+        const avatar = [
+          db.Face.findAll(),
+          db.Head.findAll(),
+          db.Hat.findAll(),
+          db.Bust.findAll()
+        ];
+      
+        Promise.all(avatar)
+          .then(([faces, heads, hats, busts]) => {
+            res.render('partials/AvatarTest', {
+              faces,
+              heads,
+              hats,
+              busts
+            });
+          })
+        },
+
     prueba4: (req, res) => {
         db.Band.findAll({
             include: {
@@ -319,7 +325,7 @@ Promise.all([group, articles])
             },
         })
         .then(bandData => {
-            res.render('partials/prueba4', { bandData });
+            res.render('partials/partialDetailBand', { bandData });
         })
     },
     

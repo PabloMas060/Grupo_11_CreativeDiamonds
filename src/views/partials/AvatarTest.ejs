@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head', { title: 'Fans' }) %>
+    <%- include('header') %>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<body>
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-head-controls">
+                <button class="avatar-prev-head"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-head-sweeper">
+                <% heads.forEach(head => { %>
+                    <div><img src="/avatar/cabeza/<%= head.image %>" alt="Cabeza"></div>
+                <% }); %>
+            </div>
+            <div class="avatar-controls avatar-head-controls">
+                <button class="avatar-next-head">></button>
+            </div>
+        </div>
+    </div>
+      
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-cara-controls">
+                <button class="avatar-prev-cara"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-cara-sweeper">
+                <% faces.forEach(face => { %>
+                    <div><img src="/avatar/cara/<%= face.image %>" alt="<%= face.image %>"></div>
+                <% }); %>
+            </div>
+            <div class="avatar-controls avatar-cara-controls">
+                <button class="avatar-next-cara">></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-sombrero-controls">
+                <button class="avatar-prev-sombrero"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-sombrero-sweeper">
+                <% hats.forEach(hat => { %>
+                    <div><img src="/avatar/sombrero/<%= hat.image %>" alt="<%= hat.image %>"></div>
+                <% }); %>
+            </div>
+            <div class= "avatar-controls avatar-sombrero-controls">
+                <button class="avatar-next-sombrero">></button>
+            </div>
+        </div>
+    </div>    
+    
+    <div class="avatar">
+        <div class="avatar-carousel">
+            <div class="avatar-controls avatar-torso-controls">
+                <button class="avatar-prev-torso"><</button>
+            </div>
+            <div class="avatar-sweeper avatar-torso-sweeper">
+                <% busts.forEach(bust => { %>
+                    <div><img src="/avatar/torso/<%= bust.image %>" alt="<%= bust.image %>"></div>
+                <% }); %>
+            </div>
+            <div class="avatar-controls avatar-torso-controls">
+                <button class="avatar-next-torso">></button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <script>
+$(document).ready(function(){
+    // Configuración del carrusel de la cabeza
+    $('.avatar-head-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+
+    // Configuración del carrusel de la cara
+    $('.avatar-cara-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+
+    $(document).ready(function(){
+    // Configuración del carrusel del sombrero
+    $('.avatar-sombrero-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+
+    $(document).ready(function(){
+    // Configuración del carrusel del torso
+    $('.avatar-torso-sweeper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        variableWidth: true,
+    });
+    // Botones de control para el carrusel de la cabeza
+    $('.avatar-head-controls .avatar-prev-head').click(function() {
+        $('.avatar-head-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-head-controls .avatar-next-head').click(function() {
+        $('.avatar-head-sweeper').slick('slickNext');
+    });
+
+    // Botones de control para el carrusel de la cara
+    $('.avatar-cara-controls .avatar-prev-cara').click(function() {
+        $('.avatar-cara-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-cara-controls .avatar-next-cara').click(function() {
+        $('.avatar-cara-sweeper').slick('slickNext');
+    });
+});
+
+    // Botones de control para el carrusel del sombrero
+    $('.avatar-sombrero-controls .avatar-prev-sombrero').click(function() {
+        $('.avatar-sombrero-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-sombrero-controls .avatar-next-sombrero').click(function() {
+        $('.avatar-sombrero-sweeper').slick('slickNext');
+    });
+});
+
+$('.avatar-torso-controls .avatar-prev-torso').click(function() {
+        $('.avatar-torso-sweeper').slick('slickPrev');
+    });
+
+    $('.avatar-torso-controls .avatar-next-torso').click(function() {
+        $('.avatar-torso-sweeper').slick('slickNext');
+    });
+});
+
+    </script>
+</body>
+</html>

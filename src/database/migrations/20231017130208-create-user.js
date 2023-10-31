@@ -79,6 +79,42 @@ module.exports = {
           }
         }
       },
+      headId: { 
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: {
+            tableName: "Heads"
+          }
+        }
+      },
+      faceId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: {
+            tableName: "Faces"
+          }
+        }
+      },
+      bustId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: {
+            tableName: "Busts"
+          }
+        }
+      },
+      hatId: { 
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: {
+            tableName: "Hats"
+          }
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -23,7 +23,11 @@ module.exports = (req, res) => {
                 password: hashSync(password, 10),
                 rolId: 2,
                 addressId: address.id,
-                identificatorId: null 
+                identificatorId: null,
+                faceId: 1,
+                headId: 1,
+                bustId: 1,
+                hatId: 1
             })
             .then(user => {
                 return res.redirect('/');
