@@ -177,12 +177,20 @@ Promise.all([group, articles])
         const exclusivoMerchPromise = db.Merch.findAll({
             where: {
                 exclusive: 0
-            }
+            },
+            include: [{
+                model: db.Type, 
+                as: 'type',
+            }],
         });
         const exclusivoAlbumPromise = db.Album.findAll({
             where: {
                 exclusive: 0
-            }
+            },
+            include: [{
+                model: db.Band,
+                as: 'band',
+            }],
         });
         
     
@@ -191,24 +199,40 @@ Promise.all([group, articles])
                 discount: {
                     [db.Sequelize.Op.ne]: null 
                 }
-            }
+            },
+            include: [{
+                model: db.Type, 
+                as: 'type',
+            }],
         });
         const discountAlbumPromise = db.Album.findAll({
             where: {
                 discount: {
                     [db.Sequelize.Op.ne]: null 
                 }
-            }
+            },
+            include: [{
+                model: db.Band,
+                as: 'band',
+            }],
         });
     
         const masVendidosMerchPromise = db.Merch.findAll({
             limit: 12,  
-            order: [['cantidadVendida', 'DESC']]
+            order: [['cantidadVendida', 'DESC']],
+            include: [{
+                model: db.Type, 
+                as: 'type',
+            }],
         });
     
         const masVendidosAlbumsPromise = db.Album.findAll({
             limit: 12,  
-            order: [['cantidadVendida', 'DESC']]
+            order: [['cantidadVendida', 'DESC']],
+            include: [{
+                model: db.Band,
+                as: 'band',
+            }],
         });
     
         Promise.all([exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerchPromise, masVendidosMerchPromise, masVendidosAlbumsPromise])
@@ -248,7 +272,11 @@ Promise.all([group, articles])
         const capsuleProductsPromise = db.Merch.findAll({
             where: {
                 typeId: 12
-            }
+            },
+            include: [{
+                model: db.Type, 
+                as: 'type',
+            }],
         });
     
         Promise.all([classicAlbumsPromise, capsuleProductsPromise, capsuleArticulosPromise])
