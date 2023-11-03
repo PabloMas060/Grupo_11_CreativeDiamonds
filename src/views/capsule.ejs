@@ -177,7 +177,7 @@
         const band = albumItem.getAttribute('data-band');
         const discography = albumItem.getAttribute('data-discography');
         const year = albumItem.getAttribute('data-year');
-        const albumId = albumItem.getAttribute('data-albumId'); // Asegúrate de tener el atributo del álbum adecuado
+        const albumId = albumItem.getAttribute('data-albumId'); 
 
         albumImage.src = image;
         albumName.textContent = title;
@@ -206,7 +206,7 @@
         albumX.appendChild(yearElement);
 
         const albumDetailLink = document.getElementById('album-detail-link');
-        albumDetailLink.href = '/products/albums/detail/' + albumId; // Asigna la URL adecuada
+        albumDetailLink.href = '/products/albums/detail/' + albumId;
 
         albumModal.style.display = 'block';
     });

@@ -33,26 +33,34 @@ module.exports = {
         res.render('contact')
     },
     groups: (req, res) => {
-        db.Group.findAll()
-            .then(groups => {
-                return db.Genre.findAll()
-                    .then(genres => {
-                        return db.Article.findAll({
-                            order: [['createdAt', 'DESC']], 
-                        })
-                            .then(articles => {
-                                res.render('groups', {
-                                    groups,
-                                    genres,
-                                    articles,
-                                });
-                            });
+        db.Group.findAll({
+            include: [
+                {
+                    model: db.Genre,
+                    as: 'Genre'
+                },
+                {
+                    model: db.Article,
+                    as: 'Articles',
+                    order: [['createdAt', 'DESC']],
+                    limit: 4 
+                }
+            ]
+        })
+        .then(groups => {
+            db.Genre.findAll()
+                .then(genres => {
+                    res.render('groups', {
+                        groups,
+                        genres,
                     });
-            })
-            .catch(error => {
-                console.error(error)
-            });
+                });
+        })
+        .catch(error => {
+            console.error(error);
+        });
     },
+    
     
 
     editProfile: (req, res) => {
@@ -79,15 +87,11 @@ module.exports = {
                 groupId: groupId
             }
         });
-    
-// Controlador
+
 Promise.all([group, articles])
     .then(([group, articles]) => {
-        console.log('Información del grupo:', group);
-        console.log('Artículos:', articles); 
-        if (!group) {
-            return res.send('Grupo no encontrado');
-        }
+        console.log('Informacion del grupo:', group);
+        console.log('Articulos:', articles); 
 
         return res.render('notices', {
             group,

@@ -9,7 +9,7 @@
         </p>
     </div>
     <div class="partial-productDisplaySection">
-        <!-- Itera sobre las bandas -->
+
         <% bandData.forEach(band => { %>
             <div class="partial-productDisplay2" data-image="<%= band.mainImage %>" data-name="<%= band.name %>" data-resume="<%= band.resume %>" data-year="<%= band.dateFounded %>" data-bandMainImage="<%= band.mainImage %>" data-bandImage="<%= band.image %>" data-bandDateFounded="<%= band.dateFounded %>" data-bandId="<%= band.bandId %>">
                 <img src="/images/bands/<%= band.mainImage %>" alt="<%= band.bandName %>">
@@ -34,7 +34,7 @@
 
 </div>
 
-<div class="partial-detailMerch" id="detailMerch" style="display: none;">
+<div class="partial-detailGroup" id="detailMerch" style="display: none;">
     <div class="modal-content">
         <span class="closedetailMerch" id="closeModal">&times;</span>
         <div class="grupoC">
@@ -49,7 +49,6 @@
                     <p class="grupoX" id="product-discography"></p>
                     <p class="grupoX" id="product-year"></p>
                     
-                    <!-- Agregamos los elementos para band -->
                     <p class="grupoX" id="product-bandId"></p>
                     <img id="bandMainImage" src="" alt="">
                     <img id="bandImage" src="" alt="">
