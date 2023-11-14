@@ -6,8 +6,8 @@ const db = require('../../database/models');
 module.exports = (req, res) => {
     const errors = validationResult(req);
 
-    if (errors.isEmpty()) {
-        return res.render("users/profile", {
+    if (!errors.isEmpty()) {
+        res.render("partials/modalLogin.ejs", {
             title: "Inicio de sesión",
             errors: errors.mapped(),
             old: req.body,
