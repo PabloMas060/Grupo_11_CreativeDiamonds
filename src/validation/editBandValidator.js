@@ -14,7 +14,8 @@ module.exports = [
         check('dateFounded')
         .notEmpty().withMessage('Éste campo es obligatorio'),
         check('totalShows')
-        .notEmpty().withMessage('Éste campo es obligatorio'),
+        .notEmpty().withMessage('Éste campo es obligatorio').bail()
+        .isNumeric().withMessage('Sólo se admiten números'),
         check('nextShows')
         .notEmpty().withMessage('Éste campo es obligatorio'),
         check('history')

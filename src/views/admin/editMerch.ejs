@@ -9,18 +9,18 @@
             <main class="container">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
-                        <form id="albumForm" action="/products/edit/merch/<%= merch.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form id="editMerchForm" action="/products/edit/merch/<%= merch.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nombre</label>
                                 <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" name="name" value="<%= merch.name %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
+                                <small id="msgError-name" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
 
                             </div>
                         
                             <div class="mb-3">
                                 <label for="price" class="form-label">Precio</label>
                                 <input type="number" step="0.01" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" id="price" name="price" value="<%= merch.price %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
+                                <small id="msgError-price" class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
 
                             </div>
                         
@@ -59,7 +59,7 @@
                             <div class="mb-3">
                                 <label for="description" class="form-label">Descripción</label>
                                 <textarea class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description" name="description" rows="3"><%= merch.description %></textarea>
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.description && errors.description.msg) %></small>
+                                <small id="msgError-description" class="ms-2 text-danger"><%= locals.errors && (errors.description && errors.description.msg) %></small>
 
                             </div>
                         
@@ -83,7 +83,7 @@
             </main>
 
 
-          
+          <script src="/javascripts/editMerchFrontendValidations.js"></script>
 
             <%- include('../partials/footer') %>
 

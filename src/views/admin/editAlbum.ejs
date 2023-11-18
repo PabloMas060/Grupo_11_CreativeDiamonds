@@ -9,31 +9,31 @@
             <main class="container">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
-                        <form id="albumForm" action="/products/edit/album/<%= album.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form id="editAlbumForm" action="/products/edit/album/<%= album.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Título del Álbum</label>
                                 <input type="text" class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>" id="title" name="title" value="<%= album.title %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.title && errors.title.msg) %></small>
+                                <small id="msgError-title" class="ms-2 text-danger"><%= locals.errors && (errors.title && errors.title.msg) %></small>
                             </div>
                         
                             <div class="mb-3">
                                 <label for="discography" class="form-label">Discográfica</label>
                                 <input type="text" class="form-control <%= locals.errors && (errors.discography && 'is-invalid') %>" id="discography" name="discography" value="<%= album.discography %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.discography && errors.discography.msg) %></small>
+                                <small id="msgError-discography" class="ms-2 text-danger"><%= locals.errors && (errors.discography && errors.discography.msg) %></small>
 
                             </div>
                         
                             <div class="mb-3">
                                 <label for="year" class="form-label">Año de Publicación</label>
                                 <input type="number" class="form-control <%= locals.errors && (errors.year && 'is-invalid') %>" id="year" name="year" value="<%= album.year %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.year && errors.year.msg) %></small>
+                                <small id="msgError-year" class="ms-2 text-danger"><%= locals.errors && (errors.year && errors.year.msg) %></small>
 
                             </div>
                         
                             <div class="mb-3">
                                 <label for="price" class="form-label">Precio</label>
                                 <input type="number" step="0.01" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" id="price" name="price" value="<%= album.price %>">
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
+                                <small id="msgError-price" class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
 
                             </div>
                         
@@ -73,7 +73,7 @@
                             <div class="mb-3">
                                 <label for="description" class="form-label">Descripción</label>
                                 <textarea class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description" name="description" rows="3"><%= album.description %></textarea>
-                                <small class="ms-2 text-danger"><%= locals.errors && (errors.description && errors.description.msg) %></small>
+                                <small id="msgError-description" class="ms-2 text-danger"><%= locals.errors && (errors.description && errors.description.msg) %></small>
 
                             </div>
                         
@@ -97,7 +97,7 @@
             </main>
 
 
-
+<script src="/javascripts/editAlbumFrontendValidations.js"></script>
             <%- include('../partials/footer') %>
 
     </body>
