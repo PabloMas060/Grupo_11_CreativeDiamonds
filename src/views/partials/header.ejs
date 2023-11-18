@@ -9,48 +9,61 @@
     <nav class="header__navbar">
         <ul class="text-center align-items-center g-5 header__navbar__ul-1">
 
-            
+
             <% if (locals.userLogin) { %>
-                <li><h6>Bienvenido</h6></li>
-              
-           
-              <!--   <li><a href="/users/foro"><img width="45" src="/iconos/icono-microfono.svg" alt=""></a>
+                <li>
+                    <h6>Bienvenido</h6>
+                </li>
+
+
+                <!--   <li><a href="/users/foro"><img width="45" src="/iconos/icono-microfono.svg" alt=""></a>
                 <p>Foro</p></li>
                 <li><a href=""><img width="45" src="/iconos/icono-notaMusical.svg" alt=""></a>
                 <p>Algun lado</p></li> -->
                 <li><a href="/groups"><img width="45" src="/iconos/icono-radio.svg" alt=""></a>
-                    <p>Grupos</p></li>
+                    <p>Grupos</p>
+                </li>
 
                 <% if (locals.userLogin.rolId===1) { %>
                     <li><a href="/users/admin"><img width="45" src="/iconos/icono-diamante.svg" alt=""></a>
-                    <p>Admin</p></li>
+                        <p>Admin</p>
+                    </li>
 
                     <% } %>
-                    <li><a href="/users/logout"><img width="45" src="/iconos/icono-cerrar.svg" alt=""></a>
-                    <p>Salir</p></li>
-                        <% } %>
-                        <li><a href="/products/artists"><img width="45" src="/iconos/icono-guitarraElectrica.svg" alt=""></a>
-                            <p>Bandas</p>
+                        <li><a href="/users/logout"><img width="45" src="/iconos/icono-cerrar.svg" alt=""></a>
+                            <p>Salir</p>
                         </li>
-                        <% if (locals.userLogin) { %>
-                            <div class="Headeravatar-image">
-                                <img src="/avatar/cabeza/<%= user.head.image %>" alt="Head">
-                            </div>
-                            <div class="Headeravatar-image">
-                                <img src="/avatar/cara/<%= user.face.image %>" alt="Face">
-                            </div>
-                            <div class="Headeravatar-image">
-                                <img src="/avatar/sombrero/<%= user.hat.image %>" alt="Hat">
-                            </div>
-                            <div class="Headeravatar-image">
-                              <a href="#" id="toggle-button"> <img src="/avatar/torso/<%= user.bust.image %>" alt="Bust"> </a>
-                            </div>
-                            
-                        <% } else { %>
-                            <a href="#" id="toggle-button"><img width="45" src="/iconos/icono-avatarTemporal.svg" alt=""></a>
                         <% } %>
-                        
-                    <p>Usuario</p></li>
+                            <li><a href="/products/artists"><img width="45" src="/iconos/icono-guitarraElectrica.svg"
+                                        alt=""></a>
+                                <p>Bandas</p>
+                            </li>
+                            <% if (locals.userLogin) { %>
+                                <div class="Headeravatar-image">
+                                    <img src="/avatar/cabeza/<%= user.head.image %>" alt="Head">
+                                </div>
+                                <div class="Headeravatar-image">
+                                    <img src="/avatar/cara/<%= user.face.image %>" alt="Face">
+                                </div>
+                                <div class="Headeravatar-image">
+                                    <img src="/avatar/sombrero/<%= user.hat.image %>" alt="Hat">
+                                </div>
+                                <div class="Headeravatar-image">
+                                    <a href="#" id="toggle-button"> <img src="/avatar/torso/<%= user.bust.image %>"
+                                            alt="Bust"> </a>
+                                </div>
+
+                                <% } else { %>
+                                    <li>
+                                        <a href="#" id="toggle-button"><img width="45"
+                                                src="/iconos/icono-avatarTemporal.svg" alt=""></a>
+                                        <p>Usuario</p>
+                                    </li>
+                                    </li>
+
+                                    <% } %>
+
+
         </ul>
 
     </nav>
@@ -123,57 +136,57 @@
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const toggleButton = document.getElementById("toggle-button");
-        const menuright = document.querySelector(".menu-right");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("toggle-button");
+            const menuright = document.querySelector(".menu-right");
 
-        toggleButton.addEventListener("click", function (event) {
-            event.preventDefault();
-            menuright.classList.toggle("menu-right-visible");
+            toggleButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                menuright.classList.toggle("menu-right-visible");
+            });
         });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const toggleButton = document.getElementById("toggle-bars");
-        const menuleft = document.querySelector(".menu-left");
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("toggle-bars");
+            const menuleft = document.querySelector(".menu-left");
 
-        toggleButton.addEventListener("click", function (event) {
-            event.preventDefault();
-            menuleft.classList.toggle("menu-left-visible");
+            toggleButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                menuleft.classList.toggle("menu-left-visible");
+            });
         });
-    });
-</script>
-<script>
-    // JavaScript para abrir el modal solo cuando se hace clic en el enlace
-    const openLoginModalLink = document.getElementById('open-login-modal-link');
-    const loginModal = document.getElementById('login-modal');
+    </script>
+    <script>
+        // JavaScript para abrir el modal solo cuando se hace clic en el enlace
+        const openLoginModalLink = document.getElementById('open-login-modal-link');
+        const loginModal = document.getElementById('login-modal');
 
-    // Inicialmente, ocultar el modal
-    loginModal.style.display = 'none';
+        // Inicialmente, ocultar el modal
+        loginModal.style.display = 'none';
 
-    openLoginModalLink.addEventListener('click', (event) => {
-        event.preventDefault(); // Evita que el enlace redirija a una página
-        loginModal.style.display = 'flex'; // Muestra el modal al hacer clic
-    });
+        openLoginModalLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Evita que el enlace redirija a una página
+            loginModal.style.display = 'flex'; // Muestra el modal al hacer clic
+        });
 
-    const closeLoginModal = () => {
-        loginModal.style.display = 'none'; // Oculta el modal
-    };
+        const closeLoginModal = () => {
+            loginModal.style.display = 'none'; // Oculta el modal
+        };
 
-    // Cierra el modal cuando se hace clic fuera de el o se presiona la tecla Escape
-    window.addEventListener('click', (event) => {
-        if (event.target === loginModal) {
-            closeLoginModal();
-        }
-    });
+        // Cierra el modal cuando se hace clic fuera de el o se presiona la tecla Escape
+        window.addEventListener('click', (event) => {
+            if (event.target === loginModal) {
+                closeLoginModal();
+            }
+        });
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeLoginModal();
-        }
-    });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeLoginModal();
+            }
+        });
 
 
-</script>
+    </script>
