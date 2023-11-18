@@ -9,7 +9,6 @@ module.exports = (req, res) => {
     const { name, categoryId, phrase, dateFounded, dateEnded, totalShows, nextShows, history, resume } = req.body;
     if (errors.isEmpty()) {
 
-
         db.Band.findByPk(id)
             .then(band => {
                 if (req.files.image && existsSync(`./public/images/bands/${band.mainImage}`)) {

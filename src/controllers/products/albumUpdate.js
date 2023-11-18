@@ -6,9 +6,9 @@ module.exports = (req, res) => {
 
     const errors = validationResult(req);
     const id = req.params.id;
-    const { title, discography, year, price, discount, bandId, genreId, exclusive, description } = req.body;
 
     if (errors.isEmpty()) {
+        const { title, discography, year, price, discount, bandId, genreId, exclusive, description } = req.body;
 
         db.Album.findByPk(id)
             .then(album => {

@@ -6,8 +6,9 @@ const addAlbumValidator = require('../validation/addAlbumValidator');
 const addMercheValidator = require('../validation/addMercheValidator');
 const addBandValidator = require('../validation/addBandValidator');
 const editAlbumValidator = require('../validation/editAlbumValidator');
-const editMerchValidator = require('../validation/editMercheValidator')
-const dBandValidator = require('../validation/addBandValidator');
+const editMerchValidator = require('../validation/editMercheValidator');
+const editBandValidator = require('../validation/editBandValidator');
+
 
 const { uploadBand } = require('../middlewares/uploadBand');
 const { uploadAlbum } = require('../middlewares/uploadAlbum');
@@ -42,6 +43,7 @@ router
       name: "images",
     }
   ]),
+  editBandValidator,
    updateBand)
   .get('/addAlbum', addAlbum)
   .post('/addAlbum', storeAlbum)
