@@ -15,13 +15,6 @@ module.exports = [
     check('price')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isDecimal().withMessage('El precio debe ser un número válido'),
-    check('discount')
-        .notEmpty().withMessage('Éste campo es obligatorio').bail()
-        .isNumeric().withMessage('Sólo se admiten números'),
-    check('bandId')
-        .notEmpty().withMessage('Éste campo es obligatorio'),
-    check('genreId')
-        .notEmpty().withMessage('Éste campo es obligatorio'),
     check('description')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isLength({
