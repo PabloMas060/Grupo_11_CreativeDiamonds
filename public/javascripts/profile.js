@@ -73,6 +73,27 @@ window.onload = async function(e){
         }
     });
 
+    $('zipcode').addEventListener('blur', function(e){
+
+        switch (true) {
+            
+            case this.value.trim().length < 2:
+                $('msgError-zipcode').innerHTML = "Mínimo debe incluir 2 numeros";
+                this.classList.add('is-invalid')
+                break
+            case !/^\d+$/.test(this.value.trim()):
+                $('msgError-zipcode').innerHTML = "Se aceptan solo numeros";
+                this.classList.add('is-invalid')
+                break
+            default:
+                $('msgError-zipcode').innerHTML = null;
+                this.classList.add('is-valid')
+                this.classList.remove('is-invalid')
+                break;
+        }
+    });
+
+
     try {
 
         const response = await fetch(`${baseURL}/provincias`);

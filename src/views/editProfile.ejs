@@ -92,6 +92,7 @@
         <div class="form-group">
             <label for="zipcode">Código Postal</label>
             <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.address ? user.address.zipcode : '' %>">
+            <small class="ms-2 text-danger" id="msgError-zipcode"><%= locals.errors && (errors.user.zipcode && errors.user.zipcode.msg) %></small>
         </div>
         
         
