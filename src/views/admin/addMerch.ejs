@@ -104,4 +104,35 @@
 
     </body>
 
+    <script>
+    function validarMerch() {
+            var name = document.getElementById('name').value;
+            var price = document.getElementById('price').value;
+            var discount = document.getElementById('discount').value;
+            var bandId = document.getElementById('bandId').value;
+            var typeId = document.getElementById('typeId').value;
+            var exclusiveCheckbox = document.getElementById('exclusive');
+            var description = document.getElementById('description').value;
+            var image = document.getElementById('image').value;
+        
+            switch (true) {
+                case (name === "" || price === "" || discount === "" || bandId === "" || typeId === "" || description === "" || image === ""):
+                    alert("Debes completar todos los campos del formulario.");
+                    return false;
+        
+                case isNaN(price) || isNaN(discount):
+                    alert("Los campos de precio y descuento deben ser numeros validos.");
+                    return false;
+        
+                case price <= 0:
+                    alert("El precio debe ser mayor a cero.");
+                    return false;
+        
+                default:
+                    return true;
+            }
+        }
+</script>
+        
+
 </html>

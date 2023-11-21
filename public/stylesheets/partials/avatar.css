@@ -16,9 +16,9 @@
 }
 
 .avatar-carousel {
-    display: flex; /* Cambiamos esta clase */
-    align-items: center; /* Añadimos esto */
-    justify-content: space-between; /* Añadimos esto */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
     width: 420px;
 }
 

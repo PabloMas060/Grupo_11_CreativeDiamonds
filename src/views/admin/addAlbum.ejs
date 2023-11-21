@@ -142,4 +142,39 @@
 
     </body>
 
+    <script>
+    function validarAlbum() {
+            var title = document.getElementById('title').value;
+            var discography = document.getElementById('discography').value;
+            var year = document.getElementById('year').value;
+            var price = document.getElementById('price').value;
+            var discount = document.getElementById('discount').value;
+            var bandId = document.getElementById('bandId').value;
+            var genreId = document.getElementById('genreId').value;
+            var description = document.getElementById('description').value;
+            var image = document.getElementById('image').value;
+        
+            switch (true) {
+                case (title === "" || discography === "" || year === "" || price === "" || discount === "" || bandId === "" || genreId === "" || description === "" || image === ""):
+                    alert("Debes completar todos los campos del formulario.");
+                    return false;
+        
+                case (isNaN(year) || isNaN(price) || isNaN(discount)):
+                    alert("Los campos de año, precio y descuento deben ser numeros validos.");
+                    return false;
+        
+                case (year.length !== 4):
+                    alert("El año debe tener 4 digitos.");
+                    return false;
+        
+                case (price <= 0 || discount < 0):
+                    alert("El precio debe ser mayor a cero y el descuento no puede ser negativo.");
+                    return false;
+        
+                default:
+                    return true;
+            }
+        }
+        </script>
+
 </html>

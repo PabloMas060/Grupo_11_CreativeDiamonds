@@ -12,22 +12,23 @@
 }
 
 .fans-bannerImage {
-  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-  height: 100%; /* Ajusta la altura de la imagen al 100% del contenedor */
+  width: 100%; 
+  height: 100%;
   object-fit: cover; /* Escala la imagen para llenar el espacio sin distorsionarla */
   object-position: center 20%;
 }
 
 .partial-textoPresentacion {
   position: absolute;
-  top: 50%; /* Coloca el texto en el centro vertical */
-  left: 50%; /* Coloca el texto en el centro horizontal */
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%); /* Centra el texto en relación con su contenedor */
   z-index: 1; /* Coloca el texto por encima de la imagen */
   font-size: 4em; /* Establece el tamaño de fuente deseado */
   color: var(--varColor1); /* Color del texto */
   background-color: var(--varColor2);
   white-space: nowrap;
+  
 }
 
   
@@ -59,16 +60,22 @@
     margin: 20px;
 }
 
+
+
 /* Estilos para la sección negra */
 .partial-Section1 {
     background-color: var(--varColor1);
     padding: 20px;
+    clip-path: polygon(100% 2%, 0 0, 0 100%, 100% 100%);
+    z-index: 2;
 }
 
 .partial-Section2 {
-    background-color: var(--varColor5);
-    padding: 20px;
+  background-color: var(--varColor5);
+  padding: 20px;
+  clip-path: polygon(0 2%, 25% 0, 100% 2%, 100% 100%, 0 100%);
 }
+
 
 .partial-Section3 {
     background-color: var(--varColor2);

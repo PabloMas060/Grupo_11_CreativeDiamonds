@@ -102,6 +102,48 @@
 
 
             <script>
+    function validarBanda() {
+    var name = document.getElementById('name').value;
+    var categoryId = document.getElementById('categoryId').value;
+    var phrase = document.getElementById('phrase').value;
+    var dateFounded = document.getElementById('dateFounded').value;
+    var dateEnded = document.getElementById('dateEnded').value;
+    var vigenteCheckbox = document.getElementById('vigente');
+    var totalShows = document.getElementById('totalShows').value;
+    var nextShows = document.getElementById('nextShows').value;
+    var history = document.getElementById('history').value;
+    var resume = document.getElementById('resume').value;
+
+    switch (true) {
+        case (name === "" || categoryId === "" || phrase === "" || dateFounded === "" || (dateEnded === "" && !vigenteCheckbox.checked) || totalShows === "" || nextShows === "" || history === "" || resume === ""):
+            alert("Debes completar todos los campos del formulario.");
+            return false;
+
+        case isNaN(dateFounded) || isNaN(dateEnded) || isNaN(totalShows):
+            alert("Los campos de fecha de inicio, fecha de finalizacion, y total de conciertos deben ser numeros validos.");
+            return false;
+
+        case dateFounded.length !== 4 || dateEnded.length !== 4:
+            alert("Los campos de fecha deben tener 4 dígitos.");
+            return false;
+
+        case (dateEnded <= dateFounded && !vigenteCheckbox.checked):
+            alert("La fecha de finalizacion debe ser posterior a la fecha de inicio.");
+            return false;
+
+        case isNaN(nextShows) || new Date(nextShows) < new Date():
+            alert("La fecha del proximo concierto debe ser una fecha futura.");
+            return false;
+
+        case totalShows < 0:
+            alert("El total de conciertos no puede ser negativo.");
+            return false;
+
+        default:
+            return true;
+    }
+}
+
                 function toggleFechaFinalizacion() {
                     const fechaFinalizacion = document.getElementById("fechaFinalizacion");
                     const vigenteCheckbox = document.getElementById("vigente");
