@@ -29,14 +29,8 @@ module.exports = [
 
                 })
                 .catch(() => Promise.reject('El email ya se encuentra registrado'))
-            //return true
-            //const users = readJSON('users.json');
-            //const user = users.find(user => user.email === value);
-            /*if(user){
-                return false
-            }
-            return true*/
-        }),//.withMessage('El email ya se encuentra registrado'),*/
+            
+        }),
     check("password")
         .isLength({
             min: 6,
