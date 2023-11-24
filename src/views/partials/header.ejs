@@ -159,23 +159,20 @@
         });
     </script>
     <script>
-        // JavaScript para abrir el modal solo cuando se hace clic en el enlace
         const openLoginModalLink = document.getElementById('open-login-modal-link');
         const loginModal = document.getElementById('login-modal');
 
-        // Inicialmente, ocultar el modal
         loginModal.style.display = 'none';
 
         openLoginModalLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Evita que el enlace redirija a una página
-            loginModal.style.display = 'flex'; // Muestra el modal al hacer clic
+            event.preventDefault(); 
+            loginModal.style.display = 'flex'; 
         });
 
         const closeLoginModal = () => {
-            loginModal.style.display = 'none'; // Oculta el modal
+            loginModal.style.display = 'none'; 
         };
 
-        // Cierra el modal cuando se hace clic fuera de el o se presiona la tecla Escape
         window.addEventListener('click', (event) => {
             if (event.target === loginModal) {
                 closeLoginModal();
