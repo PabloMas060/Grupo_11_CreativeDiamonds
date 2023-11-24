@@ -35,28 +35,5 @@ module.exports = (req, res) => {
         })
         .catch(error => console.log(error))
 
-    /*  }else {
-         const bands = db.Band.findAll({
-             include: [
-                 {
-                     association: 'category',
-                     include: [
-                         {
-                             all : true
-                         }
-                     ]
-                 }
-             ]
-         })
-        
-     }
-     const categories = db.Category.findAll()
-     Promise.all([bands,categories])
-         .then(([bands,categories]) => {
-             return res.render('index',{
-                 bands,
-                 categories
-             }
-             )
-         }) */
+  
 }

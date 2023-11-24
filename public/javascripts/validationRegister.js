@@ -81,7 +81,7 @@ window.onload = function () {
         }
     });
 
-    /* $('email').addEventListener('change', async function(e){
+     $('email').addEventListener('change', async function(e){
 
         try {
 
@@ -97,7 +97,7 @@ window.onload = function () {
         } catch (error) {
             console.error(error);
         }
-    }) */
+    }) 
 
 
     $('password').addEventListener('focus', function(e){
