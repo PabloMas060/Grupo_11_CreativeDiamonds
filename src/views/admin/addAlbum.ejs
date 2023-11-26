@@ -15,7 +15,7 @@
                                 <input type="text"
                                     class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>"
                                     id="title" name="title" value="<%= locals.old && (old.title && old.title) %>">
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-title">
                                     <%= locals.errors && (errors.title && errors.title.msg) %>
                                 </small>
                             </div>
@@ -26,7 +26,7 @@
                                     class="form-control <%= locals.errors && (errors.discography && 'is-invalid') %>"
                                     id="discography" name="discography"
                                     value="<%= locals.old && (old.discography && old.discography) %>">
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-discography">
                                     <%= locals.errors && (errors.discography && errors.discography.msg) %>
                                 </small>
                             </div>
@@ -36,7 +36,7 @@
                                 <input type="number"
                                     class="form-control <%= locals.errors && (errors.year && 'is-invalid') %>" id="year"
                                     name="year" <%=locals.old && (old.year && old.year) %>>
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-year">
                                     <%= locals.errors && (errors.year && errors.year.msg) %>
                                 </small>
 
@@ -47,7 +47,7 @@
                                 <input type="number" step="0.01"
                                     class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
                                     id="price" name="price" value="<%= locals.old && (old.price && old.price) %>">
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-price">
                                     <%= locals.errors && (errors.price && errors.price.msg) %>
                                 </small>
 
@@ -59,7 +59,7 @@
                                     class="form-control <%= locals.errors && (errors.discount && 'is-invalid') %>"
                                     id="discount" name="discount"
                                     value="<%= locals.old && (old.discount && old.discount) %>">
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-discount">
                                     <%= locals.errors && (errors.discount && errors.discount.msg) %>
                                 </small>
 
@@ -76,7 +76,7 @@
                                         </option>
                                         <% }) %>
                                 </select>
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-bandId">
                                     <%= locals.errors && (errors.bandId && errors.bandId.msg) %>
                                 </small>
                             </div>
@@ -94,7 +94,7 @@
 
 
                                 </select>
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-genreId">
                                     <%= locals.errors && (errors.genreId && errors.genreId.msg) %>
                                 </small>
 
@@ -111,7 +111,7 @@
                                     class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>"
                                     id="description" name="description"
                                     rows="3"><%= locals.old && (old.description && old.description) %></textarea>
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-description">
                                     <%= locals.errors && (errors.description && errors.description.msg) %>
                                 </small>
 
@@ -122,7 +122,7 @@
                                 <input hidden type="file"
                                     class="form-control <%= locals.errors && (errors.image && 'is-invalid') %>"
                                     id="image" name="image">
-                                <small class="ms-2 text-danger">
+                                <small class="ms-2 text-danger" id="msgError-image">
                                     <%= locals.errors && (errors.image && errors.image.msg) %>
                                 </small>
 
@@ -140,41 +140,8 @@
 
             <%- include('../partials/footer') %>
 
+
+<script src="/javascripts/addAlbumFrontendValidations.js"></script>
+   
     </body>
-
-    <script>
-    function validarAlbum() {
-            var title = document.getElementById('title').value;
-            var discography = document.getElementById('discography').value;
-            var year = document.getElementById('year').value;
-            var price = document.getElementById('price').value;
-            var discount = document.getElementById('discount').value;
-            var bandId = document.getElementById('bandId').value;
-            var genreId = document.getElementById('genreId').value;
-            var description = document.getElementById('description').value;
-            var image = document.getElementById('image').value;
-        
-            switch (true) {
-                case (title === "" || discography === "" || year === "" || price === "" || discount === "" || bandId === "" || genreId === "" || description === "" || image === ""):
-                    alert("Debes completar todos los campos del formulario.");
-                    return false;
-        
-                case (isNaN(year) || isNaN(price) || isNaN(discount)):
-                    alert("Los campos de año, precio y descuento deben ser numeros validos.");
-                    return false;
-        
-                case (year.length !== 4):
-                    alert("El año debe tener 4 digitos.");
-                    return false;
-        
-                case (price <= 0 || discount < 0):
-                    alert("El precio debe ser mayor a cero y el descuento no puede ser negativo.");
-                    return false;
-        
-                default:
-                    return true;
-            }
-        }
-        </script>
-
 </html>
