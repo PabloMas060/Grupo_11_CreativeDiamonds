@@ -1,5 +1,4 @@
-
-window.onload = function () {
+window.addEventListener('load',function () {
     $('first_name').addEventListener('focus', function (e) {
         $('msgError-first_name').innerHTML = null
         this.classList.remove('is-invalid')
@@ -179,3 +178,4 @@ window.onload = function () {
 
 
 }
+)

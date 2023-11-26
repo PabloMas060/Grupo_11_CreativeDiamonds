@@ -1,6 +1,4 @@
-const $ = id => document.getElementById(id);
-
-window.onload = function () {
+window.addEventListener('load',function () {
 
     $('name').addEventListener('focus', function (e) {
         $('msgError-name').innerHTML = null
@@ -99,3 +97,4 @@ window.onload = function () {
         !error && this.submit()
     })
 }
+)
