@@ -40,16 +40,16 @@
                             </li>
                             <% if (locals.userLogin) { %>
                                 <div class="Headeravatar-image">
-                                    <img src="/avatar/cabeza/<%= user.head.image %>" alt="Head">
+                                    <img src="/avatar/cabeza/<%= user.head ? user.head : 'defaultCabeza.png' %>" alt="Head">
                                 </div>
                                 <div class="Headeravatar-image">
-                                    <img src="/avatar/cara/<%= user.face.image %>" alt="Face">
+                                    <img src="/avatar/cara/<%= user.face ? user.face : 'defaultCara.png' %>" alt="Face">
                                 </div>
                                 <div class="Headeravatar-image">
-                                    <img src="/avatar/sombrero/<%= user.hat.image %>" alt="Hat">
+                                    <img src="/avatar/sombrero/<%= user.hat ? user.hat : 'defaultGorro.png' %>" alt="Hat">
                                 </div>
                                 <div class="Headeravatar-image">
-                                    <a href="#" id="toggle-button"> <img src="/avatar/torso/<%= user.bust.image %>"
+                                    <a href="#" id="toggle-button"> <img src="/avatar/torso/<%= user.bust ? user.bust : 'defaultTorso.png' %>"
                                             alt="Bust"> </a>
                                 </div>
 

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session'); 
 const createError = require('http-errors');
@@ -5,12 +6,20 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
+const cors = require('cors')
 const checkCookie = require('./middlewares/cookieCheck');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+const authRouter = require('./routes/auth');
+
 
 const localsCheck = require('./middlewares/localsCheck'); 
+
+const passport = require('passport');
+const {loginGoogleInitialize} = require('./services/passport')
+
+loginGoogleInitialize();
 
 
 const app = express();
@@ -26,6 +35,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(methodOverride('_method'))
+.use(cors())
+
 
 // Configuracion de express-session
 app.use(session({
@@ -40,13 +51,17 @@ app.use(session({
 app.use(checkCookie);
 app.use(localsCheck);
 
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter)
 app.use('/products', productsRouter)
+app.use('/auth', authRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(res.render("404"));
+  next(createError(404));
 });
 
 // error handler

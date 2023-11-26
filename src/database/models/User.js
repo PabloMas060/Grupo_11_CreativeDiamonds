@@ -64,6 +64,9 @@ module.exports = (sequelize, DataTypes) => {
     faceId: DataTypes.INTEGER.UNSIGNED,
     bustId: DataTypes.INTEGER.UNSIGNED,
     hatId: DataTypes.INTEGER.UNSIGNED,
+    socialId: DataTypes.STRING,
+    socialProvider: DataTypes.STRING,
+
   }, {
     sequelize,
     modelName: 'User',
