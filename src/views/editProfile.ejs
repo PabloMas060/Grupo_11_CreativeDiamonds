@@ -10,20 +10,19 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <form action="/users/edit-profile/<%= user.id %>?_method=PUT" method="POST">
+        <form id="profile-form" action="/users/edit-profile/<%= user.id %>?_method=PUT" method="POST">
 
           <div class="form-group">
             <label for="first_name">Nombre</label>
             <input type="text" class="form-control" id="first_name" name="first_name" value="<%= user.first_name %>">
-            <small class="ms-2 text-danger" id="msgError-firstName"><%= locals.errors && (errors.user.first_name && errors.user.first_name.msg) %></small>
+            <small class="ms-2 text-danger" id="msgError-first_name"><%= locals.errors && (errors.user.first_name && errors.user.first_name.msg) %></small>
           </div>
 
 
           <div class="form-group">
             <label for="last_name">Apellido</label>
             <input type="text" class="form-control" id="last_name" name="last_name" value="<%= user.last_name %>">
-            <small class="ms-2 text-danger" id="msgError-lastName"><%= locals.errors && (errors.user.last_name && errors.user.last_name.msg) %></small>
-
+            <small class="ms-2 text-danger" id="msgError-last_name"><%= locals.errors && (errors.user.last_name && errors.user.last_name.msg) %></small>
           </div>
 
 
@@ -38,12 +37,15 @@
           <div class="form-group">
             <label for="state">Estado</label>
             <input type="text" class="form-control" id="state" name="state" value="<%= user.state %>">
+            <small class="ms-2 text-danger" id="msgError-state"></small>
           </div>
 
 
           <div class="form-group">
             <label for="about">Acerca de Mi</label>
             <textarea class="form-control" id="about" name="about"><%= user.about %></textarea>
+            <small class="ms-2 text-danger" id="msgError-about"></small>
+
           </div>
 
 
@@ -104,5 +106,8 @@
 
   <!-- Pie de página -->
   <%- include('partials/footer') %>
+
+  <script src="/javascripts/validationProfile.js"></script>
+
 </body>
 </html>
