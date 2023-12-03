@@ -26,7 +26,12 @@
 
         <div class="col-10 col-md-6 D">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control  <%= locals.errors && (errors.password && 'is-invalid') %>" name="password" id="password1" >
+          <div class="row align-items-center">
+            <div class="col-8"> <input type="password" class="form-control  <%= locals.errors && (errors.password && 'is-invalid') %>" name="password" id="password1"></div>
+           <div class="col-3"> <button class="btn btn-outline-secondary btn btn-sm" type="button" id="togglePass"><i class="fa-regular fa-eye"></i></i></button></div>
+           
+          </div>
+        
           <small id="msgError-password" style="color: red;" class="login-grupoB"><%= locals.errors && errors.password ? errors.password.msg : '' %></small>
         </div>
         <div class="col-10 col-md-6 E">
@@ -45,6 +50,24 @@
 
   <%- include('partials/footer') %>
 <script src="/javascripts/validationRegister.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const passwordInput = document.getElementById('password1');
+    const togglePassButton = document.getElementById('togglePass');
+
+    togglePassButton.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type)
+
+      const eyeIcon = togglePassButton.querySelector('i');
+      eyeIcon.classList.toggle('fa-eye');
+      eyeIcon.classList.toggle('fa-eye-slash');
+    })
+
+
+  })
+</script>
   
 
 </body>

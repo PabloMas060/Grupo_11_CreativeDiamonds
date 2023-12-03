@@ -24,12 +24,12 @@
                     <small id="msgError-password" style="color: red;">
                         <%= locals.errors && errors.password ? errors.password.msg : '' %>
                     </small>
-                    <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                    <small><a href="#">¿Olvidaste tu contraseña?</a></small>
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
-                    <button type="submit" id="login-button">Iniciar Sesión</button>
+                <div class="col-6 p-3">
+                    <button class="btn btn-primary" type="submit" id="login-button">Iniciar Sesión</button>
                 </div>
                 <div class="col-6">
                     <a class="btn" href="/auth/login/google"><img class="w-25" src="/images/logo-google.png"

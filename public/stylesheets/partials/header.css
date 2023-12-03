@@ -4,6 +4,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -123,6 +124,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 5px;
     }
     
     .header-modal-content {
@@ -130,17 +132,22 @@ header {
         border: 1px solid #ccc;
         width: 400px;
         padding: 20px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 47px 7px black;
     }
     
     /* Estilos para los grupos de inicio de sesión */
     .login-grupo1 {
         display: flex;
         flex-direction: row;
+        margin-right: 2px;
     }
     .login-grupoB{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-left: 2px;
+
     }
     
     .login-grupoA, .login-grupoB {
@@ -151,11 +158,13 @@ header {
     .header__navbar__ul-1 {
         display: flex;
         gap: 1.5rem;
+        align-items: center;
     }
 
     .header__logo {
         width: 20%;
-        margin-top: 5px;
+        margin: 5px;
+        align-items: center;
     }
 
     .header__burger {
@@ -166,6 +175,7 @@ header {
         display: flex;
         width: 10%;
         align-items: center;
+        margin: 10px 50px;
     }
 
     .header__navbar__ul {

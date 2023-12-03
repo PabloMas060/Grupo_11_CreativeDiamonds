@@ -163,7 +163,7 @@ Promise.all([group, articles])
     
 
     cart: (req, res) => {
-        res.render('cart')
+        res.render('users/cart')
     },
     selfcart: (req, res) => {
         res.render('selfcart')

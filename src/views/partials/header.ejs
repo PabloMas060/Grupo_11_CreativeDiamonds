@@ -70,7 +70,7 @@
 </header>
 <div class="menu-right">
     <section>
-        <h6>Nombre usuario</h6>
+        <h6>Nombre usuario <a id="toggle-button-close" href="#"><i class="fa-regular fa-circle-xmark"></i></a></h6>
         <div class="opciones-sesion">
             <a class="btn btn-dark" href="#" id="open-login-modal-link">Iniciar Sesión</a>
             <a class="btn btn-dark" href="/users/register">Registrarme</a>
@@ -97,7 +97,7 @@
                 <p>Nexus</p>
             </div>
             <div class="col-4 menu-right-item">
-                <a href="/users/cart"><img width="45" src="/iconos/icono-carrito.svg" alt=""></a>
+                <a href="/cart"><img width="45" src="/iconos/icono-carrito.svg" alt=""></a>
                 <p>Carrito</p>
             </div>
 
@@ -110,7 +110,7 @@
 
 <div class="menu-left">
     <section>
-        <h6>Secciones</h6>
+        <h6>Secciones</h6> <a id="toggle-button-close2" href="#"><i class="fa-regular fa-circle-xmark"></i></a>
         <div class="row menu-left-section">
             <div class="col-4 menu-left-item">
                 <a href="/fans"><img width="45" src="/iconos/icono-guitarraElectrica.svg" alt=""></a>
@@ -148,6 +148,17 @@
         });
     </script>
     <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const toggleButtonClose = document.getElementById("toggle-button-close");
+            const menuright = document.querySelector(".menu-right");
+
+            toggleButtonClose.addEventListener("click", function (event) {
+                event.preventDefault();
+                menuright.classList.toggle("menu-right-visible");
+            });
+        });
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const toggleButton = document.getElementById("toggle-bars");
             const menuleft = document.querySelector(".menu-left");
@@ -158,6 +169,17 @@
             });
         });
     </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const toggleButtonClose2 = document.getElementById("toggle-button-close2");
+          const menuleft = document.querySelector(".menu-left");
+
+          toggleButtonClose2.addEventListener("click", function (event) {
+              event.preventDefault();
+              menuleft.classList.toggle("menu-left-visible");
+          });
+      });
+  </script>
     <script>
         const openLoginModalLink = document.getElementById('open-login-modal-link');
         const loginModal = document.getElementById('login-modal');
