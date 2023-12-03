@@ -17,8 +17,29 @@ module.exports = {
         references: {
           model: {
             tableName: "Orders"
-          }
+          },
+          key : 'id'
         }
+      },
+      albumId: {
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Albums'
+          },
+          key : 'id'
+        },
+        allowNull: false
+      },
+      merchId: {
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Merchs'
+          },
+          key : 'id'
+        },
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

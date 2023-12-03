@@ -23,21 +23,8 @@ module.exports = {
           }
         }
       },
-      merchId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: "Merchs"
-          }
-        }
-      },
-      albumId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: "Albums"
-          }
-        }
+      status : {
+        type : Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

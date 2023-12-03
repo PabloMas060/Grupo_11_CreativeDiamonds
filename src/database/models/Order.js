@@ -31,11 +31,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Order.init({
-    date: DataTypes.STRING,
-    total: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER.UNSIGNED,
-    merchId: DataTypes.INTEGER.UNSIGNED,
-    albumId: DataTypes.INTEGER.UNSIGNED,
+    date: { type: DataTypes.DATE, defaultValue: new Date() },
+    total: { type: DataTypes.INTEGER, defaultValue: 0 },
+    userId: DataTypes.INTEGER,
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "pending",
+      validate: {
+        isIn: {
+          args: [["pending", "completed", "canceled"]],
+          msg: 'Los valores válidos son ["pending", "completed" , "canceled"]'
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Order',
