@@ -6,11 +6,11 @@ module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        res.render("partials/modalLogin.ejs", {
+        res.render("/index", {
             title: "Inicio de sesión",
             errors: errors.mapped(),
             old: req.body,
-        });
+        }).then();
     }
     const { email, password, remember } = req.body;
     db.User.findOne({
