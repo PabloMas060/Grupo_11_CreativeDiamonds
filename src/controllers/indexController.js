@@ -23,7 +23,7 @@ module.exports = {
                     categories
                 }
                 )
-            })
+            }).catch(error => console.log(error))
        
     },
     about: (req, res) => {

@@ -34,7 +34,8 @@ module.exports = {
         type: Sequelize.TEXT
       },
       exclusive: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue : 0
       },
       bandId: {
         type: Sequelize.INTEGER,

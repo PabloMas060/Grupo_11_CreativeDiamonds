@@ -8,10 +8,16 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const cors = require('cors')
 const checkCookie = require('./middlewares/cookieCheck');
+
+
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const authRouter = require('./routes/auth');
+
+
+const albumsApiRouter = require('./routes/api/albumsRouter');
 
 
 const localsCheck = require('./middlewares/localsCheck'); 
@@ -58,6 +64,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter)
 app.use('/products', productsRouter)
 app.use('/auth', authRouter)
+
+app.use('/api/albums', albumsApiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
