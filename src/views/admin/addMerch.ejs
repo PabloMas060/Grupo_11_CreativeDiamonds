@@ -8,9 +8,9 @@
 
             <main class="container">
                 <div class="row">
-                    <div class="col-md-8 mx-auto">
-                        <form id="merchForm" action="/products/mercheAdd" method="POST" enctype="multipart/form-data">
-                            <div class="mb-3">
+                    <div class="col-md-8 mx-auto text-center">
+                        <form class="row align-items-center mb-5" style="border-radius: 7px; box-shadow: 2px 5px 10px 5px black;" id="merchForm" action="/products/mercheAdd" method="POST" enctype="multipart/form-data">
+                            <div class="col-md-8 mb-3 mt-3">
                                 <label for="name" class="form-label">Nombre</label>
                                 <input type="text"
                                     class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name"
@@ -19,7 +19,7 @@
                                     <%= locals.errors && (errors.name && errors.name.msg) %>
                                 </small>
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="price" class="form-label">Precio</label>
                                 <input type="number" step="0.01"
                                     class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
@@ -28,7 +28,7 @@
                                     <%= locals.errors && (errors.price && errors.price.msg) %>
                                 </small>
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="discount" class="form-label">Descuento (%)</label>
                                 <input type="number" step="0.01"
                                     class="form-control <%= locals.errors && (errors.discount && 'is-invalid') %>"
@@ -37,7 +37,7 @@
                                     <%= locals.errors && (errors.discount && errors.discount.msg) %>
                                 </small>
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="bandId" class="form-label">Banda</label>
                                 <select class="form-select <%= locals.errors && (errors.bandId && 'is-invalid') %>"
                                     id="bandId" name="bandId">
@@ -52,7 +52,7 @@
                                     <%= locals.errors && (errors.bandId && errors.bandId.msg) %>
                                 </small>
                             </div>
-                            <div class="mb-3">
+                            <div class="col-md-6 mb-3">
                                 <label for="typeId" class="form-label">Tipo</label>
                                 <select class="form-select <%= locals.errors && (errors.typeId && 'is-invalid') %>"
                                     id="typeId" name="typeId">
@@ -67,11 +67,8 @@
                                     <%= locals.errors && (errors.typeId && errors.typeId.msg) %>
                                 </small>
                             </div>
-                            <div class="mb-3">
-                                <label for="exclusive" class="form-label">Exclusivo</label>
-                                <input type="checkbox" id="exclusive" name="exclusive">
-                            </div>
-                            <div class="mb-3">
+                          
+                            <div class="col-md-6 mb-3">
                                 <label for="description" class="form-label">Descripción</label>
                                 <textarea
                                     class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>"
@@ -80,6 +77,10 @@
                                 <small class="ms-2 text-danger" id="msgError-description">
                                     <%= locals.errors && (errors.description && errors.description.msg) %>
                                 </small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="exclusive" class="form-label">Exclusivo</label>
+                                <input type="checkbox" id="exclusive" name="exclusive">
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="btn btn-secondary">Imagen del Álbum</label>
