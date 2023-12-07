@@ -1,15 +1,14 @@
 const db = require('../database/models');
 const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
-const { disconnect } = require('process');
 
-const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+const getAllMerchs = async (req, { withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include: [
                 {
-                    model: db.Genre,
-                    association: 'genre',
+                    model: db.Type,
+                    association: 'type',
                     attributes: ['name', 'id']
                 },
                 {
@@ -19,31 +18,31 @@ const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6
                 }
             ],
             attributes: {
-                include: [literalQueryUrl(req, 'albums', 'Album.id')],
-                exclude: ['genreId', 'bandId']
+                include: [literalQueryUrl(req, 'merchs', 'Merch.id')],
+                exclude: ['typeId', 'bandId']
             }
         };
 
-        if (withPagination === true) {
+        if (whitPagination === true) {
             options = {
                 ...options,
                 pages,
                 paginate : limit
             };
-            const {docs, pages, total} = await db.Album.paginate(options)
+            const {docs, pages, total} = await db.Merch.paginate(options)
 
             return {
-                albums : docs,
+                merchs : docs,
                 pages,
                 count : total
             }
         }
 
-        const {count, rows: albums} = await db.Album.findAndCountAll(options)
+        const {count, rows: merchs} = await db.Merch.findAndCountAll(options)
 
         return {
             count,
-            albums
+            merchs
         }
         
     } catch (error) {
@@ -54,13 +53,13 @@ const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6
     }
 }
 
-const getOneAlbum = async (req, id) => {
+const getOneMerch = async (req, id) => {
     try {
-        const album = await db.Album.findByPk(id,{
+        const merch = await db.Merch.findByPk(id,{
             include: [
                 {
-                    model: db.Genre,
-                    association: 'genre',
+                    model: db.Type,
+                    association: 'type',
                     attributes: ['name', 'id']
                 },
                 {
@@ -70,11 +69,11 @@ const getOneAlbum = async (req, id) => {
                 }
             ],
             attributes: {
-                include: [literalQueryUrl(req, 'albums', 'Album.id')],
-                exclude: ['genreId', 'bandId']
+                include: [literalQueryUrl(req, 'merchs', 'Merch.id')],
+                exclude: ['typeId', 'bandId']
             }
         })
-        return album
+        return Merch
         
     } catch (error) {
         throw {
@@ -84,22 +83,12 @@ const getOneAlbum = async (req, id) => {
     }
 }
 
-const createAlbum = async (req,res) => {
+const createMerch = async (req) => {
     try {
-        console.log(data);
-        const newAlbum = await db.Album.create({
-            ...data,
-          /*   title: title.trim(),
-            discography : discography.trim(),
-            year,
-            price,
-            discount: discount ? discount : 0,
-            bandId,
-            genreId,
-            exclusive,
-            description: description.trim(), */
+        const newMerch = await db.Merch.create({
+            ...data
         })
-        return newAlbum
+        return newMerch
     } catch (error) {
         throw {
             status : 500,
@@ -107,36 +96,32 @@ const createAlbum = async (req,res) => {
         }
     }
 }
-const storeAlbum = async (req) => {
+const storeMerch = async (req) => {
     try {
         const {
-            title,
-            discography,
-            year,
+            name,
             price,
             discount,
             bandId,
-            genreId,
+            typeId,
             exclusive,
             description,
             image
         } = req.body
 
-        const newAlbum = await db.Album.create({
-            title: title.trim(),
-            discography: discography.trim(),
-            year,
+        const newMerch = await db.Merch.create({
+            name: name.trim(),
             price,
-            discount: discount ? discount : 0,
+            discount,
             bandId,
-            genreId,
+            typeId,
             exclusive,
             description : description.trim(),
             image
         })
         
-        const album = await getOneAlbum(req, newAlbum.id)
-        return album
+        const merch = await getOneMerch(req, newMerch.id)
+        return merch
         
     } catch (error) {
         throw {
@@ -146,31 +131,27 @@ const storeAlbum = async (req) => {
     }
 }
 
-const updateAlbum = async (req) => {
+const updateMerch = async (req) => {
     try {
 
         const {
-            title,
-            discography,
-            year,
+            name,
             price,
             discount,
             bandId,
-            genreId,
+            typeId,
             exclusive,
             description,
             image
         } = req.body
 
-        await db.Album.update(
+        await db.Merch.update(
             {
-                title: title.trim(),
-                discography: discography.trim(),
-                year,
+                name: name.trim(),
                 price,
                 discount,
                 bandId,
-                genreId,
+                typeId,
                 exclusive,
                 description : description.trim(),
                 image
@@ -180,8 +161,8 @@ const updateAlbum = async (req) => {
             }
         )
 
-        const album = await getOneAlbum(req, req.params.id)
-        return album
+        const Merch = await getOneMerch(req, req.params.id)
+        return merch
         
     } catch (error) {
         throw {
@@ -191,14 +172,14 @@ const updateAlbum = async (req) => {
     }
 }
 
-const destroyAlbum = async (id) => {
+const destroyMerch = async (id) => {
     try {
-        const destroyAlbum = await db.Album.destroy(
+        const destroyMerch = await db.Merch.destroy(
             {
                 where : {id}
             }
         )
-        return destroyAlbum
+        return destroyMerch
         
     } catch (error) {
         throw {
@@ -208,13 +189,13 @@ const destroyAlbum = async (id) => {
     }
 }
 
-const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limit = 6}) => {
+const getExclusiveMerchs = async (req,{ whitPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include : ['id', 'name'],
             attributes: {
-                include: [literalQueryUrl(req, 'albums', 'Album.id')],
-                exclude: ['genreId', 'bandId']
+                include: [literalQueryUrl(req, 'merchs', 'Merch.id')],
+                exclude: ['typeId', 'bandId']
             },
             where : {
                 exclusive : 1
@@ -226,20 +207,20 @@ const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limi
                 pages,
                 paginate : limit
             };
-            const {docs, pages, total} = await db.Album.paginate(options)
+            const {docs, pages, total} = await db.Merch.paginate(options)
 
             return {
-                albums : docs,
+                merchs : docs,
                 pages,
                 count : total
             }
         }
 
-        const {count, rows: albums} = await db.Album.findAndCountAll(options)
+        const {count, rows: merchs} = await db.Merch.findAndCountAll(options)
 
         return {
             count,
-            albums
+            merchs
         }
     } catch (error) {
         throw {
@@ -250,11 +231,11 @@ const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limi
 }
 
 module.exports = {
-    getAllAlbums,
-    getOneAlbum,
-    createAlbum,
-    updateAlbum,
-    destroyAlbum,
-    getExclusiveAlbums,
-    storeAlbum
+    getAllMerchs,
+    getOneMerch,
+    createMerch,
+    updateMerch,
+    destroyMerch,
+    getExclusiveMerchs,
+    storeMerch
 }

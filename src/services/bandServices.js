@@ -1,15 +1,14 @@
-const db = require('../database/models');
+/* const db = require('../database/models');
 const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
-const { disconnect } = require('process');
 
-const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+const getAllBands = async (req, { withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include: [
                 {
-                    model: db.Genre,
-                    association: 'genre',
+                    model: db.Category,
+                    association: 'category',
                     attributes: ['name', 'id']
                 },
                 {
@@ -24,7 +23,7 @@ const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6
             }
         };
 
-        if (withPagination === true) {
+        if (whitPagination === true) {
             options = {
                 ...options,
                 pages,
@@ -84,20 +83,10 @@ const getOneAlbum = async (req, id) => {
     }
 }
 
-const createAlbum = async (req,res) => {
+const createAlbum = async (req) => {
     try {
-        console.log(data);
         const newAlbum = await db.Album.create({
-            ...data,
-          /*   title: title.trim(),
-            discography : discography.trim(),
-            year,
-            price,
-            discount: discount ? discount : 0,
-            bandId,
-            genreId,
-            exclusive,
-            description: description.trim(), */
+            ...data
         })
         return newAlbum
     } catch (error) {
@@ -127,7 +116,7 @@ const storeAlbum = async (req) => {
             discography: discography.trim(),
             year,
             price,
-            discount: discount ? discount : 0,
+            discount,
             bandId,
             genreId,
             exclusive,
@@ -257,4 +246,4 @@ module.exports = {
     destroyAlbum,
     getExclusiveAlbums,
     storeAlbum
-}
+} */
