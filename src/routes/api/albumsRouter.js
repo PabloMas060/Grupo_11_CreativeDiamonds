@@ -14,6 +14,6 @@ router
 .post('/', uploadAlbum.single('image'), addAlbumValidator, store)
 
 .delete('/:id', destroy)
-.patch('/albums', uploadAlbum.single('image'), editAlbumValidator, update)
+.patch('/:id', uploadAlbum.single('image'), editAlbumValidator, update)
 
 module.exports = router

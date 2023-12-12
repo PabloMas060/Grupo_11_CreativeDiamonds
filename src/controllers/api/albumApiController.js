@@ -3,7 +3,7 @@ const db = require('../../database/models');
 const {getAllAlbums, getOneAlbum, createAlbum, storeAlbum, updateAlbum, destroyAlbum, getExclusiveAlbums} = require('../../services/albumServices');
 
 const createResponseError = require('../../helpers/createResponseError');
-const {validatiorResult, validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 const {getAllBands} = require('../../services/bandServices');
 const {getAllGenres} = require('../../services/genreServices');
 
@@ -92,11 +92,11 @@ module.exports =  {
                 status: 400,
                 message : errors.mapped()
             }
-
-            const newAlbum = await createAlbum(req.body);
-            const bands = await getAllBands();
-            const genres = await getAllGenres();
-
+         
+            const newAlbum = await storeAlbum(req.body);
+       
+             const bands = await getAllBands(); 
+            const genres = await getAllGenres(); 
             return res.status(200).json({
                 ok:true,
                 meta : {
@@ -105,7 +105,7 @@ module.exports =  {
                     url : `/api/albums/${newAlbum.id}`
                 },
                 data: newAlbum,
-                bands,
+                bands, 
                 genres
             })
             
@@ -172,7 +172,7 @@ module.exports =  {
         try {
             const {withPagination = "true", page = 1, limit =6} = req.query;
             const { count, albums, pages} = await getExclusiveAlbums(req, {
-                whitPagination,
+                withPagination,
                 page,
                 limit: +limit
             });

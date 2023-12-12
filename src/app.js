@@ -18,6 +18,9 @@ const authRouter = require('./routes/auth');
 
 
 const albumsApiRouter = require('./routes/api/albumsRouter');
+const bandsApiRouter = require('./routes/api/bandsRouter');
+const merchsApiRouter = require('./routes/api/merchsRouter');
+
 
 
 const localsCheck = require('./middlewares/localsCheck'); 
@@ -66,6 +69,8 @@ app.use('/products', productsRouter)
 app.use('/auth', authRouter)
 
 app.use('/api/albums', albumsApiRouter)
+app.use('/api/bands', bandsApiRouter)
+app.use('/api/merchs', merchsApiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

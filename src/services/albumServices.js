@@ -24,10 +24,10 @@ const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6
             }
         };
 
-        if (withPagination === true) {
+        if (withPagination === "true") {
             options = {
                 ...options,
-                pages,
+                page,
                 paginate : limit
             };
             const {docs, pages, total} = await db.Album.paginate(options)
@@ -86,20 +86,13 @@ const getOneAlbum = async (req, id) => {
 
 const createAlbum = async (req,res) => {
     try {
-        console.log(data);
+        
         const newAlbum = await db.Album.create({
             ...data,
-          /*   title: title.trim(),
-            discography : discography.trim(),
-            year,
-            price,
-            discount: discount ? discount : 0,
-            bandId,
-            genreId,
-            exclusive,
-            description: description.trim(), */
         })
+      
         return newAlbum
+        
     } catch (error) {
         throw {
             status : 500,
@@ -107,34 +100,23 @@ const createAlbum = async (req,res) => {
         }
     }
 }
-const storeAlbum = async (req) => {
+const storeAlbum = async (data) => {
     try {
-        const {
-            title,
-            discography,
-            year,
-            price,
-            discount,
-            bandId,
-            genreId,
-            exclusive,
-            description,
-            image
-        } = req.body
+    
 
         const newAlbum = await db.Album.create({
-            title: title.trim(),
-            discography: discography.trim(),
-            year,
-            price,
-            discount: discount ? discount : 0,
-            bandId,
-            genreId,
-            exclusive,
-            description : description.trim(),
-            image
+            title: data.title.trim(),
+            discography: data.discography.trim(),
+            year: data.year,
+            price: data.price,
+            discount: data.discount ? data.discount : 0,
+            bandId: data.bandId,
+            genreId: data.genreId,
+            exclusive: data.exclusive,
+            description : data.description.trim(),
+            image : data.image.trim()
         })
-        
+        return newAlbum
         const album = await getOneAlbum(req, newAlbum.id)
         return album
         
@@ -208,10 +190,10 @@ const destroyAlbum = async (id) => {
     }
 }
 
-const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limit = 6}) => {
+const getExclusiveAlbums = async (req,{ withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
-            include : ['id', 'name'],
+           
             attributes: {
                 include: [literalQueryUrl(req, 'albums', 'Album.id')],
                 exclude: ['genreId', 'bandId']
@@ -220,7 +202,7 @@ const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limi
                 exclusive : 1
             }
         }
-        if (whitPagination === true) {
+        if (withPagination === true) {
             options = {
                 ...options,
                 pages,
