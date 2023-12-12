@@ -1,48 +1,45 @@
-/* const db = require('../database/models');
+const db = require('../database/models');
 const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
+const { disconnect, nextTick } = require('process');
 
 const getAllBands = async (req, { withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include: [
+              
                 {
                     model: db.Category,
                     association: 'category',
                     attributes: ['name', 'id']
-                },
-                {
-                    model: db.Band,
-                    association: 'band',
-                    attributes: ['name', 'id']
                 }
             ],
             attributes: {
-                include: [literalQueryUrl(req, 'albums', 'Album.id')],
-                exclude: ['genreId', 'bandId']
+                include: [literalQueryUrl(req, 'bands', 'Band.id')],
+                exclude: ['categoryId']
             }
         };
 
-        if (whitPagination === true) {
+        if (withPagination === true) {
             options = {
                 ...options,
                 pages,
                 paginate : limit
             };
-            const {docs, pages, total} = await db.Album.paginate(options)
+            const {docs, pages, total} = await db.Band.paginate(options)
 
             return {
-                albums : docs,
+                bands : docs,
                 pages,
                 count : total
             }
         }
 
-        const {count, rows: albums} = await db.Album.findAndCountAll(options)
+        const {count, rows: bands} = await db.Band.findAndCountAll(options)
 
         return {
             count,
-            albums
+            bands
         }
         
     } catch (error) {
@@ -53,27 +50,22 @@ const getAllBands = async (req, { withPagination = "false", page = 1, limit = 6}
     }
 }
 
-const getOneAlbum = async (req, id) => {
+const getOneBand = async (req, id) => {
     try {
-        const album = await db.Album.findByPk(id,{
+        const band = await db.Band.findByPk(id,{
             include: [
                 {
-                    model: db.Genre,
-                    association: 'genre',
-                    attributes: ['name', 'id']
-                },
-                {
-                    model: db.Band,
-                    association: 'band',
+                    model: db.Category,
+                    association: 'category',
                     attributes: ['name', 'id']
                 }
             ],
             attributes: {
-                include: [literalQueryUrl(req, 'albums', 'Album.id')],
-                exclude: ['genreId', 'bandId']
+                include: [literalQueryUrl(req, 'bands', 'Band.id')],
+                exclude: ['categoryId']
             }
         })
-        return album
+        return band
         
     } catch (error) {
         throw {
@@ -83,12 +75,15 @@ const getOneAlbum = async (req, id) => {
     }
 }
 
-const createAlbum = async (req) => {
+const createBand = async (req,res) => {
     try {
-        const newAlbum = await db.Album.create({
-            ...data
+        
+        const newBand = await db.Band.create({
+            ...data,
         })
-        return newAlbum
+      
+        return newBand
+        
     } catch (error) {
         throw {
             status : 500,
@@ -96,36 +91,27 @@ const createAlbum = async (req) => {
         }
     }
 }
-const storeAlbum = async (req) => {
+const storeBand = async (data) => {
     try {
-        const {
-            title,
-            discography,
-            year,
-            price,
-            discount,
-            bandId,
-            genreId,
-            exclusive,
-            description,
-            image
-        } = req.body
+    
 
-        const newAlbum = await db.Album.create({
-            title: title.trim(),
-            discography: discography.trim(),
-            year,
-            price,
-            discount,
-            bandId,
-            genreId,
-            exclusive,
-            description : description.trim(),
-            image
+        const newBand = await db.Band.create({
+            name: data.name.trim(),
+            history: data.history.trim(),
+            mainImage: data.mainImage.trim(),
+            image: data.image.trim(),
+            dateFounded: data.dateFounded,
+            dateEnded: data.dateEnded,
+            totalShows: data.totalShows,
+            nextShows: data.nextShows.trim(),
+            resume : data.resume.trim(),
+            phrase : data.phrase.trim(),
+            categoryId : data.categoryId
+
         })
-        
-        const album = await getOneAlbum(req, newAlbum.id)
-        return album
+        return newBand
+        const band = await getOneBand(req, newBand.id)
+        return band
         
     } catch (error) {
         throw {
@@ -135,42 +121,44 @@ const storeAlbum = async (req) => {
     }
 }
 
-const updateAlbum = async (req) => {
+const updateBand = async (req) => {
     try {
 
         const {
-            title,
-            discography,
-            year,
-            price,
-            discount,
-            bandId,
-            genreId,
-            exclusive,
-            description,
-            image
+            name,
+            history,
+            mainImage,
+            image,
+            dateFounded,
+            dateEnded,
+            totalShows,
+            nextShows,
+            resume,
+            phrase,
+            categoryId
         } = req.body
 
-        await db.Album.update(
+        await db.Band.update(
             {
-                title: title.trim(),
-                discography: discography.trim(),
-                year,
-                price,
-                discount,
-                bandId,
-                genreId,
-                exclusive,
-                description : description.trim(),
-                image
+                name: name.trim(),
+                history: history.trim(),
+                mainImage: mainImage.trim(),
+                image: image.trim(),
+                dateFounded,
+                dateEnded,
+                totalShows,
+                nextShows: nextShows.trim(),
+                resume: resume.trim(),
+                phrase: phrase.trim(),
+                categoryId
             },
             {
                 where : {id : req.params.id}
             }
         )
 
-        const album = await getOneAlbum(req, req.params.id)
-        return album
+        const band = await getOneBand(req, req.params.id)
+        return band
         
     } catch (error) {
         throw {
@@ -180,14 +168,14 @@ const updateAlbum = async (req) => {
     }
 }
 
-const destroyAlbum = async (id) => {
+const destroyBand = async (id) => {
     try {
-        const destroyAlbum = await db.Album.destroy(
+        const destroyBand = await db.Band.destroy(
             {
                 where : {id}
             }
         )
-        return destroyAlbum
+        return destroyBand
         
     } catch (error) {
         throw {
@@ -197,38 +185,38 @@ const destroyAlbum = async (id) => {
     }
 }
 
-const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limit = 6}) => {
+const getExclusiveBands = async (req,{ withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
-            include : ['id', 'name'],
+           
             attributes: {
-                include: [literalQueryUrl(req, 'albums', 'Album.id')],
-                exclude: ['genreId', 'bandId']
+                include: [literalQueryUrl(req, 'bands', 'Band.id')],
+                exclude: ['categoryId', 'albumId']
             },
             where : {
                 exclusive : 1
             }
         }
-        if (whitPagination === true) {
+        if (withPagination === true) {
             options = {
                 ...options,
                 pages,
                 paginate : limit
             };
-            const {docs, pages, total} = await db.Album.paginate(options)
+            const {docs, pages, total} = await db.Band.paginate(options)
 
             return {
-                albums : docs,
+                bands : docs,
                 pages,
                 count : total
             }
         }
 
-        const {count, rows: albums} = await db.Album.findAndCountAll(options)
+        const {count, rows: bands} = await db.Band.findAndCountAll(options)
 
         return {
             count,
-            albums
+            bands
         }
     } catch (error) {
         throw {
@@ -239,11 +227,11 @@ const getExclusiveAlbums = async (req,{ whitPagination = "false", page = 1, limi
 }
 
 module.exports = {
-    getAllAlbums,
-    getOneAlbum,
-    createAlbum,
-    updateAlbum,
-    destroyAlbum,
-    getExclusiveAlbums,
-    storeAlbum
-} */
+    getAllBands,
+    getOneBand,
+    createBand,
+    updateBand,
+    destroyBand,
+    getExclusiveBands,
+    storeBand
+}
