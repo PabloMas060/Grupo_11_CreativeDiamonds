@@ -3,7 +3,7 @@ const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
 const { disconnect } = require('process');
 
-const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+/* const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include: [
@@ -52,7 +52,57 @@ const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6
             message : error.message
         }
     }
-}
+} */
+const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+    try {
+        let options = {
+            include: [
+                {
+                    model: db.Genre,
+                    association: 'genre',
+                    attributes: ['name', 'id']
+                },
+                {
+                    model: db.Band,
+                    association: 'band',
+                    attributes: ['name', 'id']
+                }
+            ],
+            attributes: {
+                include: [literalQueryUrl(req, 'albums', 'Album.id')],
+                exclude: ['genreId', 'bandId']
+            }
+        };
+
+        if (withPagination === "true") {
+            options = {
+                ...options,
+                offset: (page - 1) * limit,
+                limit: limit
+            };
+
+            const {count, rows: albums} = await db.Album.findAndCountAll(options);
+
+            return {
+                count,
+                albums
+            };
+        }
+
+        const {count, rows: albums} = await db.Album.findAndCountAll(options);
+
+        return {
+            count,
+            albums
+        };
+        
+    } catch (error) {
+        throw {
+            status : 500,
+            message : error.message
+        };
+    }
+};
 
 const getOneAlbum = async (req, id) => {
     try {
@@ -190,46 +240,47 @@ const destroyAlbum = async (id) => {
     }
 }
 
-const getExclusiveAlbums = async (req,{ withPagination = "false", page = 1, limit = 6}) => {
+const getExclusiveAlbums = async (req, { withPagination = "false", page = 1, limit = 6 }) => {
     try {
         let options = {
-           
             attributes: {
                 include: [literalQueryUrl(req, 'albums', 'Album.id')],
                 exclude: ['genreId', 'bandId']
             },
-            where : {
-                exclusive : 1
+            where: {
+                exclusive: 1
             }
-        }
-        if (withPagination === true) {
+        };
+
+        if (withPagination === "true") {
             options = {
                 ...options,
-                pages,
-                paginate : limit
+                offset: (page - 1) * limit,
+                limit: limit
             };
-            const {docs, pages, total} = await db.Album.paginate(options)
+
+            const { count, rows: albums } = await db.Album.findAndCountAll(options);
 
             return {
-                albums : docs,
-                pages,
-                count : total
-            }
+                count,
+                albums
+            };
         }
 
-        const {count, rows: albums} = await db.Album.findAndCountAll(options)
+        const { count, rows: albums } = await db.Album.findAndCountAll(options);
 
         return {
             count,
             albums
-        }
+        };
     } catch (error) {
         throw {
             status: 500,
             message: error.message
-        }
+        };
     }
-}
+};
+
 
 module.exports = {
     getAllAlbums,

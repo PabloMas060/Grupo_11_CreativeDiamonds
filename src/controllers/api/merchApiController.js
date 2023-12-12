@@ -11,7 +11,7 @@ module.exports =  {
     list: async (req,res) => {
         try {
             const {withPagination = "true" , page = 1, limit = 6} = req.query;
-            const {count, merchs,pages} = await getAllMerchs(req, {
+            const {count, merchs, pages } = await getAllMerchs(req, {
                 withPagination,
                 page,
                 limit : +limit
@@ -169,7 +169,7 @@ module.exports =  {
     exclusive: async (req,res) => {
         try {
             const {withPagination = "true", page = 1, limit =6} = req.query;
-            const { count, albums, pages} = await getExclusiveMerchs(req, {
+            const { count, merchs, pages} = await getExclusiveMerchs(req, {
                 withPagination,
                 page,
                 limit: +limit

@@ -2,7 +2,7 @@ const db = require('../database/models');
 const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
 
-const getAllMerchs = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+const getAllMerchs = async (req, { withPagination = "false", page = 1, limit = 6 }) => {
     try {
         let options = {
             include: [
@@ -23,33 +23,33 @@ const getAllMerchs = async (req, { withPagination = "false", page = 1, limit = 6
             }
         };
 
-        if (withPagination === true) {
+        if (withPagination === "true") {
             options = {
                 ...options,
-                pages,
-                paginate : limit
+                offset: (page - 1) * limit,
+                limit: limit
             };
-            const {docs, pages, total} = await db.Merch.paginate(options)
+
+            const { count, rows: merchs } = await db.Merch.findAndCountAll(options);
 
             return {
-                merchs : docs,
-                pages,
-                count : total
-            }
+                count,
+                merchs
+            };
         }
 
-        const {count, rows: merchs} = await db.Merch.findAndCountAll(options)
+        const { count, rows: merchs } = await db.Merch.findAndCountAll(options);
 
         return {
             count,
             merchs
-        }
-        
+        };
+
     } catch (error) {
         throw {
-            status : 500,
-            message : error.message
-        }
+            status: 500,
+            message: error.message
+        };
     }
 }
 
@@ -183,44 +183,56 @@ const destroyMerch = async (id) => {
     }
 }
 
-const getExclusiveMerchs = async (req,{ withPagination = "false", page = 1, limit = 6}) => {
+const getExclusiveMerchs = async (req, { withPagination = "false", page = 1, limit = 6 }) => {
     try {
         let options = {
-            include : ['id', 'name'],
+            include: [
+                {
+                    model: db.Type,
+                    association: 'type',
+                    attributes: ['id', 'name']
+                },
+                {
+                    model: db.Band,
+                    association: 'band',
+                    attributes: ['id', 'name']
+                }
+            ],
             attributes: {
                 include: [literalQueryUrl(req, 'merchs', 'Merch.id')],
                 exclude: ['typeId', 'bandId']
             },
-            where : {
-                exclusive : 1
+            where: {
+                exclusive: 1
             }
-        }
-        if (withPagination === true) {
+        };
+
+        if (withPagination === "true") {
             options = {
                 ...options,
-                pages,
-                paginate : limit
+                offset: (page - 1) * limit,
+                limit: limit
             };
-            const {docs, pages, total} = await db.Merch.paginate(options)
+
+            const { count, rows: merchs } = await db.Merch.findAndCountAll(options);
 
             return {
-                merchs : docs,
-                pages,
-                count : total
-            }
+                count,
+                merchs
+            };
         }
 
-        const {count, rows: merchs} = await db.Merch.findAndCountAll(options)
+        const { count, rows: merchs } = await db.Merch.findAndCountAll(options);
 
         return {
             count,
             merchs
-        }
+        };
     } catch (error) {
         throw {
             status: 500,
             message: error.message
-        }
+        };
     }
 }
 

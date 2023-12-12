@@ -11,7 +11,6 @@ router
 .get('/', list)
 .get('/:id', detail)
 .post('/', uploadBand.single('image'), addBandValidator, store)
-
 .delete('/:id', destroy)
 .patch('/:id', uploadBand.single('image'), editBandValidator, update)
 

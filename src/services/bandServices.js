@@ -3,11 +3,10 @@ const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
 const { disconnect, nextTick } = require('process');
 
-const getAllBands = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+const getAllBands = async (req, { withPagination = "false", page = 1, limit = 6 }) => {
     try {
         let options = {
             include: [
-              
                 {
                     model: db.Category,
                     association: 'category',
@@ -20,33 +19,32 @@ const getAllBands = async (req, { withPagination = "false", page = 1, limit = 6}
             }
         };
 
-        if (withPagination === true) {
+        if (withPagination === "true") {
             options = {
                 ...options,
-                pages,
-                paginate : limit
+                offset: (page - 1) * limit,
+                limit: limit
             };
-            const {docs, pages, total} = await db.Band.paginate(options)
+
+            const { count, rows: bands } = await db.Band.findAndCountAll(options);
 
             return {
-                bands : docs,
-                pages,
-                count : total
-            }
+                count,
+                bands
+            };
         }
 
-        const {count, rows: bands} = await db.Band.findAndCountAll(options)
+        const { count, rows: bands } = await db.Band.findAndCountAll(options);
 
         return {
             count,
             bands
-        }
-        
+        };
     } catch (error) {
         throw {
-            status : 500,
-            message : error.message
-        }
+            status: 500,
+            message: error.message
+        };
     }
 }
 
@@ -185,53 +183,11 @@ const destroyBand = async (id) => {
     }
 }
 
-const getExclusiveBands = async (req,{ withPagination = "false", page = 1, limit = 6}) => {
-    try {
-        let options = {
-           
-            attributes: {
-                include: [literalQueryUrl(req, 'bands', 'Band.id')],
-                exclude: ['categoryId', 'albumId']
-            },
-            where : {
-                exclusive : 1
-            }
-        }
-        if (withPagination === true) {
-            options = {
-                ...options,
-                pages,
-                paginate : limit
-            };
-            const {docs, pages, total} = await db.Band.paginate(options)
-
-            return {
-                bands : docs,
-                pages,
-                count : total
-            }
-        }
-
-        const {count, rows: bands} = await db.Band.findAndCountAll(options)
-
-        return {
-            count,
-            bands
-        }
-    } catch (error) {
-        throw {
-            status: 500,
-            message: error.message
-        }
-    }
-}
-
 module.exports = {
     getAllBands,
     getOneBand,
     createBand,
     updateBand,
     destroyBand,
-    getExclusiveBands,
     storeBand
 }

@@ -9,7 +9,7 @@ module.exports =  {
     list: async (req,res) => {
         try {
             const {withPagination = "true" , page = 1, limit = 6} = req.query;
-            const {count, bands,pages} = await getAllBands(req, {
+            const {count, bands, pages} = await getAllBands(req, {
                 withPagination,
                 page,
                 limit : +limit
