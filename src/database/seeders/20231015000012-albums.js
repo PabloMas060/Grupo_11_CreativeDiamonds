@@ -649,21 +649,6 @@ module.exports = {
         "updatedAt": new Date()
       },
       {
-        "title": "People of the Sun",
-        "discography": "Discografía1",
-        "image": "ratm-album5.jpg",
-        "year": 2000,
-        "price": 25,
-        "discount": null,
-        "cantidadVendida": 5,
-        "description": "'People of the Sun' es un álbum recopilatorio de Rage Against the Machine que incluye versiones en vivo y lados B de la banda.",
-        "exclusive": 1,
-        "bandId": 8,
-        "genreId": 2,
-        "createdAt": new Date(),
-        "updatedAt": new Date()
-      },
-      {
         "title": "Blood Sugar Sex Magik",
         "discography": "Discografía1",
         "image": "rhcp-album1.jpg",
@@ -1084,21 +1069,6 @@ module.exports = {
         "updatedAt": new Date()
       },
       {
-        "title": "Esquivando Charcos",
-        "discography": "Discografía1",
-        "image": "larenga-album6.jpg",
-        "year": 1991,
-        "price": 25,
-        "discount": null,
-        "cantidadVendida": 5,
-        "description": "'Esquivando Charcos' es el álbum debut de La Renga y presenta canciones como 'Veneno' y 'La Balada del Diablo y La Muerte'.",
-        "exclusive": 1,
-        "bandId": 12,
-        "genreId": 3,
-        "createdAt": new Date(),
-        "updatedAt": new Date()
-      },
-      {
         "title": "Ritual",
         "discography": "Discografía1",
         "image": "lospiojos-album1.jpg",
@@ -1347,21 +1317,6 @@ module.exports = {
         "discount": null,
         "cantidadVendida": 5,
         "description": "'Sueño Stereo' es el séptimo álbum de estudio de Soda Stereo y presenta canciones como 'Ella Usó Mi Cabeza Como un Revólver' y 'Zoom'.",
-        "exclusive": 1,
-        "bandId": 14,
-        "genreId": 3,
-        "createdAt": new Date(),
-        "updatedAt": new Date()
-      },
-      {
-        "title": "Démagogos",
-        "discography": "Discografía1",
-        "image": "sodastereo-album8.jpg",
-        "year": 2008,
-        "price": 25,
-        "discount": 25,
-        "cantidadVendida": 5,
-        "description": "'Démagogos' es un álbum recopilatorio de Soda Stereo que presenta una selección de sus éxitos a lo largo de su carrera.",
         "exclusive": 1,
         "bandId": 14,
         "genreId": 3,

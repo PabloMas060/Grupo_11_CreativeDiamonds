@@ -31,26 +31,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-8 col-md-6 text-center mt-5">
+                        <div class="col-8 col-md-4 text-center mt-5">
                             <h4>Lista de canciones:</h4>
-                            <ol class="Tracklist__ol">
-                                <li class="mt-3">"Black summer"</li>
-                                <li class="mt-3">"Here ever after"</li>
-                                <li class="mt-3">"Aquatic mouth dance"</li>
-                                <li class="mt-3">"Not the one"</li>
-                                <li class="mt-3">"Poster child"</li>
-                                <li class="mt-3">"The great apes"</li>
-                                <li class="mt-3">"It's only natural"</li>
-                                <li class="mt-3">"She's a lover"</li>
-                                <li class="mt-3">"These are the ways"</li>
-                                <li class="mt-3">"Whatchu thinkin'"</li>
-                                <li class="mt-3">"Bastards of light"</li>
-                                <li class="mt-3">"White braids & pillow chair"</li>
-                                <li class="mt-3">"One way traffic"</li>
-                                <li class="mt-3">"Veronica"</li>
-                                <li class="mt-3">"Let 'em cry"</li>
-                                <li class="mt-3">"The heavy wing"</li>
-                                <li class="mt-3">"Tangelo"</li>
+                            <ol class="align-items-center text-start">
+
+                                <% tracks.forEach(({id,name},index) => { %>
+                                    <li class="mt-3"><p><%= index+1 %>. <%= name %></p></li>
+                                <% }) %>
                             </ol>
                         </div>
                         <div class="col-8 col-md-6 text-center">
