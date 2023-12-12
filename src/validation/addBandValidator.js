@@ -14,8 +14,6 @@ module.exports = [
     check('dateFounded')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isNumeric().withMessage('El dato de fundacion debe ser un número válido'),
-    check('dateEnded')
-        .isNumeric().withMessage('Sólo caracteres numéricos'),
     check('totalShows')
         .notEmpty().withMessage('Éste campo es obligatorio').bail()
         .isNumeric().withMessage('La cantidad de shows debe ser un número válido'),
@@ -27,7 +25,7 @@ module.exports = [
             min: 20,
             max: 500
         }).withMessage('La cantidad de caracteres admitidos es entre 20 y 500'),
-    body('image')
+   /*  body('image')
         .custom((value, { req }) => {
             if (req.files && req.files.image) {
                 return true;
@@ -35,12 +33,12 @@ module.exports = [
             return false;
         })
         .withMessage('La imagen de la portada de la banda es obligatoria'),
-    body('images')
+    body('mainImage')
         .custom((value, { req }) => {
             if (req.files && req.files.images) {
                 return true;
             }
             return false;
         })
-        .withMessage('El logo de la banda es obligatorio')
+        .withMessage('El logo de la banda es obligatorio') */
 ]
