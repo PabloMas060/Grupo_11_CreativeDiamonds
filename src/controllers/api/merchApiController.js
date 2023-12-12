@@ -1,9 +1,9 @@
 const db = require('../../database/models');
 
-const {getAllMerchs, getOneMerch, createMerch, storeMerch, updateMerch, destroyMerch, getExclusiveMerchs} = require('../../services/merchServices');
+const {getAllMerchs, getOneMerch, storeMerch, updateMerch, destroyMerch, getExclusiveMerchs} = require('../../services/merchServices');
 
 const createResponseError = require('../../helpers/createResponseError');
-const {validatiorResult, validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 const {getAllBands} = require('../../services/bandServices');
 const {getAllTypes} = require('../../services/typeServices');
 
@@ -11,7 +11,7 @@ module.exports =  {
     list: async (req,res) => {
         try {
             const {withPagination = "true" , page = 1, limit = 6} = req.query;
-            const {count, albums,pages} = await getAllMerchs(req, {
+            const {count, merchs,pages} = await getAllMerchs(req, {
                 withPagination,
                 page,
                 limit : +limit
@@ -91,7 +91,7 @@ module.exports =  {
                 message : errors.mapped()
             }
 
-            const newMerch = await createMerch(req.body);
+            const newMerch = await storeMerch(req.body);
             const bands = await getAllBands();
             const types = await getAllTypes();
 
@@ -170,7 +170,7 @@ module.exports =  {
         try {
             const {withPagination = "true", page = 1, limit =6} = req.query;
             const { count, albums, pages} = await getExclusiveMerchs(req, {
-                whitPagination,
+                withPagination,
                 page,
                 limit: +limit
             });

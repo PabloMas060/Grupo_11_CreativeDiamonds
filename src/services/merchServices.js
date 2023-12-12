@@ -23,7 +23,7 @@ const getAllMerchs = async (req, { withPagination = "false", page = 1, limit = 6
             }
         };
 
-        if (whitPagination === true) {
+        if (withPagination === true) {
             options = {
                 ...options,
                 pages,
@@ -73,7 +73,7 @@ const getOneMerch = async (req, id) => {
                 exclude: ['typeId', 'bandId']
             }
         })
-        return Merch
+        return merch
         
     } catch (error) {
         throw {
@@ -96,30 +96,22 @@ const createMerch = async (req) => {
         }
     }
 }
-const storeMerch = async (req) => {
+const storeMerch = async (data) => {
     try {
-        const {
-            name,
-            price,
-            discount,
-            bandId,
-            typeId,
-            exclusive,
-            description,
-            image
-        } = req.body
+    
 
         const newMerch = await db.Merch.create({
-            name: name.trim(),
-            price,
-            discount,
-            bandId,
-            typeId,
-            exclusive,
-            description : description.trim(),
-            image
+            name: data.name.trim(),
+            price: data.price,
+            discount: data.discount ? data.discount : 0,
+            cantidadVendida: data.cantidadVendida ? data.cantidadVendida : 0,
+            bandId: data.bandId,
+            typeId: data.typeId,
+            exclusive: data.exclusive,
+            description : data.description.trim(),
+            image : data.image.trim()
         })
-        
+        return newMerch
         const merch = await getOneMerch(req, newMerch.id)
         return merch
         
@@ -142,7 +134,8 @@ const updateMerch = async (req) => {
             typeId,
             exclusive,
             description,
-            image
+            image,
+            cantidadVendida
         } = req.body
 
         await db.Merch.update(
@@ -154,7 +147,8 @@ const updateMerch = async (req) => {
                 typeId,
                 exclusive,
                 description : description.trim(),
-                image
+                image,
+                cantidadVendida
             },
             {
                 where : {id : req.params.id}
@@ -189,7 +183,7 @@ const destroyMerch = async (id) => {
     }
 }
 
-const getExclusiveMerchs = async (req,{ whitPagination = "false", page = 1, limit = 6}) => {
+const getExclusiveMerchs = async (req,{ withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include : ['id', 'name'],
@@ -201,7 +195,7 @@ const getExclusiveMerchs = async (req,{ whitPagination = "false", page = 1, limi
                 exclusive : 1
             }
         }
-        if (whitPagination === true) {
+        if (withPagination === true) {
             options = {
                 ...options,
                 pages,
