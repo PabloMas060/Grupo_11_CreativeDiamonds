@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header__logo">
-        <a href="/"><img src="/logoCreativeSouls.png" alt="LOGO"></a>
+        <a href="/"><img class="" src="/logoCreativeSouls.png" alt="LOGO"></a>
         <div class="d-flex align-items-center justify-content-start burger" id="toggle-bars">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -16,27 +16,27 @@
                 </li>
 
 
-                <!--   <li><a href="/users/foro"><img width="45" src="/iconos/icono-microfono.svg" alt=""></a>
+                <!--   <li><a href="/users/foro"><img width="30" src="/iconos/icono-microfono.svg" alt=""></a>
                 <p>Foro</p></li>
-                <li><a href=""><img width="45" src="/iconos/icono-notaMusical.svg" alt=""></a>
+                <li><a href=""><img width="30" src="/iconos/icono-notaMusical.svg" alt=""></a>
                 <p>Algun lado</p></li> -->
-                <li><a href="/groups"><img width="45" src="/iconos/icono-radio.svg" alt=""></a>
-                    <p>Grupos</p>
+                <li><a href="/groups"><img width="30" src="/iconos/icono-radio.svg" alt=""></a>
+                    <p class="header-p">Grupos</p>
                 </li>
 
                 <% if (locals.userLogin.rolId===1) { %>
-                    <li><a href="/users/admin"><img width="45" src="/iconos/icono-diamante.svg" alt=""></a>
-                        <p>Admin</p>
+                    <li><a href="/users/admin"><img width="30" src="/iconos/icono-diamante.svg" alt=""></a>
+                        <p class="header-p">Admin</p>
                     </li>
 
                     <% } %>
-                        <li><a href="/users/logout"><img width="45" src="/iconos/icono-cerrar.svg" alt=""></a>
-                            <p>Salir</p>
+                        <li><a href="/users/logout"><img width="30" src="/iconos/icono-cerrar.svg" alt=""></a>
+                            <p class="header-p">Salir</p>
                         </li>
                         <% } %>
-                            <li><a href="/products/artists"><img width="45" src="/iconos/icono-guitarraElectrica.svg"
+                            <li><a href="/products/artists"><img width="30" src="/iconos/icono-guitarraElectrica.svg"
                                         alt=""></a>
-                                <p>Bandas</p>
+                                <p class="header-p">Bandas</p>
                             </li>
                             <% if (locals.userLogin) { %>
                                 <div class="Headeravatar-image">
@@ -55,9 +55,9 @@
 
                                 <% } else { %>
                                     <li>
-                                        <a href="#" id="toggle-button"><img width="45"
+                                        <a href="#" id="toggle-button"><img width="30"
                                                 src="/iconos/icono-avatarTemporal.svg" alt=""></a>
-                                        <p>Usuario</p>
+                                        <p class="header-p">Usuario</p>
                                     </li>
                                     </li>
 

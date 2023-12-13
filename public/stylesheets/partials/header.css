@@ -4,8 +4,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
+    max-height: 4rem;
 }
 
 .Headeravatar-image img{
@@ -19,14 +19,12 @@ header {
 
 .header__logo {
     display: flex;
-    width: 25%;
     margin-top: 5px;
-    padding: 10px;
     gap: 0.5rem;
 }
 
 .header__logo img {
-    width: 100px;
+    width: 60px;
 }
 .burger{
    width: 5%;
@@ -44,6 +42,10 @@ header {
 
 .header__navbar__ul-1 {
     display: none;
+    margin: 0;
+}
+.header-p {
+    margin: 0;
 }
 
 .header__navbar__ul {
@@ -113,14 +115,14 @@ header {
 
     /* Estilos para el modal */
     .header-modal {
-        display: none; /* El modal está oculto por defecto */
+        display: none; 
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999; /* Asegura que el modal esté en la parte superior */
+        z-index: 999; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -136,7 +138,7 @@ header {
         box-shadow: 3px 3px 47px 7px black;
     }
     
-    /* Estilos para los grupos de inicio de sesión */
+    
     .login-grupo1 {
         display: flex;
         flex-direction: row;
