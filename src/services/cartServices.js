@@ -1,6 +1,5 @@
-const { mergeDefaults } = require('sequelize/types/utils');
 const db = require('../database/models');
-const {Op} = rquire('sequelize');
+const {Op} = require('sequelize');
 
 module.exports = mtd = {
     getOrder : async ({userId}) => {
