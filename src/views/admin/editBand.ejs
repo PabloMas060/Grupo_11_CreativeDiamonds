@@ -54,7 +54,7 @@
                             <div class="mb-3">
                                 <label for="dateEnded" class="form-label">Año de finalización</label>
                                 <input type="number" class="form-control" id="dateEnded" name="dateEnded"
-                                    value="<%= band.dateEnded ? band.dateEnded : '' %>">
+                                    value="<%= band.dateEnded ? band.dateEnded : 0 %>">
                             </div>
                             <div class="mb-3">
                                 <label for="vigente" class="form-label">Banda Vigente</label>
@@ -96,6 +96,12 @@
                                 </small>
                             </div>
                             <div class="mb-6">
+                                <div class="d-flex flex-column gap-2"><label style="cursor: pointer;">
+                                        <img src="/images/bands/<%= band.image %>" width="100px" alt=""></label>
+                                </div>
+                                <div class="d-flex flex-column gap-2"><label style="cursor: pointer;">
+                                        <img src="/images/bands/<%= band.mainImage %>" width="100px" alt=""></label>
+                                </div>
                                 <label for="mainImage" class="btn btn-secondary">Cambiar imagen de la Banda</label>
                                 <input hidden type="file" class="form-control" id="mainImage" name="mainImage">
                                 <label for="image" class="btn btn-secondary">Cambiar Logo de la Banda</label>

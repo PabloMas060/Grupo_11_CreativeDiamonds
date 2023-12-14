@@ -70,6 +70,20 @@ window.addEventListener('load',function () {
         }
 
     });
+    $('dateEnded').addEventListener('focus', function (e) {
+        $('msgError-dateEnded').innerHTML = null
+        this.classList.remove('is-invalid')
+        this.classList.remove('is-valid')
+    })
+
+    $('dateEnded').addEventListener('blur', function (e) {
+     if(!this.value){
+        this.value === 0
+        this.classList.add('is-valid')
+        this.classList.remove('is-invalid')
+     }
+
+    });
 
     $('totalShows').addEventListener('focus', function (e) {
         $('msgError-totalShows').innerHTML = null
@@ -165,13 +179,15 @@ window.addEventListener('load',function () {
 
     });
 
+    
+
     $('editBandForm').addEventListener('submit', function(event){
         event.preventDefault();
 
         const elementsForm = this.elements;
         let error = false;
 
-        for (let i = 0 ; i < elementsForm.length -1 ; i ++) {
+        for (let i = 0 ; i < elementsForm.length -3 ; i ++) {
 
             if(!elementsForm[i].value.trim() || elementsForm[i].classList.contains('is-invalid')) {
                 error = true;

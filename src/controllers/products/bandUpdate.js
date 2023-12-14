@@ -11,21 +11,14 @@ module.exports = (req, res) => {
 
         db.Band.findByPk(id)
             .then(band => {
-                if (req.files.image && existsSync(`./public/images/bands/${band.mainImage}`)) {
-                    unlinkSync(`./public/images/bands/${band.mainImage}`);
-                }
-                if (req.files.images && existsSync(`./public/images/bands${band.image}`)) {
-                    unlinkSync(`./public/images/bands/${band.image}`)
-                }
-
                 db.Category.findAll()
                     .then(categories => {
                         db.Band.update(
                             {
                                 name: name.trim(),
                                 history,
-                                mainImage: req.files.image ? req.files.image[0].filename : band.image,
-                                image: req.files.images ? req.files.images[0].filename : band.images,
+                                mainImage: req.files.length ? req.files.filename[0] : band.mainImage,
+                                image: req.files.length ? req.files.filename[0] : band.image,
                                 dateFounded,
                                 dateEnded: dateEnded ? dateEnded : null,
                                 totalShows,
@@ -39,6 +32,7 @@ module.exports = (req, res) => {
                                     id
                                 }
                             }
+
                         ).then(() => {
                             if (req.files.image && existsSync(`./public/images/bands/${band.mainImage}`)) {
                                 unlinkSync(`./public/images/bands/${band.mainImage}`);
@@ -47,6 +41,7 @@ module.exports = (req, res) => {
                                 }
 
                             } else {
+
                                 return res.redirect('/users/admin');
                             }
                         });
