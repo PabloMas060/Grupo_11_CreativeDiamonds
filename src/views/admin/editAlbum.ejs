@@ -8,6 +8,12 @@
 
             <main class="container">
                 <div class="row">
+                    <div class="col-12 mt-4 text-start">
+                        <a class="btn btn-dark" style="cursor: pointer;" href="/users/admin">Volver al panel de administración</a>
+                    </div>
+                    <div class="col-12 mb-4 mt-4 text-center">
+                        <h3>Estás editando: <b><%= album.title %></b></h3>
+                    </div>
                     <div class="col-md-8 mx-auto">
                         <form id="editAlbumForm" action="/products/edit/album/<%= album.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
