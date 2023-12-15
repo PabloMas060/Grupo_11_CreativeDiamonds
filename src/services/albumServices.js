@@ -3,7 +3,7 @@ const fs = require('fs');
 const { literalQueryUrl, literalQueryUrlImage } = require('../helpers');
 const { disconnect } = require('process');
 
-/* const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
+ /* const getAllAlbums = async (req, { withPagination = "false", page = 1, limit = 6}) => {
     try {
         let options = {
             include: [
