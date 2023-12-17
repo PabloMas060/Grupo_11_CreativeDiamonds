@@ -162,9 +162,7 @@ Promise.all([group, articles])
     
     
 
-    cart: (req, res) => {
-        res.render('users/cart')
-    },
+  
     selfcart: (req, res) => {
         res.render('selfcart')
     },
@@ -186,6 +184,7 @@ Promise.all([group, articles])
                 model: db.Type, 
                 as: 'type',
             }],
+            limit : 4
         });
         const exclusivoAlbumPromise = db.Album.findAll({
             where: {
@@ -195,6 +194,7 @@ Promise.all([group, articles])
                 model: db.Band,
                 as: 'band',
             }],
+            limit: 4
         });
         
     
@@ -208,6 +208,7 @@ Promise.all([group, articles])
                 model: db.Type, 
                 as: 'type',
             }],
+            limit: 4
         });
         const discountAlbumPromise = db.Album.findAll({
             where: {
@@ -219,6 +220,7 @@ Promise.all([group, articles])
                 model: db.Band,
                 as: 'band',
             }],
+            limit: 4
         });
     
         const masVendidosMerchPromise = db.Merch.findAll({
@@ -228,6 +230,7 @@ Promise.all([group, articles])
                 model: db.Type, 
                 as: 'type',
             }],
+            limit : 4
         });
     
         const masVendidosAlbumsPromise = db.Album.findAll({
@@ -237,11 +240,12 @@ Promise.all([group, articles])
                 model: db.Band,
                 as: 'band',
             }],
+            limit : 4
         });
     
         Promise.all([exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerchPromise, masVendidosMerchPromise, masVendidosAlbumsPromise])
-            .then(([exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerch, masVendidosMerch, masVendidosAlbums]) => {
-                res.render('fans', { exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerch, masVendidosMerch, masVendidosAlbums });
+            .then(([exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerch, masVendidosMerchPromise, masVendidosAlbums]) => {
+                res.render('fans', { exclusivoMerchPromise, discountAlbumPromise, exclusivoAlbumPromise, discountMerch, masVendidosMerchPromise, masVendidosAlbums });
             })
             .catch(error => {
                 console.error(error);

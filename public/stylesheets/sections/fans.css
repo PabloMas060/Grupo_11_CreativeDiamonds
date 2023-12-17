@@ -3,29 +3,30 @@
     /* Agrega los estilos para el contenedor que envuelve el segundo y tercer objeto aquí */
     display: flex;
     flex-direction: row;
+    height: 25rem;
 }
 
 .fans-banner {
   position: relative;
   text-align: center;
-  height: 80vh; /* Ajusta la altura del banner al 80% de la altura de la pantalla */
+  height: 50vh; /* Ajusta la altura del banner al 80% de la altura de la pantalla */
 }
 
 .fans-bannerImage {
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* Escala la imagen para llenar el espacio sin distorsionarla */
+  object-fit: cover;
   object-position: center 20%;
 }
 
 .partial-textoPresentacion {
   position: absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); /* Centra el texto en relación con su contenedor */
-  z-index: 1; /* Coloca el texto por encima de la imagen */
-  font-size: 4em; /* Establece el tamaño de fuente deseado */
-  color: var(--varColor1); /* Color del texto */
+  top: 90%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 2rem;
+  color: var(--varColor1);
   background-color: var(--varColor2);
   white-space: nowrap;
   
@@ -51,7 +52,9 @@
     width: 200px; /* Ancho más grande */
     border-radius: 20px; /* Bordes redondeados */
 }
-
+.fans-presentacionTest{
+  width: 40%;
+}
 
 .fans-testInfoBotton{
     display: flex;
@@ -115,49 +118,55 @@
     margin: 0;
 }
 
-/* Estilos para la sección de productos populares */
+
 .partial-productDisplaySection {
     display: flex;
-    flex-wrap: wrap; /* Permite que los objetos pasen a la siguiente línea cuando no caben en el ancho */
-    justify-content: start; 
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
-/* Estilos para cada producto */
+
 .partial-productDisplay1 {
-    width: 23%; /* Para acomodar 4 productos por fila con espacio entre ellos */
-    position: relative; /* Permite posicionar el texto superpuesto */
-    margin-bottom: 20px; /* Espacio entre las filas de productos */
+     /* width: 23%;*/
+    position: relative; 
+    margin: 29px; 
 }
-
 .partial-productDisplay1 img {
-    width: 230px;
-    height: 170px;
-    object-fit: cover; /* Cubre todo el espacio sin distorsionar la imagen */
+    width: 219px;
+    height: 230px;
+    object-fit: cover; 
+    border-radius: 5%;
+    box-shadow: 1px 2px 25px 2px whitesmoke;
 }
 
-/* Estilos para cada producto circular (Álbums) */
 .partial-productDisplay2 {
-  width: 23%;
+ /*  width: 23%; */
   position: relative;
-  margin-bottom: 20px;
-  border-radius: 50%; 
-  overflow: hidden; 
+  margin: 29px;
+ 
 }
 
 .partial-productDisplay2 img {
-  width: 230px;
+  width: 219px;
   height: 230px; 
   object-fit: cover;
+  border-radius: 5%;
+  box-shadow: 1px 2px 25px 2px white;
 }
 
-/* Estilos para el texto de precio */
+
 .fans-precio {
-    position: absolute;
-    bottom: 13px;
-    left: 68px;
-    background-color: var(--varColor1);
-    color: var(--varColor2);
-    padding: 5px;
+  position: absolute;
+  bottom: 196px;
+  left: 163px;
+  background-color: #4950576e;
+  color: var(--varColor2);
+  padding: 5px;
+  border-radius: 5px;
+  width: 3rem;
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px #212529;
 }
 
 /* Estilos para el botón "VER LISTA COMPLETA" */

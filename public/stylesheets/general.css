@@ -23,6 +23,7 @@ font-family: 'Exo 2', sans-serif;
     --varColor3: #808080;       /* Gris piedra */
     --varColor2: #FFFFFF;       /* Blanco */
     --varColor1: #000000;       /* Negro */
+    --tipografiaTitulos: "Ohno Blazeface", sans-serif;
   }
   
   @font-face {
@@ -58,7 +59,7 @@ html {
 }
 
 body {
-    font-family: var(--tipografiaTitulos);
+   /*  font-family: var(--tipografiaTitulos); */
     max-width: 1366px;
     
     /* background: rgb(4, 0, 0); */
