@@ -12,7 +12,7 @@
                 <div class="container">
                     <div class="row justify-content-center g-2">
                         <div class="col-8 col-md-6 mx-auto p-5">
-                            <div class="card">
+                            <div class="card" style="box-shadow: 1px 5px 25px 10px black;">
                                 <img src="/images/albums/<%= album.image %>" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title"><%= album.title %></h5>
@@ -27,7 +27,7 @@
                                     <li class="list-group-item"><b>PRECIO:</b> us$ <%= album.price %></li>
                                 </ul>
                                 <div class="card-body text-center">
-                                    <button data-id="<%= id %>" id="btn-addCart" class="main__article_buton">Agregar al
+                                    <button data-id="<%= id %>" id="btn-addCart" class="btn btn-dark">Agregar al
                                         carrito</button>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                             <ol class="align-items-center text-start">
 
                                 <% tracks.forEach(({id,name},index) => { %>
-                                    <li class="mt-3"><p><%= index+1 %>. <%= name %></p></li>
+                                    <li class="mt-3"><p style="text-shadow: 1px 1px 1px black"><%= index+1 %>. <%= name %></p></li>
                                 <% }) %>
                             </ol>
                         </div>
@@ -45,12 +45,12 @@
                             <p><b>Reseña del álbum:</b></p>
                             <p><%= album.description %></p>
                 
-                            <ul>
+                           <!--  <ul>
                                 <li><b>Voz principal: </b> Anthony Kiedis</li>
                                 <li><b>Guitarra y coros: </b> John Frusciante</li>
                                 <li><b>Bajo: </b> Flea</li>
                                 <li><b>Batería: </b> Chad Smith</li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="col-8 col-md-6">
                             <button class="btn btn-dark"><a class="text-white" href="/products/artists/detail/<%= album.bandId %>"> Volver al listado de álbums</a></button>

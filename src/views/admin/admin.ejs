@@ -66,23 +66,17 @@
                                                                 <%= totalShows %>
                                                             </td>
                                                             <td>
-                                                                <div class="row gap-2">
-                                                                    <button type="button"
-                                                                        class="col-3 btn btn-sm  btn-primary"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#modalDetail<%= id %>">
+                                                                <%- include('../partials/modalBandDetail',{ id,
+                                                                    name, resume, mainImage })%>
+                                                                <div class="containerButons">
+                                                                    <button type="button" class="butonVerProd" data-bs-toggle="modal"  data-bs-target="#modalDetail<%= id %>">
                                                                         <i class="fas fa-eye"></i>
                                                                     </button>
-                                                                    <%- include('../partials/modalBandDetail',{ id,
-                                                                        name, resume, mainImage })%>
-                                                                        <a href="/products/edit/band/<%= id %>"
-                                                                            class="col-3 btn btn-sm btn-success">
-                                                                            <i class="fas fa-edit"></i>
+                                                                    
+                                                                        <a href="/products/edit/band/<%= id %>" class="butonEditarProd">
+                                                                            <i class="far fa-edit"></i>
                                                                         </a>
-                                                                        <button type="button"
-                                                                            class="col-3 btn btn-sm btn-danger"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#modalDelete<%=id%>">
+                                                                        <button type="button" class="butonEliminarProd eliminar-btn"  data-bs-toggle="modal" data-bs-target="#modalDelete<%=id%>">
                                                                             <i class="fas fa-trash"></i>
                                                                         </button>
                                                                         <div class="modal fade" id="modalDelete<%=id%>"

@@ -18,7 +18,7 @@
                     <div class="row align-items-center g-5">
                         <div class="col-12 col-md-6">
                             <h6>
-                                <%= band.dateFounded %> - <%= band.dateEnded %>
+                                <%= band.dateFounded %> - <%= band.dateEnded ? band.dateEnded : 'Banda Vigente'%>
                             </h6>
                         </div>
                         <div class="col-12 col-md-6">
@@ -41,13 +41,13 @@
                     </div>
                 </div>
             </section>
-            <section class="section__red">
-                <div class="row mb-3 m-5">
+            <section class="partial-Section2">
+                <div class="partial-productDisplaySection">
 
                     <% albums.forEach(({id,title,image,year,description,price, discount})=> { %>
-                        <div class="col-6 col-md-4" id="album<%= id %>">
-                            <a href="/products/albums/detail/<%= id %>"><img class="img-fluid w-50"
-                                    style="border-radius: 50%;" src="/images/albums/<%= image %>" alt=""></a>
+                        <div class="partial-productDisplay1" id="album<%= id %>">
+                            <a href="/products/albums/detail/<%= id %>"><img class="img-fluid"
+                                     src="/images/albums/<%= image %>" alt=""></a>
                             <p><b>
                                     <%= title %>
                                 </b></p>
@@ -60,11 +60,11 @@
             </section>
 
 
-            <section class="section__yellow">
-                <div class="row m-3 justify-content-start">
+            <section class="partial-Section1">
+                <div class="partial-productDisplaySection">
 
                     <% merchs.forEach(({id, price,image})=> { %>
-                        <div class="col-10 col-md-3 p-2 partial-productDisplay1">
+                        <div class="partial-productDisplay1">
                             <a href="/products/merchs/detail/<%= id %>"><img class="img-fluid" src="/images/merch/<%= image %>" alt=""></a>
                             <div class="fans-precio">$<%= price %></div>
                             <div class="col-10 col-md-3 mt-5"></div>

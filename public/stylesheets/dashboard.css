@@ -6,6 +6,41 @@
     align-items: center;
     justify-content: center;
 }
+.containerButons{
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
+
+}
+.butonEliminarProd {
+    background-color: red;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.butonVerProd{
+    background-color: #2659c9;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.butonEditarProd{
+    background-color: green;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 8px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
 @media (min-width: 481px) {
     .admin-buttons-container{
         display: flex;

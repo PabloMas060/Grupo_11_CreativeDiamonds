@@ -66,8 +66,8 @@
 }
 
 .section__black-index {
-    background: rgb(4, 0, 0);
-    background: linear-gradient(4deg, rgba(4, 0, 0, 1) 85%, rgba(255, 255, 255, 1) 100%);
+    background-color: var(--varColor1);
+    clip-path: polygon(100% 2%, 0 0, 0 100%, 100% 100%);
     flex-wrap: wrap;
     width: 100%;
     flex-direction: column;
