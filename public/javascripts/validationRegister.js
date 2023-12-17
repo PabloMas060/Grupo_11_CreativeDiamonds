@@ -125,8 +125,8 @@ window.addEventListener('load',function () {
 
 
 
-    $('password2').addEventListener('focus', function(e){
-        $('msgError-password2').innerHTML = null
+    $('password').addEventListener('focus', function(e){
+        $('msgError-password').innerHTML = null
         this.classList.remove('is-invalid');
         this.classList.remove('is-valid')
     })
@@ -164,18 +164,11 @@ window.addEventListener('load',function () {
             if(!elementsForm[i].value.trim() || elementsForm[i].classList.contains('is-invalid')){
                 error = true;
                 elementsForm[i].classList.add('is-invalid');
-                $('msgError-empty').innerHTML = "El formulario tiene errors"
+                $('msgError-empty').innerHTML = "El formulario tiene errores"
             }
 
         }
 
         !error && this.submit()
     })
-
-
-
-
-
-
-}
-)
+})

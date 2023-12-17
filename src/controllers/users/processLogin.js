@@ -6,11 +6,30 @@ module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return  res.render("/index", {
-            title: "Inicio de sesión",
-            errors: errors.mapped(),
-            old: req.body,
+        const bands = db.Band.findAll({
+            include: [
+                {
+                    association: 'category',
+                    include: [
+                        {
+                            all : true
+                        }
+                    ]
+                }
+            ]
         })
+        const categories = db.Category.findAll()
+        Promise.all([bands,categories])
+            .then(([bands,categories]) => {
+                return  res.render("index", {
+                    title: "Inicio de sesión",
+                    errors: errors.mapped(),
+                    old: req.body,
+                    bands,
+                    categories
+                })
+            }).catch(error => console.log(error))
+     
     }
     const { email, password, remember } = req.body;
     db.User.findOne({

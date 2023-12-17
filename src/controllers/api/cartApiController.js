@@ -5,8 +5,8 @@ const { getOrder, createProductInCart, removeProductFromCart, moreOrLessQuantity
 module.exports = {
     getOrderPending: async (req,res) => {
         try {
-            const {id} = req.session.userLogin;
-            const order = await getOrder({userId: id})
+            const {id} = req.session.userLogin; 
+           const order = await getOrder({userId})
             sendSuccessResponse(res, {data:order})
         } catch (error) {
             sendErrorResponse(res, error)
@@ -14,9 +14,9 @@ module.exports = {
     },
     addProduct: async (req,res) => {
         try {
-            const {albumId, merchId} = req.body;
-            const {id} = req.session.userLogin
-            await createProductInCart({userId: id, albumId, merchId})
+            const {albumId} = req.body;
+              const {id} = req.session.userLogin  
+            await createProductInCart({userId, albumId})
             sendSuccessResponse(res)
         } catch (error) {
             sendErrorResponse(res,error)
@@ -24,9 +24,9 @@ module.exports = {
     },
     removeProduct: async (req, res) => {
         try {
-            const { albumId, merchId } = req.body;
+            const { albumId } = req.body;
             const { id } = req.session.userLogin;
-            await removeProductFromCart({ userId: id, albumId, merchId })
+            await removeProductFromCart({ userId, albumId})
             sendSuccessResponse(res)
         } catch (error) {
             sendErrorResponse(res, error)
@@ -34,10 +34,10 @@ module.exports = {
     },
     moreQuantity: async (req, res) => {
         try {
-            const { albumId, merchId } = req.body;
-            const { id } = req.session.userLogin;
-
-            await moreOrLessQuantityFromProduct({ userId: id, albumId, merchId })
+            const { albumId } = req.body;
+             const { id } = req.session.userLogin;
+ 
+            await moreOrLessQuantityFromProduct({ userId, albumId})
             sendSuccessResponse(res)
         } catch (error) {
             sendErrorResponse(res, error)
@@ -45,10 +45,10 @@ module.exports = {
     },
     lessQuantity: async (req, res) => {
         try {
-            const { albumId, merchId } = req.body;
+            const { albumId } = req.body;
             const { id } = req.session.userLogin;
 
-            await moreOrLessQuantityFromProduct({ userId: id, albumId, merchId, action: "less" })
+            await moreOrLessQuantityFromProduct({ userId, albumId, action: "less" })
             sendSuccessResponse(res)
         } catch (error) {
             sendErrorResponse(res, error)
@@ -56,8 +56,8 @@ module.exports = {
     },
     clearCart: async (req, res) => {
         try {
-            const { id } = req.session.userLogin;
-            await clearAllProductFromCart({ userId: id })
+          const { id } = req.session.userLogin; 
+            await clearAllProductFromCart({ userId })
             sendSuccessResponse(res)
         } catch (error) {
             sendErrorResponse(res, error)
@@ -66,8 +66,8 @@ module.exports = {
     statusOrder: async (req, res) => {
         try {
             const { status } = req.body
-            const { id } = req.session.userLogin;
-            await modifyStatusFromOrder({ userId: id, status })
+           /*  const { id } = req.session.userLogin; */
+            await modifyStatusFromOrder({ userId: 2, status : 'pending' })
             sendSuccessResponse(res);
         } catch (error) {
             sendErrorResponse(res, error)

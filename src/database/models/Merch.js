@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 
       })
     }
+   
   }
   Merch.init({
     name: DataTypes.STRING,

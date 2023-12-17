@@ -28,8 +28,8 @@
           <label for="password" class="form-label">Contraseña</label>
           <div class="row align-items-center">
             <div class="col-8"> <input type="password" class="form-control  <%= locals.errors && (errors.password && 'is-invalid') %>" name="password" id="password1"></div>
-           <div class="col-3"> <button class="btn btn-outline-secondary btn btn-sm" type="button" id="togglePass"><i class="fa-regular fa-eye"></i></i></button></div>
-           
+<!--            <div class="col-3"> <button class="btn btn-outline-secondary btn btn-sm" type="button" id="togglePass"><i class="fa-regular fa-eye"></i></i></button></div>
+ -->           
           </div>
         
           <small id="msgError-password" style="color: red;" class="login-grupoB"><%= locals.errors && errors.password ? errors.password.msg : '' %></small>
@@ -49,6 +49,7 @@
   </div>
 
   <%- include('partials/footer') %>
+
 <script src="/javascripts/validationRegister.js"></script>
 
 <script>
@@ -57,6 +58,7 @@
     const togglePassButton = document.getElementById('togglePass');
 
     togglePassButton.addEventListener('click', () => {
+
       const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
       passwordInput.setAttribute('type', type)
 
@@ -64,8 +66,6 @@
       eyeIcon.classList.toggle('fa-eye');
       eyeIcon.classList.toggle('fa-eye-slash');
     })
-
-
   })
 </script>
   
