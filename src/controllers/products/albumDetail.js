@@ -17,7 +17,8 @@ module.exports = (req, res) => {
             return res.render('albumDetail', {
                 album,
                 genres,
-                tracks
+                tracks,
+                id
             });
         })
         .catch(error => console.log(error));

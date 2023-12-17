@@ -1,6 +1,6 @@
 const $ = id => document.getElementById(id);
 
-window.onload() = function () {
+window.addEventListener('load', function () {
 
     $('email').addEventListener('focus', function (e) {
         $('msgError-email').innerHTML = null
@@ -87,3 +87,4 @@ window.onload() = function () {
 
 
 }
+)

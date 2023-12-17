@@ -1,4 +1,4 @@
-const $ = id => document.getElementById(id);
+console.log('Holiii');
 const cartContainer = $('cartContainer');
 const clearCart = $('clear-cart');
 const btnBuy = $('btn-buy');
@@ -9,11 +9,11 @@ const cartCheck = $('cart-check');
 
 
 const getOrder = () => {
-    return fetch(`${URL_API_SERVER}/api/cart/getOrderPending`, {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then((res) => res.json)
+  return fetch('http://localhost:3000/api/cart/getOrderPending', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then((res) => res.json)
 }
 const convertFormatPeso = (n) =>
   n.toLocaleString("es-AR", {
@@ -25,58 +25,49 @@ const pintarTotal = (n) => {
   outputTotal.textContent = convertFormatPeso(n)
 }
 
-const pintarProductos = ({products}) => {
-    cartContainer.innerHTML = "";
+const pintarProducts = ({ products }) => {
+  document.getElementById('cartContainer').innerHTML = "";
 
-    if(products.length) {
-        products.forEach(({id, price, discount, name, title, image, Cart}) => {
-          const priceCalc = discount ? price - (price * discount) / 100 : price;
-          const template = `
-          <h3 class="text-start">Gestiona tu carrito</h3>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Nombre del Producto</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Descuento</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Precio final</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"><img src="/images/albums/${image}" onerror="this.onerror=null; this.scr='/images/merch/${image}';" alt="Imagen del producto"></th>
-                                <td>${title ? title : name}</td>
-                                <td>${price}</td>
-                                <td>${discount ? discount : 0}</td>
-                                <td><button onclick="lessProduct(${id},${Cart.quantity})" class="btn btn-light">-</button>
-                                    <output style="width:50px" class="form-control text-center">
-                                      ${Cart.quantity}
-                                    </output>
-                                    <button class="btn btn-light" onclick="moreProduct(${id})">+</button></td>
-                                <td>${discount ? price - (price * discount) / 100 : price}</td>
-                                <td><button onclick="removeProductFromCart(${id})"><i
-                                            class="fa-regular fa-circle-xmark"></i></button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="btn btn-success" id="btn-check">Ir a pagar</button>
-          
-          `;
-          cartContainer.innerHTML += template
-        })
-        return
+  if (products.length) {
+    products.forEach(({ id, title, price, discount, description, image, Cart }) => {
+      const priceCalc = discount ? price - (price * discount) / 100 : price;
+      const priceARG = convertFormatPeso(priceCalc)
+      const template = `
+      <div class="card-cart">
+      <div class="card-cart-body">
+      <button onclick="removeProductFromCart(${id})"
+            class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:5px;right:10px"><i
+              style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+        <img class="col-4" src="/images/productos/${image}" alt="Imagen Producto">
+        <div class="position-relative">
+          <h5 class="card-title">${title}</h5>
+          <p class="card-text col-lg-10 text-truncate">${description}</p>
+          <h5 class="card-text text-black">${priceARG} ${discount ? `<span>${discount}%OFF</span>` : ""}</h5>
+          <p class="d-flex align-items-center gap-2">
+            <button onclick="lessProduct(${id},${Cart.quantity})" class="btn btn-light">-</button>
+            <output style="width:50px" class="form-control text-center">
+              ${Cart.quantity}
+            </output>
+            <button class="btn btn-light" onclick="moreProduct(${id})">+</button>
+            <a href="/productos/productDetail/${id}" class="btn btn-primary">Ver más</a>
+          </p>
+        </div>
+      </div>
+    </div>`;
+    document.getElementById('cartContainer').innerHTML += template;
     }
-    cartContainer.innerHTML = "<h1>Tu carrito aún está vacío!</h1>";
+    )
+    return
+  }
+  document.getElementById('cartContainer').innerHTML = "<h1>Tu carrito aún está vacío!</h1>";
 }
 
 window.addEventListener('load', async () => {
   try {
-    const {ok, data} = await getOrder();
+    const { ok, data } = await getOrder();
     if (ok) {
-      pintarProductos({products : data.cart})
+      pintarProducts({ products: data.cart })
+      console.log(data);
       pintarTotal(data.total);
     }
   } catch (error) {
@@ -85,8 +76,8 @@ window.addEventListener('load', async () => {
 })
 
 const moreProduct = async (id) => {
-  const objProductId = {albumId, merchId};
-  const {ok} = await fetch(`${URL_API_SERVER}/api/cart/moreQuantity`, {
+  const objProductId = { albumId: id };
+  const { ok } = await fetch(`${URL_API_SERVER}/api/cart/moreQuantity`, {
     method: "PUT",
     body: JSON.stringify(objProductId),
     headers: {
@@ -94,13 +85,13 @@ const moreProduct = async (id) => {
     },
   }).then((res) => res.json());
 
-  if(ok) {
-    const {ok, data} = await getOrder();
-    if(ok){
-      pintarProductos({products:data.cart});
+  if (ok) {
+    const { ok, data } = await getOrder();
+    if (ok) {
+      pintarProducts({ products: data.cart });
       pintarTotal(data.total);
     }
-   }
+  }
 }
 const lessProduct = async (id, quantity) => {
   const objProductId = {
@@ -166,7 +157,7 @@ const removeProductFromCart = async (id) => {
   }
 }
 
-clearCart.addEventListener("click", async () => {
+/* clearCart.addEventListener("click", async () => {
   try {
     const result = await Swal.fire({
       title: "¿Estas seguro de vaciar tu carrito?",
@@ -255,4 +246,4 @@ btnBuy.addEventListener("click", async () => {
 
 btnCheckout.addEventListener('click', () => {
 
-})
+}) */

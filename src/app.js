@@ -21,8 +21,6 @@ const albumsApiRouter = require('./routes/api/albumsRouter');
 const bandsApiRouter = require('./routes/api/bandsRouter');
 const merchsApiRouter = require('./routes/api/merchsRouter');
 const cartApiRouter = require('./routes/api/cartRouter');
-const xcartRouter = require('./routes/api/2cartRouter');
-
 
 
 const localsCheck = require('./middlewares/localsCheck'); 
@@ -74,7 +72,6 @@ app.use('/api/albums', albumsApiRouter)
 app.use('/api/bands', bandsApiRouter)
 app.use('/api/merchs', merchsApiRouter)
 app.use('/api/cart', cartApiRouter)
-app.use('/cart', xcartRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

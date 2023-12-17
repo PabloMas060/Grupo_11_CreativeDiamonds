@@ -26,22 +26,21 @@ module.exports = mtd = {
                     },
                 }],
         }) 
-        console.log(order);
-
         return order;
     },
-    getCart: ({ orderId, albumId }) => {
+    getCart: ({ orderId }) => {
+        //console.log({orderId, albumId});
         return db.Cart.findOrCreate({
+        
             where: {
                 [Op.and]: [
-                    { orderId },
-                    { albumId }
+                    { orderId }
                 ]
             },
             defaults:
             {
-                orderId,
-                albumId
+                orderId
+    
             }
         })
     },
@@ -84,7 +83,7 @@ module.exports = mtd = {
             }
         }
         const order = await mtd.getOrder({ userId });
-        await mtd.removeCart({ orderId: order.id, albumId, merchId })
+        await mtd.removeCart({ orderId: order.id, albumId })
         const orderReload = await order.reload({ include: { all: true } })
         order.total = mtd.calcularTotal(orderReload)
         await order.save()
