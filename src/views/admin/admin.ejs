@@ -174,9 +174,9 @@
                                                                 <%= exclusive===0 ? "No" : "Sí" %>
                                                             </td>
                                                             <td>
-                                                                <div class="row gap-2">
+                                                                <div class="containerButons">
                                                                     <button type="button"
-                                                                        class="col-3 btn btn-sm  btn-primary"
+                                                                        class="butonVerProd"
                                                                         data-bs-toggle="modal"
                                                                         data-bs-target="#modalAlbumDetail<%= id %>">
                                                                         <i class="fas fa-eye"></i>
@@ -184,11 +184,11 @@
                                                                     <%- include('../partials/modalAlbumDetail',{ id,
                                                                         title, price, image })%>
                                                                         <a href="/products/edit/album/<%= id %>"
-                                                                            class="col-3 btn btn-sm btn-success">
-                                                                            <i class="fas fa-edit"></i>
+                                                                            class="butonEditarProd">
+                                                                            <i class="far fa-edit"></i>
                                                                         </a>
                                                                         <button type="button"
-                                                                            class="col-3 btn btn-sm btn-danger"
+                                                                            class="butonEliminarProd eliminar-btn"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#modalAlbumDelete<%=id%>">
                                                                             <i class="fas fa-trash"></i>
@@ -289,9 +289,9 @@
                                                                 <%= exclusive===0 ? "No" : "Sí" %>
                                                             </td>
                                                             <td>
-                                                                <div class="row gap-2">
+                                                                <div class="containerButons">
                                                                     <button type="button"
-                                                                        class="col-3 btn btn-sm  btn-primary"
+                                                                        class="butonVerProd"
                                                                         data-bs-toggle="modal"
                                                                         data-bs-target="#modalMerchDetail<%= id %>">
                                                                         <i class="fas fa-eye"></i>
@@ -299,11 +299,11 @@
                                                                     <%- include('../partials/modalMerchDetail',{ id,
                                                                         name, price, image })%>
                                                                         <a href="/products/edit/merch/<%= id %>"
-                                                                            class="col-3 btn btn-sm btn-success">
-                                                                            <i class="fas fa-edit"></i>
+                                                                            class="butonEditarProd">
+                                                                            <i class="far fa-edit"></i>
                                                                         </a>
                                                                         <button type="button"
-                                                                            class="col-3 btn btn-sm btn-danger"
+                                                                            class="butonEliminarProd eliminar-btn"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#modalMerchDelete<%=id%>">
                                                                             <i class="fas fa-trash"></i>
