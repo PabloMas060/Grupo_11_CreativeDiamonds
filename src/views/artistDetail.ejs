@@ -17,24 +17,24 @@
                 <div class="col-10 col-md-8 mt-5">
                     <div class="row align-items-center g-5">
                         <div class="col-12 col-md-6">
-                            <h6>
+                            <h6 style="text-shadow: 2px 2px 2px black;">
                                 <%= band.dateFounded %> - <%= band.dateEnded ? band.dateEnded : 'Banda Vigente'%>
                             </h6>
                         </div>
                         <div class="col-12 col-md-6">
-                            <h6>Conciertos realizados: <%= band.totalShows %>
+                            <h6 style="text-shadow: 2px 2px 2px black;">Conciertos realizados: <%= band.totalShows %>
                             </h6>
                         </div>
                         <!-- <div class="col-12 col-md-6">
                             <h6>Integrantes actuales</h6>
                         </div> -->
                         <div class="col-12 col-md-6">
-                            <h6>Próximo concierto: <%= band.nextShows %>
+                            <h6 style="text-shadow: 2px 2px 2px black;">Próximo concierto: <%= band.nextShows %>
                             </h6>
                         </div>
                     </div>
                     <div class="col-12 mt-5 p-5">
-                        <h5>Historia de la banda:</h5>
+                        <h5 style="text-shadow: 2px 2px 2px black;">Historia de la banda:</h5>
                         <p>
                             <%= band.history %>
                         </p>

@@ -66,9 +66,9 @@
 }
 .section__black-artistDetail {
     background-image: url('/images/YWaaUWl.jpg');
-    background-repeat: no-repeat;
-    background-position: start;
-    background-size: contain;
+    background-repeat: repeat;
+    background-position: end;
+    background-size: cover;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
