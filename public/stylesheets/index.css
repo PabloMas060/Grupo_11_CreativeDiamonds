@@ -142,6 +142,7 @@
 }
 .card-bands{
     box-shadow: 1px 1px 15px 1px #729486;
+    transition: all 0.3s ease; 
 
 }
 .card-bands:hover{
@@ -218,8 +219,20 @@
         height: 200px;
     }
 
-
-
+    .card-bands{
+        width: 100%;
+        box-shadow: 1px 1px 15px 1px #729486;
+        transition: all 0.3s ease; 
+    }
+    .card-bands:hover{
+        width: 105%;
+        box-shadow: 1px 5px 25px 2px blanchedalmond ;
+        
+    }
+    .card-bands img{
+        height: 200px;
+        object-fit: cover;
+    }
 
 
 }

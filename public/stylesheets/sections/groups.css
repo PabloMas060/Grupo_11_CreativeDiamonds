@@ -38,11 +38,22 @@
     flex: 0 0 calc(33.333% - 20px); /* Esto asegura que haya un margen fijo entre los elementos */
 }
 
-/* Imagen de cada grupo, la miniatura*/
+
 .group-item img {
-    width: 190px;  /* El ancho mas largo que el alto para rectangulo */
+    width: 190px;
     height: 130px;
-    object-fit: cover; /* Rellena el espacio sin distorsionar */
+    object-fit: cover;
+    border-radius: 5%;
+    box-shadow: 1px 2px 25px 2px whitesmoke;
+    transition: all 0.3s ease; 
+}
+
+.group-item img:hover {
+    width: 220px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5%;
+    box-shadow: -1px -1px 15px 8px white;
 }
 
 .group-item h2 {
