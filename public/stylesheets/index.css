@@ -64,6 +64,32 @@
     align-items: center;
     color: #fff;
 }
+.section__black-artistDetail {
+    background-image: url('/images/YWaaUWl.jpg');
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: contain;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+}
+.section__black-bg {
+    background-image: url('/images/deskto.jpg');
+    background-repeat: repeat;
+    background-position: end;
+    background-size: contain;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+}
 
 .section__black-index {
     background-color: var(--varColor1);
@@ -114,7 +140,14 @@
     text-align: center;
     align-items: center;
 }
+.card-bands{
+    box-shadow: 1px 1px 15px 1px #729486;
 
+}
+.card-bands:hover{
+    box-shadow: 1px 5px 25px 2px blanchedalmond ;
+    
+}
 
 
 

@@ -10,15 +10,15 @@
                 <img class="img-fluid" src="/artistas.png" alt="">
             </div>
 
-            <section class="section__black">
+            <section class="section__black-bg">
                 <div class="container">
                     <div class="row justify-content-evenly align-items-center">
 
                         <% bands.forEach(band=> { %>
-                            <div class="col-10 col-md-4 w-25 m-3">
-                                <div class="card" style="box-shadow: 1px 5px 25px 2px white">
+                            <div class="col-10 col-md-4 w-25 m-3" data-aos="zoom-in-down">
+                                <div class="card card-bands">
                                     <div class="card-header">
-                                        <a href="/products/artists/detail/<%= band.id %>"> <img class="img-fluid" src="/images/bands/<%= band.image %>" alt="" style="box-shadow: -5px -1px 12px 2px black"></a>
+                                        <a href="/products/artists/detail/<%= band.id %>"> <img class="img-fluid" src="/images/bands/<%= band.image %>" alt="" style="box-shadow: -5px -1px 12px 2px black; border-radius: 3px;"></a>
                                     </div>
                                     <div class="card-body">
                                         <h3>
@@ -26,7 +26,7 @@
                                         </h3>
                                     </div>
                                     <div class="card-footer">
-                                        <a class="btn btn-dark" href="/products/artists/detail/<%= band.id %>">VER
+                                        <a class="btn btn-secondary" style="box-shadow: 1px 1px 15px 5px black;" href="/products/artists/detail/<%= band.id %>">VER
                                             DETALLES</a>
                                     </div>
                                 </div>
@@ -38,7 +38,10 @@
                 </div>
             </section>
 
-
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+              </script>
 </body>
 <!-- Pie de página -->
 <%- include('partials/footer') %>

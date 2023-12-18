@@ -6,11 +6,11 @@
     <%- include('partials/head',{ title : 'Detalle de Artista' }) %>
         <%- include('partials/header') %>
 
-            <section class="section__black">
+            <section class="section__black-artistDetail">
                 <h2>Esto es... <%= band.name %>
                 </h2>
                 <div class="col-10 p-3 text-center align-items-center">
-                    <img src="/images/bands/<%= band.image %>" alt="" class="img-fluid mb-3">
+                    <img src="/images/bands/<%= band.image %>" alt="" class="img-fluid mb-3" style="border-radius: 18px; box-shadow: 1px 5px 25px 1px whitesmoke;">
                     <h5>"<%= band.phrase %>"</h5>
 
                 </div>
