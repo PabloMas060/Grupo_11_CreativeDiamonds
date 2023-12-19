@@ -7,13 +7,13 @@ module.exports = (req, res) => {
     const errors = validationResult(req);
 
     if (errors.isEmpty()) {
-        const { first_name, last_name, email, password } = req.body;
+        const { first_name, last_name, email, password1 } = req.body;
 
         db.User.create({
             first_name: first_name.trim(),
             last_name: last_name.trim(),
             email: email.trim(),
-            password: hashSync(password, 10),
+            password: hashSync(password1, 10),
             rolId: 2,
             addressId: null,
             identificatorId: null,
@@ -27,7 +27,7 @@ module.exports = (req, res) => {
             })
             .catch(error => console.log(error))
     } else {
-        return res.redirect('/users/register', {
+        return res.render('register', {
             old: req.body,
             errors: errors.mapped()
         })
