@@ -1,74 +1,94 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <%- include('partials/header') %>
+<%- include('partials/head', { title: 'Perfil de Usuario' }) %>
 
-  <%- include('partials/head', { title: 'Perfil de Usuario' }) %>
+  <body>
 
-  <div class="container">
-    <div class="row">
-      <form action="/users/register" method="POST" id="register-form1">
-        <div class="col-10 col-md-6 A">
-          <label for="first_name" class="form-label">Nombres</label>
-          <input type="text" class="form-control  <%= locals.errors && (errors.first_name && 'is-invalid') %>" name="first_name" id="first_name" value="<%= locals.old && (old.first_name && old.first_name) %>">
-          <small id="msgError-first_name" style="color: red;" class="login-grupoA"><%= locals.errors && errors.first_name ? errors.first_name.msg : '' %></small>
+    <%- include('partials/header') %>
+
+      <div class="container">
+        <div class="row">
+          <form action="/users/register" method="POST" id="register-form1">
+            <div class="col-10 col-md-6 A">
+              <label for="first_name" class="form-label">Nombres</label>
+              <input type="text" class="form-control  <%= locals.errors && (errors.first_name && 'is-invalid') %>"
+                name="first_name" id="first_name" value="<%= locals.old && (old.first_name && old.first_name) %>">
+              <small id="msgError-first_name" style="color: red;" class="login-grupoA">
+                <%= locals.errors && errors.first_name ? errors.first_name.msg : '' %>
+              </small>
+            </div>
+            <div class="col-10 col-md-6 B">
+              <label for="last_name" class="form-label">Apellido</label>
+              <input type="text" class="form-control  <%= locals.errors && (errors.last_name && 'is-invalid') %>"
+                name="last_name" id="last_name" value="<%= locals.old && (old.last_name && old.last_name) %>">
+              <small id="msgError-last_name" style="color: red;" class="login-grupoA">
+                <%= locals.errors && errors.last_name ? errors.last_name.msg : '' %>
+              </small>
+            </div>
+            <div class="col-10 col-md-8 C">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control  <%= locals.errors && (errors.email && 'is-invalid') %>"
+                name="email" id="email1" value="<%= locals.old && (old.email && old.email) %>">
+              <small id="msgError-email" style="color: red;" class="login-grupoA">
+                <%= locals.errors && errors.email ? errors.email.msg : '' %>
+              </small>
+            </div>
+
+            <div class="col-10 col-md-6 D">
+              <label for="password1" class="form-label">Contraseña</label>
+              <div class="row align-items-center">
+                <div class="col-8"> 
+                  <input type="password"
+                    class="form-control  <%= locals.errors && (errors.password1 && 'is-invalid') %>" name="password1"
+                    id="password1">
+                  </div>
+                <!--            <div class="col-3"> <button class="btn btn-outline-secondary btn btn-sm" type="button" id="togglePass"><i class="fa-regular fa-eye"></i></i></button></div>
+ -->
+              </div>
+
+              <small id="msgError-password1" style="color: red;" class="login-grupoB">
+                <%= locals.errors && errors.password1 ? errors.password1.msg : '' %>
+              </small>
+            </div>
+            <div class="col-10 col-md-6 E">
+              <label for="password2" class="form-label"> Repita Contraseña</label>
+              <input type="password" class="form-control  <%= locals.errors && (errors.password2 && 'is-invalid') %>"
+                name="password2" id="password2">
+              <small id="msgError-password2" style="color: red;" class="login-grupoB">
+                <%= locals.errors && errors.password2 ? errors.password2.msg : '' %>
+              </small>
+            </div>
+
+            <div class="col-10 align-items-start">
+              <small id="msgError-empty" class="ms-2 text-danger"></small>
+              <button class="btn btn-dark" type="submit">Registrate</button>
+            </div>
+          </form>
         </div>
-        <div class="col-10 col-md-6 B">
-          <label for="last_name" class="form-label">Apellido</label>
-          <input type="text" class="form-control  <%= locals.errors && (errors.last_name && 'is-invalid') %>" name="last_name" id="last_name" value="<%= locals.old && (old.last_name && old.last_name) %>">
-          <small id="msgError-last_name" style="color: red;" class="login-grupoA"><%= locals.errors && errors.last_name ? errors.last_name.msg : '' %></small>
-        </div>
-        <div class="col-10 col-md-8 C">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control  <%= locals.errors && (errors.email && 'is-invalid') %>" name="email" id="email1" value="<%= locals.old && (old.email && old.email) %>">
-          <small id="msgError-email" style="color: red;" class="login-grupoA"><%= locals.errors && errors.email ? errors.email.msg : '' %></small>
-        </div>
+      </div>
 
-        <div class="col-10 col-md-6 D">
-          <label for="password" class="form-label">Contraseña</label>
-          <div class="row align-items-center">
-            <div class="col-8"> <input type="password" class="form-control  <%= locals.errors && (errors.password && 'is-invalid') %>" name="password" id="password1"></div>
-<!--            <div class="col-3"> <button class="btn btn-outline-secondary btn btn-sm" type="button" id="togglePass"><i class="fa-regular fa-eye"></i></i></button></div>
- -->           
-          </div>
-        
-          <small id="msgError-password" style="color: red;" class="login-grupoB"><%= locals.errors && errors.password ? errors.password.msg : '' %></small>
-        </div>
-        <div class="col-10 col-md-6 E">
-          <label for="password2" class="form-label"> Repita Contraseña</label>
-          <input type="password" class="form-control  <%= locals.errors && (errors.password2 && 'is-invalid') %>" name="password2" id="password2">
-          <small id="msgError-password2" style="color: red;" class="login-grupoB"><%= locals.errors && errors.password2 ? errors.password2.msg : '' %></small>
-        </div>
+      <%- include('partials/footer') %>
 
-        <div class="col-10 align-items-start">
-            <small  id="msgError-empty"  class="ms-2 text-danger"></small>
-          <button class="btn btn-dark" type="submit" >Registrate</button>
-        </div>
-      </form>
-    </div>
-  </div>
+        <script src="/javascripts/validationRegister.js"></script>
 
-  <%- include('partials/footer') %>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.getElementById('password1');
+            const togglePassButton = document.getElementById('togglePass');
 
-<script src="/javascripts/validationRegister.js"></script>
+            togglePassButton.addEventListener('click', () => {
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const passwordInput = document.getElementById('password1');
-    const togglePassButton = document.getElementById('togglePass');
+              const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+              passwordInput.setAttribute('type', type)
 
-    togglePassButton.addEventListener('click', () => {
+              const eyeIcon = togglePassButton.querySelector('i');
+              eyeIcon.classList.toggle('fa-eye');
+              eyeIcon.classList.toggle('fa-eye-slash');
+            })
+          })
+        </script>
 
-      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', type)
 
-      const eyeIcon = togglePassButton.querySelector('i');
-      eyeIcon.classList.toggle('fa-eye');
-      eyeIcon.classList.toggle('fa-eye-slash');
-    })
-  })
-</script>
-  
+  </body>
 
-</body>
 </html>

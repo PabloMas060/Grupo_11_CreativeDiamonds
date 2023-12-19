@@ -20,9 +20,7 @@
                 <p>Foro</p></li>
                 <li><a href=""><img width="30" src="/iconos/icono-notaMusical.svg" alt=""></a>
                 <p>Algun lado</p></li> -->
-                <li><a href="/groups"><img width="30" src="/iconos/icono-radio.svg" alt=""></a>
-                    <p class="header-p">Grupos</p>
-                </li>
+
 
                 <% if (locals.userLogin.rolId===1) { %>
                     <li><a href="/users/admin"><img width="30" src="/iconos/icono-diamante.svg" alt=""></a>
@@ -30,38 +28,44 @@
                     </li>
 
                     <% } %>
+
+                        <li><a href="/groups"><img width="30" src="/iconos/icono-radio.svg" alt=""></a>
+                            <p class="header-p">Grupos</p>
+                        </li>
+                        <li>
+                            <a href="/api/cart"><img width="30" src="/iconos/icono-carrito.svg" alt=""></a>
+                            <p class="header-p">Carrito</p>
+                        </li>
                         <li><a href="/users/logout"><img width="30" src="/iconos/icono-cerrar.svg" alt=""></a>
                             <p class="header-p">Salir</p>
                         </li>
+
+                        <div class="Headeravatar-image">
+                            <img src="/avatar/cabeza/<%= user.head ? user.head : 'defaultCabeza.png' %>" alt="Head">
+                        </div>
+                        <div class="Headeravatar-image">
+                            <img src="/avatar/cara/<%= user.face ? user.face : 'defaultCara.png' %>" alt="Face">
+                        </div>
+                        <div class="Headeravatar-image">
+                            <img src="/avatar/sombrero/<%= user.hat ? user.hat : 'defaultGorro.png' %>" alt="Hat">
+                        </div>
+                        <div class="Headeravatar-image">
+                            <a href="#" id="toggle-button"> <img
+                                    src="/avatar/torso/<%= user.bust ? user.bust : 'defaultTorso.png' %>" alt="Bust">
+                            </a>
+                        </div>
                         <% } %>
                             <li><a href="/products/artists"><img width="30" src="/iconos/icono-guitarraElectrica.svg"
                                         alt=""></a>
                                 <p class="header-p">Bandas</p>
                             </li>
-                            <% if (locals.userLogin) { %>
-                                <div class="Headeravatar-image">
-                                    <img src="/avatar/cabeza/<%= user.head ? user.head : 'defaultCabeza.png' %>" alt="Head">
-                                </div>
-                                <div class="Headeravatar-image">
-                                    <img src="/avatar/cara/<%= user.face ? user.face : 'defaultCara.png' %>" alt="Face">
-                                </div>
-                                <div class="Headeravatar-image">
-                                    <img src="/avatar/sombrero/<%= user.hat ? user.hat : 'defaultGorro.png' %>" alt="Hat">
-                                </div>
-                                <div class="Headeravatar-image">
-                                    <a href="#" id="toggle-button"> <img src="/avatar/torso/<%= user.bust ? user.bust : 'defaultTorso.png' %>"
-                                            alt="Bust"> </a>
-                                </div>
 
-                                <% } else { %>
-                                    <li>
-                                        <a href="#" id="toggle-button"><img width="30"
-                                                src="/iconos/icono-avatarTemporal.svg" alt=""></a>
-                                        <p class="header-p">Usuario</p>
-                                    </li>
-                                    </li>
+                            <li>
+                                <a href="#" id="open-login-modal-link"><img width="30" src="/iconos/icono-avatarTemporal.svg"
+                                        alt=""></a>
+                                <p class="header-p">Ingresar</p>
+                            </li>
 
-                                    <% } %>
 
 
         </ul>
@@ -148,7 +152,7 @@
         });
     </script>
     <script>
-          document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             const toggleButtonClose = document.getElementById("toggle-button-close");
             const menuright = document.querySelector(".menu-right");
 
@@ -169,17 +173,17 @@
             });
         });
     </script>
-     <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const toggleButtonClose2 = document.getElementById("toggle-button-close2");
-          const menuleft = document.querySelector(".menu-left");
+            const toggleButtonClose2 = document.getElementById("toggle-button-close2");
+            const menuleft = document.querySelector(".menu-left");
 
-          toggleButtonClose2.addEventListener("click", function (event) {
-              event.preventDefault();
-              menuleft.classList.toggle("menu-left-visible");
-          });
-      });
-  </script>
+            toggleButtonClose2.addEventListener("click", function (event) {
+                event.preventDefault();
+                menuleft.classList.toggle("menu-left-visible");
+            });
+        });
+    </script>
     <script>
         const openLoginModalLink = document.getElementById('open-login-modal-link');
         const loginModal = document.getElementById('login-modal');
@@ -187,12 +191,12 @@
         loginModal.style.display = 'none';
 
         openLoginModalLink.addEventListener('click', (event) => {
-            event.preventDefault(); 
-            loginModal.style.display = 'flex'; 
+            event.preventDefault();
+            loginModal.style.display = 'flex';
         });
 
         const closeLoginModal = () => {
-            loginModal.style.display = 'none'; 
+            loginModal.style.display = 'none';
         };
 
         window.addEventListener('click', (event) => {

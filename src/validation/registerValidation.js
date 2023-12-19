@@ -31,7 +31,7 @@ module.exports = [
                 .catch(() => Promise.reject('El email ya se encuentra registrado'))
             
         }),
-    check("password")
+    check("password1")
         .isLength({
             min: 6,
             max: 12,
@@ -39,7 +39,7 @@ module.exports = [
         .withMessage("Debe tener entre 6 y 12 caracteres"),
     body("password2")
         .custom((value, { req }) => {
-            if (value !== req.body.password) {
+            if (value !== req.body.password1) {
                 return false;
             }
             return true;
