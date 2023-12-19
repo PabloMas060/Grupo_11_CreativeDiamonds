@@ -12,7 +12,7 @@ module.exports = (req, res) => {
             country: country.trim(),
             city: city.trim(),
             province: province.trim(),
-            zipcode: zipcode.trim(),
+            zipcode: zipcode,
         };
 
         db.User.findByPk(req.session.userLogin.id, {

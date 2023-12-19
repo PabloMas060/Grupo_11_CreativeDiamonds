@@ -18,7 +18,7 @@ router
 .post("/login",loginValidation, processLogin)
 .get('/profile', checkUserLogin, profile)
 .get('/edit-profile/:id', checkUserLogin, profileEdit)
-.put('/edit-profile/:id', /*profileValidation,*/ profileUpdate)
+.put('/edit-profile/:id', profileValidation, profileUpdate)
 .get('/admin',checkAdmin, admin)
 .get("/logout", logout)
 

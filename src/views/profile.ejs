@@ -1,110 +1,178 @@
 <!DOCTYPE html>
 <html>
-  <%- include('partials/header') %>
+<%- include('partials/head', { title: 'Perfil de Usuario' }) %>
 
-  <%- include('partials/head', { title: 'Perfil de Usuario' }) %>
-<body>
-  <header>
-    <h1>Perfil de Usuario</h1>
-  </header>
-  <div class="profile-AvatarStats">
-  <!-- Contenedor de perfil -->
-  <div class="profile-container">
-    <!-- Primer cuadrado -->
-    <div class="profile-box">
-      <div class="profile-info">
-        <h2><%= user.last_name %></h2>
-        <div class="profile-especificaciones">
-          <img src="/iconos/icono-favorito.svg" alt="Favorito">
-          <span><%= user.nickname %></span> 
-        </div>
-      </div>
-    </div>
+  <body class="home__body">
+    <%- include('partials/header') %>
+      <h3 class="text-center m-5">Perfil de Usuario</h3>
 
-    <!-- Segundo cuadrado -->
-    <div class="profile-cajasCentro">
-        <div class="profile-box">
-          <div class="profile-avatar">
-            <div class="avatar-container">
-                <div class="avatar-image">
-                  <div class="avatar-image">
-                    <img src="/avatar/cabeza/<%= user.head.image %>" alt="Head">
+
+      <div class="container">
+
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tus datos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="">Dirección</button>
+            </li>
+          </ul>
+          <form action="/edit-profile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="tab-content"
+            id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+              tabindex="0">
+              <div class="row">
+                <div class="col-8">
+                  <div class="mt-3 text-center">
+                    <div class="col-6">
+                      <div class="col-12 text-center">
+                        <h6>
+                          <%= user.first_name %>
+                            <%= user.last_name %>
+                        </h6>
+
+                        <img
+                          src="<%= /http/.test(user.avatar) ? user.avatar?.toString().trim() : `/avatar/${user.avatar || 'default-avatar.jpg'}` %>"
+                          style="border-radius: 50%; width: 50%;" alt="">
+                      </div>
+                    </div>
+                    <label for="formFile" class="buttons buttons__primary">Cambiar imagen</label>
+                    <input class="form-control" name="image" type="file" id="formFile" hidden>
+                  </div>
                 </div>
-                <div class="avatar-image">
-                  <img src="/avatar/cara/<%= user.face.image %>" alt="Face">
+                <div class="col-4">
+                  <div>
+                    <label for="fist_name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control <%= (locals.errors && errors.fist_name) && 'is-invalid'%>"
+                      id="fist_name" name="fist_name" value="<%= user.fist_name %>">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.first_name ? errors.first_name.msg : null %>
+                    </small>
+                  </div>
+                  <div>
+                    <label for="last_name" class="form-label">Apellido</label>
+                    <input type="text" class="form-control  <%= (locals.errors && errors.last_name) && 'is-invalid'%>"
+                      id="last_name" name="last_name" value="<%= user.last_name %>">
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.last_name ? errors.last_name.msg : null %>
+                    </small>
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>"
+                      id="email" name="email" value="<%= user.email %>" disabled>
+                    <small class="text-danger ms-2">
+                      <%= locals.errors && errors.email ? errors.email.msg : null %>
+                    </small>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="buttons buttons__primary">Guardar cambios</button>
+                </div>
               </div>
-                    <img src="/avatar/sombrero/<%= user.hat.image %>" alt="Hat">
-                </div>
-                <div class="avatar-image">
-                    <img src="/avatar/torso/<%= user.bust.image %>" alt="Bust">
-                </div>
-
             </div>
-        </div>
-          <div class="profile-status">
-            <div class="status-text">
-              <p><%= user.state || 'Aun no has definido tu estado. Modificar' %></p>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+              tabindex="0">
+              <div class="row col-8">
+                <div class="col-12 col-md-6">
+                  <label for="address" class="form-label">Domicilio</label>
+                  <input type="text" class="form-control <%= (locals.errors && errors.address) && 'is-invalid'%>"
+                    id="address" name="address" value="<%= user.address?.address %>">
+                  <small class="text-danger ms-2">
+                    <%= locals.errors && errors.address ? errors.address.msg : null %>
+                  </small>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="address" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control <%= (locals.errors && errors.city) && 'is-invalid'%>" id="city"
+                    name="city" value="<%= user.address?.city%>">
+                  <small class="text-danger ms-2">
+                    <%= locals.errors && errors.city ? errors.city.msg : null %>
+                  </small>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="address" class="form-label">Provincia</label>
+                  <input type="text" class="form-control <%= (locals.errors && errors.province) && 'is-invalid'%>"
+                    id="province" name="province" value="<%= user.address?.province %>">
+                  <small class="text-danger ms-2">
+                    <%= locals.errors && errors.province ? errors.province.msg : null %>
+                  </small>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="address" class="form-label">Código Postal</label>
+                  <input type="number" class="form-control <%= (locals.errors && errors.zipcode) && 'is-invalid'%>"
+                    id="zipcode" name="zipcode" value="<%= user.address?.zipcode %>">
+                  <small class="text-danger ms-2">
+                    <%= locals.errors && errors.zipcode ? errors.zipcode.msg : null %>
+                  </small>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="buttons buttons__primary d-flex justify-content-end">Editar
+                    dirección</button>
+                </div>
+              </div>
             </div>
+            <div class="tab-pane fade" id="pills-shop" role="tabpanel" aria-labelledby="pills-shop-tab" tabindex="0">
+              <div id="card-compra"></div>
+            </div>
+          </form>
+      
+
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="profile-stats-title">
+        <h2>Estadísticas</h2>
+        <div class="profile-stats">
+
+          <!-- Primera estadística -->
+          <div class="stat-box">
+            <div class="stat-icon">
+              <img src="/iconos/icono-disco.svg" alt="Icono de disco">
+            </div>
+            <h3>Horas escuchadas</h3>
+            <p>
+              <%= user.hours_listened || '0' %>h
+            </p>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-icon">
+              <img src="/iconos/icono-favorito.svg" alt="Icono de favorito">
+            </div>
+            <h3>Canciones guardadas</h3>
+            <p>
+              <%= user.saved_songs || '0' %>
+            </p>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-icon">
+              <img src="/iconos/icono-microfono.svg" alt="Icono de micrófono">
+            </div>
+            <h3>Comentarios hechos</h3>
+            <p>
+              <%= user.comments_made || '0' %>
+            </p>
           </div>
         </div>
-    
-        <!-- Tercer cuadrado -->
-        <div class="profile-box">
-          <div class="profile-music">
-            <img src="/iconos/<%= user.identificator ? user.identificator.imagen : '/iconos/icono-desconocido.svg' %>" alt="Identificator">
-          </div>
-          <div class="profile-location">
-            <span>||</span>
-            <span><%= user.address ? (user.address.country ? user.address.country : 'Pais') : 'Pais' %></span>
-            <span>||</span>
-            <span><%= user.address ? (user.address.city || 'Ciudad') : 'Ciudad' %></span>
-          </div>
-        </div>
-    </div>
-
-    <!-- Cuarto cuadrado -->
-    <div class="profile-box">
-      <div class="profile-description">
-        <p><%= user.about || 'Aun no has escrito una descripcion personal.' %></p>
       </div>
-    </div>
-  </div>
-
-  <div class="profile-stats-title"><h2>Estadísticas</h2>
-  <div class="profile-stats">
-
-    <!-- Primera estadística -->
-    <div class="stat-box">
-      <div class="stat-icon">
-        <img src="/iconos/icono-disco.svg" alt="Icono de disco">
       </div>
-      <h3>Horas escuchadas</h3>
-      <p><%= user.hours_listened || '0' %>h</p>
-    </div>
-  
-    <div class="stat-box">
-      <div class="stat-icon">
-        <img src="/iconos/icono-favorito.svg" alt="Icono de favorito">
-      </div>
-      <h3>Canciones guardadas</h3>
-      <p><%= user.saved_songs || '0' %></p>
-    </div>
-  
-    <div class="stat-box">
-      <div class="stat-icon">
-        <img src="/iconos/icono-microfono.svg" alt="Icono de micrófono">
-      </div>
-      <h3>Comentarios hechos</h3>
-      <p><%= user.comments_made || '0' %></p>
-    </div>
-  </div>
-</div>
-</div>
-
-<a href="/users/edit-profile/<%= user.id %>" class="btn btn-primary">Modificar Perfil</a>
 
 
-  <!-- Pie de página -->
-  <%- include('partials/footer') %>
-</body>
+
+
+      <!-- Pie de página -->
+      <%- include('partials/footer') %>
+  </body>
+
 </html>

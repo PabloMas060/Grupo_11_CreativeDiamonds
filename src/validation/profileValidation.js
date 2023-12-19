@@ -18,19 +18,6 @@ const profileValidation = [
             max: 8
         }).withMessage('La cantidad de caracteres admitidos es entre 2 y 8'),
 
-    /*check('email').isEmail().withMessage('Email no es válido')*/
-    /*.custom((value) => {
-        const users = readJSON('users.json');
-        const user = users.find(user => user.email === value);
-        if(user){
-            return false
-        }
-        return true
-    }).withMessage('El email ya se encuentra registrado')
-    */,
-    /*check('shipping').notEmpty().withMessage('Direccion es obligatorio'),
-    check('phone').notEmpty().withMessage('Telefono es obligatorio'),
-    check('mainImage').notEmpty().withMessage('Imagen es obligatorio'),*/
 ];
 
 module.exports = profileValidation
