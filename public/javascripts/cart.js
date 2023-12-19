@@ -13,7 +13,7 @@ const getOrder = () => {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then((res) => res.json)
+  }).then((res) => res.json())
 }
 const convertFormatPeso = (n) =>
   n.toLocaleString("es-AR", {
@@ -26,40 +26,61 @@ const pintarTotal = (n) => {
 }
 
 const pintarProducts = ({ products }) => {
-  document.getElementById('cartContainer').innerHTML = "";
+  cartContainer.innerHTML = "";
 
   if (products.length) {
-    products.forEach(({ id, title, price, discount, description, image, Cart }) => {
+    products.forEach(({ id, title, price, discount, description, image, Cart,bandId }) => {
       const priceCalc = discount ? price - (price * discount) / 100 : price;
       const priceARG = convertFormatPeso(priceCalc)
       const template = `
-      <div class="card-cart">
-      <div class="card-cart-body">
-      <button onclick="removeProductFromCart(${id})"
-            class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:5px;right:10px"><i
-              style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
-        <img class="col-4" src="/images/productos/${image}" alt="Imagen Producto">
-        <div class="position-relative">
-          <h5 class="card-title">${title}</h5>
-          <p class="card-text col-lg-10 text-truncate">${description}</p>
-          <h5 class="card-text text-black">${priceARG} ${discount ? `<span>${discount}%OFF</span>` : ""}</h5>
-          <p class="d-flex align-items-center gap-2">
+      <div class="col-6">
+      <div class="row align-items-center">
+
+        <div class="col-4" style="padding: 5px;">
+        <img class="col-12" src="/images/albums/${image}" alt="Imagen Producto">
+        </div>
+
+        <div class="col-8 align-items-center justify-content-between">
+
+        <div class="card align-items-center justify-content-between">
+        <div class="card-header">
+        <h5 class="card-title">${title}</h5>
+        </div>
+        <div class="card-body">
+        <p class="card-text col-lg-10">${description}</p>
+          <h5 class="card-text">${priceARG} ${discount ? `<small>${discount}%OFF</small>` : ""}</h5>
+        </div>
+        <div class="card-footer">
+        <p class="d-flex align-items-center gap-2">
             <button onclick="lessProduct(${id},${Cart.quantity})" class="btn btn-light">-</button>
             <output style="width:50px" class="form-control text-center">
               ${Cart.quantity}
             </output>
             <button class="btn btn-light" onclick="moreProduct(${id})">+</button>
-            <a href="/productos/productDetail/${id}" class="btn btn-primary">Ver más</a>
+            <a href="/products/artists/detail/${bandId}" class="btn btn-dark">Ver más</a>
           </p>
         </div>
-      </div>
-    </div>`;
-    document.getElementById('cartContainer').innerHTML += template;
+        </div>
+         
+        </div>
+
+     </div>
+     </div>
+     
+     
+     
+     <button onclick="removeProductFromCart(${id})"
+            class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:133px;right:344px"><i
+              style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+              
+              
+              `;
+      cartContainer.innerHTML += template;
     }
     )
     return
   }
-  document.getElementById('cartContainer').innerHTML = "<h1>Tu carrito aún está vacío!</h1>";
+  cartContainer.innerHTML = "<h1>Tu carrito aún está vacío!</h1>";
 }
 
 window.addEventListener('load', async () => {
@@ -67,7 +88,6 @@ window.addEventListener('load', async () => {
     const { ok, data } = await getOrder();
     if (ok) {
       pintarProducts({ products: data.cart })
-      console.log(data);
       pintarTotal(data.total);
     }
   } catch (error) {
@@ -95,7 +115,7 @@ const moreProduct = async (id) => {
 }
 const lessProduct = async (id, quantity) => {
   const objProductId = {
-    idProduct: id
+    albumId: id
   };
 
   if (quantity > 1) {
@@ -127,7 +147,7 @@ const removeProductFromCart = async (id) => {
     })
     if (result.isConfirmed) {
       const objProductId = {
-        idProduct: id
+        albumId: id
       }
       const { ok } = await fetch(`${URL_API_SERVER}/api/cart/removeProduct`, {
         method: "DELETE",
@@ -156,8 +176,7 @@ const removeProductFromCart = async (id) => {
     console.log(error);
   }
 }
-
-/* clearCart.addEventListener("click", async () => {
+clearCart.addEventListener("click", async () => {
   try {
     const result = await Swal.fire({
       title: "¿Estas seguro de vaciar tu carrito?",
@@ -192,7 +211,6 @@ const removeProductFromCart = async (id) => {
     console.log(error);
   }
 })
-
 btnBuy.addEventListener("click", async () => {
   const result = await Swal.fire({
     title: "¿Quieres confirmar la compra?",
@@ -243,7 +261,3 @@ btnBuy.addEventListener("click", async () => {
     }
   }
 })
-
-btnCheckout.addEventListener('click', () => {
-
-}) */

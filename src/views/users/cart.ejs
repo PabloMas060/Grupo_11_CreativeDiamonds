@@ -2,29 +2,49 @@
 <html>
 <%- include('../partials/head',{ title : 'CARRITO' }) %>
 
-    <body>
-        <%- include('../partials/header') %>
+  <body>
+    <%- include('../partials/header') %>
 
 
 
-            <main class="col-12">
-                <div class="col-10">
-                    <h2> Música en tu carrito </h2>
-                </div>
+      <main class="col-12">
+        <div class="col-10">
+          <h2> Música en tu carrito </h2>
+        </div>
 
-                <div class="container-cart-box">
-                    <div id="cartContainer" class="col-8 bg-dark"></div>
+        <div class="container-cart-box">
+          <div id="cartContainer" class="container" style="border: solid 1px black;border-radius: 8px;">
+            <!-- templete -->
+            
+            <!-- templete -->
+          </div>
 
-                </div>
+          <div class="card col-4 my-5 position-sticky" id="card-comprar-cart">
+            <div class="card-body my-2 d-flex flex-column gap-2">
+              <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
+              <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
+              <a href="/products/artists" class="btn w-100 btn-dark">Seguir mirando</a>
+              <div class="text-end fs-3">
+                <span>
+                  Total:
+                </span>
+                <output id="output-total">
+                  0
+                </output>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
 
-            </main>
+      </main>
 
-            <%- include('../partials/footer') %>
-                <script src="/javascripts/cart.js"></script>
+      <%- include('../partials/footer') %>
+        <script src="/javascripts/cart.js"></script>
 
-             
 
-    </body>
+
+  </body>
 
 </html>

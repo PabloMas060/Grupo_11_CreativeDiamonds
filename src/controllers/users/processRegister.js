@@ -20,9 +20,16 @@ module.exports = (req, res) => {
             faceId: 1,
             headId: 1,
             bustId: 1,
-            hatId: 1
+            hatId: 1,
+            avatar: null
         })
             .then(user => {
+                db.Order.create({
+                    date: new Date(),
+                    total: 0,
+                    userId : user.id,
+                    status: "pending"
+                })
                 return res.redirect('/')
             })
             .catch(error => console.log(error))

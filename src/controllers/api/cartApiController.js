@@ -6,8 +6,8 @@ module.exports = {
  
     getOrderPending: async (req,res) => {
         try {
-/*            const {id} = req.session.userLogin;
- */           const order = await getOrder({userId : 3})
+       const {id} = req.session.userLogin; 
+        const order = await getOrder({userId: id})
             sendSuccessResponse(res, {data:order})
         } catch (error) {
             sendErrorResponse(res, error)
@@ -16,7 +16,8 @@ module.exports = {
     addProduct: async (req,res) => {
         try {
             const {albumId} = req.body;
-              const {id} = req.session.userLogin  
+          /*   console.log(req.body); */
+                const {id} = req.session.userLogin    
             await createProductInCart({userId: id, albumId})
             sendSuccessResponse(res)
         } catch (error) {
@@ -26,7 +27,7 @@ module.exports = {
     removeProduct: async (req, res) => {
         try {
             const { albumId } = req.body;
-            const { id } = req.session.userLogin;
+             const { id } = req.session.userLogin; 
             await removeProductFromCart({ userId: id, albumId})
             sendSuccessResponse(res)
         } catch (error) {

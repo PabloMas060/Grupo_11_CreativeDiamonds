@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 1
     },
     orderId: DataTypes.INTEGER.UNSIGNED,
-    albumId: DataTypes.INTEGER.UNSIGNED,
+    albumId: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: true
+    }
   }, {
     sequelize,
     modelName: 'Cart',

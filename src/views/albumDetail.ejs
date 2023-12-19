@@ -27,8 +27,7 @@
                                     <li class="list-group-item"><b>PRECIO:</b> us$ <%= album.price %></li>
                                 </ul>
                                 <div class="card-body text-center">
-                                    <button data-id="<%= id %>" id="btn-addCart" class="btn btn-dark">Agregar al
-                                        carrito</button>
+                                    <button data-id="<%= album.id %>" id="btn-addCart" class="btn btn-dark">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
@@ -67,8 +66,8 @@
 
             <!-- Pie de página -->
             <%- include('partials/footer') %>
-            <script src="/js/addProductToCart"></script>
-
+            <script src="/javascripts/productDetail.js"></script>
+        
 
 </body>
 

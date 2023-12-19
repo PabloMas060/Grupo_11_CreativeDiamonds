@@ -28,6 +28,12 @@ module.exports = {
                     socialProvider: provider
                 }
             })
+            const order = await db.Order.create({
+                date: new Date(),
+                    total: 0,
+                    userId : id,
+                    status: "pending"
+            })
             if(!isCreate){
                 await address.destroy()
             }

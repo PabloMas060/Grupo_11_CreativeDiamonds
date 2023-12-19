@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
         }
     })
 
-    $('password').addEventListener('change', async function(e){
+/*     $('password').addEventListener('change', async function(e){
 
         try {
 
@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
         } catch (error) {
             console.log(error);
         }
-    })
+    }) */
 
     $('login-form').addEventListener('submit', function(event) {
         event.preventDefault();

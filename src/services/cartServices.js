@@ -28,18 +28,18 @@ module.exports = mtd = {
         }) 
         return order;
     },
-    getCart: ({ orderId }) => {
-        //console.log({orderId, albumId});
+    getCart: ({ orderId, albumId }) => {
+        console.log({orderId, albumId});
         return db.Cart.findOrCreate({
         
             where: {
                 [Op.and]: [
-                    { orderId }
+                    { orderId, albumId }
                 ]
             },
             defaults:
             {
-                orderId
+                orderId, albumId
     
             }
         })
