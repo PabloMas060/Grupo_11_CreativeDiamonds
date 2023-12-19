@@ -5,7 +5,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    max-height: 4rem;
+    padding: 10px 0;
 }
 
 .Headeravatar-image img{
@@ -41,7 +41,8 @@ header {
 
 
 .header__navbar__ul-1 {
-    display: none;
+    display: flex;
+    gap: 5px;
     margin: 0;
 }
 .header-p {

@@ -98,25 +98,25 @@ window.addEventListener('load',function () {
     }) 
 
 
-    $('password').addEventListener('focus', function(e){
-        $('msgError-password').innerHTML = null
+    $('password1').addEventListener('focus', function(e){
+        $('msgError-password1').innerHTML = null
         this.classList.remove('is-invalid');
         this.classList.remove('is-valid')
     })
 
-    $('password').addEventListener('blur', function(e){
+    $('password1').addEventListener('blur', function(e){
 
         switch (true) {
             case !this.value.trim():
-                $('msgError-password').innerHTML = "Éste campo es obligatorio"
+                $('msgError-password1').innerHTML = "Éste campo es obligatorio"
                 this.classList.add('is-invalid')
                 break;
             case (this.value.trim().length < 6 || this.value.trim().length > 12):
-                $('msgError-password').innerHTML = "Entre 6 y 12 caracteres";
+                $('msgError-password1').innerHTML = "Entre 6 y 12 caracteres";
                 this.classList.add('is-invalid')
                 break
             default:
-                $('msgError-password').innerHTML = null;
+                $('msgError-password1').innerHTML = null;
                 this.classList.add('is-valid')
                 this.classList.remove('is-invalid')
                 break;
@@ -125,7 +125,7 @@ window.addEventListener('load',function () {
 
 
 
-    $('password').addEventListener('focus', function(e){
+    $('password2').addEventListener('focus', function(e){
         $('msgError-password').innerHTML = null
         this.classList.remove('is-invalid');
         this.classList.remove('is-valid')
@@ -138,7 +138,7 @@ window.addEventListener('load',function () {
                 $('msgError-password2').innerHTML = "Debes confirmar tu contraseña"
                 this.classList.add('is-invalid')
                 break;
-            case this.value.trim() !== $('password').value.trim():
+            case this.value.trim() !== $('password1').value.trim():
                 $('msgError-password2').innerHTML = "Las contraseñas no coinciden";
                 this.classList.add('is-invalid')
                 break
