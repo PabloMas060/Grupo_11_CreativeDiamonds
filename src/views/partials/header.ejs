@@ -39,32 +39,22 @@
                         <li><a href="/users/logout"><img width="30" src="/iconos/icono-cerrar.svg" alt=""></a>
                             <p class="header-p">Salir</p>
                         </li>
-
-                        <div class="Headeravatar-image">
-                            <img src="/avatar/cabeza/<%= user.head ? user.head : 'defaultCabeza.png' %>" alt="Head">
-                        </div>
-                        <div class="Headeravatar-image">
-                            <img src="/avatar/cara/<%= user.face ? user.face : 'defaultCara.png' %>" alt="Face">
-                        </div>
-                        <div class="Headeravatar-image">
-                            <img src="/avatar/sombrero/<%= user.hat ? user.hat : 'defaultGorro.png' %>" alt="Hat">
-                        </div>
-                        <div class="Headeravatar-image">
-                            <a href="#" id="toggle-button"> <img
-                                    src="/avatar/torso/<%= user.bust ? user.bust : 'defaultTorso.png' %>" alt="Bust">
-                            </a>
-                        </div>
+                        
+                        <li><a href="/users/profile"><img width="30" style="border-radius: 50%;" src="<%= /http/.test(user.avatar) ? user.avatar?.toString().trim() : `/avatar/${user.avatar || 'default-avatar.jpg'}` %>" alt=""></a>
+                        <p class="header-p">Perfil</p></li>
+                        <% }else{ %>
+                            <li>
+                                <a href="#" id="open-login-modal-link"><img width="30" src="/iconos/icono-avatarTemporal.svg"
+                                        alt=""></a>
+                                <p class="header-p">Ingresar</p>
+                            </li>
                         <% } %>
                             <li><a href="/products/artists"><img width="30" src="/iconos/icono-guitarraElectrica.svg"
                                         alt=""></a>
                                 <p class="header-p">Bandas</p>
                             </li>
 
-                            <li>
-                                <a href="#" id="open-login-modal-link"><img width="30" src="/iconos/icono-avatarTemporal.svg"
-                                        alt=""></a>
-                                <p class="header-p">Ingresar</p>
-                            </li>
+                          
 
 
 

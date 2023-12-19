@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <%- include('partials/head', { title: 'Noticia' }) %>
-<%- include('partials/header') %>
 
 <body>
+    <%- include('partials/header') %>
+
     <div class="notice" style="background-color: <%= article.Group.primaryColor %>;">
         <div class="notice-info" style="background-color: <%= article.Group.secondaryColor %>;">
             <p><%= article.createdAt.toLocaleDateString() %></p>
