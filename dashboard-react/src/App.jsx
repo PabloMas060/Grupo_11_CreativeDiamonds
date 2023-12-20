@@ -1,15 +1,18 @@
+import { BrowserRouter } from 'react-router-dom'
+import { MainLayout } from './layouts'
+import { AppRoutes } from './routes'
+import { MusicProvider } from './context/MusicProvider'
 
-
-import './App.css'
-import { AppRouter } from './routes/AppRouter'
 function App() {
-
-
   return (
-    
-      
-    <AppRouter/>
+    <BrowserRouter>
+      <MusicProvider>
+        <MainLayout>
+          <AppRoutes />
+        </MainLayout>
+      </MusicProvider>
+
+    </BrowserRouter>
   )
 }
-
 export default App

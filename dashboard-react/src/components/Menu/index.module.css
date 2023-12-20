@@ -1,0 +1,51 @@
+.fondo{
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 2px;
+    border-radius: 9px;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.boxLogo{
+display: flex;
+justify-content: center;
+}
+
+.logo{
+    width:50px;
+    margin-left: 90px;
+    animation-duration:  4s  infinite;
+    animation-name: slidein;
+}
+
+
+.imagesLogoError{
+    height: 140px;
+    margin-left: 130px;
+}
+
+@media (max-width:500px){
+    .imagesLogoError{
+        height: 140px;
+      margin-left: 120px;;
+    }
+
+    .imagesLogo{
+ 
+    margin-left: 70px;
+   
+}
+  }
+
+@keyframes slidein {
+    from {
+        position: relative;
+        top: 20px;
+    }
+  
+    to {
+        position: relative;
+        top: 0px;
+    }
+  }

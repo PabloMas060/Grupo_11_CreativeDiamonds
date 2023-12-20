@@ -8,6 +8,7 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const cors = require('cors')
 const checkCookie = require('./middlewares/cookieCheck');
+const SpotifyWebApi = require('spotify-web-api-node');
 
 
 
@@ -32,6 +33,12 @@ loginGoogleInitialize();
 
 
 const app = express();
+
+const spotifyWebApi = new SpotifyWebApi({
+  clientId: process.env.SPOTIFY_CLIENT_ID,
+  clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+  redirectUri: process.env.SPOTIFY_REDIRECT_URL
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
